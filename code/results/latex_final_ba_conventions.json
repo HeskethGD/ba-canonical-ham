@@ -1,0 +1,59 @@
+[
+  {
+    "genus": 1,
+    "curve_coefficients": [
+      "0.768",
+      "-3.52",
+      "-2.4",
+      "4.0"
+    ],
+    "raw_sheet_product_sign": -1,
+    "scaled_errors": {
+      "sheet_product": "0.0",
+      "minus_sheet_rate": "7.7077529e-34",
+      "plus_sheet_rate": "0.0",
+      "wronskian": "2.1123927e-32",
+      "potential": "0.0"
+    }
+  },
+  {
+    "genus": 2,
+    "curve_coefficients": [
+      "-3.04128",
+      "13.632",
+      "11.68",
+      "-18.4",
+      "-4.0",
+      "4.0"
+    ],
+    "raw_sheet_product_sign": 1,
+    "scaled_errors": {
+      "sheet_product": "1.6563239e-32",
+      "minus_sheet_rate": "3.4367803e-33",
+      "plus_sheet_rate": "1.540744e-33",
+      "wronskian": "1.3878807e-32",
+      "potential": "4.0798022e-33"
+    }
+  },
+  {
+    "genus": 3,
+    "curve_coefficients": [
+      "27.2498688",
+      "-120.926208",
+      "-113.14688",
+      "173.824",
+      "54.88",
+      "-52.64",
+      "-5.6",
+      "4.0"
+    ],
+    "raw_sheet_product_sign": -1,
+    "scaled_errors": {
+      "sheet_product": "2.6195105e-33",
+      "minus_sheet_rate": "0.0",
+      "plus_sheet_rate": "0.0",
+      "wronskian": "3.9154315e-25",
+      "potential": "1.5188848e-33"
+    }
+  }
+]

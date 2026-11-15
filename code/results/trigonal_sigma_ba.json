@@ -1,0 +1,117 @@
+{
+  "case": "trigonal",
+  "genus": 3,
+  "group_sizes": [
+    3,
+    3
+  ],
+  "canonical_pairs": 15,
+  "curve": "y^3=x^4+2*x^3+3*x^2+5*x+7",
+  "dps": 24,
+  "generapy_version": "0.1.1.dev4+gaed252bd5",
+  "duration": 6.0,
+  "analytic_samples": 41,
+  "dense_ode_samples": 601,
+  "coarse_steps": 6000,
+  "fine_steps": 12000,
+  "time": "z(t)=z0-i*t*e_g; real t; brackets -i; complex Hamiltonian H0; independent partners",
+  "z0": [
+    [
+      "0.6000000000000000000000000206795153138257",
+      "0.3000000000000000000000000103397576569128"
+    ],
+    [
+      "0.1999999999999999999999999896602423430872",
+      "0.1500000000000000000000000051698788284564"
+    ],
+    [
+      "0.09999999999999999999999999483012117154358",
+      "0.1999999999999999999999999896602423430872"
+    ]
+  ],
+  "normalized_residue_weights": [
+    [
+      0.27855548259310436,
+      -0.08091259665001656
+    ],
+    [
+      -0.10576277539056668,
+      -0.8955899086176152
+    ],
+    [
+      -0.08489778169213232,
+      0.1998202721833817
+    ],
+    [
+      0.23855840332069123,
+      -0.0014268152524120428
+    ],
+    [
+      0.005089803233961662,
+      -0.9944423193101024
+    ],
+    [
+      -0.044598915625011774,
+      0.5149735082182008
+    ]
+  ],
+  "phase_coefficients": [
+    [
+      6.227140784348883,
+      15.53366984640436
+    ],
+    [
+      -5.060995068497823,
+      6.549497768344894
+    ],
+    [
+      -3.591233512606193,
+      0.9462999720169669
+    ],
+    [
+      13.329291015255562,
+      16.279426620910133
+    ],
+    [
+      -3.1844039790064764,
+      7.790703115898826
+    ],
+    [
+      -2.564029912166287,
+      -1.368483563742814
+    ]
+  ],
+  "all_mode_canonical_residual": 1.24980515945784e-12,
+  "kernel_derivative_residual": 1.3483736031136218e-12,
+  "diagonal_pairing_drift": 2.743255792103865e-14,
+  "coarse_ode_error": 1.9573908064246818e-10,
+  "fine_ode_error": 1.7661655577081697e-11,
+  "step_halving_ratio": 11.082714176380225,
+  "fine_modal_power_error": 1.2032898205829493e-11,
+  "BA_conserved_quantity_drift": 1.6205007885531585e-12,
+  "ODE_conserved_quantity_drift": 8.597452836778421e-13,
+  "infinity_characteristic_rounding": 0.0,
+  "minimum_sigma_denominator": 7.537920401213218,
+  "sigma_backend": "Generapy kleinian_sigma_jet for every analytic sample",
+  "setup_seconds": 6.291595415677875,
+  "evaluation_benchmark_seconds": [
+    2.2224798328243196,
+    2.2220621248707175,
+    2.2019412918016315
+  ],
+  "mean_sample_seconds": 2.0872571352392253,
+  "plotted_modes": [
+    "Re xi_1",
+    "Re xi_4",
+    "Re xi_1,4",
+    "Re (xi_1 xi_1_bar)"
+  ],
+  "plot_style": "black and white; sparse open BA markers, dense solid Runge--Kutta lines",
+  "all_modes_checked": true,
+  "all_powers_checked": true,
+  "physical_real_form": false,
+  "BA_reality_error": 1.5773430506572947,
+  "ODE_reality_error": 1.589007062056936,
+  "minimum_elementary_power": -8.116856201500244,
+  "maximum_imaginary_power": 160.95187897314844
+}

@@ -1,0 +1,250 @@
+{
+  "checks": [
+    {
+      "genus": 1,
+      "phi": "1",
+      "phase_dimension": 4,
+      "generic_rank": 2,
+      "jacobi_verified": true,
+      "all_spectral_coefficients_in_involution": true,
+      "casimirs_count": 2,
+      "same_BA_polynomial_flow": true,
+      "Hamiltonian": "u0*w0 + v0**2"
+    },
+    {
+      "genus": 1,
+      "phi": "x",
+      "phase_dimension": 4,
+      "generic_rank": 2,
+      "jacobi_verified": true,
+      "all_spectral_coefficients_in_involution": true,
+      "casimirs_count": 2,
+      "same_BA_polynomial_flow": true,
+      "Hamiltonian": "u0*w1 + w0"
+    },
+    {
+      "genus": 2,
+      "phi": "1",
+      "phase_dimension": 7,
+      "generic_rank": 4,
+      "jacobi_verified": true,
+      "all_spectral_coefficients_in_involution": true,
+      "casimirs_count": 3,
+      "same_BA_polynomial_flow": true,
+      "Hamiltonian": "u0*w1 + u1*w0 + 2*v0*v1",
+      "spectral_integrals": [
+        "u0*w0 + v0**2",
+        "u0*w1 + u1*w0 + 2*v0*v1",
+        "u0*w2 + u1*w1 + v1**2 + w0",
+        "u0 + u1*w2 + w1",
+        "u1 + w2"
+      ],
+      "casimirs": [
+        "u0*w2 + u1*w1 + v1**2 + w0",
+        "u0 + u1*w2 + w1",
+        "u1 + w2"
+      ],
+      "coordinates": [
+        "u0",
+        "u1",
+        "v0",
+        "v1",
+        "w0",
+        "w1",
+        "w2"
+      ],
+      "poisson_matrix": [
+        [
+          "0",
+          "0",
+          "u1",
+          "1",
+          "-2*v1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-u1",
+          "-1",
+          "0",
+          "0",
+          "-u0 + w1",
+          "w2",
+          "1"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "-u1 + w2",
+          "1",
+          "0"
+        ],
+        [
+          "2*v1",
+          "0",
+          "u0 - w1",
+          "u1 - w2",
+          "0",
+          "-2*v1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-w2",
+          "-1",
+          "2*v1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "genus": 2,
+      "phi": "x*(x - 1)",
+      "phase_dimension": 7,
+      "generic_rank": 4,
+      "jacobi_verified": true,
+      "all_spectral_coefficients_in_involution": true,
+      "casimirs_count": 3,
+      "same_BA_polynomial_flow": true,
+      "Hamiltonian": "u0 + u1*w2 + u1 + w1 + w2 + 1",
+      "spectral_integrals": [
+        "u0*w0 + v0**2",
+        "u0*w1 + u1*w0 + 2*v0*v1",
+        "u0*w2 + u1*w1 + v1**2 + w0",
+        "u0 + u1*w2 + w1",
+        "u1 + w2"
+      ],
+      "casimirs": [
+        "u1 + w2",
+        "u0*w0 + v0**2",
+        "u0*w0 + u0*w1 + u0*w2 + u0 + u1*w0 + u1*w1 + u1*w2 + u1 + v0**2 + 2*v0*v1 + v1**2 + w0 + w1 + w2 + 1"
+      ],
+      "coordinates": [
+        "u0",
+        "u1",
+        "v0",
+        "v1",
+        "w0",
+        "w1",
+        "w2"
+      ],
+      "poisson_matrix": [
+        [
+          "0",
+          "0",
+          "u0",
+          "-u0",
+          "-2*v0",
+          "2*v0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-u0",
+          "-u1 - 1",
+          "2*v0",
+          "2*v1",
+          "0"
+        ],
+        [
+          "-u0",
+          "u0",
+          "0",
+          "0",
+          "w0",
+          "u0 - w0",
+          "-u0"
+        ],
+        [
+          "u0",
+          "u1 + 1",
+          "0",
+          "0",
+          "-w0",
+          "u1 - w1 - w2",
+          "-u1 - 1"
+        ],
+        [
+          "2*v0",
+          "-2*v0",
+          "-w0",
+          "w0",
+          "0",
+          "-2*v0",
+          "2*v0"
+        ],
+        [
+          "-2*v0",
+          "-2*v1",
+          "-u0 + w0",
+          "-u1 + w1 + w2",
+          "2*v0",
+          "0",
+          "2*v1"
+        ],
+        [
+          "0",
+          "0",
+          "u0",
+          "u1 + 1",
+          "-2*v0",
+          "-2*v1",
+          "0"
+        ]
+      ],
+      "canonical_power_coordinates": [
+        "u0",
+        "u0 + u1 + 1"
+      ],
+      "canonical_power_momenta": [
+        "v0/u0",
+        "(-v0 - v1)/(u0 + u1 + 1)"
+      ]
+    },
+    {
+      "genus": 3,
+      "phi": "1",
+      "phase_dimension": 10,
+      "generic_rank": 6,
+      "jacobi_verified": true,
+      "all_spectral_coefficients_in_involution": true,
+      "casimirs_count": 4,
+      "same_BA_polynomial_flow": true,
+      "Hamiltonian": "u0*w2 + u1*w1 + u2*w0 + 2*v0*v2 + v1**2"
+    },
+    {
+      "genus": 3,
+      "phi": "x*(x - 2)*(x - 1)",
+      "phase_dimension": 10,
+      "generic_rank": 6,
+      "jacobi_verified": true,
+      "all_spectral_coefficients_in_involution": true,
+      "casimirs_count": 4,
+      "same_BA_polynomial_flow": true,
+      "Hamiltonian": "u1 + u2*w3 + 3*u2 + w2 + 3*w3 + 7"
+    }
+  ]
+}

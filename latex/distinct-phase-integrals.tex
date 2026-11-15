@@ -1,0 +1,113 @@
+\section{Explicit spectral integrals for distinct phase coefficients}
+\label{sec:distinct-phase-integrals}
+
+For distinct phase coefficients within each group, the complete integral
+set can be chosen directly from spectral values and derivatives. This
+provides an explicit specialization of \cref{thm:canonical-independence}.
+The selection points are determined by
+the fixed diagonal entries of the pencil. In the $(\nu,\lambda)$
+plane, the diagonal factor $\lambda-X_{hh}-\nu D_{hh}$ vanishes
+on the straight line $\lambda=X_{hh}+\nu D_{hh}$,
+$1\leq h\leq d$. From \cref{eq:canonical-X,eq:canonical-pencil},
+these are the three families
+\begin{equation}\label{eq:canonical-diagonal-lines}
+\begin{aligned}
+ \lambda&=\nu-2b_\ell^L,&&1\leq\ell\leq L,\\
+ \lambda&=-\nu-2b_m^M,&&1\leq m\leq M,\\
+ \lambda&=b_n^N,&&1\leq n\leq N.
+\end{aligned}
+\end{equation}
+Thus a family is simply a list of parallel straight lines: there are
+$L$ lines of slope $1$, $M$ of slope $-1$, and $N$ horizontal lines.
+The $\lambda$-intercept is the value at $\nu=0$, namely $X_{hh}$;
+the three lists of intercepts are $-2b_\ell^L,-2b_m^M,b_n^N$.
+
+An intersection $q=(\lambda_q,\nu_q)$ is fixed by these phase
+coefficients. Evaluating the spectral determinant there gives the
+function $F(q)=F(\lambda_q,\nu_q)$ of the evolving modes.
+These values are conserved and commute by
+\cref{prop:canonical-commutation}. Distinct intercepts within each
+family ensure that at most one line from each family passes through
+any point, so intersections involve either two or three lines.
+
+\begin{theorem}\label{thm:distinct-phase-evaluations}
+Suppose each of the three lists of phase coefficients
+\[
+ b_1^L,\ldots,b_L^L;\qquad
+ b_1^M,\ldots,b_M^M;\qquad
+ b_1^N,\ldots,b_N^N
+\]
+is pairwise distinct.
+At every two-line intersection $q$, take $F(q)$; at every triple
+intersection, take $F(q),\partial_\lambda F(q),\partial_\nu F(q)$.
+These $p=LM+MN+NL$ functions are generically independent commuting
+first integrals. Hence \cref{eq:canonical-H} is Liouville integrable
+for every positive $L,M,N$. A complete local set can include $H$
+wherever $\mathrm dH\ne0$.
+\end{theorem}
+\begin{proof}
+There are $LM+MN+NL$ pairs of lines from different families.
+Ordinarily each pair gives one evaluation. If three lines meet,
+their three pairwise intersections coincide; the value and its two
+first spectral derivatives provide three functions at that point.
+Thus the total count remains $p$. The derivatives also commute,
+by differentiating \cref{prop:canonical-commutation} with respect
+to the fixed spectral arguments.
+
+To prove independence, it suffices to find one nonzero Jacobian minor.
+Use the $p$ upper off-diagonal mode entries $x_{hi}=X_{hi}$ as
+column coordinates, with $1\leq h<i\leq d$ in different blocks;
+use the proposed integrals as rows. Evaluate this Jacobian at the
+test states $X_{hi}=0$, $X_{ih}=\epsilon$, keeping all phase
+coefficients fixed. Here $\epsilon$ is a parameter selecting the
+test state. We find the leading determinant as $\epsilon\to0$.
+
+Write $l_h=\lambda-X_{hh}-\nu D_{hh}$, $1\leq h\leq d$,
+and let $R_q$ be the product of the nonzero $l_h(q)$ over
+$1\leq h\leq d$. At a two-line intersection, two diagonal
+factors vanish. A determinant term linear in $x_{hi}$ can remove
+both zeros by pairing it with its reverse entry $\epsilon$;
+this gives $-\epsilon R_q$ only for the edge joining those two
+lines. All other columns vanish to higher order. Dividing this
+row by $\epsilon$ therefore leaves the single nonzero leading
+entry $-R_q$.
+
+At a triple intersection, three diagonal factors vanish. The Jacobian
+row for $F(q)$ first detects a three-edge cycle, of order $\epsilon^2$.
+A spectral derivative removes one vanishing factor, so
+$F_\lambda(q)$ and $F_\nu(q)$ detect two-edge cycles of order
+$\epsilon$. Order the three relevant columns as $L$--$M$,
+$L$--$N$, $M$--$N$. After dividing these three rows by
+$\epsilon^2,\epsilon,\epsilon$, respectively, determinant
+differentiation gives the leading block
+\begin{equation}\label{eq:canonical-confluent-block}
+ R_q\begin{pmatrix}0&-1&0\\-1&-1&-1\\0&-1&1\end{pmatrix},
+ \qquad \det=-R_q^3\ne0.
+\end{equation}
+Leading entries on edges outside the corresponding intersection
+vanish, because a vanishing diagonal factor remains. Consequently
+the full normalized Jacobian is block diagonal: one nonzero scalar
+block for each two-line intersection and one invertible three-by-three
+block for each triple. Its determinant is nonzero. The unscaled
+minor is therefore a nonzero polynomial in $\epsilon$, proving
+independence on a dense open set of the mode phase space. Since $H$
+commutes with this complete set, it is locally a function of these
+integrals and can replace a suitable member wherever $\mathrm dH\ne0$.
+\end{proof}
+
+The $d-1$ independent power charges can be retained in a complete set,
+leaving
+\[
+ G=p-d+1=LM+MN+NL-L-M-N+1.
+\]
+spectral integrals. Away from triple intersections, there is a simple
+group-symmetric selection: regard the modes as edges of the complete
+tripartite graph, choose any spanning tree, and retain the evaluations
+on its $G$ complementary edges. Indeed, at the proof's test state the
+charge differentials form a weighted incidence matrix, whose tree
+minor is nonzero; the complementary spectral rows give the remaining
+nonzero diagonal block. At triple intersections, differential row
+selection from the confluent set gives the required complement.
+For $N=1$, the count becomes $L+M$ power charges and $LM$ spectral
+integrals.
+

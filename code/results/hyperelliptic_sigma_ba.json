@@ -1,0 +1,97 @@
+{
+  "case": "hyperelliptic",
+  "genus": 2,
+  "group_sizes": [
+    2,
+    2
+  ],
+  "canonical_pairs": 8,
+  "curve": "y^2=4*x*(x^2-1)*(x^2-4)",
+  "dps": 24,
+  "generapy_version": "0.1.1.dev4+gaed252bd5",
+  "duration": 6.0,
+  "analytic_samples": 41,
+  "dense_ode_samples": 601,
+  "coarse_steps": 6000,
+  "fine_steps": 12000,
+  "time": "z(t)=z0-i*t*e_g; real t; brackets -i; real Hamiltonian H0 on the all-positive real form",
+  "z0": [
+    [
+      "-0.6872573749240475284401061053554617552173",
+      "0.7999999999999999999999999586409693723486"
+    ],
+    [
+      "-0.3259941576305484618020990636950695404524",
+      "0.7999999999999999999999999586409693723486"
+    ]
+  ],
+  "normalized_residue_weights": [
+    [
+      0.13797766059323516,
+      0.0
+    ],
+    [
+      0.27420048684890475,
+      0.0
+    ],
+    [
+      0.19947183773130459,
+      0.0
+    ],
+    [
+      0.7627063097108354,
+      -0.0
+    ]
+  ],
+  "phase_coefficients": [
+    [
+      -0.8669134585039688,
+      -0.0
+    ],
+    [
+      -3.6917075006324556,
+      -0.0
+    ],
+    [
+      0.03188464580964079,
+      0.0
+    ],
+    [
+      -3.178108583881821,
+      0.0
+    ]
+  ],
+  "all_mode_canonical_residual": 1.216041921584697e-15,
+  "kernel_derivative_residual": 1.4773926341995133e-15,
+  "diagonal_pairing_drift": 1.4575705879638548e-16,
+  "coarse_ode_error": 1.5177137637013655e-10,
+  "fine_ode_error": 1.6824413876927653e-11,
+  "step_halving_ratio": 9.02090126172359,
+  "fine_modal_power_error": 1.5643021835178773e-11,
+  "BA_conserved_quantity_drift": 1.0203401900663553e-15,
+  "ODE_conserved_quantity_drift": 2.0948854750171102e-14,
+  "infinity_characteristic_rounding": 0.0,
+  "minimum_sigma_denominator": 2.054139222668925,
+  "sigma_backend": "Generapy kleinian_sigma_jet for every analytic sample",
+  "setup_seconds": 0.7855565422214568,
+  "evaluation_benchmark_seconds": [
+    0.04604116687551141,
+    0.05904408311471343,
+    0.04580266587436199
+  ],
+  "mean_sample_seconds": 0.055254690076519807,
+  "plotted_modes": [
+    "Re xi_1",
+    "Re xi_3",
+    "Re xi_1,3",
+    "Re (xi_1 xi_1_bar)"
+  ],
+  "plot_style": "black and white; sparse open BA markers, dense solid Runge--Kutta lines",
+  "all_modes_checked": true,
+  "all_powers_checked": true,
+  "physical_real_form": true,
+  "BA_reality_error": 2.9610617336094573e-16,
+  "ODE_reality_error": 1.7920057050731535e-12,
+  "minimum_elementary_power": 0.022261485962802998,
+  "maximum_imaginary_power": 4.456590364299313e-16
+}

@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{aliascnt}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newaliascnt{lemma}{theorem}
+\newtheorem{lemma}[lemma]{Lemma}
+\aliascntresetthe{lemma}
+\newaliascnt{proposition}{theorem}
+\newtheorem{proposition}[proposition]{Proposition}
+\aliascntresetthe{proposition}
+\newaliascnt{corollary}{theorem}
+\newtheorem{corollary}[corollary]{Corollary}
+\aliascntresetthe{corollary}
+\newcommand{\C}{\mathbb C}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Id}{\mathrm{Id}}
+\newcommand{\trans}{\mathsf T}
+\newcommand{\BA}{Baker--Akhiezer}
+
+\title{Baker--Akhiezer functions on arbitrary curves in modified
+Jiang--Rauch-Wojciechowski systems}
+\author{Graham Hesketh\\
+Independent Researcher, UK\\
+\href{mailto:gdh1e10@gmail.com}{\texttt{gdh1e10@gmail.com}}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We establish the vector--matrix--vector case of a phase extension of
+the Jiang--Rauch-Wojciechowski system as a canonical Hamiltonian
+realization of the scalar Baker--Akhiezer function and its Abelian
+evolution on arbitrary smooth curves with a marked point.
+A finite linear residue test is
+necessary and sufficient for ordinary and dual evaluations and their
+Cauchy-kernel pair modes to solve the canonical equations.
+Any finite collection of regular elementary evaluations can be included
+after adjoining points, and the prescribed curve is the normalization
+of the realized spectral curve. Conversely, generic canonical initial
+modes reconstruct Baker--Akhiezer solutions on their spectral curve.
+The commuting spectral family spans all Abel directions, with constant
+mode phases determined by meromorphic interpolation.
+The curve type changes the compatible phase coefficients, initial data
+and required mode counts, while the Hamiltonian retains its form.
+For the full three-matrix system, we establish Liouville integrability
+for all positive matrix sizes and every fixed phase profile, and
+characterize the regular marked spectral curves. Hyperelliptic and
+trigonal numerical examples validate the construction.
+\end{abstract}
+
+\input{introduction}
+\input{canonical-hamiltonian}
+\input{spectral-geometry}
+\input{ba-realization}
+\input{hyperelliptic-realization}
+\input{mumford-correspondence}
+\input{numerical-validation}
+\input{discussion}
+
+\appendix
+\input{jiang-comparison}
+\input{distinct-phase-integrals}
+\input{spectral-converse}
+\input{ba-active-converse}
+\input{spectral-prym}
+
+\bibliographystyle{plainurl}
+\bibliography{references}
+\end{document}

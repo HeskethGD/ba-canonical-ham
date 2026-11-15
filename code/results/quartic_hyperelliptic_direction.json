@@ -1,0 +1,66 @@
+{
+  "symbolic_row": {
+    "all_curve_coefficients_and_node_symmetric_functions_symbolic": true,
+    "Abel_direction": [
+      "-h3",
+      "-h2-h3*sum(a_k)"
+    ],
+    "phase_formula": "a_k+s_opposite+sum(a)/2+lambda4/4-Y_k*(2*h3*a_k+2*h2+h3*sum(a))-h3*sum_opposite(kappa_j*y_j)"
+  },
+  "fixed_data_certificate": true,
+  "all_mode_certificates": [
+    {
+      "curve": "4*x**5 + 7097*x**4/180 - 118531*x**3/540 - 299863*x**2/6480 + 2641699*x/3240 - 317183/1296",
+      "marked_abscissae": [
+        "-5",
+        "-2",
+        "3",
+        "7"
+      ],
+      "direction": [
+        "-6/5",
+        "-53/30"
+      ],
+      "phase_rates": [
+        "-653/240",
+        "-7153/1200",
+        "-3721/1200",
+        "-1781/240"
+      ],
+      "different_divisors_on_same_curve": 3,
+      "all_16_mode_equations": true,
+      "fixed_curve_tangency": true,
+      "nonzero_central_phase_checked": true
+    },
+    {
+      "curve": "4*x**5 + 13595*x**4/108 - 106589*x**3/4860 - 9716039*x**2/11664 + 364333*x/729 + 8263396/18225",
+      "marked_abscissae": [
+        "-7",
+        "-3",
+        "2",
+        "9"
+      ],
+      "direction": [
+        "4/3",
+        "29/18"
+      ],
+      "phase_rates": [
+        "-505/48",
+        "-8705/432",
+        "-329/48",
+        "-10241/432"
+      ],
+      "different_divisors_on_same_curve": 3,
+      "all_16_mode_equations": true,
+      "fixed_curve_tangency": true,
+      "nonzero_central_phase_checked": true
+    }
+  ],
+  "generapy_check": {
+    "digits": 32,
+    "all_eight_elementary_equations": true,
+    "max_scaled_error": "4.027519319e-31",
+    "max_z1_identity_error": "9.121204217e-31",
+    "central_phase": "0.27"
+  }
+}

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.pytest_cache/
+.check-logs/
+latex/build/
+latex/*.aux
+latex/*.log
+latex/*.out
+latex/*.fls
+latex/*.fdb_latexmk
+latex/*.blg
+latex/*.synctex.gz
+latex/submission-source.zip

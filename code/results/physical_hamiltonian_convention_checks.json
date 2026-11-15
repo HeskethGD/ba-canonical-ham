@@ -1,0 +1,98 @@
+[
+  {
+    "sizes": [
+      1,
+      1,
+      1
+    ],
+    "real_form": false,
+    "hamiltonian_error": 6.889024877215972e-11,
+    "lax_error": 5.617333549722722e-15,
+    "higher_flow_error": 4.3220627292571254e-14,
+    "reality_error": null
+  },
+  {
+    "sizes": [
+      1,
+      1,
+      1
+    ],
+    "real_form": true,
+    "hamiltonian_error": 2.6006739162192803e-11,
+    "lax_error": 1.4432899320127035e-15,
+    "higher_flow_error": 1.0376113739958893e-13,
+    "reality_error": 2.482534153247273e-16
+  },
+  {
+    "sizes": [
+      2,
+      2,
+      1
+    ],
+    "real_form": false,
+    "hamiltonian_error": 1.6490662841306713e-10,
+    "lax_error": 1.2560739669470201e-15,
+    "higher_flow_error": 1.2657087841691035e-13,
+    "reality_error": null
+  },
+  {
+    "sizes": [
+      2,
+      2,
+      1
+    ],
+    "real_form": true,
+    "hamiltonian_error": 7.22614328577898e-11,
+    "lax_error": 1.3506446028928517e-15,
+    "higher_flow_error": 2.5433559371059913e-14,
+    "reality_error": 4.440892098500626e-16
+  },
+  {
+    "sizes": [
+      2,
+      3,
+      2
+    ],
+    "real_form": false,
+    "hamiltonian_error": 1.6410015914832737e-10,
+    "lax_error": 1.9860273225978185e-15,
+    "higher_flow_error": 1.3412376404895574e-13,
+    "reality_error": null
+  },
+  {
+    "sizes": [
+      2,
+      3,
+      2
+    ],
+    "real_form": true,
+    "hamiltonian_error": 2.8454607905625747e-10,
+    "lax_error": 1.9860273225978185e-15,
+    "higher_flow_error": 2.640744289429354e-13,
+    "reality_error": 1.7763568394002505e-15
+  },
+  {
+    "sizes": [
+      3,
+      1,
+      2
+    ],
+    "real_form": false,
+    "hamiltonian_error": 1.8067373487771657e-10,
+    "lax_error": 1.790180836524724e-15,
+    "higher_flow_error": 1.2695670921804689e-13,
+    "reality_error": null
+  },
+  {
+    "sizes": [
+      3,
+      1,
+      2
+    ],
+    "real_form": true,
+    "hamiltonian_error": 2.2983400004666677e-10,
+    "lax_error": 9.930136612989092e-16,
+    "higher_flow_error": 1.205642909605853e-13,
+    "reality_error": 1.7763568394002505e-15
+  }
+]

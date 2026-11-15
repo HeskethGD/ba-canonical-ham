@@ -1,0 +1,194 @@
+\section{Numerical validation}\label{sec:numerical-validation}
+
+We compare the BA construction with independent integration of
+Hamilton's equations on a genus-two hyperelliptic curve and a smooth
+genus-three trigonal curve. All analytic values and derivatives are
+computed with Generapy's sigma and sigma-jet functions \cite{Generapy}.
+Periods, Abel lifts, second-kind lifts and reference normalizations
+are computed once for each example. The canonical vector field is
+then evaluated separately from the polynomial Hamiltonian
+\cref{eq:BA-H0-flat}.
+
+\subsection{Curves and prescribed BA data}
+
+The hyperelliptic example uses
+\begin{equation}\label{eq:numeric-hyperelliptic-curve}
+ y^2=4x(x^2-1)(x^2-4),\qquad L=M=2,
+\end{equation}
+and hence has eight canonical mode pairs. The ordered point
+abscissae are $0.1,2.3,0.5,3.0$, with positive real ordinates in the
+first group and negative ordinates in the second. We use the Baker
+differentials of \cref{eq:BA-curve,eq:BA-second-kind} and reference
+vector $z_0=\omega e_2+\tfrac{4i}{5}(1,1)^{\trans}$, where
+$\omega$ is the first-kind half-period matrix. These are the normalized
+BA points $\widehat Q_k$ of \cref{eq:BA-general-dictionary}.
+This choice gives real phase coefficients, positive normalized weights
+and the all-positive real form
+$\bar\xi_k=\xi_k^*$, $1\leq k\leq K$, and
+$\bar\xi_{ij}=\xi_{ij}^*$, $1\leq i\leq L<j\leq K$.
+Thus every mode power is a squared modulus on this explosive-type solution.
+
+The trigonal example uses
+\begin{equation}\label{eq:numeric-trigonal-curve}
+ y^3=x^4+2x^3+3x^2+5x+7,\qquad L=M=3,
+\end{equation}
+and hence has fifteen canonical mode pairs. The compatible
+first- and second-kind bases are
+\begin{equation}\label{eq:numeric-trigonal-bases}
+ du=\frac{(1,x,y)^{\trans}}{3y^2}\,dx,\qquad
+ dr=\frac{((5x^2+6x+3)y,\,2xy,\,x^2)^{\trans}}{3y^2}\,dx.
+\end{equation}
+At the unique point at infinity write $x=s^{-3}$ and
+$y=s^{-4}w(s)$, where
+$w(s)^3=1+2s^3+3s^6+5s^9+7s^{12}$ and $w(0)=1$.
+Let $\epsilon_3=e^{2\pi i/3}$. The points have $x=r^3$ and
+$y=\epsilon_3^j f(r^3)^{1/3}$, where $f(x)$ is the quartic in
+\cref{eq:numeric-trigonal-curve}, its displayed cube root is positive,
+and the ordered $(r,j)$ lists are
+\[
+ (0.6,0),\ (0.9,1),\ (1.4,2)
+ \quad\text{and}\quad
+ (0.7,0),\ (1.1,1),\ (1.8,2).
+\]
+The lifts follow the corresponding infinity-chart paths. The finite
+part of $\int dr_3$ has zero constant term in $s$; explicitly its
+principal-sheet value is
+\[
+ R_3(s)=s^{-1}+\int_0^s\frac{1-w(q)^{-2}}{q^2}\,dq.
+\]
+The reference vector is
+$z_0=(0.6+0.3i,\,0.2+0.15i,\,0.1+0.2i)$.
+
+In both cases we use reference-normalized sigma ratios
+\begin{equation}\label{eq:numeric-reference-sigma}
+ \psi_\pm(P,z;z_0)=
+ \frac{\sigma(A(P)\pm z)\sigma(z_0)}
+ {\sigma(A(P)\pm z_0)\sigma(z)}
+ \exp\bigl(\pm\boldsymbol R(P)^{\trans}(z-z_0)\bigr).
+\end{equation}
+These equal one at $z_0$. The residue criterion in
+\cref{thm:general-BA-realization} determines the normalized weights
+$\kappa_k$ and phase coefficients $b_k$, $1\leq k\leq K$.
+The initial elementary gauges are $c_k=\sqrt{\kappa_k}$, using the
+principal complex square root. Thus
+$\xi_k(0)=\bar{\xi}_k(0)=\sqrt{\kappa_k}$; the pair-mode initial data
+are fixed by \cref{eq:general-pair-modes}.
+For the trigonal example the resulting constants, rounded to six
+decimal places, are
+\input{ba-trigonal-parameters}
+The numerical integrations use the full stored values.
+
+For completeness, the trigonal kernel used here has an explicit
+third-order Green-pairing formula. Write $\partial=\partial_{z_3}$,
+$f_i=\psi_+(Q_i,z;z_0)$ and $g_j=\psi_-(Q_j,z;z_0)$.
+The scalar BA operator and its formal adjoint have the form
+\[
+ \mathscr L_3=\partial^3+p_3\partial+q_3,\qquad
+ \mathscr L_3^{\rm ad}=-\partial^3-p_3\partial+q_3-\partial p_3,
+ \qquad p_3=3\partial^2\log\sigma(z),
+\]
+with $\mathscr L_3 f_i=x_i f_i$ and
+$\mathscr L_3^{\rm ad}g_j=x_jg_j$. Such scalar operators are supplied
+by the BA construction \cite{Krichever1977}. Their Green identity gives
+\begin{equation}\label{eq:numeric-trigonal-kernel}
+ \Omega(Q_i,Q_j)=
+ \frac{g_j\partial^2f_i-(\partial g_j)(\partial f_i)
+              +(\partial^2g_j)f_i+p_3g_jf_i}{x_i-x_j}.
+\end{equation}
+Indeed the derivative of the numerator is
+$g_j\mathscr L_3 f_i-f_i\mathscr L_3^{\rm ad}g_j
+=(x_i-x_j)f_ig_j$; the coefficient $q_3$ cancels.
+The kernel normalization fixes the primitive, and
+$i\dot\Omega(Q_i,Q_j)=f_ig_j$ along $z=z_0-it e_3$.
+
+\subsection{Independent evolution and accuracy}
+
+Both examples use real time $t$, with $z=z_0-it e_g$,
+$0\leq t\leq6$, in the stated Abel coordinates. The independent
+integrator solves Hamilton's equations for $H_0$ with brackets $-i$,
+exactly as in \cref{eq:general-network-rates}. The trigonal example
+uses genuinely complex weights and phases and retains independent
+Hamiltonian partners.
+
+Sigma jets are evaluated at 24 decimal digits. Mode assembly and the
+independent fourth-order Runge--Kutta integration use double-precision
+complex arithmetic. We evaluate the BA formulas at 41 points and
+plot the numerical trajectory at 601 points. Integrations with
+6,000 and 12,000 steps test convergence. The kernel is evaluated
+from BA jets through the second-order Green pairing in the
+hyperelliptic case and the third-order pairing in the trigonal case.
+Its derivative is computed by differentiating that pairing, without
+substituting Hamilton's equations.
+
+For each mode, the scaled discrepancy between values $a,b$ is
+$|a-b|/(1+\max(|a|,|b|))$. Maxima are taken over all modes and all
+41 comparison points, including modes not displayed in the figures.
+The fine-step results are
+\input{ba-validation-table}
+We also check the spectral map
+\cref{eq:BA-prescribed-spectral-map} at twelve curve points at each
+of three BA states. The maximum ratio of the smallest to largest
+singular value of
+$\lambda(P)\Id-\mathsf L_0(\nu(P))$ is
+$2.2\times10^{-16}$ for the hyperelliptic example and
+$6.8\times10^{-17}$ for the trigonal example. The corresponding
+total excess singularity defects in
+\cref{eq:BA-prescribed-genus-defect} are two and six.
+The vector-field residual directly tests the BA functions against
+Hamilton's equations; trajectory discrepancies also include numerical
+integration and stored-data errors. To separate these effects, a
+35-digit Runge--Kutta calculation promotes the same stored coefficients
+and initial values and uses $6{,}000$, $12{,}000$ and $24{,}000$ steps.
+For both examples the ratio of successive trajectory differences is
+$16.0$, confirming fourth-order convergence. The table also gives the
+Richardson-extrapolated discrepancies; these retain the precision limits
+of the stored parameters and BA values. The original double-precision
+BA-comparison ratios therefore do not measure the integrator's order.
+For the hyperelliptic run, the maximum scaled discrepancy between
+barred partners and actual complex conjugates is $3.0\times10^{-16}$
+for the BA evaluations and $1.8\times10^{-12}$ for Runge--Kutta.
+The conservation checks include $H_0$ and every row and column power charge
+\[
+ I_i-\sum_{j=L+1}^{K}I_{ij},\quad1\leq i\leq L,
+ \qquad
+ I_j-\sum_{i=1}^{L}I_{ij},\quad L+1\leq j\leq K,
+ \qquad I_{ij}=\xi_{ij}\bar{\xi}_{ij}.
+\]
+\Cref{fig:numeric-hyperelliptic,fig:numeric-trigonal} show representative
+elementary modes, a pair composite and an elementary mode power.
+The scripts \path{code/ba_numeric_examples.py} and
+\path{code/reference_sigma_ba.py}, together with the accompanying
+parameter records, are available in the
+accompanying project repository at
+\url{https://github.com/HeskethGD/ba-canonical-ham}
+and reproduce the comparisons.
+
+\begin{figure}[p]
+ \centering
+ \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]
+ {figures/hyperelliptic_sigma_ba.pdf}
+ \caption{Genus-two hyperelliptic realization on
+ \cref{eq:numeric-hyperelliptic-curve}. The panels show
+ $\operatorname{Re}\xi_1$, $\operatorname{Re}\xi_3$,
+ $\operatorname{Re}\xi_{1,3}$ and
+ $|\xi_1|^2$.
+ Open markers are direct Generapy BA evaluations; solid black lines
+ are independent Runge--Kutta solutions of the canonical equations
+ generated by $H_0$ with brackets $-i$, and $z=z_0-it e_2$.}
+ \label{fig:numeric-hyperelliptic}
+\end{figure}
+\begin{figure}[p]
+ \centering
+ \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]
+ {figures/trigonal_sigma_ba.pdf}
+ \caption{Genus-three trigonal realization on
+ \cref{eq:numeric-trigonal-curve}. The panels show
+ $\operatorname{Re}\xi_1$, $\operatorname{Re}\xi_4$,
+ $\operatorname{Re}\xi_{1,4}$ and
+ $\operatorname{Re}(\xi_1\bar{\xi}_1)$.
+ Open markers are direct Generapy BA evaluations; solid black lines
+ are independent Runge--Kutta solutions of the canonical equations
+ generated by $H_0$ with brackets $-i$, and $z=z_0-it e_3$.}
+ \label{fig:numeric-trigonal}
+\end{figure}
+\clearpage

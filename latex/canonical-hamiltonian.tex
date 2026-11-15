@@ -1,0 +1,335 @@
+\section{The canonical multiwave Hamiltonian}
+\label{sec:canonical}
+
+We first give the complex canonical system in the three-matrix notation
+of \cref{eq:intro-mixing}. An explicit change of coordinates identifies
+its cubic interactions with the multiwave construction of Jiang and
+Rauch-Wojciechowski \cite[Section II]{JRW1991}. Retaining independent
+constant diagonal blocks supplies the mode-dependent linear rates
+required by compatible prescribed BA data in
+\cref{thm:general-BA-realization}. We refer to this constant-diagonal
+extension as the modified JRW system. Commuting power charges then redistribute
+these rates into the symmetric phase convention used here. The resulting
+pencil supplies commuting integrals through the AKS construction;
+their functional independence is considered separately. The detailed
+comparison with the original system is given in Appendix~\ref{sec:JRW-dictionary}.
+
+\subsection{Modes, brackets and Hamilton equations}
+\label{sec:canonical-modes}
+
+There are $p=LM+MN+NL$ canonical mode pairs. Their nonzero basic
+brackets are
+\begin{equation}\label{eq:canonical-brackets}
+\begin{aligned}
+ \{u_{\ell m},\bar{u}_{ij}\}&=-i\delta_{\ell i}\delta_{mj},
+ &&1\leq\ell,i\leq L,\quad1\leq m,j\leq M,\\
+ \{v_{mn},\bar{v}_{jk}\}&=-i\delta_{mj}\delta_{nk},
+ &&1\leq m,j\leq M,\quad1\leq n,k\leq N,\\
+ \{w_{n\ell},\bar{w}_{ki}\}&=-i\delta_{nk}\delta_{\ell i},
+ &&1\leq n,k\leq N,\quad1\leq\ell,i\leq L.
+\end{aligned}
+\end{equation}
+All other basic brackets vanish, apart from antisymmetry. Bars label
+independent Hamiltonian partners, with the same array dimensions as the
+unbarred modes. Stars mean actual complex conjugation; $\trans$ means
+ordinary transpose, and $\dagger$ means actual conjugate transpose.
+A dot denotes differentiation with respect to time $t$, and
+$\dot h=\{h,H\}$. Thus
+\[
+ i\dot u=\frac{\partial H}{\partial\bar u},\qquad
+ i\dot{\bar u}=-\frac{\partial H}{\partial u}.
+\]
+This is the usual complex canonical convention: writing
+$u=(q+ip)/\sqrt2$ and $\bar u=(q-ip)/\sqrt2$ gives $\{q,p\}=1$.
+The variables $q,p$ are complex unless a real form is imposed.
+
+For real phase coefficients and real coupling, the real forms
+$\bar u=\epsilon_u u^*$, $\bar v=\epsilon_v v^*$ and
+$\bar w=\epsilon_w w^*$, with $\epsilon_u,\epsilon_v,\epsilon_w\in\{1,-1\}$,
+are invariant precisely when $\epsilon_u\epsilon_v\epsilon_w=1$.
+The all-positive choice is the explosive three-wave form; the three
+choices with two negative signs are decay forms and admit definite
+combinations of the power charges. The Hamiltonian is real on each
+form, with $i\dot u=\epsilon_u\partial H/\partial u^*$ and the
+corresponding equations for $v,w$. The general complex system retains
+independent partners; Liouville integrability is understood in the
+complex Hamiltonian sense.
+
+Let $b_\ell^{L}$, $b_m^{M}$ and $b_n^{N}$ be constants, with
+$1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$.
+The superscripts distinguish the three groups of phase coefficients.
+
+\begin{samepage}
+With coupling normalization $\kappa=\sqrt2$, the Hamiltonian is
+\begin{align}\label{eq:canonical-H}
+H={}&\sum_{\ell=1}^{L}\sum_{m=1}^{M}
+ (b_\ell^{L}+b_m^{M})u_{\ell m}\bar{u}_{\ell m}
+ +\sum_{m=1}^{M}\sum_{n=1}^{N}
+ (b_m^{M}+b_n^{N})v_{mn}\bar{v}_{mn}\nonumber\\
+&+\sum_{n=1}^{N}\sum_{\ell=1}^{L}
+ (b_n^{N}+b_\ell^{L})w_{n\ell}\bar{w}_{n\ell}\nonumber\\
+&+\sqrt2\sum_{\ell=1}^{L}\sum_{m=1}^{M}\sum_{n=1}^{N}
+ \left(u_{\ell m}v_{mn}w_{n\ell}
+       +\bar{u}_{\ell m}\bar{v}_{mn}\bar{w}_{n\ell}\right).
+\end{align}
+\end{samepage}
+Each mode's linear phase coefficient is the sum of the constants at its two
+endpoint groups. The Hamiltonian is invariant in form under cyclic
+permutation of the groups and their mode matrices.
+The three mode powers are
+\begin{equation}\label{eq:canonical-powers}
+ I^u_{\ell m}=u_{\ell m}\bar{u}_{\ell m},\qquad
+ I^v_{mn}=v_{mn}\bar{v}_{mn},\qquad
+ I^w_{n\ell}=w_{n\ell}\bar{w}_{n\ell},
+ \quad1\leq\ell\leq L,\ 1\leq m\leq M,\ 1\leq n\leq N.
+\end{equation}
+They become squared moduli when the partners are actual complex
+conjugates.
+
+The Hamilton equations are, for
+$1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$,
+\begin{equation}\label{eq:canonical-rates}
+\begin{aligned}
+ i\dot u_{\ell m}&=(b_\ell^L+b_m^M)u_{\ell m}
+            +\sqrt2\sum_{k=1}^{N}\bar{v}_{mk}\bar{w}_{k\ell},\\
+ i\dot{\bar{u}}_{\ell m}&=-(b_\ell^L+b_m^M)\bar{u}_{\ell m}
+            -\sqrt2\sum_{k=1}^{N}v_{mk}w_{k\ell},\\
+ i\dot v_{mn}&=(b_m^{M}+b_n^N)v_{mn}
+       +\sqrt2\sum_{i=1}^{L}\bar{u}_{im}\bar{w}_{ni},\\
+ i\dot{\bar{v}}_{mn}&=-(b_m^{M}+b_n^N)\bar{v}_{mn}
+       -\sqrt2\sum_{i=1}^{L}u_{im}w_{ni},\\
+ i\dot w_{n\ell}&=(b_n^N+b_\ell^{L})w_{n\ell}
+       +\sqrt2\sum_{j=1}^{M}\bar{u}_{\ell j}\bar{v}_{jn},\\
+ i\dot{\bar{w}}_{n\ell}&=-(b_n^N+b_\ell^{L})\bar{w}_{n\ell}
+       -\sqrt2\sum_{j=1}^{M}u_{\ell j}v_{jn}.
+\end{aligned}
+\end{equation}
+
+\subsection{Power symmetries and phase conventions}
+\label{sec:canonical-phase-gauges}
+
+The linear terms cancel from the mode-power derivatives. The conserved
+power combinations generating diagonal mode gauges are
+\begin{equation}\label{eq:canonical-charges}
+\begin{aligned}
+ Q_\ell^L&=\sum_{n=1}^{N}I^w_{n\ell}
+             -\sum_{m=1}^{M}I^u_{\ell m},&&1\leq\ell\leq L,\\
+ Q_m^M&=\sum_{n=1}^{N}I^v_{mn}
+             -\sum_{\ell=1}^{L}I^u_{\ell m},&&1\leq m\leq M,\\
+ Q_n^N&=\sum_{\ell=1}^{L}I^w_{n\ell}
+             -\sum_{m=1}^{M}I^v_{mn},&&1\leq n\leq N.
+\end{aligned}
+\end{equation}
+They commute, and their only linear relation is
+\begin{equation}\label{eq:canonical-charge-relation}
+ \sum_{\ell=1}^{L}Q_\ell^L-\sum_{m=1}^{M}Q_m^M
+                         -\sum_{n=1}^{N}Q_n^N=0.
+\end{equation}
+Hence there are $L+M+N-1$ independent power charges on a generic
+mode chart. The mixed signs in their definitions specify the
+orientation of each gauge action.
+
+Adding a constant linear combination of these charges to $H$
+redistributes the linear mode rates without changing any power
+derivative. We distinguish the symmetric-phase Hamiltonian $H$ from
+a second convention $H_0$, in which the $u$ modes have zero linear
+rate. This convention is convenient for comparison with Jiang and
+Rauch-Wojciechowski. Define
+\begin{align}\label{eq:canonical-H0}
+ H_0&=H+\sum_{\ell=1}^{L}b_\ell^LQ_\ell^L
+        +\sum_{m=1}^{M}b_m^MQ_m^M\nonumber\\
+ &=\sum_{n=1}^{N}\sum_{\ell=1}^{L}
+       (2b_\ell^L+b_n^N)w_{n\ell}\bar{w}_{n\ell}
+   +\sum_{m=1}^{M}\sum_{n=1}^{N}
+       (2b_m^M+b_n^N)v_{mn}\bar{v}_{mn}+H_{\mathrm{mix}},
+\end{align}
+where $H_{\mathrm{mix}}$ is \cref{eq:intro-mixing} with
+$\kappa=\sqrt2$. Let
+$(\tilde{\boldsymbol u},\tilde{\boldsymbol v},\tilde{\boldsymbol w})$
+and their barred partners denote solutions of Hamilton's equations
+generated by $H_0$. The corresponding solutions of $H$ are
+\begin{equation}\label{eq:canonical-phase-gauge}
+\begin{aligned}
+ u_{\ell m}(t)&=e^{-i(b_\ell^L+b_m^M)t}\tilde u_{\ell m}(t),
+ &&1\leq\ell\leq L,\quad1\leq m\leq M,\\
+ v_{mn}(t)&=e^{ib_m^Mt}\tilde v_{mn}(t),
+ &&1\leq m\leq M,\quad1\leq n\leq N,\\
+ w_{n\ell}(t)&=e^{ib_\ell^Lt}\tilde w_{n\ell}(t),
+ &&1\leq n\leq N,\quad1\leq\ell\leq L.
+\end{aligned}
+\end{equation}
+The barred partners receive the
+inverse factors. This time-dependent change is canonical at each
+fixed time. Its exponents cancel in every cubic mixing product, so
+both those products and all mode powers are identical in the two
+descriptions. Appendix~\ref{sec:JRW-dictionary} identifies $H_0$ with the
+constant-diagonal extension of the 1991 Hamiltonian.
+
+The independent diagonal parameters and this change of phase convention
+have distinct roles. In each mixing product $u_{\ell m}v_{mn}w_{n\ell}$,
+the sum of the three linear phase coefficients is
+$2(b_\ell^L+b_m^M+b_n^N)$, for
+$1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$.
+The phase gauge \cref{eq:canonical-phase-gauge} preserves this sum.
+The outer diagonal parameters therefore supply interaction-dependent
+linear rates that remain present in either convention. Their values
+are fixed by the marked curve data in the BA realization.
+
+\subsection{The matrix pencil and its Lax equation}
+\label{sec:canonical-lax}
+
+A Lax representation packages the mode equations into a matrix
+commutator, from which conserved quantities follow through the
+characteristic polynomial. We obtain the representation from the
+three-block construction of Jiang and Rauch-Wojciechowski
+\cite[equation (2.7)]{JRW1991}, using the constant-diagonal extension
+and the symmetric phase convention. The coordinate and phase changes
+are given explicitly in Appendix~\ref{sec:JRW-dictionary}.
+
+First write the equations using the mode matrices
+$\boldsymbol u\in\C^{L\times M}$,
+$\boldsymbol v\in\C^{M\times N}$,
+$\boldsymbol w\in\C^{N\times L}$ and the constant phase matrices
+\begin{equation}\label{eq:canonical-diagonals}
+ \mathsf B_L=\diag(b_1^L,\ldots,b_L^L),\qquad
+ \mathsf B_M=\diag(b_1^M,\ldots,b_M^M),\qquad
+ \mathsf B_N=\diag(b_1^N,\ldots,b_N^N).
+\end{equation}
+Then \cref{eq:canonical-rates} is equivalently
+\begin{equation}\label{eq:canonical-matrix-rates}
+\begin{aligned}
+ i\dot{\boldsymbol u}
+ &=\mathsf B_L\boldsymbol u+\boldsymbol u\mathsf B_M
+       +\sqrt2\bar{\boldsymbol w}^{\trans}\bar{\boldsymbol v}^{\trans},\\
+ i\dot{\bar{\boldsymbol u}}^{\trans}
+ &=-\mathsf B_M\bar{\boldsymbol u}^{\trans}-\bar{\boldsymbol u}^{\trans}\mathsf B_L
+       -\sqrt2\boldsymbol v\boldsymbol w,\\
+ i\dot{\boldsymbol v}
+ &=\mathsf B_M\boldsymbol v+\boldsymbol v\mathsf B_N
+       +\sqrt2\bar{\boldsymbol u}^{\trans}\bar{\boldsymbol w}^{\trans},\\
+ i\dot{\bar{\boldsymbol v}}^{\trans}
+ &=-\mathsf B_N\bar{\boldsymbol v}^{\trans}-\bar{\boldsymbol v}^{\trans}\mathsf B_M
+       -\sqrt2\boldsymbol w\boldsymbol u,\\
+ i\dot{\boldsymbol w}
+ &=\mathsf B_N\boldsymbol w+\boldsymbol w\mathsf B_L
+       +\sqrt2\bar{\boldsymbol v}^{\trans}\bar{\boldsymbol u}^{\trans},\\
+ i\dot{\bar{\boldsymbol w}}^{\trans}
+ &=-\mathsf B_L\bar{\boldsymbol w}^{\trans}-\bar{\boldsymbol w}^{\trans}\mathsf B_N
+       -\sqrt2\boldsymbol u\boldsymbol v.
+\end{aligned}
+\end{equation}
+These same blocks assemble into the $d\times d$ coefficient matrix
+$\mathsf X(t)$, where $d=L+M+N$:
+\begin{equation}\label{eq:canonical-X}
+ \mathsf X=\begin{pmatrix}
+ -2\mathsf B_L&\sqrt2\boldsymbol u&\bar{\boldsymbol w}^{\trans}\\
+ \sqrt2\bar{\boldsymbol u}^{\trans}&-2\mathsf B_M&\boldsymbol v\\
+ -\boldsymbol w&-\bar{\boldsymbol v}^{\trans}&\mathsf B_N
+ \end{pmatrix}.
+\end{equation}
+The matrix pencil is the affine family
+\begin{equation}\label{eq:canonical-pencil}
+ \mathsf L(\nu,t)=\mathsf X(t)+\nu\mathsf D,\qquad
+ \mathsf D=\diag(\Id_L,-\Id_M,0_N).
+\end{equation}
+Here $\nu$ is a constant spectral parameter, $\mathsf D$ is fixed,
+and $\mathsf L(0,t)=\mathsf X(t)$. The time dependence of
+$\mathsf X$ comes entirely from the mode matrices; its diagonal
+blocks are constant. Suppressing $t$ in the notation, block
+multiplication gives
+\begin{equation}\label{eq:canonical-lax}
+ i\dot{\mathsf L}=[\mathsf L,\mathsf T],\qquad
+ \mathsf T(\nu)=\begin{pmatrix}
+ -\mathsf B_L&0&\bar{\boldsymbol w}^{\trans}\\
+ 0&\mathsf B_M&-\boldsymbol v\\
+ -\boldsymbol w&\bar{\boldsymbol v}^{\trans}&-\nu\Id_N
+ \end{pmatrix}.
+\end{equation}
+Equivalently, $\dot{\mathsf L}=[\mathsf L,-i\mathsf T]$. Its off-diagonal blocks reproduce \cref{eq:canonical-matrix-rates},
+while its diagonal blocks have zero derivatives.
+The spectral determinant is
+\begin{equation}\label{eq:canonical-spectral}
+ F(\lambda,\nu)=\det(\lambda\Id_d-\mathsf L(\nu)).
+\end{equation}
+Its coefficients are polynomials in the modes and are conserved by
+\cref{eq:canonical-lax}.
+
+\subsection{The AKS framework and commuting integrals}
+\label{sec:canonical-AKS}
+
+To establish integrability, the conserved quantities must also commute
+under the canonical bracket. The AKS framework explains this
+commutativity by expressing the mode bracket in terms of the same
+matrices $\mathsf X,\mathsf D$ used in
+\cref{eq:canonical-X,eq:canonical-pencil}.
+Write $X_{hi},D_{hi}$ for their entries. The canonical mode brackets give
+\begin{equation}\label{eq:canonical-frozen}
+ \{X_{hi},X_{jk}\}
+ =-i(D_{hh}-D_{ii})\delta_{hk}\delta_{ij},
+ \qquad1\leq h,i,j,k\leq d.
+\end{equation}
+Its coefficients depend only on the fixed matrix $\mathsf D$.
+Fixing the three diagonal blocks of $\mathsf X$ leaves precisely the
+off-diagonal canonical mode coordinates; these form a symplectic
+affine leaf of the matrix bracket.
+
+For scalar functions $f(\mathsf X),g(\mathsf X)$, define their
+matrix gradients $P,Q$ by
+\begin{equation}\label{eq:canonical-matrix-gradients}
+ \mathrm df=\tr(P\,\mathrm d\mathsf X),\qquad
+ \mathrm dg=\tr(Q\,\mathrm d\mathsf X).
+\end{equation}
+These gradients can depend on the mode values. Contracting
+\cref{eq:canonical-frozen} gives
+\begin{equation}\label{eq:canonical-gradient-bracket}
+ \{f,g\}
+ =i\tr(\mathsf D[P,Q]).
+\end{equation}
+This constant bracket and the shifted invariants of
+$\mathsf X+\nu\mathsf D$ give the argument-shift realization of
+the AKS construction \cite{MishchenkoFomenko1978,Bolsinov1992,
+AdlerVanMoerbeke2018}.
+
+The Hamiltonian belongs to this construction through the trace identity
+\begin{align}\label{eq:canonical-trace-H}
+ H={}&-\tfrac13\tr\mathsf X^3
+      +3\tr\!\left[\mathsf B_L
+        (\bar{\boldsymbol w}^{\trans}\boldsymbol w
+                     -\boldsymbol u\bar{\boldsymbol u}^{\trans})\right]
+        \nonumber\\
+ &+3\tr\!\left[\mathsf B_M
+        (\boldsymbol v\bar{\boldsymbol v}^{\trans}
+                     -\bar{\boldsymbol u}^{\trans}\boldsymbol u)\right]
+      -\tfrac83\tr\mathsf B_L^3
+      -\tfrac83\tr\mathsf B_M^3
+      +\tfrac13\tr\mathsf B_N^3.
+\end{align}
+The two quadratic trace terms are weighted combinations of the power
+charges in \cref{eq:canonical-charges}; the traces of the fixed phase
+matrices are constants. Thus $H$ combines a cubic spectral invariant
+with commuting gauge generators.
+
+\begin{proposition}\label{prop:canonical-commutation}
+Every coefficient of $F$ in \cref{eq:canonical-spectral} commutes
+with every other coefficient and with the charges in
+\cref{eq:canonical-charges}.
+\end{proposition}
+\begin{proof}
+Using the gradient definition \cref{eq:canonical-matrix-gradients},
+let $P$ and $Q$ be the matrix gradients of conjugation-invariant polynomials
+of $\mathsf X+\nu\mathsf D$ and $\mathsf X+\mu\mathsf D$,
+respectively. They commute with their respective matrix arguments.
+Cyclicity of the trace gives
+\[
+ \tr((\mathsf X+\nu\mathsf D)[P,Q])
+ =\tr((\mathsf X+\mu\mathsf D)[P,Q])=0.
+\]
+Subtracting proves $\tr(\mathsf D[P,Q])=0$ for $\nu\ne\mu$;
+polynomial continuation includes $\nu=\mu$. This proves spectral
+commutativity under \cref{eq:canonical-frozen}. Each power charge
+acts on $\mathsf X$ by constant diagonal conjugation, which also
+preserves $F$.
+\end{proof}
+
+\input{integrability}
+\input{spectral-flows}

@@ -1,0 +1,189 @@
+\section{Generic BA reconstruction with repeated phases}
+\label{app:BA-active-converse}
+
+This appendix supplies the regularity step in
+\cref{thm:BA-spectral-converse}. Throughout, $N=1$ and the two
+phase lists are fixed, with arbitrary repetitions. A change of basis
+is allowed only inside an equal-phase block; it then preserves both
+the Hamiltonian and the fixed phase coefficients.
+
+\subsection{Constant canonical bases and inactive directions}
+
+For constant invertible block-diagonal matrices $\mathsf S_L,\mathsf S_M$ respecting
+the phase lists, the coordinate changes
+\begin{equation}\label{eq:BA-block-bases}
+\begin{aligned}
+ \boldsymbol\xi_L&\mapsto \mathsf S_L^{-\trans}\boldsymbol\xi_L,&
+ \bar{\boldsymbol\xi}_L&\mapsto \mathsf S_L\bar{\boldsymbol\xi}_L,\\
+ \boldsymbol\xi_M&\mapsto \mathsf S_M\boldsymbol\xi_M,&
+ \bar{\boldsymbol\xi}_M&\mapsto \mathsf S_M^{-\trans}\bar{\boldsymbol\xi}_M,\\
+ \boldsymbol\xi_{LM}&\mapsto \mathsf S_L\boldsymbol\xi_{LM}\mathsf S_M^{-1},&
+ \bar{\boldsymbol\xi}_{LM}&\mapsto \mathsf S_L^{-\trans}\bar{\boldsymbol\xi}_{LM}\mathsf S_M^{\trans}
+\end{aligned}
+\end{equation}
+are canonical and preserve \cref{eq:BA-H0-flat}. The corresponding
+block moments transform by conjugation. Since they are conserved,
+their diagonalizing bases can be chosen once at the initial time.
+
+For a block of size $r$, let $n$ be the number of outside directions:
+$n=M+1$ in the first group and $n=L+1$ in the second. Absorbing the
+nonzero slope denominators into the incoming couplings writes its
+moment as $\mathsf F\mathsf G$, with $\mathsf F$ of size $r\times n$ and $\mathsf G$ of size
+$n\times r$. If $r>n$, then generically $\mathsf G\mathsf F$ is invertible and
+\begin{equation}\label{eq:BA-inactive-splitting}
+ \mathbb C^r=\operatorname{im}\mathsf F\oplus\ker\mathsf G
+             =\operatorname{im}(\mathsf F\mathsf G)\oplus\ker(\mathsf F\mathsf G).
+\end{equation}
+The two subspaces are constant. In an adapted basis the $r-n$
+directions in the second summand have zero incoming and outgoing
+couplings. They stay zero and contribute only the spectral factor
+$(\lambda-e_B-s_B\nu)^{r-n}$, where $e_B,s_B$ are their intercept
+and slope. Delete them and repeat. The process terminates with
+positive active dimensions $L_a,M_a$ such that every remaining block
+has size at most its number of outside directions. Inverse basis
+changes restore all original coordinates.
+
+The reduction is generic: arbitrary maximal-rank coupling pairs can
+be written as an embedded active pair, with zero extra directions,
+followed by a block basis change. Thus the active coupling data are
+not forced onto an additional exceptional algebraic subset.
+
+\subsection{Regularity of the active spectral curve}
+
+\begin{proposition}\label{prop:BA-active-regularity}
+For every fixed phase profile, generic active initial modes have an
+irreducible spectral curve, smooth in the affine plane, whose
+normalization has distinct resolved infinity branches and nonspecial
+scalar BA divisors. Each active moment block has simple nonzero
+spectrum. The normalization genus is
+\begin{equation}\label{eq:BA-active-genus}
+ G_a=L_aM_a
+ -\sum_{B\in\mathcal B_L}\frac{|B|(|B|-1)}2
+ -\sum_{B\in\mathcal B_M}\frac{|B|(|B|-1)}2,
+\end{equation}
+where $\mathcal B_L,\mathcal B_M$ are the partitions into equal-phase
+blocks of the active groups.
+\end{proposition}
+
+\begin{proof}
+We check the affine curve, its connectivity, and its infinity data
+separately. For a block of size $r\leq n$, the product $\mathsf F\mathsf G$ can have
+arbitrary distinct nonzero eigenvalues: choose $\mathsf F$ to select $r$
+outside directions and $\mathsf G$ to give a prescribed diagonal product.
+Thus maximal coupling ranks and simple nonzero moment spectra are
+nonempty open conditions. There are finitely many blocks, and their
+conditions hold simultaneously on a nonempty open set of the
+irreducible active mode space.
+
+For affine smoothness put
+$\mathsf M=\lambda\Id-\mathsf X-\nu\mathsf D$.
+A right kernel vector supported in one original group would, by
+the diagonal equations, be supported in one equal-phase block.
+The incoming coupling map on that block is injective, so the vector
+is zero. The analogous statement holds for left kernels. At a point
+of corank $q$, put bases for the right and left kernels in the
+columns of a $d\times q$ matrix $\mathsf R$ and the rows of a
+$q\times d$ matrix $\mathsf S$, respectively. The derivative
+transverse to the matrix rank stratum is
+\[
+ \delta\mathsf X\longmapsto \mathsf S\,\delta\mathsf X\,\mathsf R.
+\]
+This map is onto: a nonzero $q\times q$ annihilator $\mathsf Z$
+would produce $\mathsf R\mathsf Z\mathsf S$
+orthogonal to all off-diagonal-block variations, hence block diagonal.
+A nonzero column of that block-diagonal matrix would be a forbidden
+group-supported right kernel vector. The off-diagonal parameters
+therefore meet every rank stratum transversely. Corank at least two
+has codimension at least four, while $(\lambda,\nu)$ provide only two
+variables. Such points are absent for generic parameters. The
+corank-one determinant hypersurface is smooth, and generic smoothness
+of its projection to parameter space gives smooth affine fibers
+\cite[Chapter~III]{Hartshorne1977}.
+
+For irreducibility, insert one index at a time, always keeping a
+block's size at most its current outside dimension. Such an order
+exists: if both groups had pending indices and neither insertion
+were possible, the saturated blocks would imply both
+$L_{\rm cur}\geq M_{\rm cur}+1$ and
+$M_{\rm cur}\geq L_{\rm cur}+1$. If only one group has pending
+indices, the final block-size bound allows its next insertion.
+The $(1,1)$ base has an irreducible specialization
+\[
+ (\lambda-\rho)(\lambda-\nu-e_L)(\lambda+\nu-e_M)-\delta_0=0,
+ \qquad \delta_0\ne0.
+\]
+As a quadratic in $\nu$ its discriminant has an odd pole at
+$\lambda=\rho$, so is not a square.
+
+For an insertion, at zero new outgoing coupling the characteristic
+polynomial is $\ell F_{\rm old}$, with
+$\ell=\lambda-e-s\nu$. Suppose $r$ old indices have the same phase
+as the new index and $n$ directions lie outside its group. Eliminating
+the other indices in its group gives
+\[
+ \deg_\nu F_{\rm old}(e+s\nu,\nu)=n-r.
+\]
+For $r>0$ the leading coefficient is a nonzero constant times the
+old moment-block determinant; for $r=0$ it is the nonzero outside
+leading determinant. The allowed insertion has $r+1\leq n$, so
+the old curve meets the new line at a finite point. At that point
+the smooth old pencil has corank one with nonzero outside components
+in both kernels. Choose new coupling vectors $\boldsymbol a,\boldsymbol b$,
+supported on the outside indices, so that
+$\boldsymbol a\operatorname{adj}(\mathsf M_{\rm old})\boldsymbol b$ does not vanish there.
+The perturbed determinant is
+\[
+ F_\varepsilon=\ell F_{\rm old}
+       -\varepsilon \boldsymbol a\operatorname{adj}(\mathsf M_{\rm old})\boldsymbol b.
+\]
+A factorization deforming the coprime monic factors
+$\ell,F_{\rm old}$ would force the first perturbation into
+$(\ell,F_{\rm old})$, hence to vanish at every intersection.
+This obstruction also excludes a factorization after finite algebraic
+parameter extension. Indeed, put $\varepsilon=\tau^k$ and suppose
+monic factors specialize to $\ell$ and $F_{\rm old}$. Write them as
+\[
+ G=\ell+\sum_{m\geq1}\tau^m a_m,\qquad
+ J=F_{\rm old}+\sum_{m\geq1}\tau^m b_m,
+ \qquad \deg_\lambda a_m<1,\quad
+        \deg_\lambda b_m<\deg_\lambda F_{\rm old}.
+\]
+For $m<k$, induction on $m$ gives
+$a_mF_{\rm old}+b_m\ell=0$. Coprimeness forces $\ell$ to divide
+$a_m$, hence $a_m=b_m=0$ by the degree bounds. At order $k$, the
+same coefficient equation would put
+$-\boldsymbol a\operatorname{adj}(\mathsf M_{\rm old})\boldsymbol b$
+in the ideal $(\ell,F_{\rm old})$, contrary to its nonzero value at
+the selected intersection. Thus fractional parameter powers cannot
+remove the obstruction. Induction proves generic geometric
+irreducibility for every active phase profile.
+
+Finally diagonalize the conserved moment blocks. Their simple
+eigenvalues $\vartheta_i$ give the infinity expansions
+\[
+ \lambda=s_B\nu+e_B+\vartheta_i/\nu+O(\nu^{-2}),
+ \qquad1\leq i\leq |B|.
+\]
+Branches in different phase blocks of one group have contact order
+one, and those in the same block have contact order two. They are
+distinct smooth points on the normalization. Counting these contacts
+relative to the distinct-phase genus $L_aM_a$ gives
+\cref{eq:BA-active-genus}. The singleton point remains smooth.
+
+In the moment eigenbasis the leading spectral eigenvectors at infinity
+form an invertible basis. The eigenline module is therefore saturated
+on the normalization, including these tangent plane branches. Its
+pushforward under $\nu$ is the original trivial bundle of rank
+$L_a+M_a+1$. The line-bundle degree, last-component zeros and exact
+sequence argument in \cref{thm:BA-spectral-converse} apply with genus
+$G_a$, giving degree-$G_a$ nonspecial scalar divisors. The bilinear
+kernel and differential \cref{eq:BA-converse-duality} have the same
+divisor and puncture properties, so all reconstruction formulas apply.
+\end{proof}
+
+The original elementary coordinates are thus constant linear
+combinations of the scalar BA evaluations in the active basis; the
+pair matrix and its partner transform on both sides as in
+\cref{eq:BA-block-bases}. This handles generic initial modes for
+every fixed phase list. Additional singular spectral levels and
+nonsemisimple moment specializations require separate limiting data.

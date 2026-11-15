@@ -1,0 +1,57 @@
+\section{Reconstructing a pencil from its spectral curve}
+\label{sec:geometry-converse}
+
+We prove the converse used in \cref{thm:geometry-classification}.
+The construction follows the spectral line-bundle method
+\cite[\S1]{Beauville1990}, with the prescribed infinity branches
+determining the repeated eigenvalues of the leading matrix.
+
+Let $C$ be the normalization of the plane model in statement~2 of
+\cref{thm:geometry-classification}. Choose projective coordinates so
+that the common line is $\tau=0$ and its three marked plane points
+are $[1:1:0]$, $[-1:1:0]$, $[0:1:0]$.
+Transversality makes $\nu$ have $d$ simple poles. Thus
+\[
+ \pi=\nu:C\longrightarrow\mathbb P^1,\qquad
+ \pi^{-1}(\infty)=\mathcal D_\infty
+ =\mathcal D_L+\mathcal D_M+\mathcal D_N
+\]
+is a finite degree-$d$ map, and the poles of $\lambda$ are bounded
+by $\mathcal D_\infty$.
+
+Choose a line bundle $\mathcal E$ of degree $G-1$ with
+$H^0(C,\mathcal E)=0$, and put
+$\mathcal L=\mathcal E(\mathcal D_\infty)$. Such $\mathcal E$
+exist outside the theta divisor. The pushforward $\pi_*\mathcal L$
+is a rank-$d$ bundle on $\mathbb P^1$ of degree zero, by
+Riemann--Roch. Moreover, the projection formula gives
+\[
+ H^0\bigl(\mathbb P^1,(\pi_*\mathcal L)(-1)\bigr)
+ =H^0(C,\mathcal E)=0.
+\]
+Every vector bundle on $\mathbb P^1$ splits into line bundles.
+The vanishing makes all their degrees nonpositive, while their sum
+is zero. Therefore $\pi_*\mathcal L\simeq\mathcal O^{d}$.
+
+Multiplication by $\lambda$ now defines
+\[
+ \mathcal O^{d}\longrightarrow\mathcal O^{d}(1).
+\]
+In a trivialization it is an affine pencil $\mathsf X+\nu\mathsf D$.
+At $\nu=\infty$ its leading operator is multiplication by
+$\lambda/\nu$ on the $d$ separate fibers over infinity. Its values
+are $1,-1,0$, with multiplicities $L,M,N$; hence a constant basis
+change makes $\mathsf D=\diag(\Id_L,-\Id_M,0_N)$.
+The characteristic polynomial is the plane equation: over a generic
+$\nu$, the operator has the $d$ values of $\lambda$ as eigenvalues.
+
+The eigenvalues of the three diagonal blocks of $\mathsf X$ are
+the branch intercepts. Ordinary multiplicity gives distinct
+intercepts within each block, so a block-diagonal basis change
+diagonalizes all three blocks while preserving $\mathsf D$.
+Write their entries as $-2b_\ell^L$, $-2b_m^M$, $b_n^N$,
+with $1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$.
+The six remaining blocks are unrestricted. Assigning them the
+factors and signs of \cref{eq:canonical-X} gives the three mode
+matrices and their independent partners, and hence initial data
+for \cref{eq:canonical-H}. This proves the required realization.

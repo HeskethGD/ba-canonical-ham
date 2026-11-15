@@ -1,0 +1,93 @@
+{
+  "full_genus_one_field": {
+    "all_initial_modes_symbolic": true,
+    "six_field_components": true,
+    "Abel_rate_relative_to_H0": "b1 + b2 - 3*rho",
+    "gauge_rates": [
+      "-2*b1**2 - b1*b2 + 6*b1*rho - 2*c*d - 3*rho**2 + u1*v1 + u2*v2",
+      "-b1*b2 - 2*b2**2 + 6*b2*rho - 2*c*d - 3*rho**2 + u1*v1 + u2*v2"
+    ]
+  },
+  "exact_genus_two_cases": [
+    {
+      "curve": "4*x**5 + 7097*x**4/180 - 118531*x**3/540 - 299863*x**2/6480 + 2641699*x/3240 - 317183/1296",
+      "central_shift": "3/7",
+      "Abel_direction": [
+        "-6/5",
+        "-641/210"
+      ],
+      "phase_rates_from_finite_parts": [
+        "-101477/11760",
+        "-970057/58800",
+        "286751/58800",
+        "-66029/11760"
+      ],
+      "central_principal_part_and_constant": true,
+      "outer_finite_parts_match_all_four_rates": true,
+      "all_mode_certificate": {
+        "curve": "4*x**5 + 7097*x**4/180 - 118531*x**3/540 - 299863*x**2/6480 + 2641699*x/3240 - 317183/1296",
+        "marked_abscissae": [
+          "-5",
+          "-2",
+          "3",
+          "7"
+        ],
+        "direction": [
+          "-6/5",
+          "-53/30"
+        ],
+        "phase_rates": [
+          "-653/240",
+          "-7153/1200",
+          "-3721/1200",
+          "-1781/240"
+        ],
+        "different_divisors_on_same_curve": 3,
+        "all_16_mode_equations": true,
+        "fixed_curve_tangency": true,
+        "nonzero_central_phase_checked": true
+      }
+    },
+    {
+      "curve": "4*x**5 + 13595*x**4/108 - 106589*x**3/4860 - 9716039*x**2/11664 + 364333*x/729 + 8263396/18225",
+      "central_shift": "3/7",
+      "Abel_direction": [
+        "4/3",
+        "41/126"
+      ],
+      "phase_rates_from_finite_parts": [
+        "-9073/2352",
+        "-140345/21168",
+        "-48833/2352",
+        "-542201/21168"
+      ],
+      "central_principal_part_and_constant": true,
+      "outer_finite_parts_match_all_four_rates": true,
+      "all_mode_certificate": {
+        "curve": "4*x**5 + 13595*x**4/108 - 106589*x**3/4860 - 9716039*x**2/11664 + 364333*x/729 + 8263396/18225",
+        "marked_abscissae": [
+          "-7",
+          "-3",
+          "2",
+          "9"
+        ],
+        "direction": [
+          "4/3",
+          "29/18"
+        ],
+        "phase_rates": [
+          "-505/48",
+          "-8705/432",
+          "-329/48",
+          "-10241/432"
+        ],
+        "different_divisors_on_same_curve": 3,
+        "all_16_mode_equations": true,
+        "fixed_curve_tangency": true,
+        "nonzero_central_phase_checked": true
+      }
+    }
+  ],
+  "total_fixed_curve_divisor_states": 6,
+  "equations_per_state": 16
+}

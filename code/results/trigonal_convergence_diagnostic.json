@@ -1,0 +1,110 @@
+{
+  "double": [
+    {
+      "steps": 1200,
+      "BA_discrepancy": 1.2290490982768326e-07
+    },
+    {
+      "steps": 2400,
+      "BA_discrepancy": 7.774498730394149e-09,
+      "step_halving_difference": 1.1513166349280269e-07
+    },
+    {
+      "steps": 6000,
+      "BA_discrepancy": 1.9573908064246818e-10
+    },
+    {
+      "steps": 12000,
+      "BA_discrepancy": 1.7661655577081697e-11,
+      "step_halving_difference": 1.9506165598680223e-10
+    },
+    {
+      "steps": 24000,
+      "BA_discrepancy": 2.7805963609904288e-11,
+      "step_halving_difference": 1.802061980095995e-11
+    },
+    {
+      "steps": 48000,
+      "BA_discrepancy": 4.1294535018005655e-11,
+      "step_halving_difference": 3.9369940983004334e-11
+    }
+  ],
+  "extended": [
+    {
+      "steps": 1200,
+      "BA_discrepancy": 1.229033123950726e-07
+    },
+    {
+      "steps": 2400,
+      "BA_discrepancy": 7.769534868059312e-09,
+      "step_halving_difference": 1.1513503823248655e-07
+    },
+    {
+      "steps": 6000,
+      "BA_discrepancy": 1.9603676975688928e-10
+    },
+    {
+      "steps": 12000,
+      "BA_discrepancy": 1.5135925143376426e-11,
+      "step_halving_difference": 1.8239359790484895e-10
+    },
+    {
+      "steps": 24000,
+      "BA_discrepancy": 2.7631495297325505e-11,
+      "step_halving_difference": 3.246645217955468e-11
+    },
+    {
+      "steps": 48000,
+      "BA_discrepancy": 3.6932593966257894e-11,
+      "step_halving_difference": 2.4940534882923714e-11
+    }
+  ],
+  "precision_comparison": [
+    {
+      "steps": 1200,
+      "discrepancy": 4.050568659430648e-12
+    },
+    {
+      "steps": 2400,
+      "discrepancy": 6.076579874279124e-12
+    },
+    {
+      "steps": 6000,
+      "discrepancy": 3.364246021753722e-12
+    },
+    {
+      "steps": 12000,
+      "discrepancy": 1.4566748704888736e-11
+    },
+    {
+      "steps": 24000,
+      "discrepancy": 2.3920306205427722e-11
+    },
+    {
+      "steps": 48000,
+      "discrepancy": 9.712733290572484e-12
+    }
+  ],
+  "extended_mantissa_bits": 52,
+  "double_mantissa_bits": 52,
+  "extended_Richardson_BA_discrepancy": 3.843742321674764e-11,
+  "multiprecision_dps": 35,
+  "multiprecision": [
+    {
+      "steps": 6000,
+      "BA_discrepancy": 2.004926923107727e-10
+    },
+    {
+      "steps": 12000,
+      "BA_discrepancy": 1.2700381807235326e-11,
+      "step_halving_difference": 1.8779352107479813e-10
+    },
+    {
+      "steps": 24000,
+      "BA_discrepancy": 3.02301275012294e-12,
+      "step_halving_difference": 1.1765336669053438e-11
+    }
+  ],
+  "multiprecision_Richardson_BA_discrepancy": 3.104470587304092e-12,
+  "precision_note": "NumPy extended and double have identical mantissa sizes on this host. Only the mpmath run tests higher integration precision. It promotes the same saved coefficients and initial data exactly."
+}

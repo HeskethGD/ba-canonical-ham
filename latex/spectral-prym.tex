@@ -1,0 +1,83 @@
+\section{The Prym condition for the symmetric reduction}
+\label{sec:geometry-prym-proof}
+
+Under \cref{eq:geometry-fold}, define the constant matrix
+\begin{equation}\label{eq:prym-transpose}
+ \mathsf S=\begin{pmatrix}
+ 0&\Id_s&0\\ \Id_s&0&0\\ 0&0&-1
+ \end{pmatrix}.
+\end{equation}
+The matrices in \cref{eq:canonical-X,eq:canonical-lax} obey
+\begin{equation}\label{eq:prym-pencil-duality}
+ \mathsf S^2=\Id_{2s+1},\qquad
+ \mathsf X=\mathsf S\mathsf X^{\trans}\mathsf S,\qquad
+ \mathsf S\mathsf D\mathsf S=-\mathsf D,\qquad
+ \mathsf T(\nu)=-\mathsf S\mathsf T(-\nu)^{\trans}\mathsf S.
+\end{equation}
+Consequently
+$\mathsf L(\nu)=\mathsf S\mathsf L(-\nu)^{\trans}\mathsf S$,
+which proves \cref{eq:geometry-involution}. It also identifies a
+right eigenvector at $\iota P$ with a left eigenvector at $P$.
+
+Normalize the last component of the right eigenvector to one, and
+let $\mathcal A(t)$ be its finite pole divisor on a generic smooth
+spectral chart. Consider the last diagonal cofactor
+\begin{equation}\label{eq:prym-cofactor}
+ A(\lambda,\nu)=
+ \det\bigl(\lambda\Id_{2s}-\mathsf L_{\mathrm{upper}}(\nu)\bigr),
+\end{equation}
+where $\mathsf L_{\mathrm{upper}}$ is the first $2s$ rows and
+columns of the pencil. This cofactor is even in $\nu$.
+At a smooth finite point of $C$, the adjugate of
+$\lambda\Id_{2s+1}-\mathsf L$ has rank one. In local nonvanishing
+eigenvector frames it is a nonzero scalar times a right vector and
+a left vector. The zeros of its last diagonal entry thus split
+between zeros of their last components. The transpose relation
+identifies these two zero divisors by $\iota$, giving
+\begin{equation}\label{eq:prym-divisor}
+ (A)_0=\mathcal A(t)+\iota\mathcal A(t).
+\end{equation}
+This is stated on the open chart where these zeros are simple,
+disjoint and finite.
+
+Generically, the poles of $A$ have order $s-1$ on each of the $2s$
+outer infinity branches and order $2s$ on the central branch.
+These orders follow by substituting \cref{eq:geometry-branches}
+into \cref{eq:prym-cofactor}. Thus its pole divisor is the fixed divisor
+\[
+ \mathcal A_\infty
+ =(s-1)\left(\sum_{\ell=1}^{s}P_\ell^L
+                  +\sum_{m=1}^{s}P_m^M\right)+2s P_1^N,
+ \qquad \deg\mathcal A_\infty=2s^2.
+\]
+It follows that $\deg\mathcal A(t)=s^2$ and
+$\mathcal A(t)+\iota\mathcal A(t)\sim\mathcal A_\infty$.
+For a fixed reference divisor $\mathcal A(0)$, the degree-zero class
+\[
+ \xi(t)=[\mathcal A(t)-\mathcal A(0)]\in\operatorname{Jac}(C)
+\]
+therefore satisfies $\xi(t)+\iota(\xi(t))=0$.
+Since $\xi(0)=0$, connected evolution puts $\xi(t)$ in the identity
+component, namely the Prym. The standard isospectral
+eigenvector-divisor linearization
+\cite[\S3]{AdlerVanMoerbeke2018} consequently restricts the motion
+to a translate of this Prym. This proves containment of the reduced
+divisor motion; a global reconstruction of the entire reduced
+isospectral manifold would require its normalization data as well.
+
+For completeness, there are $s$ constant diagonal mode gauges.
+Writing $\boldsymbol v=(v_{i1})_{i=1}^{s}$, their action is
+\[
+ v_{i1}\mapsto e^{\epsilon_i}v_{i1},\qquad
+ u_{ij}\mapsto e^{-\epsilon_i-\epsilon_j}u_{ij},
+ \qquad 1\leq i,j\leq s,
+\]
+with inverse factors on the partners and the same constraints on
+$\boldsymbol w$. They preserve the normalized eigenvector's pole
+divisor. The number of independent pairs after folding is
+$s+s(s+1)/2$. Indeed, the pulled-back symplectic form has factor two
+on each vector-mode pair and on each off-diagonal symmetric
+matrix-mode pair. Multiplying both members of each such pair by
+$\sqrt2$, and leaving the diagonal pairs unchanged, gives canonical
+coordinates. This accounts for the gauge and Prym dimensions in
+\cref{sec:geometry-prym}.

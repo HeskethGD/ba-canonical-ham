@@ -1,0 +1,26 @@
+[
+  {
+    "case": "hyperelliptic",
+    "genus": 2,
+    "sizes": [
+      2,
+      2
+    ],
+    "phase_reconstruction_error": 0.0,
+    "tested_curve_points_and_states": 36,
+    "maximum_scaled_singularity_residual": 2.162999528586137e-16,
+    "expected_total_excess_singularity_defect": 2
+  },
+  {
+    "case": "trigonal",
+    "genus": 3,
+    "sizes": [
+      3,
+      3
+    ],
+    "phase_reconstruction_error": 0.0,
+    "tested_curve_points_and_states": 36,
+    "maximum_scaled_singularity_residual": 6.797974066973548e-17,
+    "expected_total_excess_singularity_defect": 6
+  }
+]

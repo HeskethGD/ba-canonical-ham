@@ -1,0 +1,51 @@
+{
+  "digits": 55,
+  "curve": "4*prod(x-a), a in ['-6.0', '-2.0', '3.0', '8.0', '13.0']",
+  "all_phase_coefficients_zero": true,
+  "two_equal_phase_blocks_of_size_2": true,
+  "genus_two_BA_sector_of_size_five_pencil": true,
+  "records": [
+    {
+      "moving_divisor_x": [
+        "17.0",
+        "21.0"
+      ],
+      "central_shift": "0.0",
+      "max_scaled_matrix_field_error": "1.923878842592839666901306529985281486993753282282024085e-54",
+      "all_16_mode_equations": true
+    },
+    {
+      "moving_divisor_x": [
+        "17.0",
+        "21.0"
+      ],
+      "central_shift": "0.4285714285714285714285714285714285714285714285714285714",
+      "max_scaled_matrix_field_error": "4.210549704270310218832854064754851083523503123940043158e-54",
+      "all_16_mode_equations": true
+    },
+    {
+      "moving_divisor_x": [
+        "18.0",
+        "25.0"
+      ],
+      "central_shift": "0.0",
+      "max_scaled_matrix_field_error": "2.950117611183300868188060823744042341815997307856430576e-54",
+      "all_16_mode_equations": true
+    },
+    {
+      "moving_divisor_x": [
+        "18.0",
+        "25.0"
+      ],
+      "central_shift": "0.4285714285714285714285714285714285714285714285714285714",
+      "max_scaled_matrix_field_error": "8.82275685702289679902957043608672195569498604689132808e-54",
+      "all_16_mode_equations": true
+    }
+  ],
+  "symbolic_branch_finite_parts": [
+    "-C - K + 3*rho**2",
+    "C - K - 3*rho**2"
+  ],
+  "C_means": "x(Q_k)-a_fifth",
+  "K_means": "(sum_second_nodes-sum_first_nodes)/2"
+}

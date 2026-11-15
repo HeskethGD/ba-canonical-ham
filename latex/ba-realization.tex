@@ -1,0 +1,407 @@
+\section{Baker--Akhiezer realizations on a prescribed curve}
+\label{sec:general-BA-realization}
+
+We now construct solutions from a smooth curve with a marked point. The case
+$N=1$ of \cref{eq:canonical-H0} has two elementary mode vectors
+and a matrix of pair modes. Ordinary and dual scalar BA functions
+supply the vectors; their Cauchy kernel supplies the matrix. A
+meromorphic interpolation problem determines whether these functions
+satisfy the same canonical equations and fixes their phase coefficients.
+This construction uses the curve itself rather than a particular plane
+equation. The hyperelliptic sigma formulas in
+\cref{sec:BA-realization} will give an explicit specialization.
+
+\subsection{Modes and one-point BA data}
+
+Set $N=1$ and define
+\begin{equation}\label{eq:BA-mode-counts}
+ K=L+M,\qquad p=K+LM.
+\end{equation}
+We use single indices for the $K$ elementary pairs and double indices
+for the $LM$ cross-group pair composites. Their dictionary with the
+$H_0$ modes of \cref{eq:canonical-phase-gauge} is
+\begin{equation}\label{eq:BA-mode-dictionary}
+ \xi_i=\tilde w_{1i},\qquad
+ \xi_{L+m}=\tilde v_{m1},\qquad
+ \xi_{i,L+m}=\tilde u_{im},
+ \quad1\leq i\leq L,\quad1\leq m\leq M,
+\end{equation}
+with the same rule for barred partners. Put
+\begin{equation}\label{eq:BA-phase-dictionary}
+ b_i=2b_i^L+b_1^N,\qquad b_{L+m}=2b_m^M+b_1^N,
+ \quad1\leq i\leq L,\quad1\leq m\leq M.
+\end{equation}
+The inherited brackets satisfy $\{\xi_k,\bar\xi_r\}=-i\delta_{kr}$, with the corresponding rule for pair modes, and
+\begin{equation}\label{eq:BA-H0-flat}
+ H_0=\sum_{k=1}^{K}b_k\xi_k\bar{\xi}_k
+ +\sqrt2\sum_{i=1}^{L}\sum_{j=L+1}^{K}
+ (\xi_i\xi_j\xi_{ij}+\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}).
+\end{equation}
+
+Fix a smooth compact connected curve $\mathcal C$ of genus $g$, a
+marked point $P_\infty$, and a local parameter $s$ vanishing there.
+Let $\psi(P,t)$ and $\psi^\vee(P,t)$ be ordinary and dual one-point BA functions,
+with fixed nonspecial pole divisors $\mathscr D,\mathscr D^\vee$ of
+degree $g$, normalized by
+\begin{equation}\label{eq:general-BA-asymptotics}
+ \psi(P,t)=e^{-it/s}(1+O(s)),\qquad
+ \psi^\vee(P,t)=e^{it/s}(1+O(s)).
+\end{equation}
+Both functions equal one at the reference point where all hierarchy
+times vanish. Their duality differential
+$d\Omega_0$ has zero divisor $\mathscr D+\mathscr D^\vee$ and a double
+pole at $P_\infty$, with principal part $d(s^{-1})$. The differential is
+fixed in time. These are the standard ordinary/dual BA data
+\cite[\S3]{KricheverShiota2011}.
+
+Choose normalized holomorphic differentials
+$\boldsymbol\omega$, the Abel map $A(P)=\int_{P_\infty}^P
+\boldsymbol\omega$, and a theta characteristic $\delta$. Write
+$\theta=\theta[\delta](\,\cdot\mid\mathbb B)$ for the corresponding
+Riemann theta function. For a holomorphic basis $du$ and compatible
+second-kind basis $dr$, our half-period convention is
+$2\omega=\oint_a du$, $2\omega'=\oint_b du$,
+$2\eta=-\oint_a dr$, $2\eta'=-\oint_b dr$, with
+$\mathbb B=\omega^{-1}\omega'$ and symmetric
+$\varkappa=\eta\omega^{-1}$. We use the theta-exponential sigma
+representation \cite{BEL1997,KorotkinShramchenko2012}
+\[
+ \sigma(u)=C\exp\!\left(\tfrac12u^{\trans}\varkappa u\right)
+ \theta\bigl((2\omega)^{-1}u\bigr),\qquad C\ne0.
+\]
+The differential bases and characteristic fix this convention; the
+factor $C$ cancels from every reference-normalized ratio. In the
+normalized Abel coordinates used here, $du=\boldsymbol\omega$ and
+$2\omega=\Id_g$. These conventions agree with Generapy
+\cite{Generapy}; the hyperelliptic and numerical sections use their
+stated unnormalized differential bases.
+
+Let $d\Omega_1$ be the normalized second-kind differential with
+principal part $d(s^{-1})$, and write $\Xi(P)=\int^P d\Omega_1$,
+with $\Xi=s^{-1}+O(s)$ at the puncture. Its BA direction
+$\boldsymbol U$ gives $z(t)=z_0-it\boldsymbol U$. Put
+$\Xi_\sigma(P)=\Xi(P)-\boldsymbol U^{\trans}\varkappa A(P)$.
+The equivalent theta and sigma formulas are
+\begin{equation}\label{eq:general-BA-theta}
+\begin{aligned}
+ \psi(P,t)
+ &=e^{-it\Xi(P)}
+ \tfrac{\theta(z(t)+A(P))\theta(z_0)}
+ {\theta(z(t))\theta(z_0+A(P))}
+ =e^{-it\Xi_\sigma(P)}
+ \tfrac{\sigma(z(t)+A(P))\sigma(z_0)}
+ {\sigma(z(t))\sigma(z_0+A(P))},\\[4pt]
+ \psi^\vee(P,t)
+ &=e^{it\Xi(P)}
+ \tfrac{\theta(z(t)-A(P))\theta(z_0)}
+ {\theta(z(t))\theta(z_0-A(P))}
+ =e^{it\Xi_\sigma(P)}
+ \tfrac{\sigma(z(t)-A(P))\sigma(z_0)}
+ {\sigma(z(t))\sigma(z_0-A(P))}.
+\end{aligned}
+\end{equation}
+The correction in $\Xi_\sigma$ accounts for sigma's quadratic
+exponential and makes these equalities exact.
+The physical time $t$ corresponds to first BA time $-it$ and fixes
+the Abel direction. To obtain an open
+Jacobian family, replace $-it\Xi$ by
+$-i\sum_{n=1}^{m_0}t_n\Xi_n$ and $z_0-it\boldsymbol U$ by
+$z_0-i\sum_{n=1}^{m_0}t_n\boldsymbol U_n$, choosing finitely many
+BA directions that span the Jacobian. The dot remains $\partial_{t_1}$;
+the reference $z_0$, pole divisors and $d\Omega_0$ remain fixed.
+The construction singles out one essential singularity at
+$P_\infty$. Other points over infinity in a plane presentation are
+ordinary marked points of the smooth curve.
+
+Let $\Omega(P,Q;t)$ be the scalar Cauchy--BA kernel. Its diagonal
+normalization, in any local coordinate $s_Q$ at a finite point $Q$,
+is
+\begin{equation}\label{eq:general-kernel-normalization}
+ \Omega(P,Q)\sim\frac{1}{\beta_Q(s_Q(P)-s_Q(Q))},\qquad
+ d\Omega_0=(\beta_Q+O(s_Q))ds_Q.
+\end{equation}
+Its fixed poles in the two variables are the ordinary and dual BA
+divisors. At the puncture its leading terms are
+\begin{equation}\label{eq:general-kernel-infinity}
+ \Omega(P,Q)\sim s(P)e^{-it/s(P)}\psi^\vee(Q)\quad(P\to P_\infty),
+ \qquad
+ \Omega(P,Q)\sim-s(Q)\psi(P)e^{it/s(Q)}\quad(Q\to P_\infty).
+\end{equation}
+These divisor and normalization conditions determine the kernel.
+We use the differential-kernel characterization of
+\cite[Definition~3.2 and (3.22)]{Bertola2021}, with variables and sign
+converted to \cref{eq:general-kernel-normalization}.
+BA uniqueness gives the standard identity
+\begin{equation}\label{eq:general-kernel-rate}
+ i\dot\Omega(P,Q)=\psi(P)\psi^\vee(Q).
+\end{equation}
+Indeed differentiation removes the fixed diagonal principal part;
+subtracting $\psi(P)\psi^\vee(Q)$ removes the leading term at the puncture.
+The remaining BA section has zero leading coefficient and vanishes.
+The BA-product primitive is also treated in
+\cite[\S2.4]{GrinevichOrlov1989} and
+\cite[Corollary~3.1]{AratynNissimovPacheva1997}.
+
+Choose distinct points $Q_k$, $1\leq k\leq K$, away from the
+puncture, the fixed BA poles and zeros of $d\Omega_0$. For nonzero
+constant weights $\kappa_k$ and reciprocal gauges $c_k$, define
+\begin{equation}\label{eq:general-elementary-modes}
+\begin{aligned}
+ \xi_i&=c_i \psi^\vee(Q_i),&\bar{\xi}_i&=\kappa_i \psi(Q_i)/c_i,
+ &&1\leq i\leq L,\\
+ \xi_j&=c_j \psi(Q_j),&\bar{\xi}_j&=\kappa_j \psi^\vee(Q_j)/c_j,
+ &&L+1\leq j\leq K,
+\end{aligned}
+\end{equation}
+and
+\begin{equation}\label{eq:general-pair-modes}
+ \xi_{ij}=\frac{\sqrt2\kappa_i\kappa_j}{c_ic_j}\Omega(Q_i,Q_j),
+ \qquad \bar{\xi}_{ij}=-\sqrt2c_ic_j\Omega(Q_j,Q_i),
+ \quad1\leq i\leq L<j\leq K.
+\end{equation}
+An \emph{elementary mode} is an evaluation of an ordinary or dual BA
+function with one curve-point shift. A \emph{pair composite} is a
+kernel evaluation carrying the corresponding difference of Abel shifts.
+In the hyperelliptic sheet convention this becomes the sum of the two
+elementary lifts. The terminology specifies shift data, not a
+factorization into elementary functions at the same $z$.
+
+\subsection{The interpolation criterion}
+\label{sec:general-BA-interpolation}
+
+The pair equations already follow from \cref{eq:general-kernel-rate}.
+The elementary equations require weighted sums over the opposite
+group. Their coefficients are determined by one meromorphic function
+for each group. We require functions $h_L,h_M$ with simple finite
+poles only at the respective points, and
+\begin{equation}\label{eq:general-h-normalization}
+ h_L=s^{-1}+O(s),\qquad h_M=s^{-1}+O(s)
+ \quad(P\to P_\infty).
+\end{equation}
+The absence of a constant term fixes their additive constants.
+
+At each $Q_k$ choose $s_k(Q_k)=0$, and write
+\begin{equation}\label{eq:general-residue-data}
+ \boldsymbol\omega=(E_k+O(s_k))ds_k,\quad
+ d\Omega_0=(\beta_k+O(s_k))ds_k,\quad
+ \boldsymbol\omega=(-\boldsymbol U+O(s))ds\quad(P\to P_\infty).
+\end{equation}
+Here the $E_k$ are constant $g$-component columns; the last expansion
+fixes the sign of the BA direction. Prescribe the principal coefficient
+$r_k=2\kappa_k/\beta_k$ of the appropriate $h$ at $Q_k$.
+
+\begin{lemma}[Meromorphic interpolation]\label{lem:general-BA-interpolation}
+The normalized functions $h_L,h_M$ exist if and only if
+\begin{equation}\label{eq:general-residue-criterion}
+ \sum_{i=1}^{L}r_iE_i=\boldsymbol U,\qquad
+ \sum_{j=L+1}^{K}r_jE_j=\boldsymbol U.
+\end{equation}
+For each consistent group the function is unique, and its weights are
+\begin{equation}\label{eq:general-residue-weights}
+ \kappa_i=\tfrac12\operatorname{Res}_{Q_i}(h_Ld\Omega_0),
+ \quad1\leq i\leq L,\qquad
+ \kappa_j=\tfrac12\operatorname{Res}_{Q_j}(h_Md\Omega_0),
+ \quad L+1\leq j\leq K.
+\end{equation}
+\end{lemma}
+\begin{proof}
+The differential $h\omega_\alpha$ has finite residues
+$r_k(E_k)_\alpha$ and residue $-U_\alpha$ at the puncture.
+Their sum must vanish. Conversely, the compact-curve
+Mittag--Leffler criterion says precisely that these residue pairings
+with all holomorphic differentials are the obstruction to extending
+the prescribed principal parts \cite{Hartshorne1977}.
+Subtract the constant term at the puncture. Two resulting functions
+have no poles, so their difference is constant, hence zero.
+\end{proof}
+
+This is a finite linear construction: form the $g\times n$ evaluation
+matrix of a group of $n$ points and solve for its $n$ principal
+coefficients. Generic groups with $n\geq g$ have rank $g$ and
+$n-g$ free parameters. A solution must have every $r_k\ne0$ to retain
+all chosen modes. More generally the criterion is consistency of the
+displayed system, with no coordinate forced to zero. Special groups
+with fewer than $g$ points can satisfy it.
+
+\subsection{The kernel convolution identity}
+\label{sec:kernel-verification}
+
+The interpolation functions turn the kernel into weighted BA
+differential identities. These will give Hamilton's equations and
+the spectral map through the same residue calculation.
+
+\begin{lemma}[Kernel convolution and its puncture limits]
+\label{lem:general-kernel-convolution}
+Let $h$ be either interpolation function, with group range
+$(k_0,k_1)=(1,L)$ or $(L+1,K)$. Then
+\begin{equation}\label{eq:general-kernel-convolution}
+ \psi(P)\psi^\vee(R)=(h(P)-h(R))\Omega(P,R)
+ -2\sum_{k=k_0}^{k_1}\kappa_k\Omega(P,Q_k)\Omega(Q_k,R).
+\end{equation}
+Its puncture limits are the weighted identities
+\begin{equation}\label{eq:general-weighted-BA}
+\begin{aligned}
+ i\dot \psi(P)&=h(P)\psi(P)
+ -2\sum_{k=k_0}^{k_1}\kappa_k \psi(Q_k)\Omega(P,Q_k),\\
+ i\dot \psi^\vee(P)&=-h(P)\psi^\vee(P)
+ -2\sum_{k=k_0}^{k_1}\kappa_k \psi^\vee(Q_k)\Omega(Q_k,P).
+\end{aligned}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Apply the residue theorem in $Q$ to
+$h(Q)\Omega(P,Q)\Omega(Q,R)d\Omega_0(Q)$.
+The zeros of $d\Omega_0$ cancel its fixed BA-divisor poles.
+The residues at $P,R,Q_k$ are, respectively,
+$-h(P)\Omega(P,R)$, $h(R)\Omega(P,R)$ and
+$2\kappa_k\Omega(P,Q_k)\Omega(Q_k,R)$.
+At the puncture \cref{eq:general-kernel-infinity} gives
+$\psi(P)\psi^\vee(R)\,ds/s$. Summing the residues proves
+\cref{eq:general-kernel-convolution}.
+
+For the first limit write
+$\psi^\vee(R)=e^{it/s}(1+\phi_1s+O(s^2))$. Then
+\[
+ \Omega(P,R)=e^{it/s}\bigl[-s\psi(P)
+ +s^2(-i\dot\psi(P)-\phi_1\psi(P))+O(s^3)\bigr].
+\]
+The second coefficient follows by matching the order-$s$ terms in
+$i\dot\Omega(P,R)=\psi(P)\psi^\vee(R)$.
+The coefficient of $s e^{it/s}$ in
+\cref{eq:general-kernel-convolution} is the first identity in
+\cref{eq:general-weighted-BA}. Taking $P$ to the puncture gives
+the dual identity.
+\end{proof}
+
+The weighted identities can also be proved by BA uniqueness: the
+prescribed principal coefficients cancel the poles at $Q_k$, and
+the normalization of $h$ cancels the leading puncture term. The
+remaining BA section has zero leading coefficient and vanishes.
+Both arguments use the same normalized kernel and interpolation data.
+Related addition determinants and their confluent BA Wronskian forms
+are treated in \cite{Fay1973,Nakayashiki2026}.
+
+\subsection{The realization theorem}
+
+\begin{theorem}\label{thm:general-BA-realization}
+Fix the regular one-point BA data and nonzero constants in
+\cref{eq:general-elementary-modes,eq:general-pair-modes}.
+These modes satisfy Hamilton's equations for \cref{eq:BA-H0-flat}
+on a nonempty open set of the Jacobian if and only if
+\cref{eq:general-residue-criterion} holds and
+\begin{equation}\label{eq:general-phase-values}
+ b_i=-h_M(Q_i),\quad1\leq i\leq L,\qquad
+ b_j=h_L(Q_j),\quad L+1\leq j\leq K.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For sufficiency, apply \cref{lem:general-kernel-convolution}.
+At first-group points use the second group in
+\cref{eq:general-weighted-BA}; at second-group points use the first.
+Substituting \cref{eq:general-elementary-modes,eq:general-pair-modes}
+gives
+\begin{equation}\label{eq:general-network-rates}
+\begin{aligned}
+ i\dot\xi_i&=b_i\xi_i+\sqrt2\sum_{j=L+1}^{K}\bar{\xi}_j\bar{\xi}_{ij},&
+ i\dot{\bar{\xi}}_i&=-b_i\bar{\xi}_i-\sqrt2\sum_{j=L+1}^{K}\xi_j\xi_{ij},
+ &&1\leq i\leq L,\\
+ i\dot\xi_j&=b_j\xi_j+\sqrt2\sum_{i=1}^{L}\bar{\xi}_i\bar{\xi}_{ij},&
+ i\dot{\bar{\xi}}_j&=-b_j\bar{\xi}_j-\sqrt2\sum_{i=1}^{L}\xi_i\xi_{ij},
+ &&L+1\leq j\leq K,\\
+ i\dot\xi_{ij}&=\sqrt2\bar{\xi}_i\bar{\xi}_j,&
+ i\dot{\bar{\xi}}_{ij}&=-\sqrt2\xi_i\xi_j,
+ &&1\leq i\leq L<j\leq K.
+\end{aligned}
+\end{equation}
+The last line follows from \cref{eq:general-kernel-rate}.
+These are exactly the canonical equations of \cref{eq:BA-H0-flat}.
+
+For necessity, it is useful to isolate the theta-divisor argument.
+Write $\partial_a=\sum_{\alpha=1}^{g}a_\alpha\partial_{z_\alpha}$.
+If $a,\boldsymbol U$ are nonzero constant vectors and
+$\partial_{\boldsymbol U}\partial_a\partial_V\log\theta=0$
+on an open set, then $V=0$. Indeed, its leading pole along the
+smooth theta divisor is
+$2(\partial_{\boldsymbol U}\theta)(\partial_a\theta)
+(\partial_V\theta)/\theta^3$.
+The divisor is irreducible and reduced, so one normal derivative
+vanishes identically there. A nonzero translation vector cannot be
+tangent everywhere to an ample divisor, whose translation stabilizer
+is finite. The first two vectors are nonzero, forcing $V=0$.
+
+To apply this fact, let $\mathsf H_\theta=\partial_z^2\log\theta$.
+Fay's two-kernel product identity, in our normalization, is
+\begin{equation}\label{eq:general-Fay-power}
+ \Omega(P,Q)\Omega(Q,P)d\Omega_0(P)d\Omega_0(Q)
+ =-B(P,Q)-\boldsymbol\omega(P)^{\trans}\mathsf H_\theta
+                         \boldsymbol\omega(Q),
+\end{equation}
+where $B$ is the normalized fundamental bidifferential
+\cite[p.~26]{Fay1973}; see also \cite[(3.12)]{Korotkin2003}.
+Its puncture limit gives
+\begin{equation}\label{eq:general-elementary-power}
+ \psi(P)\psi^\vee(P)d\Omega_0(P)=d\Omega_1(P)
+       +\boldsymbol\omega(P)^{\trans}\mathsf H_\theta\boldsymbol U.
+\end{equation}
+For the second group put
+$V_M=\sum_{j=L+1}^{K}r_jE_j-\boldsymbol U$. The first-group charge
+$\xi_i\bar{\xi}_i-\sum_{j=L+1}^{K}\xi_{ij}\bar{\xi}_{ij}$, divided by
+$\kappa_i$, is
+\[
+ \psi(Q_i)\psi^\vee(Q_i)+2\sum_{j=L+1}^{K}\kappa_j
+          \Omega(Q_i,Q_j)\Omega(Q_j,Q_i).
+\]
+By \cref{eq:general-Fay-power,eq:general-elementary-power}, its
+product with $d\Omega_0(Q_i)$ is a fixed differential coefficient
+minus $\boldsymbol\omega(Q_i)^{\trans}\mathsf H_\theta V_M$.
+The canonical charge is conserved, so
+$\partial_{\boldsymbol U}\partial_{E_i}\partial_{V_M}
+\log\theta=0$. Holomorphic differentials have no common zero, hence
+$E_i\ne0$ and $\boldsymbol U\ne0$. The preceding argument gives
+$V_M=0$. A column charge similarly gives the first residue equation.
+The interpolation functions now exist, and comparison with
+\cref{eq:general-weighted-BA} forces \cref{eq:general-phase-values}.
+In genus zero the residue systems
+are empty and phase necessity follows directly from the weighted
+identities, with $\theta=1$.
+\end{proof}
+
+The open-Jacobian hypothesis is used in this necessity argument.
+Sufficiency gives a solution along every regular line
+$z_0-it\boldsymbol U$. The following consequence makes precise how
+an arbitrary finite list can be included in the construction.
+
+\begin{corollary}[Including prescribed elementary evaluations]
+\label{cor:BA-finite-list}
+Fix the regular BA data and assign any finite set of distinct regular
+points to the two groups, with nonzero principal coefficients $r_k$
+at those points. Adjoining $g+1$ generic points to each group suffices
+to solve both residue equations with every added coefficient nonzero.
+The weights and phase coefficients are then given by
+\cref{eq:general-residue-weights,eq:general-phase-values}, so the
+enlarged mode list has the canonical BA realization of
+\cref{thm:general-BA-realization}.
+\end{corollary}
+\begin{proof}
+For one group, subtract the contributions of the prescribed points
+from $\boldsymbol U$. We must express the resulting vector as a
+linear combination of the $g+1$ added evaluation columns.
+Choose the new points so that every $g$ of these columns are
+independent, avoiding the existing points and the fixed exceptional
+divisors. Such choices form a nonempty open set: independent
+holomorphic differentials remain independent when evaluated at
+generic points. The $g\times(g+1)$ evaluation matrix is surjective
+and its one-dimensional kernel has no zero coordinate. Its solution
+set is therefore an affine line on which each coefficient vanishes
+at at most one parameter value. Avoiding these finitely many values
+makes all added coefficients nonzero, including when the residual
+vector is zero. Apply the same argument to the second group,
+also avoiding the points added to the first. In genus zero there
+are no residue equations, and the single added coefficient in each
+group can be any nonzero value.
+\end{proof}
+
+\input{constrained-kp}
+\input{ba-spectral-converse}
+\input{ba-higher-flows}

@@ -1,0 +1,46 @@
+{
+  "lax": {
+    "sizes": [
+      2,
+      2,
+      1
+    ],
+    "trace_and_mixed_lax_checks": 4
+  },
+  "abel": {
+    "holomorphic_basis_numerators": [
+      "1",
+      "lambda - nu",
+      "lambda + nu",
+      "lambda**2 - nu**2"
+    ],
+    "U3": [
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "U4": [
+      "0",
+      "1",
+      "1",
+      "trX"
+    ],
+    "U5": [
+      "1",
+      "trX",
+      "trX",
+      "trX**2/2 + trX2/2"
+    ],
+    "U_coefficient_a_H5": [
+      "0",
+      "-1",
+      "1",
+      "trXD"
+    ],
+    "unshifted_trace_direction_rank": 3,
+    "with_mixed_quartic_direction_rank": 4,
+    "determinant": "2",
+    "exact_fibre_residue_checks": 12
+  }
+}

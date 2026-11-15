@@ -1,0 +1,104 @@
+\section{Comparison with Jiang and Rauch-Wojciechowski}
+\label{sec:JRW-dictionary}
+
+In \cite[equations (2.7)--(2.12)]{JRW1991}, take the row count to
+be $L+M$ and the column count to be $N$. Choose the signature matrices
+$\mathsf S_{\rm row}=\Id_{L+M}$, $\mathsf S_{\rm col}=\Id_N$ and
+$\mathsf S_{\pm}=\diag(\Id_L,-\Id_M)$. Write the original variables as
+\begin{equation}\label{eq:JRW-variables}
+ \tau=\begin{pmatrix}a\\b\end{pmatrix},\qquad
+ \varpi=\begin{pmatrix}0&P\\Q&0\end{pmatrix},\qquad
+ E=\diag(\epsilon_1,\ldots,\epsilon_N),
+\end{equation}
+where $a$ is $L\times N$, $b$ is $M\times N$ and $P$ is
+$L\times M$. The original Hermitian relations are complexified by
+treating their partner entries as independent. The mode change of variables is
+\begin{equation}\label{eq:JRW-mode-map}
+\begin{aligned}
+ \tilde w_{n\ell}&=a_{\ell n},&
+ \bar{\tilde w}_{n\ell}&=\bar{a}_{\ell n},&&1\leq n\leq N,\quad1\leq\ell\leq L,\\
+ \tilde v_{mn}&=\bar{b}_{mn},&
+ \bar{\tilde v}_{mn}&=b_{mn},&&1\leq m\leq M,\quad1\leq n\leq N,\\
+ \tilde u_{\ell m}&=\frac{\mathrm i}{\sqrt2}Q_{m\ell},&
+ \bar{\tilde u}_{\ell m}&=\frac{\mathrm i}{\sqrt2}P_{\ell m},
+ &&1\leq\ell\leq L,\quad1\leq m\leq M.
+\end{aligned}
+\end{equation}
+Indeed, the original brackets on $a,b$ have signs $+1,-1$,
+respectively, while $\{P_{\ell m},Q_{ji}\}=2\delta_{\ell i}\delta_{mj}$.
+Multiplying the original Poisson bracket by $-i$ gives our time
+convention, equivalently $t_{\rm J}=-it$ for its original time.
+The brackets then become \cref{eq:canonical-brackets} under
+\cref{eq:JRW-mode-map}. The letter $b$ in \cref{eq:JRW-variables}
+denotes the original mode array, distinct from the fixed coefficients
+$b_\ell^L,b_m^M$.
+
+The Hamiltonian printed by Jiang and Rauch-Wojciechowski becomes
+\begin{equation}\label{eq:JRW-H}
+ H_{\mathrm{source}}=\mathrm i\,\tr
+ \left(\varpi\tau\bar{\tau}^{\trans}+\tau E\bar{\tau}^{\trans}\right).
+\end{equation}
+This is exactly \cref{eq:canonical-H0} with
+$b_\ell^L=b_m^M=0$ and $b_n^N=\mathrm i\epsilon_n$ for all indicated
+indices. In particular, its three rectangular interaction arrays are
+already present for general column count $N$, together with the
+column phase parameters $\epsilon_n$.
+
+To obtain the phase parameters in \cref{eq:canonical-H}, retain a
+constant diagonal upper block
+\begin{equation}\label{eq:JRW-Z}
+ Z=\diag(\delta_1^L,\ldots,\delta_L^L,
+         \delta_1^M,\ldots,\delta_M^M)
+\end{equation}
+in the original pencil and Hamiltonian:
+\begin{equation}\label{eq:JRW-extension}
+\begin{aligned}
+ X_{{\rm J},Z}(\mu)
+ &=\begin{pmatrix}Z+\varpi&\tau\\\bar{\tau}^{\trans}&E\end{pmatrix}
+   +\mu\diag(-\mathsf S_{\pm},0_N),\\
+ H_Z&=\mathrm i\,\tr\left[
+       (\varpi-Z)\tau\bar{\tau}^{\trans}+\tau E\bar{\tau}^{\trans}\right].
+\end{aligned}
+\end{equation}
+With the same time convention, the original time matrix gives $i\dot X_{{\rm J},Z}=[X_{{\rm J},Z},T_{\rm J}]$. Under
+\cref{eq:JRW-mode-map}, this is $H_0$ with
+\begin{equation}\label{eq:JRW-phase-map}
+ b_\ell^L=-\frac{\mathrm i}{2}\delta_\ell^L,\quad1\leq\ell\leq L,
+ \qquad b_m^M=-\frac{\mathrm i}{2}\delta_m^M,\quad1\leq m\leq M,
+ \qquad b_n^N=\mathrm i\epsilon_n,\quad1\leq n\leq N.
+\end{equation}
+Thus the constant-diagonal extension is explicit: $Z=0$ recovers the
+printed 1991 Hamiltonian, and arbitrary $Z$ supplies independent
+outer phase coefficients. Applying \cref{eq:canonical-phase-gauge}
+then gives the symmetric Hamiltonian \cref{eq:canonical-H}.
+For $N=1$, $Z=0$ forces all elementary phase coefficients to
+coincide; arbitrary $Z$ accommodates \cref{eq:general-phase-values}.
+
+
+The original pencil and the pencil of \cref{sec:canonical-lax} are related by
+\begin{equation}\label{eq:JRW-pencil-map}
+ \mathrm i X_{{\rm J},Z}(\mu)
+ =\mathsf G\,\widetilde{\mathsf L}(-\mathrm i\mu)^{\trans}\mathsf G^{-1},
+ \qquad \mathsf G=\diag(\Id_L,\Id_M,\mathrm i\Id_N).
+\end{equation}
+Here $\trans$ is ordinary transpose. The matrix $\widetilde{\mathsf L}$
+is built from \cref{eq:canonical-X,eq:canonical-pencil} using the
+solutions $\tilde{\boldsymbol u},\tilde{\boldsymbol v},\tilde{\boldsymbol w}$
+of $H_0$ defined in \cref{sec:canonical-phase-gauges}, with the same
+constant diagonal matrices. The symmetric-phase solutions of $H$ and
+the zero-$u$-phase solutions of $H_0$ give pencils related by
+\begin{equation}\label{eq:canonical-pencil-gauge}
+ \mathsf L(\nu,t)=\mathsf S(t)\widetilde{\mathsf L}(\nu,t)
+                         \mathsf S(t)^{-1},\qquad
+ \mathsf S(t)=\diag(e^{-it\mathsf B_L},e^{it\mathsf B_M},\Id_N).
+\end{equation}
+Consequently $H$ and $H_0$ have identical spectral polynomials along
+the solutions related by \cref{eq:canonical-phase-gauge}.
+
+The completeness statement of \cref{thm:canonical-independence} also
+applies at $Z=0$, for arbitrary row count $L+M$ and column count $N$, with repeated or distinct entries of $E$.
+Jiang and Rauch-Wojciechowski prove the two- and three-row cases and
+recover extra integrals at coincident column parameters in the
+two-row case by perturbation \cite[Section II.C, equation (2.23)]{JRW1991}.
+The equal-phase moment matrices and insertion lemma provide a single
+independence argument for all these sizes and coincidences.

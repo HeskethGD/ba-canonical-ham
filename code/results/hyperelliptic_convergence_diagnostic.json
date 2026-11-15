@@ -1,0 +1,22 @@
+{
+  "multiprecision_dps": 35,
+  "multiprecision": [
+    {
+      "steps": 6000,
+      "BA_discrepancy": 1.5419791914311625e-10
+    },
+    {
+      "steps": 12000,
+      "BA_discrepancy": 1.2140638414868841e-11,
+      "step_halving_difference": 1.4208289419818846e-10
+    },
+    {
+      "steps": 24000,
+      "BA_discrepancy": 3.333376383869137e-12,
+      "step_halving_difference": 8.880267949094188e-12
+    }
+  ],
+  "multiprecision_Richardson_BA_discrepancy": 2.762883283850359e-12,
+  "multiprecision_successive_difference_ratio": 15.999843136791984,
+  "precision_note": "NumPy extended and double have identical mantissa sizes on this host. Only the mpmath run tests higher integration precision. It promotes the same saved coefficients and initial data exactly."
+}

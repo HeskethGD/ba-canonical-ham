@@ -1,0 +1,257 @@
+\section{Mode powers and the Mumford system}
+\label{sec:mumford-correspondence}
+
+The elementary mode powers in \cref{thm:BA-realization} are
+evaluations of the moving divisor polynomial $\mathcal P$.
+We reconstruct this polynomial and its derivative from the modes,
+identify their equations with the odd Mumford flow, and describe
+the mode information retained by the BA formulas. The curve, marked points and weights remain fixed throughout this section. We write $\mathcal P_{z_g}=\partial_{z_g}\mathcal P=i\dot{\mathcal P}$ and
+$\mathcal P_{z_gz_g}=\partial_{z_g}^2\mathcal P=-\ddot{\mathcal P}$.
+
+\subsection{Reconstructing the divisor polynomials}
+
+Define the elementary powers $I_k=\xi_k\bar{\xi}_k$, $1\leq k\leq K$.
+Their derivatives follow directly from the canonical Hamiltonian
+\cref{eq:BA-H0-flat}: the linear phase terms cancel, leaving
+\begin{equation}\label{eq:mumford-power-rates}
+\begin{aligned}
+ i\dot I_i&=\sqrt2\sum_{j=L+1}^{K}
+ (\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}-\xi_i\xi_j\xi_{ij}),&&1\leq i\leq L,\\
+ i\dot I_j&=\sqrt2\sum_{i=1}^{L}
+ (\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}-\xi_i\xi_j\xi_{ij}),&&L+1\leq j\leq K.
+\end{aligned}
+\end{equation}
+Thus $\dot I_k=\{I_k,H_0\}$ is a polynomial in the modes, rather
+than additional derivative data. On the BA family,
+\begin{equation}\label{eq:mumford-evaluations}
+ \frac{I_k}{\kappa_k}=\mathcal P(z,a_k),\qquad
+ \frac{i\dot I_k}{\kappa_k}=\mathcal P_{z_g}(z,a_k),
+ \qquad1\leq k\leq K.
+\end{equation}
+
+Since $L\geq g$, use the first $g$ marked abscissae and their
+Lagrange basis polynomials
+\begin{equation}\label{eq:mumford-lagrange}
+ \ell_k(x)=\prod_{\substack{r=1\\r\ne k}}^{g}
+                  \frac{x-a_r}{a_k-a_r},\qquad1\leq k\leq g.
+\end{equation}
+The leading coefficient of $\mathcal P$ is one, so interpolation
+of its remaining coefficients and of $\mathcal P_{z_g}$ gives
+\begin{equation}\label{eq:mumford-reconstruction}
+\begin{aligned}
+ \mathcal P(z,x)
+ &=x^g+\sum_{k=1}^{g}
+       \left(\frac{I_k}{\kappa_k}-a_k^g\right)\ell_k(x),\\
+ \mathcal P_{z_g}(z,x)
+ &=\sum_{k=1}^{g}\frac{i\dot I_k}{\kappa_k}\ell_k(x).
+\end{aligned}
+\end{equation}
+Any $g$ distinct marked abscissae give the same reconstruction on
+this family. The additional evaluations supply the remaining mode
+powers and their linear interpolation relations.
+
+Jacobi inversion gives $\mathcal P\mid f-\mathcal P_{z_g}^{\,2}$.
+Consequently define the polynomial
+\begin{equation}\label{eq:mumford-W}
+ \mathcal W(z,x)=\frac{f(x)-\mathcal P_{z_g}(z,x)^2}
+                         {4\mathcal P(z,x)},\qquad
+ f=\mathcal P_{z_g}^{\,2}+4\mathcal P\mathcal W.
+\end{equation}
+Here $\mathcal P$ and $\mathcal W$ are monic of degrees $g$ and
+$g+1$, while $\deg_x\mathcal P_{z_g}\leq g-1$. The factor four
+makes $\mathcal W$ monic for the curve normalization
+\cref{eq:BA-curve}. Write Mumford's three polynomials as
+$(\mathcal U,\mathcal V,\mathcal W)$, with
+\begin{equation}\label{eq:mumford-dictionary}
+ \mathcal U=\mathcal P,\qquad
+ \mathcal V=\mathcal P_{z_g}/2,\qquad
+ \mathcal U\mathcal W+\mathcal V^2=f/4.
+\end{equation}
+These are the degree constraints and spectral relation of the
+ordinary odd Mumford system
+\cite[Chapter~IIIa]{Mumford1984}; see also
+\cite[\S3.1]{FernandesVanhaecke2001}. Its monic spectral curve is
+obtained from ours by dividing the ordinate by two.
+
+\subsection{The projected equations of motion}
+
+Write the common scalar potential as
+\begin{equation}\label{eq:mumford-potential}
+ \mathcal Q(z)=2\wp_{gg}(z)+\frac{\lambda_{2g}}4
+ =\frac{\lambda_{2g}}4-2[x^{g-1}]\mathcal P(z,x).
+\end{equation}
+The shared second-order BA equation and constant sheet-pair
+Wronskian in \cref{eq:BA-identities,eq:BA-powers-rates} give
+\begin{equation}\label{eq:mumford-product-identity}
+ 2\mathcal P\mathcal P_{z_gz_g}-\mathcal P_{z_g}^{\,2}
+       -4(x+\mathcal Q)\mathcal P^2=-f(x).
+\end{equation}
+For example, differentiate the product of the BA functions at an
+arbitrary curve point with abscissa $x$, use their common scalar
+equation, and eliminate the difference of their derivatives with
+their Wronskian. Since the point is arbitrary, this gives a
+polynomial identity in $x$.
+
+Substituting \cref{eq:mumford-W} into
+\cref{eq:mumford-product-identity}, then differentiating the
+spectral relation, yields the closed polynomial flow
+\begin{equation}\label{eq:mumford-flow}
+ \mathcal P_{z_gz_g}=2\bigl((x+\mathcal Q)\mathcal P-\mathcal W\bigr),
+ \qquad
+ i\dot{\mathcal W}=-(x+\mathcal Q)\mathcal P_{z_g}.
+\end{equation}
+Together with $\mathcal P_{z_g}$ as the second polynomial
+coordinate, these are the odd Mumford infinity flow. The time
+normalization is fixed by $i\dot{\mathcal U}=2\mathcal V$
+and the BA direction $z(t)=z_0-it e_g$.
+
+The correspondence can also be checked in a two-by-two Lax form.
+Define
+\begin{equation}\label{eq:mumford-lax-matrices}
+ \mathsf A(x)=\begin{pmatrix}
+ \mathcal V&\mathcal U\\
+ \mathcal W&-\mathcal V
+ \end{pmatrix},\qquad
+ \mathsf B(x)=\begin{pmatrix}0&1\\x+\mathcal Q&0\end{pmatrix}.
+\end{equation}
+Then \cref{eq:mumford-flow} is equivalent to
+\begin{equation}\label{eq:mumford-lax}
+ i\dot{\mathsf A}=[\mathsf A,\mathsf B],\qquad
+ \det\left(\frac y2\Id_2-\mathsf A(x)\right)
+                  =\frac{y^2-f(x)}4.
+\end{equation}
+Thus the mode-power projection preserves both the divisor dynamics
+and the prescribed hyperelliptic curve.
+
+\subsection{Recovering the modes from divisor data}
+
+At a generic state of the fixed-curve Mumford fiber, set
+$\mathcal P_k=\mathcal P(a_k)$ and
+$\mathcal P_{z_g,k}=\mathcal P_{z_g}(a_k)$,
+$1\leq k\leq K$. Choose nonzero elementary values $\xi_k$ and put
+\begin{equation}\label{eq:mumford-mode-inverse}
+ \bar{\xi}_k=\frac{\kappa_k\mathcal P_k}{\xi_k},
+ \qquad1\leq k\leq K.
+\end{equation}
+Substitution of the BA logarithmic rates into the Wronskians
+\cref{eq:BA-pair-composites} determines every composite algebraically:
+\begin{equation}\label{eq:mumford-composite-inverse}
+\begin{aligned}
+ \xi_{ij}
+ &=\frac{\bar{\xi}_i\bar{\xi}_j}{\sqrt2(a_j-a_i)}
+       \left(\frac{\mathcal P_{z_g,j}+y_j}{\mathcal P_j}
+             -\frac{\mathcal P_{z_g,i}+y_i}{\mathcal P_i}\right),\\
+ \bar{\xi}_{ij}
+ &=-\frac{\xi_i\xi_j}{\sqrt2(a_j-a_i)}
+       \left(\frac{\mathcal P_{z_g,j}-y_j}{\mathcal P_j}
+             -\frac{\mathcal P_{z_g,i}-y_i}{\mathcal P_i}\right),
+ \qquad1\leq i\leq L<j\leq K.
+\end{aligned}
+\end{equation}
+These formulas apply on the chart $\mathcal P_k\ne0$,
+$1\leq k\leq K$. Jacobi inversion supplies the corresponding
+$z$, and the constants $c_k$ in \cref{eq:BA-elementary} match the
+chosen elementary values. Under the conditions of
+\cref{thm:BA-realization}, the lifted modes then follow the
+canonical network equations.
+
+The polynomial triple determines the divisor state; the $K$
+elementary normalizations specify its mode lift. In particular,
+the phase-dependent individual BA functions are retained by the
+mode description, and the composites are fixed once those
+normalizations have been chosen. After forgetting this gauge
+freedom, the fixed-curve BA family gives an open part of the usual
+Mumford fiber, a Jacobian with its theta divisor removed
+\cite[Proposition~3.1]{FernandesVanhaecke2001}. This identifies
+the fixed-curve solutions and their vector fields. A correspondence
+of Poisson structures would additionally require a reduction of
+the canonical network bracket.
+
+\subsection{Gauge symmetries and Abel translations}
+\label{sec:gauge-Abel-symmetries}
+
+The power charges of \cref{eq:canonical-charges} have a direct symmetry
+interpretation. A conserved function $Q$ generates a canonical symmetry
+because $\{Q,H\}=0$ implies that its Hamiltonian flow commutes with the
+time evolution. This is the Hamiltonian form of Noether's correspondence.
+For $N=1$, the $K=L+M$ independent charges generate the reciprocal
+mode gauges
+\begin{equation}\label{eq:BA-gauge-action}
+\begin{aligned}
+ \xi_k&\longmapsto e^{\theta_k}\xi_k,&
+ \bar{\xi}_k&\longmapsto e^{-\theta_k}\bar{\xi}_k,
+ &&1\leq k\leq K,\\
+ \xi_{ij}&\longmapsto e^{-(\theta_i+\theta_j)}\xi_{ij},&
+ \bar{\xi}_{ij}&\longmapsto e^{\theta_i+\theta_j}\bar{\xi}_{ij},
+ &&1\leq i\leq L<j\leq K.
+\end{aligned}
+\end{equation}
+Here the $\theta_k$ are constant complex parameters; purely imaginary
+values preserve the conjugate real form. Every term of $H_0$ is
+invariant. These symmetries follow from the polynomial Hamiltonian
+itself; the BA realization identifies them with changes of the
+normalization constants $c_k$.
+
+On the regular spectral locus, the ambient integral count separates these gauge generators
+from the remaining spectral integrals:
+\begin{equation}\label{eq:gauge-translation-count}
+ p=(d-1)+G,\qquad d=L+M+N,
+ \qquad p=LM+MN+NL,
+\end{equation}
+where $G$ is the regular spectral genus in
+\cref{eq:canonical-genus-preview}. Locally, fixing the $d-1$ independent
+charges and quotienting their gauge actions leaves $G$ Hamiltonian
+degrees of freedom. Under eigenvector-divisor linearization, the
+commuting isospectral flows act as Abel translations
+\cite{Beauville1990,Vanhaecke2001}. The autonomous Hamiltonian selects
+the time direction within this commuting family; it is included in the
+complete integral set of \cref{thm:canonical-independence}.
+
+When phases coincide, the moment matrices
+\cref{eq:canonical-block-moment} extend the diagonal gauges to
+continuous changes of basis within equal-phase groups.
+Their principal-block invariants provide the additional integrals
+counted in \cref{eq:canonical-spectral-deficit}.
+
+For the prescribed hyperelliptic BA family, $g$ divisor coordinates and
+$K$ mode normalizations specify the lift described in
+\cref{eq:mumford-mode-inverse,eq:mumford-composite-inverse}.
+Its spectral level is identified in
+\cref{prop:BA-prescribed-spectral-curve}. The realized $H_0$
+flow translates $z$ in the $-ie_g$ direction.
+\Cref{thm:BA-higher-flows} identifies the further spectral flows
+with translations of this same BA family and the constant mode phases
+in \cref{eq:BA-higher-time-phase}. Their Abel directions span its
+Jacobian, while the power charges generate the reciprocal gauges.
+
+\subsection{Mechanical coordinate realizations}
+
+An explicit connection with Garnier coordinates follows by taking
+$L=g$. Then $q_L=1$ and $\kappa_i=1/(2R_L'(a_i))$,
+$1\leq i\leq g$. Introduce local coordinates $r_i$ by
+$r_i^2=4I_i$. Lagrange interpolation gives
+\begin{equation}\label{eq:mumford-garnier-potential}
+ \sum_{i=1}^{g}r_i^2
+ =2\left([x^{g-1}]\mathcal P+\sum_{i=1}^{g}a_i\right).
+\end{equation}
+Using \cref{eq:mumford-product-identity} to differentiate these
+coordinates gives
+\begin{equation}\label{eq:mumford-garnier}
+ -\ddot r_i
+ =\left(\alpha_i-\sum_{j=1}^{g}r_j^2\right)r_i
+   -\frac{f(a_i)}{R_L'(a_i)^2r_i^3},\qquad
+ \alpha_i=a_i+\frac{\lambda_{2g}}4+2\sum_{j=1}^{g}a_j,
+ \quad1\leq i\leq g.
+\end{equation}
+In the geometric Abel time $-it$, this is the Garnier form with centrifugal terms
+\cite{Kostov1999,Vanhaecke2001}. At marked branch points the
+corresponding inverse-cube terms vanish. The elementary BA modes
+provide a description retaining the sheet-pair phases as well as
+these mechanical coordinates.
+
+For the Neumann realization of the same divisor geometry, see
+\cite[Chapter~IIIa, \S4]{Mumford1984}. Vanhaecke discusses its
+connections with Garnier and integrable H\'enon--Heiles systems
+\cite{Vanhaecke2001}; the genus-two case~(ii) H\'enon--Heiles
+system and its BA description are treated explicitly in
+\cite[\S4]{Braden2005}.

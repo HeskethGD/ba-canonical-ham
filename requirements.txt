@@ -1,0 +1,7 @@
+# Exact direct dependencies from the source repository's working environment.
+# Git commits are pinned rather than tracking main/master.
+generapy @ git+https://github.com/HeskethGD/generapy.git@aed252bd5a3b5014fc37e81ec4634d84c908cf18
+sympy @ git+https://github.com/sympy/sympy.git@319ea7a6186edf88bc23d502917242b10314ae51
+mpmath==1.4.1
+numpy==2.5.3
+matplotlib==3.11.2
