@@ -5,6 +5,7 @@ __pycache__/
 .DS_Store
 .pytest_cache/
 .check-logs/
+/generapy_issues/
 latex/build/
 latex/*.aux
 latex/*.log

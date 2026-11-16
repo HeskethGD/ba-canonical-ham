@@ -68,18 +68,18 @@
   "fine_ode_error": 1.6824413876927653e-11,
   "step_halving_ratio": 9.02090126172359,
   "fine_modal_power_error": 1.5643021835178773e-11,
-  "BA_conserved_quantity_drift": 1.0203401900663553e-15,
+  "BA_conserved_quantity_drift": 1.0203401900663536e-15,
   "ODE_conserved_quantity_drift": 2.0948854750171102e-14,
   "infinity_characteristic_rounding": 0.0,
   "minimum_sigma_denominator": 2.054139222668925,
-  "sigma_backend": "Generapy kleinian_sigma_jet for every analytic sample",
-  "setup_seconds": 0.5962591669522226,
+  "sigma_backend": "Generapy baker_akhiezer_jet (reference) and kleinian_sigma_directional_jet",
+  "setup_seconds": 0.6175661669112742,
   "evaluation_benchmark_seconds": [
-    0.008460166864097118,
-    0.06105916714295745,
-    0.008802583906799555
+    0.010584666859358549,
+    0.05738904094323516,
+    0.010196957737207413
   ],
-  "mean_sample_seconds": 0.05471891880307982,
+  "mean_sample_seconds": 0.053801860648956965,
   "plotted_modes": [
     "Re xi_1",
     "Re xi_3",

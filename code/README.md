@@ -26,7 +26,8 @@ Python if it has another name.
 The default `quick` suite checks physical signs, polynomial higher flows,
 the spectral map from stored data, Abel-direction formulas and a repeated-
 phase BA sector. `symbolic` includes larger exact checks; `sigma` computes
-fresh Generapy BA values. `diagnostics` includes independent integrations
+fresh Generapy BA values, plus independent adapter checks at numerator
+zeros and regular points. `diagnostics` includes independent integrations
 and the al-family example. These extended suites can take longer.
 `all` does not regenerate the full 41-point figures or the 35-digit RK4
 tables; their explicit commands are in the root README.
@@ -49,7 +50,8 @@ dependencies. The mathematical proofs are in the manuscript.
 | `real_forms_regular_locus_checks.py` | Signed real-form identities and local node-smoothing coefficients. |
 | `latex_final_symmetric_prym_checks.py` | Symmetric-fold tangency and matrix duality identities, supporting the Prym appendix. |
 | `ba_numeric_examples.py` | Both full sigma-versus-ODE validation examples, figures and stored trajectories. |
-| `reference_sigma_ba.py` | Reference-normalized sigma BA values and derivatives shared by those examples. |
+| `reference_sigma_ba.py` | Ordinary/dual sign and time adapter for Generapy's public reference-normalized BA jets; directional sigma jets supply the separate pair-mode potential. |
+| `reference_ba_jet_checks.py` | Independent scalar sigma-ratio differentiation through order three: ordinary/dual normalization, nonfinal coordinates, numerator zeros and nearby points in genera one/two, and singular chart rejection. |
 | `prescribed_curve_spectral_image.py` | Spectral map checked at 36 point/state combinations per stored example. |
 | `ba_convergence_diagnostic.py` | Stored-data RK4 precision/refinement checks; multiprecision mode generates the paper's refinement rows. |
 | `generate_ba_validation_table.py` | Generate the parameter and validation tables from recorded JSON. |

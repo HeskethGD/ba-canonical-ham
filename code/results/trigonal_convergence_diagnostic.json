@@ -106,5 +106,6 @@
     }
   ],
   "multiprecision_Richardson_BA_discrepancy": 3.104470587304092e-12,
+  "multiprecision_successive_difference_ratio": 15.961593480682502,
   "precision_note": "NumPy extended and double have identical mantissa sizes on this host. Only the mpmath run tests higher integration precision. It promotes the same saved coefficients and initial data exactly."
 }

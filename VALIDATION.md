@@ -4,13 +4,12 @@
 
 The current requirements pin Generapy to
 `bd50a507ff009127768dfdf53e209e6c0a364142`
-(`0.1.1.dev35+gbd50a507f`). A clean installation, all 17 check scripts and
-both complete numerical examples passed on 16 November 2026. The current
-code and requirements are intended to be used together. The full
-[upgrade validation](#generapy-upgrade-compatibility-test--16-november-2026)
-below records the environment, API changes, exact baseline comparison and
-remaining work. Earlier sections describe historical checks, rather than
-the current installation status.
+(`0.1.1.dev35+gbd50a507f`). A clean installation was verified for that pin.
+The public BA jet implementation passed all 18 check scripts and both
+complete numerical examples on 16 November 2026; see the latest
+[migration validation](#public-ba-jet-migration) below. The code and
+requirements are intended to be used together. Earlier records below
+describe historical checks, rather than the current implementation.
 
 ## Original baseline
 
@@ -134,9 +133,89 @@ Per-script logs and the complete-example log from this run are under
 `.check-logs/generapy-candidate/` (ignored by Git). The current tracked
 example summaries record the candidate version and timings.
 
-This establishes compatibility of the existing calculations with the
-unreleased commit. Migration to directional sigma jets or the public
-reference-normalized BA jets, and explicit numerator-zero tests, remain
-separate work; the zero-safe differentiation task is still open. Testing
-an eventual PyPI release remains a later step. No Generapy release or tag
-was created.
+This established compatibility of the existing calculations with the
+unreleased commit. At that stage, migration to the public reference-normalized
+BA jets and explicit numerator-zero tests remained separate work. Those were
+subsequently completed below. Testing an eventual PyPI release remains a
+later step. No Generapy release or tag was created.
+
+## Public BA jet migration
+
+Completed on 16 November 2026 using the same pinned Generapy build and
+`.venv-generapy/` environment. The comparison baseline is commit
+`e1ea551232264f6db83b97fba3b96a33a4e18f2e` (the dependency compatibility
+upgrade merged to `main`). No dependency revision changed in this migration.
+
+### Implementation
+
+`ReferenceSigmaBA` now adapts the paper's ordinary/dual signs and geometric
+Abel time to Generapy's public `baker_akhiezer_jet`, with reference
+normalization and explicit period/lift data for both curves. All BA values
+and derivatives come from that API; local logarithmic differentiation and
+reference-normalizer assembly have been removed.
+
+Both ordinary and dual calls use the same moving argument and direction.
+Negating the ordinary shift and exponent rate preserves its convention
+because sigma parity cancels in the reference ratio. The adapter requires
+the half-integral characteristic used by the examples. The supplied rate
+describes evolution in the selected coordinate, not arbitrary Abel directions.
+
+The separate `GenerapySigma` adapter uses public directional sigma jets for
+the potential and its derivative in the pair-mode formulas. It matches the
+BA API's outer guard precision so requests for the common denominator can
+reuse Generapy's precision-aware theta cache. No additional result cache is
+implemented in this repository.
+
+### Validation
+
+- All 18 scripts in `run_checks.py --suite all` pass, including the new
+  `reference_ba_jet_checks.py` in the sigma suite. The additional ordinary
+  reference-zero case was also verified in a final direct run of that script.
+- The adapter is compared with independent numerical differentiation of
+  direct scalar sigma ratios through order three. Tests cover odd/even
+  characteristics, a nonfinal coordinate, complex displacements, both jet
+  orders, and normalization at the reference. Numerator-zero tests in genera
+  one and two cover ordinary and dual modes at the zero and offsets of
+  `+/-1e-12`; all derivatives remain finite and agree within `1e-32` at
+  40-digit working precision. Singular moving denominators and ordinary/dual
+  reference normalizers are rejected.
+- Both fresh example checks and the complete 41-point, `0 <= t <= 6`
+  examples pass. Maximum canonical residuals remain `1.2e-15` (hyperelliptic)
+  and `1.2e-12` (trigonal); fine ODE discrepancies remain `1.7e-11` and
+  `1.8e-11`.
+- Every trigonal NPZ array is exactly equal to the baseline. Hyperelliptic
+  BA and ODE arrays differ by at most `2.3e-29` in absolute value; grids,
+  weights, phase coefficients and `z0` are exactly unchanged. Example JSON
+  records now name the public BA/directional-sigma backend.
+- Both complete examples regenerate identical PNGs and identical figure
+  PDFs apart from creation dates. Existing PDFs were retained to avoid
+  date-only changes.
+- The standard trigonal convergence diagnostic and both 35-digit convergence
+  calculations were rerun against the new stored trajectories. Refinement
+  ratios are `15.999843` (hyperelliptic) and `15.961593` (trigonal), both
+  rounding to `16.0` in the manuscript. The recorded convergence values
+  reproduce the previous values; the trigonal JSON additionally records
+  the derived successive-difference ratio.
+- Regenerated manuscript tables are unchanged. The methods paragraph now
+  names the public reference BA and directional sigma jets. The manuscript
+  rebuilds to 51 pages without undefined references or overfull boxes; the
+  rendered methods page and validation table were visually checked.
+
+Logs and the baseline-array comparison are under `.check-logs/public-ba/`
+(ignored by Git). The full examples and convergence commands replace their
+tracked result records. Reproduce the migration checks with:
+
+```sh
+MPLBACKEND=Agg .venv-generapy/bin/python code/ba_numeric_examples.py --case both
+.venv-generapy/bin/python code/run_checks.py --suite all --log-dir .check-logs/public-ba
+.venv-generapy/bin/python code/ba_convergence_diagnostic.py
+.venv-generapy/bin/python code/ba_convergence_diagnostic.py --multiprecision --hyperelliptic
+.venv-generapy/bin/python code/ba_convergence_diagnostic.py --multiprecision
+.venv-generapy/bin/python code/generate_ba_validation_table.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd latex/main.tex
+```
+
+The zero-safe differentiation task is complete for this adapter. Sigma
+denominator and reference zeros still require a different regular chart.
+Timing records are observations from validation runs, not controlled speed
+comparisons. Generapy publication remains separate.

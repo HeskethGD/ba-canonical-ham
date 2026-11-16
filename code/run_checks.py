@@ -26,6 +26,7 @@ SUITES={
         'mumford_core_comparison.py',
     ],
     'sigma':[
+        'reference_ba_jet_checks.py',
         'latex_final_ba_conventions.py',
         'quartic_hyperelliptic_direction.py',
     ],

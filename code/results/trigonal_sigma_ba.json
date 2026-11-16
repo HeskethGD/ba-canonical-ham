@@ -92,14 +92,14 @@
   "ODE_conserved_quantity_drift": 8.597452836778421e-13,
   "infinity_characteristic_rounding": 0.0,
   "minimum_sigma_denominator": 7.537920401213218,
-  "sigma_backend": "Generapy kleinian_sigma_jet for every analytic sample",
-  "setup_seconds": 5.613147791940719,
+  "sigma_backend": "Generapy baker_akhiezer_jet (reference) and kleinian_sigma_directional_jet",
+  "setup_seconds": 5.49818883324042,
   "evaluation_benchmark_seconds": [
-    0.05125654116272926,
-    1.3986709997989237,
-    0.05331912497058511
+    0.02404045918956399,
+    1.2040979997254908,
+    0.025697875302284956
   ],
-  "mean_sample_seconds": 1.3903047968065594,
+  "mean_sample_seconds": 0.9839343638045759,
   "plotted_modes": [
     "Re xi_1",
     "Re xi_4",

@@ -1,7 +1,8 @@
 """Generapy sigma BA validation on hyperelliptic and trigonal curves.
 
-All sigma evaluations and derivatives call Generapy directly. Constants
-are initialized once outside evaluate_modes; no alternate theta evaluator
+All BA modes and derivatives use Generapy's public reference-normalized
+BA jets. Directional sigma jets supply the separate pair-mode potential.
+Constants are initialized once outside evaluate_modes; no alternate theta evaluator
 or evaluation-cache layer is used. Sparse analytic samples are plotted as
 open markers against dense independent Runge--Kutta curves.
 """
@@ -153,7 +154,7 @@ class Network:
         L,M=self.L,self.M;K=L+M
         abel_time=-1j*t
         z=list(self.z0);z[-1]+=self.sigma.ctx.mpc(abel_time);d=self.sigma.jet(z,3)
-        f,g=[np.array(a,dtype=complex) for a in zip(*(a.jets(abel_time,d) for a in self.modes))]
+        f,g=[np.array(a,dtype=complex) for a in zip(*(a.jets(abel_time) for a in self.modes))]
         p=complex(3*(d[2]/d[0]-(d[1]/d[0])**2))
         pd=complex(3*(d[3]/d[0]-3*d[2]*d[1]/d[0]**2+2*(d[1]/d[0])**3))
         def kernel(i,j):
@@ -226,11 +227,10 @@ def network(data,ctx,z0=None):
     sigma=GenerapySigma(ctx,omega,tau,kappa,characteristic)
     points=data['points'];x=np.array([complex(restore(p['x'],ctx)) for p in points])
     y=np.array([complex(restore(p['y'],ctx)) for p in points])
-    reference=sigma.jet(z0,0)[0]
     modes=[ReferenceSigmaBA(sigma,[restore(a,ctx) for a in p['abel']],restore(p['rate'],ctx),
-                            z0,reference_denominator=reference) for p in points]
+                            z0) for p in points]
     d=sigma.jet(z0,3);p=complex(3*(d[2]/d[0]-(d[1]/d[0])**2))
-    f,g=[np.array(a,dtype=complex) for a in zip(*(a.jets(0,d) for a in modes))]
+    f,g=[np.array(a,dtype=complex) for a in zip(*(a.jets(0) for a in modes))]
     if data['kind']=='trigonal':
         beta=f[:,2]-g[:,1]*f[:,1]+g[:,2]+p
         residues=[]
@@ -366,7 +366,8 @@ def run(obj,args):
                 BA_conserved_quantity_drift=BA_drift,ODE_conserved_quantity_drift=ODE_drift,
                 infinity_characteristic_rounding=obj.data['characteristic_rounding'],
                 minimum_sigma_denominator=minimum,
-                sigma_backend='Generapy kleinian_sigma_jet for every analytic sample',
+                sigma_backend=('Generapy baker_akhiezer_jet (reference) and '
+                               'kleinian_sigma_directional_jet'),
                 setup_seconds=obj.data['setup_seconds'],
                 evaluation_benchmark_seconds=obj.data['evaluation_benchmark_seconds'],
                 mean_sample_seconds=float(np.mean(sample_seconds)),
