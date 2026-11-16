@@ -2,14 +2,15 @@
 
 ## Current supported version
 
-The current requirements pin Generapy to
-`bd50a507ff009127768dfdf53e209e6c0a364142`
-(`0.1.1.dev35+gbd50a507f`). A clean installation was verified for that pin.
-The public BA jet implementation passed all 18 check scripts and both
-complete numerical examples on 16 November 2026; see the latest
-[migration validation](#public-ba-jet-migration) below. The code and
+The current requirements pin `generapy==0.2.0` from PyPI. Its runtime source
+matches the previously tested development revision. A clean installation
+was verified for the release; see the latest
+[release validation](#generapy-020-pypi-release) below.
+All 18 check scripts and both complete numerical examples passed with the
+release on 16 November 2026. The [migration validation](#public-ba-jet-migration)
+records the BA adapter conventions and numerator-zero checks. The code and
 requirements are intended to be used together. Earlier records below
-describe historical checks, rather than the current implementation.
+describe historical checks, rather than the current installation status.
 
 ## Original baseline
 
@@ -219,3 +220,60 @@ The zero-safe differentiation task is complete for this adapter. Sigma
 denominator and reference zeros still require a different regular chart.
 Timing records are observations from validation runs, not controlled speed
 comparisons. Generapy publication remains separate.
+
+## Generapy 0.2.0 PyPI release
+
+Validated on 16 November 2026 against this project's preceding commit
+`66f35564828ed225fbcb86fbf34accae164146ec`, which used the public BA jets
+with Generapy `0.1.1.dev35+gbd50a507f`. Requirements now use
+`generapy==0.2.0` from PyPI; the SymPy source pin and other direct dependency
+versions are unchanged.
+
+### Source and installation verification
+
+The local Generapy `v0.2.0` tag resolves to
+`cd98830890aae1ae5d231b13980345733775bd2e`. Compared with the previously
+tested `bd50a507ff009127768dfdf53e209e6c0a364142`, the only tracked changes
+are release notes and documentation configuration. All 25 Python source
+files packaged in the published wheel match the release tag byte for byte,
+excluding generated `_version.py` metadata, which now identifies `0.2.0`.
+
+The wheel downloaded from PyPI is `generapy-0.2.0-py3-none-any.whl`, SHA256:
+
+```text
+96263c3664fc8a6b770c13a966fb801b05819adeade6e20d29de71816afde810
+```
+
+A fresh `.venv-generapy-release/` environment was created with Python
+3.14.7 and installed from the updated requirements. Generapy imports from
+that environment's site-packages, reports `0.2.0`, and is not a VCS/editable
+installation. `pip check` passes. The prior environments were retained.
+
+### Project validation
+
+- All 18 check scripts pass, including ordinary/dual numerator-zero checks.
+- Both complete 41-point examples pass over `0 <= t <= 6`.
+- Every saved NPZ array is exactly equal to the preceding development-build
+  baseline, including BA/ODE trajectories, weights, phases and time grids.
+  Geometry JSON differs only in Generapy version; example summaries differ
+  only in version and timings. All numerical validation metrics are identical.
+- Regenerated PNGs are identical; figure PDFs differ only in creation dates,
+  so existing PDFs were retained. Regenerated manuscript tables are unchanged.
+
+The convergence integrations were not repeated for this release-only change:
+their stored inputs and references are exactly unchanged, and those calculations
+do not call Generapy. The existing manuscript PDF was retained because its
+source, figures and tables did not change. The original code-to-release
+comparison and installation/check logs are recorded here and under
+`.check-logs/generapy-020-release/` (ignored by Git).
+
+To reproduce from the repository root:
+
+```sh
+python3 -m venv .venv-generapy-release
+.venv-generapy-release/bin/python -m pip install -r requirements.txt
+.venv-generapy-release/bin/python -m pip check
+.venv-generapy-release/bin/python code/run_checks.py --suite all
+MPLBACKEND=Agg .venv-generapy-release/bin/python code/ba_numeric_examples.py --case both
+.venv-generapy-release/bin/python code/generate_ba_validation_table.py
+```

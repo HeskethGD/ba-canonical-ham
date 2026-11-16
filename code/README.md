@@ -7,7 +7,7 @@ now `latex/`.
 
 Install the root [`requirements.txt`](../requirements.txt) before running
 the checks, including when updating an existing environment. The supported
-Generapy revision is pinned there; the spectral BA checks use its public
+Generapy version is pinned there; the spectral BA checks use its public
 `baker_akhiezer` API. See the root [setup instructions](../README.md#python-environment)
 and [validation record](../VALIDATION.md) for the tested versions and results.
 The commands below use `.venv/bin/python`; substitute your environment's

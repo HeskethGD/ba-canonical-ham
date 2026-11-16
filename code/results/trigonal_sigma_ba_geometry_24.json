@@ -335,5 +335,5 @@
   "native_abel_error": "4.13590306276513837435704e-25",
   "second_kind_rate": "FP integral of x^2 dx/(3y^2), constant term zero in s=x^(-1/3)",
   "dps": 24,
-  "generapy_version": "0.1.1.dev35+gbd50a507f"
+  "generapy_version": "0.2.0"
 }

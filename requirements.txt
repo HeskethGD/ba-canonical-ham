@@ -1,7 +1,6 @@
 # Tested direct dependencies for this repository (Python 3.14.7, macOS ARM64).
-# Generapy: 0.1.1.dev35+gbd50a507f; full compatibility validation on 2026-11-16.
-# The unreleased source revision is intentional; do not track moving main/master.
-generapy @ git+https://github.com/HeskethGD/generapy.git@bd50a507ff009127768dfdf53e209e6c0a364142
+# SymPy remains pinned to its tested source commit rather than a moving branch.
+generapy==0.2.0
 sympy @ git+https://github.com/sympy/sympy.git@319ea7a6186edf88bc23d502917242b10314ae51
 mpmath==1.4.1
 numpy==2.5.3

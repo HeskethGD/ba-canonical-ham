@@ -3,83 +3,41 @@
 Manuscript and reproducibility code for *Baker–Akhiezer functions on
 arbitrary curves in modified Jiang–Rauch-Wojciechowski systems*.
 
-The paper studies a canonical cubic multiwave Hamiltonian, its complete
-integral count and spectral curves, and the two-way correspondence between
-its vector–matrix–vector case and scalar Baker–Akhiezer (BA) data.
-The higher spectral Hamiltonians generate Abel translations with explicit
-constant mode phases. Numerical examples use genus-two hyperelliptic and
-genus-three trigonal curves.
+The paper studies a canonical cubic multiwave Hamiltonian, its integrals
+and spectral curves, and its correspondence with scalar Baker–Akhiezer
+(BA) data. Numerical examples use genus-two hyperelliptic and genus-three
+trigonal curves.
 
-Author: Graham Hesketh, Independent Researcher, UK
-([gdh1e10@gmail.com](mailto:gdh1e10@gmail.com)).
-
-Public repository: <https://github.com/HeskethGD/ba-canonical-ham>.
-
-## License
-
-The original manuscript, code, figures and numerical records in this
-repository are dedicated to the public domain under **CC0 1.0 Universal**;
-see [`LICENSE`](LICENSE). External dependencies retain their own licenses.
+**Graham Hesketh** · Independent Researcher, UK ·
+[gdh1e10@gmail.com](mailto:gdh1e10@gmail.com)
 
 ## Contents
 
-- [`latex/main.pdf`](latex/main.pdf): compiled manuscript.
-- [`latex/main.tex`](latex/main.tex): manuscript source, with all inputs,
-  bibliography and figures in the same directory tree.
-- [`code/README.md`](code/README.md): check inventory and reproduction commands.
-- `code/results/`: recorded parameters, BA/ODE trajectories and check outputs.
-- `code/figures/`: black-and-white figures generated from the examples.
-- `code/support/`: small local helpers needed by the exact checks.
-- [`VALIDATION.md`](VALIDATION.md): current validation results, tested
-  dependency revisions and historical baseline verification.
+- [Paper](latex/main.pdf) and [LaTeX source](latex/main.tex).
+- [Code and check inventory](code/README.md).
+- [Recorded calculations](code/results/) and [figures](code/figures/).
+- [Validation details](VALIDATION.md).
 
-The repository contains the material for this paper. Separate determinant
-and Kovalevskaya projects, exploratory notebooks, source-paper collections
-and review correspondence are not part of this distribution.
+## Installation
 
-## Python environment
+Calculations used Python 3.14.7 on macOS ARM64 with Generapy 0.2.0,
+SymPy 1.15.0.dev0, mpmath 1.4.1, NumPy 2.5.3 and Matplotlib 3.11.2.
+Exact dependencies are pinned in [requirements.txt](requirements.txt).
+Git is required to install the pinned SymPy source revision.
 
-The recorded runs used Python 3.14.7 on macOS ARM64. Install into a fresh
-environment from the repository root:
+From the repository root:
 
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m pip check
-.venv/bin/python code/run_checks.py --suite quick
 ```
 
-The current requirements preserve the tested source commits of Generapy
-and SymPy and the recorded numerical dependency versions. Generapy is
-`0.1.1.dev35+gbd50a507f`, pinned to commit
-`bd50a507ff009127768dfdf53e209e6c0a364142` from its unreleased `main`.
-A clean installation was verified for this dependency pin. The public BA
-jet implementation passed all 18 check scripts and both complete numerical
-examples on 16 November 2026. Trigonal trajectories reproduce the previous
-version exactly; hyperelliptic trajectories differ by at most `2.3e-29`.
-A tagged release has not yet been selected. The plotting and exact-check code does
-not require Marimo.
+Run all commands below from the repository root.
 
-Git is required to install the pinned Generapy and SymPy sources. When
-updating an existing checkout, rerun the installation and dependency check:
+## Numerical examples
 
-```sh
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m pip check
-```
-
-The code uses Generapy's public `baker_akhiezer` and `baker_akhiezer_jet` APIs and
-require the updated dependency pin. With another virtual environment,
-replace `.venv/bin/python` in the commands below, or set the Makefile's
-`PYTHON` variable, for example `make check-all PYTHON=/path/to/venv/bin/python`.
-
-## Reproduce the paper
-
-Run commands from the repository root. The main example script computes
-periods, lifts and exponent constants once, uses Generapy's public
-reference-normalized BA jets at sparse analytic sample points, and
-independently integrates Hamilton's
-equations with RK4:
+Regenerate the BA-versus-ODE comparisons and check their spectral images:
 
 ```sh
 .venv/bin/python code/ba_numeric_examples.py --case hyperelliptic
@@ -87,18 +45,35 @@ equations with RK4:
 .venv/bin/python code/prescribed_curve_spectral_image.py
 ```
 
-Defaults reproduce the recorded interval `0 <= t <= 6`, precision of
-24 decimal digits, 41 analytic sample points and 601 plotted numerical
-points. The trigonal sigma evaluation is substantially slower than the
-hyperelliptic example. To check construction without regenerating plots:
+The examples compare Generapy's reference-normalized BA jets with independent
+RK4 integration of Hamilton's equations. Defaults use `0 <= t <= 6`,
+24 decimal digits, 41 analytic sample points and 601 plotted ODE points.
+Use `--case both` to run both examples in one command. To check their
+construction without regenerating trajectories and plots:
 
 ```sh
 .venv/bin/python code/ba_numeric_examples.py --case both --check-only
 ```
 
-The 35-digit convergence calculations use the **same stored binary64
-coefficients and initial modes**. They isolate integration arithmetic;
-they do not reconstruct the curve at higher precision:
+Recorded results and figures are included. Regeneration replaces files in
+`code/results/` and `code/figures/`; `--check-only` also updates geometry records.
+
+## Checks
+
+Run the quick checks or the complete suite of 18 scripts:
+
+```sh
+.venv/bin/python code/run_checks.py --suite quick
+.venv/bin/python code/run_checks.py --suite all
+```
+
+Individual suites and script descriptions are listed in [code/README.md](code/README.md).
+Logs are written to `.check-logs/`. The full suite does not regenerate the
+complete example plots or the convergence tables.
+
+## Convergence calculations and tables
+
+Run the 35-digit RK4 refinement calculations, then generate the manuscript tables:
 
 ```sh
 .venv/bin/python code/ba_convergence_diagnostic.py --multiprecision --hyperelliptic
@@ -106,62 +81,38 @@ they do not reconstruct the curve at higher precision:
 .venv/bin/python code/generate_ba_validation_table.py
 ```
 
-Those commands update files in `code/results/` and the generated parameter
-and validation tables in `latex/`. The existing records are included so
-the manuscript and checks can be inspected before rerunning the expensive
-calculations. Regenerating examples replaces their records and figures.
+These calculations promote the stored binary64 coefficients and initial modes
+to higher integration precision; they do not reconstruct the curves at higher
+precision. Results are saved in `code/results/`, and tables are written to `latex/`.
 
-For exact and structural checks, see the suites in `code/README.md`.
-They supplement the manuscript proofs with explicit examples and
-symbolic identities; finite rank witnesses are not all-size proofs.
-
-## Build the manuscript
+## Build the paper
 
 A TeX installation with `latexmk`, BibTeX and the packages listed in
-`latex/main.tex` is required. From the repository root:
+[main.tex](latex/main.tex) is required.
 
 ```sh
-cd latex
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+make paper
 ```
 
-Alternatively use `make paper`. The source includes `main.bbl`; the
-bibliography database is `references.bib`. To prepare the submission ZIP
-after rebuilding:
+This regenerates the manuscript tables and builds `latex/main.pdf`.
+To compile only the LaTeX source:
 
 ```sh
-.venv/bin/python code/package_manuscript.py
+latexmk -pdf -interaction=nonstopmode -halt-on-error -cd latex/main.tex
 ```
 
-This copies current code figures into `latex/figures/` and packages the
-recursive TeX input graph, bibliography and figures. It does not include
-the Python code or private working material in the manuscript ZIP.
+To build a self-contained manuscript source archive, including its bibliography
+and figures:
 
-## Publication checklist
+```sh
+make package
+```
 
-- [x] Test the unreleased Generapy commit in a fresh environment and
-  regenerate both complete examples. Results reproduce the baseline;
-  see `VALIDATION.md` for the scope and commands.
-- [ ] Replace the tested Generapy development commit pin with the chosen
-  tagged release when available, then verify a fresh installation of that
-  release. Generapy publication is managed separately.
-- [x] Use Generapy's zero-safe public BA jets for reference-normalized
-  ordinary and dual modes. Independent sigma-ratio differentiation checks
-  derivatives through order three at and near numerator zeros in genera
-  one and two; both complete paper examples pass. Denominator and reference
-  zeros still require a regular chart.
-- [x] Add author information, the chosen repository license (CC0 1.0
-  Universal), and the final public repository URL to the project;
-  author details and the repository link are also in the manuscript.
-- [ ] Add the permanent manuscript identifier (for example, an arXiv ID
-  or DOI) once assigned. The GitHub repository URL is recorded above;
-  no permanent manuscript identifier has been supplied yet.
+The archive is written to `latex/submission-source.zip`. Make targets use
+`.venv/bin/python` by default; override it with `PYTHON=/path/to/venv/bin/python`.
 
-## Evaluation backend
+## License
 
-Generapy's public BA jets compute every ordinary and dual mode and its
-derivatives. Directional sigma jets separately supply the potential terms
-needed by the pair-mode formulas. `code/reference_sigma_ba.py` translates
-the paper's sign and time conventions; it performs no local BA derivative
-assembly. The dependency revision remains unchanged from the compatibility
-upgrade, and the numerical results retain the paper's accuracy.
+The original manuscript, code, figures and numerical records are dedicated
+to the public domain under [CC0 1.0 Universal](LICENSE). External dependencies
+retain their own licenses.
