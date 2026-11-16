@@ -30,8 +30,8 @@ see [`LICENSE`](LICENSE). External dependencies retain their own licenses.
 - `code/results/`: recorded parameters, BA/ODE trajectories and check outputs.
 - `code/figures/`: black-and-white figures generated from the examples.
 - `code/support/`: small local helpers needed by the exact checks.
-- [`VALIDATION.md`](VALIDATION.md): checks completed on this snapshot and
-  the dependency-installation test still to be done.
+- [`VALIDATION.md`](VALIDATION.md): current validation results, tested
+  dependency revisions and historical baseline verification.
 
 The repository contains the material for this paper. Separate determinant
 and Kovalevskaya projects, exploratory notebooks, source-paper collections
@@ -45,13 +45,32 @@ environment from the repository root:
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pip check
 .venv/bin/python code/run_checks.py --suite quick
 ```
 
 The current requirements preserve the tested source commits of Generapy
 and SymPy and the recorded numerical dependency versions. Generapy is
-`0.1.1.dev4+gaed252bd5`; it has not yet been replaced by a new tagged
-release. The plotting and exact-check code does not require Marimo.
+`0.1.1.dev35+gbd50a507f`, pinned to commit
+`bd50a507ff009127768dfdf53e209e6c0a364142` from its unreleased `main`.
+A clean installation, all 17 check scripts and both complete numerical
+examples passed on 16 November 2026. All stored BA/ODE arrays and numerical
+validation metrics reproduce the original baseline exactly. A tagged
+release has not yet been selected. The plotting and exact-check code does
+not require Marimo.
+
+Git is required to install the pinned Generapy and SymPy sources. When
+updating an existing checkout, rerun the installation and dependency check:
+
+```sh
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m pip check
+```
+
+The current check scripts use Generapy's public `baker_akhiezer` API and
+require the updated dependency pin. With another virtual environment,
+replace `.venv/bin/python` in the commands below, or set the Makefile's
+`PYTHON` variable, for example `make check-all PYTHON=/path/to/venv/bin/python`.
 
 ## Reproduce the paper
 
@@ -118,8 +137,12 @@ the Python code or private working material in the manuscript ZIP.
 
 ## Publication checklist
 
-- [ ] Replace the Generapy commit pin with the chosen tagged release and test
-  a fresh installation. Regenerate the validation records and figures.
+- [x] Test the unreleased Generapy commit in a fresh environment and
+  regenerate both complete examples. Results reproduce the baseline;
+  see `VALIDATION.md` for the scope and commands.
+- [ ] Replace the tested Generapy development commit pin with the chosen
+  tagged release when available, then verify a fresh installation of that
+  release. Generapy publication is managed separately.
 - [ ] Make reference-ratio differentiation zero-safe before widening the
   evaluation domain to numerator-zero crossings. In
   `code/reference_sigma_ba.py`, replace logarithmic numerator derivatives
@@ -127,7 +150,7 @@ the Python code or private working material in the manuscript ZIP.
   denominator and reference values. Verify ordinary and dual jets through
   order three at numerator zeros, agreement away from zeros, and both
   numerical examples. The current evaluator and tested sample charts are
-  retained for this baseline snapshot.
+  retained in the current version.
 - [x] Add author information, the chosen repository license (CC0 1.0
   Universal), and the final public repository URL to the project;
   author details and the repository link are also in the manuscript.
@@ -135,6 +158,10 @@ the Python code or private working material in the manuscript ZIP.
   or DOI) once assigned. The GitHub repository URL is recorded above;
   no permanent manuscript identifier has been supplied yet.
 
-The metadata portion of the original third task is complete. Its permanent
-identifier portion remains open separately. Numerical records retain their
-original software versions; this snapshot precedes the Generapy updates.
+## Further development
+
+The current version uses the tested Generapy dependency and public spectral
+BA API. Adopting directional sigma jets and the public reference-normalized
+BA jets is planned separately, together with the numerator-zero tests above.
+Numerical example records identify the tested Generapy development version;
+their numerical values are unchanged from the original baseline.

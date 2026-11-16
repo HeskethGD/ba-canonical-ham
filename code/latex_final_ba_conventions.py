@@ -7,8 +7,7 @@ from pathlib import Path
 import json
 import sympy as s
 from mpmath import mp
-from generapy import Curve, kleinian_p
-from generapy.kleinian import kleinian_baker_akhiezer
+from generapy import Curve, kleinian_p, baker_akhiezer
 
 
 def check(genus):
@@ -34,9 +33,9 @@ def check(genus):
     def psi(t, sheet):
         argument = z[:-1]+[t]
         abel, integral = points[sheet]
-        return kleinian_baker_akhiezer(
+        return baker_akhiezer(
             argument, abel, integral, first.omega, first.tau,
-            second.kappa, characteristic, ctx=ctx)
+            second.kappa, characteristic, normalization='spectral', ctx=ctx)
 
     def polynomial(t):
         argument = z[:-1]+[t]

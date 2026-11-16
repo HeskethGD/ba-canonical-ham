@@ -182,5 +182,5 @@
   "kappa_symmetry": "0.0",
   "second_kind_rate": "Generapy automatic odd-degree second-kind Abel integral",
   "dps": 24,
-  "generapy_version": "0.1.1.dev4+gaed252bd5"
+  "generapy_version": "0.1.1.dev35+gbd50a507f"
 }

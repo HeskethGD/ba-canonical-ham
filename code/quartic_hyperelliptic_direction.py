@@ -224,8 +224,7 @@ def full_mode_certificates():
 def generapy_direction_check():
     """Independently compare the elementary sigma derivatives with H4."""
     from mpmath import mp
-    from generapy import Curve, kleinian_p
-    from generapy.kleinian import kleinian_baker_akhiezer
+    from generapy import Curve, kleinian_p, baker_akhiezer
     ctx=mp.clone();ctx.dps=32
     coefficients=list(map(ctx.mpf,['-3.04128','13.632','11.68','-18.4','-4','4']))
     curve=Curve({(0,2):1,**{(i,0):-c for i,c in enumerate(coefficients)}},ctx=ctx)
@@ -263,8 +262,9 @@ def generapy_direction_check():
         abel=curve.abel_map_kind_1(target).value
         integral=curve.abel_map_kind_2(target).value
         def psi(argument,sheet):
-            return kleinian_baker_akhiezer(argument,sheet*abel,sheet*integral,
-                       first.omega,first.tau,second.kappa,characteristic,ctx=ctx)
+            return baker_akhiezer(argument,sheet*abel,sheet*integral,
+                       first.omega,first.tau,second.kappa,characteristic,
+                       normalization='spectral',ctx=ctx)
         q,qs=psi(z,1),weights[i]*psi(z,-1)
         d1=ctx.diff(lambda t:psi([t,z[1]],1),z[0])/q
         d2=ctx.diff(lambda t:psi([z[0],t],1),z[1])/q
