@@ -16,11 +16,33 @@ after the general reconstruction and Hamiltonian comparison.
 
 Fix a smooth compact connected curve $\mathcal C$ of genus $g$,
 distinct punctures $R_k$ with local parameters $s_k$, $1\leq k\leq N$,
-and regular ordinary and dual BA divisors $\mathscr D,\mathscr D^\vee$
-of degree $g+N-1$. Regularity means that the $N$ normalized leading
-values determine a BA section uniquely. At the reference divisor this
-is $H^0(\mathcal O(\mathscr D-\sum_{k=1}^{N}R_k))=0$, with the
-corresponding dual condition. The normalized bases satisfy
+and an ordinary BA divisor $\mathscr D$ of degree $g+N-1$, disjoint
+from the punctures. Put $\mathscr R=\sum_{k=1}^{N}R_k$. Regularity at the
+reference time means $H^0(\mathcal O(\mathscr D-\mathscr R))=0$: the $N$
+leading values then determine a BA section uniquely.
+
+The dual divisor is determined by these data. Write $K_{\mathcal C}$
+for a canonical divisor. The map from
+$H^0(K_{\mathcal C}+2\mathscr R)$ to the $N$ double-pole coefficients and the
+$g+N-1$ restriction values along $\mathscr D$ (including jets at
+multiple points) is an isomorphism. Its kernel is
+$H^0(K_{\mathcal C}+\mathscr R-\mathscr D)$, which vanishes by Serre duality
+and Riemann--Roch, since $\deg(\mathscr D-\mathscr R)=g-1$ and its $H^0$
+vanishes. The source and target both have dimension $g+2N-1$.
+There is therefore a unique differential $d\Omega_0$ vanishing at
+$\mathscr D$ with double-pole leading parts $-ds_k/s_k^2$.
+Its remaining zero divisor is $\mathscr D^\vee$, of degree $g+N-1$,
+and
+\[
+ \mathcal O(\mathscr D^\vee-\mathscr R)
+ \simeq\mathcal O(K_{\mathcal C}+\mathscr R-\mathscr D)
+\]
+shows that the dual leading-value problem is regular too.
+Zero divisors are counted with multiplicity. The simple-pole residues
+of $d\Omega_0$ are
+allowed and are determined by this construction. The first-order
+local parameters fix its double-pole coefficients and hence the
+dual divisor. The normalized bases satisfy
 \begin{equation}\label{eq:general-BA-asymptotics}
 \begin{aligned}
  \psi_k(P,t)&=e^{-it/s_m}(\delta_{km}+O(s_m)),\\
@@ -36,9 +58,8 @@ has these leading values, so uniqueness gives
 $\sum_{k=1}^{N}\psi_k(P,0)=\sum_{k=1}^{N}\psi_k^\vee(P,0)=1$.
 The number $N$ specifies these BA punctures independently of the genus;
 they need not be infinities in another plane equation for the curve.
-Their fixed duality differential $d\Omega_0$ has zero divisor
-$\mathscr D+\mathscr D^\vee$ and leading part $-ds_k/s_k^2$ at each
-puncture; simple-pole residues there are allowed.
+The zero divisor of the fixed duality differential is
+$\mathscr D+\mathscr D^\vee$.
 
 Choose normalized holomorphic differentials $\boldsymbol\omega$ and put
 \begin{equation}\label{eq:multipoint-Abel-direction}
@@ -81,7 +102,9 @@ The theta formulas are
 The fixed factors are determined by the reference sections:
 $a_k=\psi_k(P,0)\theta(z_0)/\theta(z_0+\Delta_k)$ and
 $b_k=\psi_k^\vee(P,0)\theta(z_0)/\theta(z_0-\Delta_k)$.
-They encode the divisors and puncture normalizations.
+They encode the divisors and puncture normalizations. The time-dependent
+formulas are evaluated off $\theta(z)=0$ and extend meromorphically
+in the BA times, with possible poles on that divisor.
 Equivalently, put $J_{\sigma,k}=J_k-\boldsymbol U^{\trans}\varkappa\Delta_k$,
 $a_{\sigma,k}=a_k e^{-z_0^{\trans}\varkappa\Delta_k-\Delta_k^{\trans}\varkappa\Delta_k/2}$
 and
@@ -136,7 +159,13 @@ For nonzero weights $\kappa_a$ and reciprocal gauges $c_a,e_k$ define
  \quad1\leq i\leq L,\ 1\leq j\leq M,\ 1\leq k\leq N.
 \end{aligned}
 \end{equation}
-The bars are independent partner labels. The kernel rate already gives
+The bars are independent partner labels. The fixed normalizations have
+one redundancy: for any $s\ne0$, replacing $c_i$ by $sc_i$ in the
+first group, $c_{L+j}$ by $s^{-1}c_{L+j}$ in the second, and $e_k$
+by $s^{-1}e_k$ leaves every mode unchanged. This is the single
+relation among the $d$ vertex gauge generators, leaving $d-1$
+independent actions as in \cref{eq:canonical-charge-relation}.
+The kernel rate already gives
 the $u$ equations; the other arrays require weighted sums over the
 opposite ordinary-point group.
 
@@ -280,25 +309,67 @@ Fay's two-kernel identity is
 \end{equation}
 where $B$ is the normalized fundamental bidifferential
 \cite[p.~26]{Fay1973}; see also \cite[(3.12)]{Korotkin2003}.
-Its diagonal time derivative gives
+To obtain the diagonal BA product, use the theta form of the kernel.
+With $\Delta=A(P)-A(Q)$ it has the reference-normalized evolution
+\[
+ \Omega(P,Q;t)=\Omega(P,Q;0)e^{-it(\Xi(P)-\Xi(Q))}
+ \frac{\theta(z(t)+\Delta)\theta(z_0)}
+      {\theta(z(t))\theta(z_0+\Delta)}.
+\]
+In a local coordinate $s$, write $\boldsymbol\omega=E_P\,ds$ and
+$\partial_s\Xi=\Xi_s$. Its expansion as $Q\to P$ is
+\[
+\begin{aligned}
+ \Omega(P,Q;t)\frac{d\Omega_0(Q)}{ds(Q)}
+ &=\frac1{s(P)-s(Q)}+a(P)-it\Xi_s(P)\\
+ &\quad+E_P^{\trans}\bigl(\nabla\log\theta(z)-\nabla\log\theta(z_0)\bigr)
+ +O(s(P)-s(Q)),
+\end{aligned}
+\]
+where $a(P)$ is the time-independent regular coefficient at $t=0$.
+Differentiate by $i\partial_t$ and take the diagonal limit.
+The kernel rate \cref{eq:general-kernel-rate} and
+$i\dot z=\boldsymbol U$ give
 \begin{equation}\label{eq:general-elementary-power}
  \left(\sum_{k=1}^{N}\psi_k(P)\psi_k^\vee(P)\right)d\Omega_0(P)
- =d\Omega_1(P)+\boldsymbol\omega(P)^{\trans}\mathsf H_\theta\boldsymbol U,
+ =d\Xi(P)+\boldsymbol\omega(P)^{\trans}\mathsf H_\theta\boldsymbol U.
 \end{equation}
-where $d\Omega_1=d\Xi$ has the chosen puncture principal parts.
-For $V_M=\sum_{j=L+1}^{K}r_jE_j-\boldsymbol U$, the first-group
-charge divided by $\kappa_i$ is
-$\sum_{k=1}^{N}\psi_k(Q_i)\psi_k^\vee(Q_i)
-+2\sum_{j=L+1}^{K}\kappa_j\Omega(Q_i,Q_j)\Omega(Q_j,Q_i)$.
-Its product with $d\Omega_0(Q_i)$ is a fixed coefficient minus
-$\boldsymbol\omega(Q_i)^{\trans}\mathsf H_\theta V_M$.
-Conservation implies
-$\partial_{\boldsymbol U}\partial_{E_i}\partial_{V_M}\log\theta=0$.
-The leading cubic pole is the product of the three normal derivatives
-of $\theta$. Its irreducible reduced ample divisor has finite
-translation stabilizer, so no nonzero constant direction is everywhere
-tangent. Holomorphic differentials have no common zero, so $E_i\ne0$;
-the nonzero $\boldsymbol U$ hypothesis then forces $V_M=0$.
+Thus the diagonal identity follows from the kernel's regular part;
+the off-diagonal products are given separately by
+\cref{eq:general-Fay-power}.
+
+Let $\mathcal Q_i=Q_i^L/\kappa_i$, where $Q_i^L$ is the first-group
+power charge of \cref{eq:canonical-charges}. The mode definitions give
+\[
+ \mathcal Q_i=\sum_{k=1}^{N}\psi_k(Q_i)\psi_k^\vee(Q_i)
+ +2\sum_{j=L+1}^{K}\kappa_j\Omega(Q_i,Q_j)\Omega(Q_j,Q_i).
+\]
+Put $V_M=\sum_{j=L+1}^{K}r_jE_j-\boldsymbol U$ and let
+$B_{ij}$ denote the coefficient of $B(Q_i,Q_j)$ in the chosen
+coordinates at $Q_i,Q_j$. Substituting the two product identities,
+with $r_j=2\kappa_j/\beta_j$, yields
+\[
+ \beta_i\mathcal Q_i
+ =\Xi_s(Q_i)-\sum_{j=L+1}^{K}r_jB_{ij}
+       -\partial_{E_i}\partial_{V_M}\log\theta(z).
+\]
+The first two terms are independent of $z$. Since $\mathcal Q_i$ is
+conserved and $\dot z=-i\boldsymbol U$, the ansatz on an open
+Jacobian family implies the meromorphic identity
+\[
+ \partial_{\boldsymbol U}\partial_{E_i}\partial_{V_M}\log\theta=0.
+\]
+At a smooth point of the theta divisor its leading cubic pole has
+coefficient
+$2(\partial_{\boldsymbol U}\theta)(\partial_{E_i}\theta)
+(\partial_{V_M}\theta)$. The theta divisor of a smooth connected
+curve is irreducible, reduced and ample. Consequently one of these
+three factors must vanish identically along it. A constant direction
+everywhere tangent to this divisor lies in the Lie algebra of its
+translation stabilizer, which is finite. The first factor cannot
+vanish identically because $\boldsymbol U\ne0$, nor can the second:
+holomorphic differentials have no common zero, so $E_i\ne0$.
+It follows that $V_M=0$. This is the second residue equation.
 A column charge gives the other residue equation. The weighted equations
 then fix the phase compatibility.
 \end{proof}
@@ -327,3 +398,14 @@ at most simple puncture poles. Generic $g+N$ evaluation columns have
 the same full-rank and nonzero-kernel property. Apply the same argument
 to each group. In genus zero the residue system is empty.
 \end{proof}
+
+With $a_L,a_M$ added evaluation points the resulting system has
+\[
+ (L+a_L)(M+a_M)+N(L+M+a_L+a_M)
+\]
+canonical mode pairs. The original evaluations are retained as
+entries of these enlarged arrays; their equations include the new
+modes. Completion therefore constructs a coupled enlargement.
+
+Here $a_L=a_M=g+1$ for the basic completion, and
+$a_L=a_M=g+N$ when all regular puncture constants are prescribed.

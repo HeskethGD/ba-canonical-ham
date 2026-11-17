@@ -3,9 +3,11 @@
 
 We prove \cref{thm:canonical-independence} using the commuting algebra
 $\mathcal A$ defined in \cref{sec:canonical-independence}.
-The argument inserts one index at a time; spectral invariants and
-equal-phase moment invariants together supply the new independent
-functions.
+The argument inserts one index at a time. At each step the new
+canonical pairs split into directions detected by spectral invariants
+and directions detected by equal-phase moment invariants. The lemma
+below constructs complementary independent derivatives for these two
+sets; its final cyclic-vector test shows that they occur simultaneously.
 
 The next lemma constructs an independence certificate in the mode
 coordinates. A vector $v$ is \emph{cyclic} for a matrix $\mathsf Z$ of size
@@ -39,6 +41,17 @@ and its derivative in the new incoming column is zero. The old
 principal moments have the same properties. We need $n$ further
 functions with zero old-coordinate
 derivatives and independent derivatives in $\boldsymbol a$.
+
+The certificate will have the block form
+\[
+ \frac{\partial(\text{lifted old functions},\text{new functions})}
+      {\partial(\text{selected old coordinates},\boldsymbol a)}
+ =\begin{pmatrix}J_{\rm old}&*\\0&J_{\rm new}\end{pmatrix}.
+\]
+Here $J_{\rm old}$ is already nonsingular. We construct $J_{\rm new}$
+from moment derivatives on one summand of $\C^n$ and spectral
+derivatives on its complement. Establishing this at one point is
+enough, since nonvanishing of the minor is a Zariski-open condition.
 
 Order the old indices as the $r$ equal-phase indices, the $c$
 different-phase indices of the same original group, and the $n$
@@ -165,7 +178,8 @@ A positive size triple satisfying the triangle inequalities can be
 reduced to $(1,1,1)$ by decreasing a largest entry; the preceding triple
 still satisfies those inequalities. Reverse this process, appending
 indices last within their equal-phase blocks. At each step
-$|m_1-m_2|\leq r+c$, so \cref{lem:canonical-insertion} applies.
+$|m_1-m_2|\leq r+c$, which is stronger than the sufficient
+bound $r+c+1$ in \cref{lem:canonical-insertion}.
 
 If one group exceeds the sum of the others, first build the balanced
 triple where its size equals that sum, using initial segments of its

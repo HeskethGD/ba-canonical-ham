@@ -1,0 +1,7 @@
+{
+  "dps": 55,
+  "independent_backend": "mpmath.jtheta, analytic Jacobi derivatives",
+  "maximum_scaled_jet_error": "9.0521355545789e-56",
+  "maximum_scaled_ratio_and_log_rate_error": "4.0620819777564e-56",
+  "production_backend": "Generapy rtheta_jet; unchanged"
+}

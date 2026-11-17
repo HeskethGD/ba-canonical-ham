@@ -150,3 +150,14 @@ The first command checks all 24 mode rates, both spectral eigenvectors
 and an independent fourth-trace Abel direction. The numerical run
 compares sparse direct BA evaluations with dense RK4 trajectories for
 both flows and writes the black-and-white figure and result records.
+
+### Converse reconstruction
+
+```sh
+.venv/bin/python code/ba_genus2_converse_check.py --numerics
+.venv/bin/python code/generate_converse_validation_table.py
+```
+
+This genus-two (1,1,2) example starts from independent canonical modes,
+reconstructs the spectral curve and both BA divisors, and compares the
+recovered BA solution with RK4. Its curve has the generic spectral genus.

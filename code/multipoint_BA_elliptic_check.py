@@ -66,7 +66,7 @@ def check(higher_orders=()):
     ellL=bL;ellM=[-x for x in bM]
     ellN=[-(aM[k]+aL[k])/2 for k in range(2)]
     root2=mp.sqrt(2)
-    errors=[];spectral_errors=[];kernel_errors=[];bilinear_errors=[]
+    errors=[];spectral_errors=[];kernel_errors=[];bilinear_errors=[];diagonal_errors=[]
     initial_ordinary=lambda P:sum(fixed(P)/fixedp[k]*phi(z0,P-R[k]) for k in range(2))
     initial_dual=lambda P:sum(fixedp[k]*dualfixed(P)*phi(z0,R[k]-P) for k in range(2))
     partition_error=max(abs(fn(P)-1) for fn in (initial_ordinary,initial_dual) for P in nodes)
@@ -162,6 +162,10 @@ def check(higher_orders=()):
             lhs=(chi(P)-chi(Q)+logshift(P-Q))*omega(P,Q)
             rhs=sum(psi(P,k)*psid(Q,k) for k in range(2))
             kernel_errors.append(abs(lhs-rhs)/(1+abs(rhs)))
+        for P in (nodes[0],nodes[3]):
+            lhs=sum(psi(P,k)*psid(P,k) for k in range(2))*beta(P)
+            rhs=sum(ep(P-r) for r in R)-2*ep(z)
+            diagonal_errors.append(abs(lhs-rhs)/(1+abs(rhs)))
         X=mp.matrix(6)
         for i in range(2):
             X[i,i]=-2*bL[i]
@@ -220,6 +224,7 @@ def check(higher_orders=()):
             bilinear_errors.append(abs(reconstructed-expected)/(1+abs(expected)))
     assert max(errors)<mp.mpf('1e-38'),max(errors)
     assert max(kernel_errors)<mp.mpf('1e-38'),max(kernel_errors)
+    assert max(diagonal_errors)<mp.mpf('1e-38'),max(diagonal_errors)
     assert max(spectral_errors)<mp.mpf('1e-38'),max(spectral_errors)
     assert max(bilinear_errors)<mp.mpf('1e-38'),max(bilinear_errors)
     for flow in higher:
@@ -234,6 +239,7 @@ def check(higher_orders=()):
                           'principal_coefficients':[str(x) for x in principal]},
             'all_24_rates_max_scaled_error':mp.nstr(max(errors),12),
             'rank_two_kernel_rate_max_scaled_error':mp.nstr(max(kernel_errors),12),
+            'diagonal_BA_product_max_scaled_error':mp.nstr(max(diagonal_errors),12),
             'prescribed_curve_eigenvector_max_scaled_error':mp.nstr(max(spectral_errors),12),
             'normalized_eigenvector_kernel_max_scaled_error':mp.nstr(max(bilinear_errors),12),
             'reference_partition_of_unity_error':mp.nstr(partition_error,12),

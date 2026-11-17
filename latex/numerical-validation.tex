@@ -281,6 +281,63 @@ spectral traces:
 At $40$ digits the analytic residuals decrease further; both precision
 records and the trajectories accompany the code.
 
+\subsection{Reconstruction from canonical initial modes}
+\label{sec:numeric-BA-converse}
+
+To test the reverse construction of \cref{thm:BA-spectral-converse},
+start with $L=M=1$, $N=2$ and independent canonical launch data,
+\[
+ b_1^L=\tfrac17,\quad b_1^M=-\tfrac29,\quad
+ (b_1^N,b_2^N)=(\tfrac13,-\tfrac15),
+\]
+\[
+ \mathsf X(0)=\begin{pmatrix}
+ -2/7&(7+2i)/10&(9+2i)/10&(4-i)/10\\
+ (4-3i)/10&4/9&(6+i)/10&(-3+5i)/10\\
+ -(5-4i)/10&-(8-2i)/10&1/3&0\\
+ -(-2+3i)/10&-(2+4i)/10&0&-1/5
+ \end{pmatrix}.
+\]
+The off-diagonal entries specify all five canonical mode pairs by
+\cref{eq:canonical-X}; no BA data are used to choose them.
+Exact symbolic computation gives
+$F(\lambda,\nu)=A(\lambda)\nu^2+B(\lambda)\nu+C(\lambda)$.
+Its discriminant $B^2-4AC$ is a square-free polynomial of degree six,
+so the smooth compactification of $y^2=B^2-4AC$ has genus two.
+Here $g=G=2$:
+this tests the generic spectral genus, with no excess defect.
+
+The adjugate normalization of \cref{eq:BA-converse-functions}, with
+$a=(0,0,1,1)^{\trans}$, determines the ordinary and dual divisors
+from the zeros of
+$a^{\trans}\operatorname{adj}(\lambda\Id-\mathsf L)a$.
+The two types of zero are distinguished by which of the left and
+right anchor contractions vanishes. Both divisors have degree three.
+A branch-point change $x=(\lambda-e)^{-1}$, $Y=y x^3$ gives an
+odd-degree model for Generapy's period and Abel-map evaluation.
+The branch point sent to infinity fixes the numerical Abel base
+and its Riemann characteristic. The punctures and divisors are transported with this change.
+The BA parameters remain $s_k=-1/\nu$, so their principal
+coefficients and finite parts are recomputed in the $x$ chart.
+Their reference sections and duality differential recover every
+initial mode algebraically before any theta evaluation. We then
+evolve the reconstructed theta formulas and compare all ten analytic
+rates with the canonical field:
+\input{ba-converse-validation-table}
+The RK4 comparison uses $65$ direct BA samples over $0\leq t\leq2$,
+with $1600$ and $3200$ steps. The error ratio is $16.01$.
+The script \path{code/ba_genus2_converse_check.py} and its stored
+records contain the exact characteristic polynomial, both recovered
+divisors and the complete reconstruction data.
+
+As a separate implementation check, Generapy's elliptic theta jets
+through order three, theta ratios and logarithmic rates were compared
+with \texttt{mpmath.jtheta}, including period shifts and a point near
+a theta zero. The maximum scaled discrepancy was below $10^{-54}$
+at $55$ digits. This independent check is in
+\path{code/independent_elliptic_theta_check.py}; the manuscript's BA
+evaluations and plots continue to use Generapy.
+
 \begin{figure}[p]
  \centering
  \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]

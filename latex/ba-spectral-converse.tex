@@ -73,6 +73,45 @@ polynomial. The plane degree is $d$; subtracting the ordinary
 infinity defects gives \cref{eq:BA-prescribed-genus-defect}.
 \end{proof}
 
+\paragraph{Prescribed curves and spectral fibres.}
+Fix the marked spectral curve and its functions $\lambda,\nu$,
+with distinct phase intercepts. On the regular framed spectral
+correspondence, a smooth genus-$G$ level has $G$ divisor-class
+parameters and $d-1$ independent mode gauges, hence dimension
+$G+d-1=p$. A prescribed genus-$g$ normalization instead supplies
+$g+d-1$ parameters after identifying equivalent meromorphic frames.
+Relative to an expected-dimensional spectral fibre, this realized
+family has codimension $G-g$. It is an invariant normalization-based
+family on a special level when $g<G$, and is open in the regular
+fibre when $g=G$.
+
+This family has a concrete spectral-sheaf interpretation. Separate
+the forced ordinary infinity points, and let
+$n:\mathcal C\to\Gamma_{\mathrm{sp}}$ normalize the remaining
+integral spectral model. At the reference time the components of
+\cref{eq:BA-prescribed-eigenvector} are sections of
+\[
+ \mathscr L=\mathcal O\left(\mathscr D^\vee+
+                         \sum_{a=1}^{K}Q_a\right).
+\]
+Subtracting the full pole fibre of $\nu$ gives
+$\mathscr L(-\nu^{-1}(\infty))=\mathcal O(\mathscr D^\vee-
+\sum_{k=1}^{N}R_k)$, with both cohomology groups zero.
+Its leading-value sequence shows that the $d$ components form a
+basis and that $\nu_*\mathscr L\simeq\mathcal O^d$.
+Multiplication by $\lambda$ gives the pencil, so the component
+spectral sheaf on $\Gamma_{\mathrm{sp}}$ is $n_*\mathscr L$.
+Thus the realized family is the stratum obtained by pushing line
+bundles forward from the normalization, with the mode framings
+retained. Its divisor-class dimension is $g$.
+The full compactified spectral fibre can also contain sheaves with
+singularity gluing data \cite{AdamsHarnadHurtubise1990II,Beauville1990}.
+The general solution of
+\cref{thm:BA-spectral-converse} reconstructs the curve belonging to
+generic initial modes. For repeated phases its active dimensions,
+moment data and restored block bases are accounted for separately
+in Appendix~\ref{app:BA-active-converse}.
+
 With several punctures, the interpolation functions can instead factor
 through a covering; curve identification then requires birationality.
 The stronger completion in \cref{cor:BA-finite-list} permits distinct
@@ -208,7 +247,9 @@ inactive zero directions and invert the canonical bases afterwards.
 \end{proof}
 
 For comparison with a prescribed realization, its fixed $e_k$ gauges
-can first be made one by a constant diagonal canonical transformation.
+are set to one by the puncture-vertex canonical gauge transformations.
+The common rescaling of \cref{sec:general-BA-interpolation} accounts
+for the single redundancy among all vertex normalization constants.
 The reference partition of unity in \cref{sec:multipoint-BA-data}
 then makes \cref{eq:BA-converse-constants} recover the original
 weights and gauges directly.

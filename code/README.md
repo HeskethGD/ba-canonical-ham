@@ -131,3 +131,26 @@ The precision check is reproducible with:
 ```sh
 python code/multipoint_BA_genus2_check.py --dps 40 --output code/results/multipoint_BA_genus2_precision40.json
 ```
+
+### Reconstruction from canonical initial modes
+
+`ba_genus2_converse_check.py` starts from a specified generic complex
+(1,1,2) launch. SymPy computes its characteristic curve and checks its
+sextic discriminant is square-free. Adjugate contractions recover the
+ordinary and dual BA divisors. Algebraic reference sections recover all
+ten initial modes before any theta evaluation; public Generapy periods,
+Abel maps and theta jets then give the full time evolution.
+
+```sh
+python code/ba_genus2_converse_check.py --numerics
+python code/generate_converse_validation_table.py
+```
+
+The resulting genus is the generic network genus two. This is a converse
+test, unlike examples launched from prescribed BA data. The default
+command performs the reconstruction and analytic rate checks; `--numerics`
+also compares with independent RK4 integration.
+
+`independent_elliptic_theta_check.py` checks public Generapy theta jets
+and ratios against mpmath's Jacobi theta implementation. This backend
+is for independent validation only and is not used by the BA plots.

@@ -38,6 +38,7 @@
   },
   "all_24_rates_max_scaled_error": "2.93920118457e-55",
   "rank_two_kernel_rate_max_scaled_error": "5.10062272317e-56",
+  "diagonal_BA_product_max_scaled_error": "1.08454422007e-55",
   "prescribed_curve_eigenvector_max_scaled_error": "1.86139135206e-55",
   "normalized_eigenvector_kernel_max_scaled_error": "2.58424680587e-56",
   "reference_partition_of_unity_error": "8.40766236277e-56",

@@ -76,7 +76,11 @@ $G_a+N_a-1$ and give normalized bases of $N_a$ sections.
 
 \begin{proof}
 We check the affine curve, its connectivity, and its infinity data
-separately. For a block of size $r\leq n$, the product $\mathsf F\mathsf G$ can have
+separately. Generic smoothness and the spectral line-bundle
+correspondence are standard \cite{Hartshorne1977,Beauville1990,AdamsHarnadHurtubise1990II}.
+The explicit coupling and insertion arguments below verify their
+regularity hypotheses uniformly for the fixed repeated-phase profiles
+of this mode space. For a block of size $r\leq n$, the product $\mathsf F\mathsf G$ can have
 arbitrary distinct nonzero eigenvalues: choose $\mathsf F$ to select $r$
 outside directions and $\mathsf G$ to give a prescribed diagonal product.
 Thus maximal coupling ranks and simple nonzero moment spectra are
@@ -149,8 +153,12 @@ A factorization deforming the coprime monic factors
 $\ell,F_{\rm old}$ would force the first perturbation into
 $(\ell,F_{\rm old})$, hence to vanish at every intersection.
 This obstruction also excludes a factorization after finite algebraic
-parameter extension. Indeed, put $\varepsilon=\tau^k$ and suppose
-monic factors specialize to $\ell$ and $F_{\rm old}$. Write them as
+parameter extension. Monicity and Gauss's lemma keep the factor coefficients integral
+at $\varepsilon=0$. After a finite ramified parameter change they
+admit power-series expansions. Put $\varepsilon=\tau^k$ and suppose
+monic factors specialize to $\ell$ and $F_{\rm old}$. These are the
+only nontrivial special factors, and monicity preserves their positive
+$\lambda$-degrees under specialization. Write them as
 \[
  G=\ell+\sum_{m\geq1}\tau^m a_m,\qquad
  J=F_{\rm old}+\sum_{m\geq1}\tau^m b_m,

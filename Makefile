@@ -18,6 +18,7 @@ tables:
 	$(PYTHON) code/generate_ba_validation_table.py
 	$(PYTHON) code/generate_multipoint_validation_table.py
 	$(PYTHON) code/generate_genus2_multipoint_table.py
+	$(PYTHON) code/generate_converse_validation_table.py
 
 paper: tables
 	cd latex && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex

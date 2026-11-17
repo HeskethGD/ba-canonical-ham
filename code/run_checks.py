@@ -27,6 +27,7 @@ SUITES={
     ],
     'sigma':[
         'reference_ba_jet_checks.py',
+        'independent_elliptic_theta_check.py',
         'latex_final_ba_conventions.py',
         'quartic_hyperelliptic_direction.py',
     ],
@@ -34,6 +35,7 @@ SUITES={
         'multipoint_BA_network_check.py',
         'multipoint_BA_elliptic_check.py',
         'multipoint_BA_genus2_check.py',
+        'ba_genus2_converse_check.py',
         'multipoint_higher_flow_check.py',
         'multipoint_repeated_phase_moments.py',
     ],

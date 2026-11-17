@@ -6,11 +6,56 @@ The current requirements pin `generapy==0.2.0` from PyPI. Its runtime source
 matches the previously tested development revision. A clean installation
 was verified for the release; see the latest
 [release validation](#generapy-020-pypi-release) below.
-All 18 check scripts and both complete numerical examples passed with the
-release on 16 November 2026. The [migration validation](#public-ba-jet-migration)
+All 29 current check scripts pass with the release, as recorded in the
+17 November validation below. The original 18 checks and both complete
+one-point numerical examples also passed on 16 November 2026. The [migration validation](#public-ba-jet-migration)
 records the BA adapter conventions and numerator-zero checks. The code and
 requirements are intended to be used together. Earlier records below
 describe historical checks, rather than the current installation status.
+
+## Current manuscript validation (17 November 2026)
+
+The revised manuscript builds to 67 pages, including its table of
+contents. The current source archive has 39 files and is independently
+rebuildable. There are no undefined references, multiply defined labels
+or overfull boxes. The page counts in the dated records below describe
+earlier revisions, not the current manuscript.
+
+All 29 scripts in `code/run_checks.py --suite all` pass on Generapy
+0.2.0 and the pinned requirements. Logs are in
+`.check-logs/sonnet-revision/` (ignored). The two elliptic multipoint
+checks were rerun after adding the diagonal BA-product identity; its
+maximum scaled residual is `1.1e-55` at 55 digits.
+
+The new converse example starts from directly specified canonical
+(1,1,2) modes. Its exact characteristic discriminant is a square-free
+sextic, giving the generic genus two. Adjugate contractions recover
+three ordinary and three dual divisor points. Algebraic reconstruction
+recovers the initial modes to `2.6e-41` and the weights to `3.3e-41`,
+before any theta evaluation. Reconstructed theta evolution agrees with
+all ten canonical rates to `4.0e-40`. Independent RK4 over [0,2]
+has fine-grid discrepancy `4.2e-13`, with refinement ratio `16.01`;
+the direct and RK4 spectral drifts are `4.1e-14` and `3.7e-12`.
+
+An independent elliptic check compares public Generapy theta jets
+through order three, ratios and logarithmic rates with
+`mpmath.jtheta`. Maximum scaled discrepancies are below `1e-54` at
+55 digits. This separate implementation is used for validation, not
+by the production BA plots.
+
+```sh
+python code/run_checks.py --suite all
+python code/ba_genus2_converse_check.py --numerics
+python code/generate_converse_validation_table.py
+python code/independent_elliptic_theta_check.py
+```
+
+The existing multipuncture genus-two example still checks two independent
+Abel directions on a genus-two specialization of the genus-seven network.
+The converse example instead tests a generic genus-two spectral level.
+Previously validated long-time one-point trajectories and figures retain
+their recorded values; those full integrations were not rerun for these
+proof and validation additions.
 
 ## Original baseline
 
@@ -321,9 +366,9 @@ Reproduce the new checks from the repository root:
 
 The complete run logs are in `.check-logs/multipoint-release/` (ignored).
 
-The rebuilt manuscript has 56 pages (54 before the extension), with no
-undefined references or overfull boxes. The 33-file source archive also
-rebuilds independently to 56 pages. Reviewed monochrome figure PDFs are
+The initial multipoint revision built to 56 pages (54 before that
+extension), with no undefined references or overfull boxes. Its 33-file
+source archive also rebuilt independently to 56 pages. Reviewed monochrome figure PDFs are
 retained when source copies differ only in creation/modification dates.
 
 ## Adams–Harnad–Hurtubise comparison

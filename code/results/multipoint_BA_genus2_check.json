@@ -1,4 +1,6 @@
 {
+  "backend": "Generapy periods, Abel maps and complete first-order theta jets",
+  "generapy_version": "0.2.0",
   "dps": 32,
   "genus": 2,
   "L_M_N": [
@@ -139,7 +141,5 @@
     "(-1.2082032302087594857749205234536 + 5.0394485176550407851547578196643j)"
   ],
   "generic_network_genus": 7,
-  "spectral_defect": 5,
-  "backend": "Generapy periods, Abel maps and complete first-order theta jets",
-  "generapy_version": "0.2.0"
+  "spectral_defect": 5
 }
