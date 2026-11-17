@@ -14,37 +14,41 @@
 \contentsline {subsection}{\numberline {3.4}Covering degrees and hyperelliptic cases}{14}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}A symmetric reduction and its Prym}{15}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Special spectral levels}{15}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Baker--Akhiezer realizations on a prescribed curve}{15}{section.4}%
+\contentsline {section}{\numberline {4}Baker-Akhiezer realizations on a prescribed curve}{15}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Scalar BA bases and their kernel}{15}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Mode arrays and meromorphic interpolation}{17}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}The kernel convolution identity}{17}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Realization and finite completion}{18}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}The one-point member and elementary modes}{19}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}The constrained KP interpretation}{21}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}The prescribed spectral curve and BA reconstruction}{21}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Higher Hamiltonians, BA times and mode phases}{24}{subsection.4.8}%
-\contentsline {section}{\numberline {5}Quartic and cubic canonical realizations of BA dynamics}{27}{section.5}%
-\contentsline {subsection}{\numberline {5.1}A quartic canonical parent}{27}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}The two matrix brackets}{28}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}BA convolution and interaction factorization}{28}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Hyperelliptic specialization}{29}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Curve and function conventions}{29}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Sigma modes and the general normalization}{30}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Explicit interpolation weights and phases}{31}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Half-period shifts and al functions}{33}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Genus one and many elementary modes}{33}{subsection.6.5}%
-\contentsline {section}{\numberline {7}Mode powers and the Mumford system}{34}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Reconstructing the divisor polynomials}{34}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}The projected equations of motion}{35}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Recovering the modes from divisor data}{35}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Gauge symmetries and Abel translations}{36}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Mechanical coordinate realizations}{36}{subsection.7.5}%
-\contentsline {section}{\numberline {8}Numerical validation}{37}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Curves and prescribed BA data}{37}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Independent evolution and accuracy}{38}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}A multipuncture elliptic example}{39}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Two independent genus-two multipuncture flows}{40}{subsection.8.4}%
-\contentsline {section}{\numberline {9}Discussion}{45}{section.9}%
+\contentsline {section}{\numberline {5}Spectral reconstruction and commuting BA flows}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The prescribed spectral curve and BA reconstruction}{19}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Higher Hamiltonians, BA times and mode phases}{22}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Quartic and cubic canonical realizations of BA dynamics}{24}{section.6}%
+\contentsline {subsection}{\numberline {6.1}A quartic canonical parent}{25}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}The two matrix brackets}{25}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}BA convolution and interaction factorization}{26}{subsection.6.3}%
+\contentsline {section}{\numberline {7}The one-point specialization}{26}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Elementary modes and their canonical equations}{27}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Higher-flow phases in the one-point notation}{28}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}The constrained KP interpretation}{28}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Hyperelliptic specialization}{29}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Curve and function conventions}{29}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Sigma modes and the general normalization}{30}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Explicit interpolation weights and phases}{31}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Half-period shifts and al functions}{33}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Genus one and many elementary modes}{33}{subsection.8.5}%
+\newpage 
+\contentsline {section}{\numberline {9}Mode powers and the Mumford subsystem}{34}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Reconstructing the divisor polynomials}{34}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}The projected equations of motion}{35}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Recovering the modes from divisor data}{35}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Gauge symmetries and Abel translations}{36}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Mechanical coordinate realizations}{36}{subsection.9.5}%
+\contentsline {section}{\numberline {10}Numerical validation}{37}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Curves and prescribed BA data}{37}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Independent evolution and accuracy}{38}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}A multipuncture elliptic example}{39}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Two independent genus-two multipuncture flows}{40}{subsection.10.4}%
+\contentsline {section}{\numberline {11}Discussion}{45}{section.11}%
 \contentsline {section}{\numberline {A}Comparison with Menyuk, Chen and Lee}{46}{appendix.A}%
 \contentsline {subsection}{\numberline {A.1}The restricted shared-mode family}{46}{subsection.A.1}%
 \contentsline {subsection}{\numberline {A.2}The broader matrix wave construction}{47}{subsection.A.2}%
