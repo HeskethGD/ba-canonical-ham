@@ -9,6 +9,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink,noabbrev]{cleveref}
 \numberwithin{equation}{section}
+\setcounter{tocdepth}{2}
 \newtheorem{theorem}{Theorem}[section]
 \newaliascnt{lemma}{theorem}
 \newtheorem{lemma}[lemma]{Lemma}
@@ -37,28 +38,38 @@ Independent Researcher, UK\\
 \maketitle
 
 \begin{abstract}
-We identify a canonical multiwave Hamiltonian setting for scalar
-Baker--Akhiezer functions and their commuting Abelian evolution on
-arbitrary smooth curves with a marked point. In the vector--matrix--vector
-member of an established cubic multiwave family, a finite linear
-residue test is necessary and sufficient for ordinary and dual BA
-evaluations and their pair functions to solve the canonical equations.
-Every finite collection of regular elementary evaluations can be
-included after adjoining points, and the prescribed curve is the
-normalization of the realized spectral curve. Conversely, generic
-canonical initial modes reconstruct BA solutions. The commuting
-polynomial spectral Hamiltonians span every Abel direction on each
-fixed spectral level, with mode phase rates computed by meromorphic
-interpolation. The curve data determine compatible phase coefficients,
-initial values and mode counts while the cubic Hamiltonian retains
-its form. Explicit hyperelliptic interpolation and hyperelliptic and
-trigonal numerical examples illustrate the construction.
+We give a canonical cubic multiwave Hamiltonian realization of scalar
+Baker--Akhiezer functions on arbitrary smooth curves with marked
+punctures. For every positive triple of mode-array sizes $L,M,N$,
+a finite linear residue test constructs compatible ordinary and dual
+BA bases and their pair kernels. Any finite collection of regular
+evaluations can be included after adjoining points. An explicit
+spectral map identifies the prescribed curve on the birational
+realization locus; conversely, generic canonical initial modes recover
+multipoint BA solutions, including repeated phases after constant
+canonical basis changes. The commuting polynomial Hamiltonians
+supply all Abel directions on each such spectral level, with BA times
+and reciprocal mode phases computed by meromorphic interpolation.
+The case $N=1$ gives a one-point BA pair and two elementary mode
+vectors. Hyperelliptic formulas, trigonal solutions and multipuncture examples
+of genera one and two illustrate the construction.
 \end{abstract}
+
+\clearpage
+\begingroup
+\makeatletter
+\renewcommand{\@pnumwidth}{2.5em}
+\renewcommand{\@tocrmarg}{3.5em}
+\makeatother
+\tableofcontents
+\endgroup
+\clearpage
 
 \input{introduction}
 \input{canonical-hamiltonian}
 \input{spectral-geometry}
 \input{ba-realization}
+\input{ahh-comparison}
 \input{hyperelliptic-realization}
 \input{mumford-correspondence}
 \input{numerical-validation}
@@ -68,6 +79,7 @@ trigonal numerical examples illustrate the construction.
 \appendix
 \input{mcl-comparison}
 \input{jiang-comparison}
+\input{ahh-dictionary}
 \input{integrability-proof}
 \input{distinct-phase-integrals}
 \input{spectral-geometry-details}

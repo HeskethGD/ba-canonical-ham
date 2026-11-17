@@ -5,8 +5,11 @@ realization of Baker–Akhiezer functions on arbitrary curves*.
 
 The paper studies a canonical cubic multiwave Hamiltonian, its integrals
 and spectral curves, and its correspondence with scalar Baker–Akhiezer
-(BA) data. Numerical examples use genus-two hyperelliptic and genus-three
-trigonal curves.
+(BA) data for arbitrary positive array sizes L, M and N. The N=1 member
+uses a one-point BA pair; N>1 uses scalar multipuncture BA bases on one
+curve. Examples include genus-two hyperelliptic, genus-three trigonal,
+and elliptic and genus-two L=M=N=2 realizations. The genus-two
+multipuncture example compares two independent commuting BA flows.
 
 **Graham Hesketh** · Independent Researcher, UK ·
 [gdh1e10@gmail.com](mailto:gdh1e10@gmail.com)
@@ -60,7 +63,7 @@ Recorded results and figures are included. Regeneration replaces files in
 
 ## Checks
 
-Run the quick checks or the complete suite of 18 scripts:
+Run the quick checks or the complete suite of 22 scripts:
 
 ```sh
 .venv/bin/python code/run_checks.py --suite quick
@@ -71,6 +74,23 @@ Individual suites and script descriptions are listed in [code/README.md](code/RE
 Logs are written to `.check-logs/`. The full suite does not regenerate the
 complete example plots or the convergence tables.
 
+## Multipuncture BA checks
+
+The public Generapy 0.2.0 theta jets evaluate the new elliptic basis,
+kernel and derivatives. The scripts assemble the fixed divisor and
+puncture normalization; they do not add a theta-series implementation.
+Sigma jets can evaluate the equivalent ratios when those data are supplied.
+
+```sh
+.venv/bin/python code/run_checks.py --suite multipoint
+.venv/bin/python code/generate_multipoint_validation_table.py
+```
+
+This suite checks all 24 canonical rates for L=M=N=2, the spectral
+map and normalized eigenvector kernel, higher-flow time/phase matching,
+and exact repeated-phase block moments. Its elliptic curve has genus one;
+the generic spectral curve of that network has genus seven.
+
 ## Convergence calculations and tables
 
 Run the 35-digit RK4 refinement calculations, then generate the manuscript tables:
@@ -79,6 +99,7 @@ Run the 35-digit RK4 refinement calculations, then generate the manuscript table
 .venv/bin/python code/ba_convergence_diagnostic.py --multiprecision --hyperelliptic
 .venv/bin/python code/ba_convergence_diagnostic.py --multiprecision
 .venv/bin/python code/generate_ba_validation_table.py
+.venv/bin/python code/generate_multipoint_validation_table.py
 ```
 
 These calculations promote the stored binary64 coefficients and initial modes
@@ -116,3 +137,16 @@ The archive is written to `latex/submission-source.zip`. Make targets use
 The original manuscript, code, figures and numerical records are dedicated
 to the public domain under [CC0 1.0 Universal](LICENSE). External dependencies
 retain their own licenses.
+
+### Genus-two multipuncture example
+
+```sh
+.venv/bin/python code/multipoint_BA_genus2_check.py
+MPLBACKEND=Agg .venv/bin/python code/multipoint_BA_genus2_check.py --numerics
+.venv/bin/python code/generate_genus2_multipoint_table.py
+```
+
+The first command checks all 24 mode rates, both spectral eigenvectors
+and an independent fourth-trace Abel direction. The numerical run
+compares sparse direct BA evaluations with dense RK4 trajectories for
+both flows and writes the black-and-white figure and result records.

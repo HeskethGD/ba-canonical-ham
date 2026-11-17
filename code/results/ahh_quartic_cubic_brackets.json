@@ -1,0 +1,7 @@
+{
+  "parent_induced_Lie_bracket": true,
+  "same_flow_quadratic_Lie_and_cubic_frozen_Hamiltonians": true,
+  "Poisson_pencil_from_constant_shift": true,
+  "explicit_three_mode_cross_brackets": true,
+  "convention": "Common physical factor -i suppressed."
+}

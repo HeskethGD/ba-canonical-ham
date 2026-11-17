@@ -1,0 +1,26 @@
+{
+  "L_M_N": [
+    2,
+    2,
+    2
+  ],
+  "all_phases_repeated_within_each_group": true,
+  "all_three_quadratic_block_moments_conserved": {
+    "original_cubic": [
+      true,
+      true,
+      true
+    ],
+    "shifted_trace_3": [
+      true,
+      true,
+      true
+    ],
+    "shifted_trace_4": [
+      true,
+      true,
+      true
+    ]
+  },
+  "scope": "Exact conservation check for the block moments used to choose constant infinity-branch bases. General regularity is established by the separate argument."
+}

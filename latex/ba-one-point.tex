@@ -1,0 +1,121 @@
+\subsection{The one-point member and elementary modes}
+\label{sec:BA-one-point}
+
+For $N=1$ put $R_1=P_\infty$, $s_1=s$ and $e_1=1$.
+The divisors have degree $g$ and there is a single ordinary/dual pair
+$\psi,\psi^\vee$. Choose reference normalization
+$\psi(P,0)=\psi^\vee(P,0)=1$, and subtract the constant term of
+each $h$ at $P_\infty$. Thus $a_{L,1}=a_{M,1}=0$.
+This member has two elementary vectors and a pair-mode matrix.
+
+The combined index and number of canonical pairs are
+\begin{equation}\label{eq:BA-mode-counts}
+ K=L+M,\qquad p=K+LM.
+\end{equation}
+We use single indices for the $K$ elementary pairs and double indices
+for the $LM$ cross-group pair composites. Their dictionary with the
+$H_0$ modes of \cref{eq:canonical-phase-gauge} is
+\begin{equation}\label{eq:BA-mode-dictionary}
+ \xi_i=\tilde w_{1i},\qquad
+ \xi_{L+m}=\tilde v_{m1},\qquad
+ \xi_{i,L+m}=\tilde u_{im},
+ \quad1\leq i\leq L,\quad1\leq m\leq M,
+\end{equation}
+with the same rule for barred partners. Put
+\begin{equation}\label{eq:BA-phase-dictionary}
+ b_i=2b_i^L+b_1^N,\qquad b_{L+m}=2b_m^M+b_1^N,
+ \quad1\leq i\leq L,\quad1\leq m\leq M.
+\end{equation}
+The inherited brackets satisfy $\{\xi_k,\bar\xi_r\}=-i\delta_{kr}$, with the corresponding rule for pair modes, and
+\begin{equation}\label{eq:BA-H0-flat}
+ H_0=\sum_{k=1}^{K}b_k\xi_k\bar{\xi}_k
+ +\sqrt2\sum_{i=1}^{L}\sum_{j=L+1}^{K}
+ (\xi_i\xi_j\xi_{ij}+\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}).
+\end{equation}
+
+
+The equivalent one-point theta and sigma formulas, with
+$\Xi=s^{-1}+O(s)$ and
+$\Xi_\sigma=\Xi-\boldsymbol U^{\trans}\varkappa A(P)$, are
+\begin{equation}\label{eq:general-BA-theta}
+\begin{aligned}
+ \psi(P,t)
+ &=e^{-it\Xi(P)}
+ \tfrac{\theta(z(t)+A(P))\theta(z_0)}
+ {\theta(z(t))\theta(z_0+A(P))}
+ =e^{-it\Xi_\sigma(P)}
+ \tfrac{\sigma(z(t)+A(P))\sigma(z_0)}
+ {\sigma(z(t))\sigma(z_0+A(P))},\\[4pt]
+ \psi^\vee(P,t)
+ &=e^{it\Xi(P)}
+ \tfrac{\theta(z(t)-A(P))\theta(z_0)}
+ {\theta(z(t))\theta(z_0-A(P))}
+ =e^{it\Xi_\sigma(P)}
+ \tfrac{\sigma(z(t)-A(P))\sigma(z_0)}
+ {\sigma(z(t))\sigma(z_0-A(P))}.
+\end{aligned}
+\end{equation}
+In this notation the unphased BA modes are
+\begin{equation}\label{eq:general-elementary-modes}
+\begin{aligned}
+ \xi_i&=c_i \psi^\vee(Q_i),&\bar{\xi}_i&=\kappa_i \psi(Q_i)/c_i,
+ &&1\leq i\leq L,\\
+ \xi_j&=c_j \psi(Q_j),&\bar{\xi}_j&=\kappa_j \psi^\vee(Q_j)/c_j,
+ &&L+1\leq j\leq K,
+\end{aligned}
+\end{equation}
+and
+\begin{equation}\label{eq:general-pair-modes}
+ \xi_{ij}=\frac{\sqrt2\kappa_i\kappa_j}{c_ic_j}\Omega(Q_i,Q_j),
+ \qquad \bar{\xi}_{ij}=-\sqrt2c_ic_j\Omega(Q_j,Q_i),
+ \quad1\leq i\leq L<j\leq K.
+\end{equation}
+
+An \emph{elementary mode} has the shift of one curve-point lift
+relative to $P_\infty$. A \emph{pair composite} has the difference
+of the two lifts; in the hyperelliptic sheet convention this becomes
+the sum of the elementary shifts. The terms specify the shift data,
+not a factorization at a common $z$. For $N>1$, the basis sections
+instead have shifts $A(P)-A(R_k)$; all sections share the same curve
+and kernel, but generally no single base point makes both arrays
+one-point elementary vectors.
+
+The raw phase values and equations reduce to
+\begin{equation}\label{eq:one-point-phase-values}
+ b_i=-h_M(Q_i),\quad1\leq i\leq L,\qquad
+ b_j=h_L(Q_j),\quad L+1\leq j\leq K,
+\end{equation}
+\begin{equation}\label{eq:general-network-rates}
+\begin{aligned}
+ i\dot\xi_i&=b_i\xi_i+\sqrt2\sum_{j=L+1}^{K}\bar{\xi}_j\bar{\xi}_{ij},&
+ i\dot{\bar{\xi}}_i&=-b_i\bar{\xi}_i-\sqrt2\sum_{j=L+1}^{K}\xi_j\xi_{ij},
+ &&1\leq i\leq L,\\
+ i\dot\xi_j&=b_j\xi_j+\sqrt2\sum_{i=1}^{L}\bar{\xi}_i\bar{\xi}_{ij},&
+ i\dot{\bar{\xi}}_j&=-b_j\bar{\xi}_j-\sqrt2\sum_{i=1}^{L}\xi_i\xi_{ij},
+ &&L+1\leq j\leq K,\\
+ i\dot\xi_{ij}&=\sqrt2\bar{\xi}_i\bar{\xi}_j,&
+ i\dot{\bar{\xi}}_{ij}&=-\sqrt2\xi_i\xi_j,
+ &&1\leq i\leq L<j\leq K.
+\end{aligned}
+\end{equation}
+These are Hamilton's equations for \cref{eq:BA-H0-flat}.
+For this phase gauge, write $\mathsf A_L=\diag(b_1,\ldots,b_L)$,
+$\mathsf A_M=\diag(b_{L+1},\ldots,b_K)$.
+An optional scalar spectral origin $\rho$ gives
+\begin{equation}\label{eq:BA-H0-pencil}
+\begin{aligned}
+ \mathsf L_0(\nu)&=\begin{pmatrix}
+ \rho\Id_L-\mathsf A_L+\nu\Id_L&\sqrt2\boldsymbol\xi_{LM}&\bar{\boldsymbol\xi}_L\\
+ \sqrt2\bar{\boldsymbol\xi}_{LM}^{\trans}&\rho\Id_M-\mathsf A_M-\nu\Id_M&\boldsymbol\xi_M\\
+ -\boldsymbol\xi_L^{\trans}&-\bar{\boldsymbol\xi}_M^{\trans}&\rho
+ \end{pmatrix},\\
+ \mathsf T_0(\nu)&=\begin{pmatrix}
+ 0&0&\bar{\boldsymbol\xi}_L\\0&0&-\boldsymbol\xi_M\\
+ -\boldsymbol\xi_L^{\trans}&\bar{\boldsymbol\xi}_M^{\trans}&-\nu
+ \end{pmatrix}.
+\end{aligned}
+\end{equation}
+Here $\boldsymbol\xi_L,\boldsymbol\xi_M$ are the column vectors of
+the two elementary groups and $\boldsymbol\xi_{LM}$ is their pair
+matrix. This is the one-point form of the canonical pencil after
+its phase gauge; $\rho$ only shifts the spectral ordinate.

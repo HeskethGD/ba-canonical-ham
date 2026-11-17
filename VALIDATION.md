@@ -277,3 +277,82 @@ python3 -m venv .venv-generapy-release
 MPLBACKEND=Agg .venv-generapy-release/bin/python code/ba_numeric_examples.py --case both
 .venv-generapy-release/bin/python code/generate_ba_validation_table.py
 ```
+
+
+## Multipuncture generalization (17 November 2026)
+
+The manuscript now treats all positive L,M,N. Its explicit hyperelliptic,
+Mumford and constrained-KP specializations remain one-point results.
+Four additional scripts form the `multipoint` suite; `all` now runs 22
+checks. No Generapy source was modified.
+
+A fresh ignored `.venv-generapy-release/` was installed with the existing
+requirements: Generapy 0.2.0, pinned SymPy 1.15.0.dev0, mpmath 1.4.1,
+NumPy 2.5.3 and Matplotlib 3.11.2. `pip check` and all 22 suite scripts
+passed. The new elliptic wrapper uses only public Generapy theta jets
+with fixed data and a precision-fixed complete-jet cache.
+
+At 55 digits, the L=M=N=2 elliptic example verifies all 24 analytic
+canonical rates, both spectral eigenvectors, and the reference-normalized
+kernel, with maximum scaled residual below 3e-55. The shifted cubic and
+quartic trace checks, with spectral shift 0.17+0.09i, have residuals below
+7e-55, including nonzero third-group phase corrections. Their finite-part
+rates are constructed independently rather than fitted to the fields.
+Exact rational and repeated-phase moment checks also pass.
+
+The numerical geometry has two punctures and degree-two ordinary/dual
+divisors on an elliptic curve: it is a genus-one special level of a
+network whose generic genus is seven. It does not numerically construct
+genus-seven theta data. The general proof is in the manuscript.
+
+The new parameter and residual tables are generated from stored JSON by
+`code/generate_multipoint_validation_table.py`. Previous long-time
+hyperelliptic/trigonal trajectory and convergence records are retained:
+their BA evaluator, coefficients and integration algorithms are unchanged.
+The full suite includes their stored spectral-image and BA convention
+checks; the long trajectory/convergence calculations were not repeated.
+
+Reproduce the new checks from the repository root:
+
+```sh
+.venv-generapy-release/bin/python code/run_checks.py --suite multipoint
+.venv-generapy-release/bin/python code/generate_multipoint_validation_table.py
+```
+
+The complete run logs are in `.check-logs/multipoint-release/` (ignored).
+
+The rebuilt manuscript has 56 pages (54 before the extension), with no
+undefined references or overfull boxes. The 33-file source archive also
+rebuilds independently to 56 pages. Reviewed monochrome figure PDFs are
+retained when source copies differ only in creation/modification dates.
+
+## Adams–Harnad–Hurtubise comparison
+
+The `ahh` suite checks the selected quartic pullback and its bilinear
+projection exactly, verifies the cubic Hamiltonian and phase dictionary
+for unequal group sizes including (2,2,2), and derives both matrix
+Poisson brackets from their stated definitions. An independent 55-digit
+elliptic residue check verifies all six ordered off-diagonal identities
+and all three diagonal limits on a complete three-point fiber. The
+arbitrary-curve proof is the residue calculation in the manuscript; the
+elliptic check is a numerical validation of its signs and frames.
+
+## Genus-two multipuncture flows
+
+The L=M=N=2 genus-two example uses distinct finite punctures and
+three-point ordinary/dual BA divisors. The 32-digit checks compare all
+24 BA rates with the canonical matrix field, both left and right Lax
+eigenvectors with the prescribed curve map, and a fourth-trace flow
+with its independently assembled matrix field. An additional 40-digit
+run records the precision dependence of these analytic residuals.
+
+The two Abel directions have determinant approximately -0.17423333.
+Thus this example tests two independent directions, unlike the elliptic
+multipuncture example. Its genus-two curve is a special spectral level
+of the generic genus-seven network, with defect five.
+
+The cubic trajectory uses 8000/16000 RK4 steps over [0,8]; the
+fourth-trace trajectory uses 32000/64000 steps over [0,1.5]. Each is
+compared with 65 direct BA samples. The figure shows 801 dense RK4
+samples per flow. Full results and step-halving comparisons are in
+`code/results/multipoint_BA_genus2_numerics.json`.

@@ -1,6 +1,6 @@
 \section{Numerical validation}\label{sec:numerical-validation}
 
-We compare the BA construction with independent integration of
+We compare the one-point BA construction ($N=1$) with independent integration of
 Hamilton's equations on a genus-two hyperelliptic curve and a smooth
 genus-three trigonal curve. Analytic BA values and derivatives use
 Generapy's reference-normalized BA jets; directional sigma jets supply
@@ -164,6 +164,123 @@ accompanying project repository at
 \url{https://github.com/HeskethGD/ba-canonical-ham}
 and reproduce the comparisons.
 
+\subsection{A multipuncture elliptic example}
+\label{sec:numeric-multipoint}
+
+To test all three nonsingleton arrays, take $L=M=N=2$ on
+$\C/(\mathbb Z+\tau\mathbb Z)$ with $\tau=0.23+1.17i$ and punctures
+$R_1=0.13+0.14i$, $R_2=0.41+0.29i$.
+Write $\Theta(P)=\theta[\frac12,\frac12](P\mid\tau)$ and
+$E_1=\partial_P\log\Theta$. Choose
+\[
+ d\Omega_0=\beta(P)dP,\qquad
+ \beta(P)=E_1'(P-R_1)+E_1'(P-R_2)+0.23-0.19i.
+\]
+Its four zeros split into two ordinary and two dual divisor points;
+the ordinary points, rounded here, are
+\input{ba-multipoint-divisor}
+The reference is $z_0=R_1+R_2-D_1-D_2$, with these exact lifts,
+and $z(t)=z_0+2it$. For
+$\mathfrak a(P)=\prod_{k=1}^{2}\Theta(P-R_k)/
+\prod_{a=1}^{2}\Theta(P-D_a)$ and
+$\Xi(P)=\sum_{k=1}^{2}E_1(P-R_k)$, the kernel is
+\[
+ \Omega(P,Q)=\frac{\mathfrak a(P)}{\beta(Q)\mathfrak a(Q)}
+ e^{-it(\Xi(P)-\Xi(Q))}
+ \frac{\Theta'(0)\Theta(z(t)+P-Q)}{\Theta(z(t))\Theta(P-Q)}.
+\]
+Its puncture limits give the two normalized bases. Use the four
+ordinary evaluation points
+\[
+ (Q_1,Q_2,Q_3,Q_4)
+ =(0.07+0.03i,\ 0.57+0.08i,\ 0.78+0.21i,\ 0.26+0.63i)
+\]
+and principal coefficients $(r_1,r_2,r_3,r_4)=(-0.7,-1.3,-0.9,-1.1)$.
+Each group sum is $-2$, the required genus-one Abel velocity.
+Thus $h_L=\Xi+\sum_{i=1}^{2}r_iE_1(P-Q_i)$ and
+$h_M=\Xi+\sum_{j=3}^{4}r_jE_1(P-Q_j)$ give the interpolation
+functions, weights and phases. This genus-one realization has
+excess spectral defect six, since the network's generic genus is seven.
+
+Generapy's existing public theta jets evaluate the kernel and its
+analytic derivatives at $55$ digits. The multipuncture basis and
+fixed divisor factors are assembled from these data. The sigma versions in
+\cref{sec:multipoint-BA-data} are likewise computable from its sigma
+jets once the puncture and second-kind data have been supplied.
+At $t=0,0.031,0.087$ we compare all $24$ analytic mode rates with
+the separately assembled canonical field, and check both spectral
+eigenvectors and the reference-normalized bilinear kernel.
+For the shifted trace orders $r=3,4$, with $\nu_0=0.17+0.09i$,
+meromorphic finite parts determine the higher BA time and all vertex
+phases. Their analytic rates are compared with the independent matrix
+field $i\dot{\mathsf X}=[\mathsf D,(\mathsf X+\nu_0\mathsf D)^{r-1}]$:
+\input{ba-multipoint-validation-table}
+The scripts \path{code/multipoint_BA_elliptic_check.py} and
+\path{code/multipoint_higher_flow_check.py} record the full data and
+these residuals. Exact rational-curve checks and conserved block
+moments provide separate symbolic checks of the signs and the
+repeated-phase basis construction.
+
+\subsection{Two independent genus-two multipuncture flows}
+\label{sec:numeric-multipoint-genus2}
+
+For a higher-genus test of the full arrays, retain $L=M=N=2$ and
+use the smooth genus-two curve of
+\cref{eq:numeric-hyperelliptic-curve}. Write
+$P(x)=(x,2\sqrt{x(x^2-1)(x^2-4)})$, with the principal square root
+at the specified points. Choose
+\[
+ R_1=P(0.25),\quad R_2=P(2.4),\qquad
+ (Q_1,Q_2,Q_3,Q_4)=(P(0.4),P(2.6),P(0.8),P(3.3)),
+\]
+with the first two $Q$ points in the $L$ group. The ordinary divisor
+has points $D_a=P(d_a)$, $1\leq a\leq3$, where
+\[
+ (d_1,d_2,d_3)=(0.1+0.15i,\ 0.7+0.25i,\ 1.4+0.2i).
+\]
+Here the local parameters at the punctures are $s_k=x-x(R_k)$,
+$1\leq k\leq2$. Reference sections are constructed as rational functions with poles
+at the three $D_a$ and unit leading vectors at the two punctures.
+The duality differential is determined by its zeros at $D_a$ and
+leading parts $-ds_k/s_k^2$; its remaining three zeros give the dual
+divisor. Rational interpolation gives $h_L,h_M$, the weights and
+phase constants. Generapy Abel maps and theta jets then evaluate
+\cref{eq:multipoint-BA-theta,eq:multipoint-mode-arrays}. The full
+construction is in \path{code/multipoint_BA_genus2_check.py}.
+
+We compare the cubic Hamiltonian $H$ with the commuting fourth-trace
+Hamiltonian $H_{4,\nu_0}=\tr(\mathsf X+\nu_0\mathsf D)^4/4$,
+$\nu_0=0.17$. Meromorphic time normalization uses the two simple
+puncture principal parts as representatives of the Abel directions.
+In normalized Abel coordinates their trajectories are
+$z=z_0-it\boldsymbol U$ and $z=z_0-it_4\boldsymbol U_4$, with
+\[
+ \boldsymbol U\simeq
+ \begin{pmatrix}0.05678315\\0.49752720\end{pmatrix},\qquad
+ \boldsymbol U_4\simeq
+ \begin{pmatrix}-0.07762562\\-3.74854497\end{pmatrix},\qquad
+ \det(\boldsymbol U,\boldsymbol U_4)\simeq-0.17423333.
+\]
+Thus the two flows exercise independent Jacobian directions on the
+same curve with the same initial modes. At $32$ digits, analytic
+mode rates and the left and right pencil eigenvectors have scaled
+residuals below $2\times10^{-29}$; the fourth-trace mode rates have
+residual below $3\times10^{-26}$. The distinct third-group phases
+also satisfy the birationality criterion of
+\cref{prop:BA-prescribed-spectral-curve}. This is a genus-two level
+of the generically genus-seven network, with spectral defect five.
+
+\Cref{fig:numeric-multipoint-genus2} compares $65$ direct BA samples
+per flow with dense independent RK4 solutions. The cubic flow is
+integrated to $t=8$ with $8000$ and $16000$ steps; the fourth-trace
+flow is integrated to $t_4=1.5$ with $32000$ and $64000$ steps.
+The table reports maximum scaled errors over all $24$ modes and
+integral drifts for the Hamiltonian, power charges and shifted
+spectral traces:
+\input{ba-genus2-multipoint-table}
+At $40$ digits the analytic residuals decrease further; both precision
+records and the trajectories accompany the code.
+
 \begin{figure}[p]
  \centering
  \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]
@@ -191,5 +308,21 @@ and reproduce the comparisons.
  are independent Runge--Kutta solutions of the canonical equations
  generated by $H_0$ with brackets $-i$, and $z=z_0-it e_3$.}
  \label{fig:numeric-trigonal}
+\end{figure}
+\begin{figure}[p]
+ \centering
+ \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]
+ {figures/multipoint_genus2_ba.pdf}
+ \caption{Genus-two realization with $L=M=N=2$. Left: the cubic
+ Hamiltonian $H$; right: the commuting fourth-trace Hamiltonian
+ $H_{4,\nu_0}$, with $\nu_0=0.17$. Each column uses the same initial modes. The panels
+ show $\operatorname{Re}u_{11}$, the two puncture-indexed modes
+ $\operatorname{Re}v_{11}$ and $\operatorname{Re}v_{12}$,
+ $\operatorname{Re}w_{11}$ and $\operatorname{Re}w_{21}$, and
+ $\operatorname{Re}(u_{11}\bar u_{11})$.
+ Open circles and squares are direct Generapy-based BA evaluations;
+ solid and dashed black lines are independent RK4 trajectories.
+ The barred modes are independent Hamiltonian partners.}
+ \label{fig:numeric-multipoint-genus2}
 \end{figure}
 \clearpage

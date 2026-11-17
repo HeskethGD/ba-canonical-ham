@@ -1,0 +1,42 @@
+{
+  "checks": [
+    {
+      "L_M_N": [
+        1,
+        2,
+        2
+      ],
+      "source_polynomial_flow": true,
+      "time_and_phase_map": true,
+      "all_canonical_mode_equations": true,
+      "cubic_hamiltonian_trace_and_charges": true,
+      "canonical_to_frozen_bracket": true
+    },
+    {
+      "L_M_N": [
+        2,
+        3,
+        1
+      ],
+      "source_polynomial_flow": true,
+      "time_and_phase_map": true,
+      "all_canonical_mode_equations": true,
+      "cubic_hamiltonian_trace_and_charges": true,
+      "canonical_to_frozen_bracket": true
+    },
+    {
+      "L_M_N": [
+        2,
+        2,
+        2
+      ],
+      "source_polynomial_flow": true,
+      "time_and_phase_map": true,
+      "all_canonical_mode_equations": true,
+      "cubic_hamiltonian_trace_and_charges": true,
+      "canonical_to_frozen_bracket": true
+    }
+  ],
+  "source": "AHH 1990 Part II, eqs. (2.1)-(2.2), P(z,nu^-1)=z^2/nu",
+  "scope": "Explicit all-size polynomial-Lax solution transfer. Does not assert an F,G canonical reduction or BA regularity at every exceptional spectral level."
+}

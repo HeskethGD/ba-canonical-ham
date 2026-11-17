@@ -30,6 +30,19 @@ SUITES={
         'latex_final_ba_conventions.py',
         'quartic_hyperelliptic_direction.py',
     ],
+    'multipoint':[
+        'multipoint_BA_network_check.py',
+        'multipoint_BA_elliptic_check.py',
+        'multipoint_BA_genus2_check.py',
+        'multipoint_higher_flow_check.py',
+        'multipoint_repeated_phase_moments.py',
+    ],
+    'ahh':[
+        'ahh_quartic_to_cubic.py',
+        'ahh_general_multiwave_map.py',
+        'ahh_quartic_cubic_brackets.py',
+        'ahh_fiber_kernel_residues.py',
+    ],
     'diagnostics':[
         'higher_flow_evolution_diagnostic.py',
         'al_function_checks.py',

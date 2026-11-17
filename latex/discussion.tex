@@ -2,11 +2,12 @@
 
 The canonical multiwave Baker--Akhiezer system provides a canonical
 model for scalar BA dynamics whose interaction structure is independent
-of the curve type. The two-way correspondence for $N=1$ and the
+of the curve type. The two-way correspondence for arbitrary positive $L,M,N$ and the
 higher-flow result give this interpretation its substance: prescribed
 BA evaluations find a home in the cubic equations, generic canonical
 initial modes recover their BA data, and the spectral Hamiltonians
-supply every Abel direction together with the mode phases.
+supply every Abel direction on birational spectral levels together
+with the mode phases.
 This correspondence motivates further study of the system's
 Hamiltonian hierarchy and reductions across different curve families.
 
@@ -14,14 +15,24 @@ The realization criterion turns prescribed curve data into canonical
 multiwave dynamics: residue equations determine compatible weights,
 and opposite-group interpolation values determine the linear phase
 rates. The kernel lemma gives the differential identities behind this
-construction. Its constrained-KP interpretation in
+construction. For the one-point member, its constrained-KP interpretation in
 \cref{sec:BA-constrained-KP} explains how the two weighted scalar
 operators share their BA function and couple through the pair kernels.
 \Cref{prop:BA-prescribed-spectral-curve,thm:BA-spectral-converse}
 identify the realized curve and reconstruct BA data from generic
-canonical initial modes of the $N=1$ system.
+canonical initial modes of the full three-array system.
 
-For the parent three-matrix family, the spectral and principal-moment
+The comparison with Adams, Harnad and Hurtubise gives two compatible
+views of the same matrix evolution. Their canonical moment-map lift
+has quartic interactions, while the cubic modes use the constant
+member of the matrix Poisson pencil. Complete-fiber BA convolution
+turns the bilinear lift into endpoint BA functions and expresses this
+change of interaction order as a Sylvester displacement relation.
+This connection complements the prescribed-point realization: it
+explains how the direct cubic modes sit within the established
+spectral construction while retaining a simple canonical bracket.
+
+For the full three-matrix family, the spectral and principal-moment
 integrals give the complete Liouville count for every fixed phase
 profile, with the detailed proof in Appendix~\ref{sec:integrability-proof}. The symmetry interpretation in
 \cref{sec:gauge-Abel-symmetries} distinguishes mode gauges, equal-phase
@@ -29,7 +40,8 @@ changes of basis and flows that become translations in spectral
 divisor coordinates. These different symmetries explain why power
 charges alone need not complete the integral count.
 
-The Mumford projection has a useful optical analogy in the passage from
+In the one-point hyperelliptic specialization, the Mumford projection
+has a useful optical analogy in the passage from
 complex field modes to Stokes variables. In elliptically solvable optical
 systems, Stokes variables describe closed projected dynamics and determine
 the logarithmic rates needed to reconstruct the individual modes.
@@ -46,19 +58,18 @@ the $K$ independent reciprocal mode gauges.
 The broader spectral family offers further function-theoretic problems.
 Its marked plane models describe different covering degrees and branches
 at infinity; special levels and involutions produce lower-genus
-normalizations and Prym descriptions. The one-point BA construction
-applies across these curve types in the vector--matrix--vector case.
-For $N>1$, the time matrix has a higher-rank spectral coefficient, and
-the corresponding kernel derivative is a sum of BA products. Extending
-the coordinate reconstruction to an appropriate vector or multipoint
-BA problem would connect the full three-matrix family to comparably
-explicit modes. Singular spectral levels and nonsemisimple moment
+normalizations and Prym descriptions. The BA construction applies across these curve types: one puncture
+gives the vector--matrix--vector member, while several punctures
+produce the full arrays through a common scalar BA basis and a
+rank-$N$ kernel derivative. The puncture count is independent of
+the genus or the number of infinities in another plane presentation.
+Singular spectral levels and nonsemisimple moment
 blocks also require limiting constructions beyond the generic converse.
 
 The commuting spectral Hamiltonians give a multi-time view of the
-interactions. For $N=1$, \cref{thm:BA-higher-flows} computes their
-one-point BA times and constant mode phases on each prescribed family;
-finitely many spectral coefficients generate all its Abel directions.
+interactions. \Cref{thm:BA-higher-flows} computes their puncture times and constant
+mode phases by finite meromorphic interpolation. On a birational
+level, finitely many spectral coefficients generate every Abel direction.
 A scalar evolution selects one such direction, and higher Hamiltonians
 introduce higher-order mixing terms on the same mode space. This makes
 the translation and gauge symmetries explicit in the BA representation.

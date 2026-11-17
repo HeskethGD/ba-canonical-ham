@@ -1,0 +1,19 @@
+{
+  "quartic_pullback": [
+    {
+      "q": 2,
+      "d": 3,
+      "canonical_rates": true,
+      "bilinear_closed_rate": true,
+      "power_and_rectangle_decomposition": true
+    },
+    {
+      "q": 3,
+      "d": 3,
+      "canonical_rates": true,
+      "bilinear_closed_rate": true,
+      "power_and_rectangle_decomposition": true
+    }
+  ],
+  "scope": "Symbolic parent projection. The separate all-size block and phase check is ahh_general_multiwave_map.py. No canonical equivalence or pure-BA dictionary for the projected entries is asserted."
+}

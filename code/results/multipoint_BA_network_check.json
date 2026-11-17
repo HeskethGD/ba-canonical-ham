@@ -1,0 +1,13 @@
+{
+  "genus": 0,
+  "L_M_N": [
+    2,
+    2,
+    2
+  ],
+  "kernel_rate_identity": true,
+  "both_group_convolution_identities": true,
+  "all_24_mode_rates": true,
+  "triad_exponents_cancel_for_all_times": true,
+  "scope": "Exact rational multipuncture check. Positive-genus scope follows from the stated BA uniqueness/residue proof, not from this genus-zero example."
+}

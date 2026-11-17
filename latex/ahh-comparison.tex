@@ -1,0 +1,174 @@
+\section{Quartic and cubic canonical realizations of BA dynamics}
+\label{sec:AHH-comparison}
+
+The moment-map construction of Adams, Harnad and Previato pulls
+matrix Hamiltonians back through bilinear maps; Adams, Harnad and
+Hurtubise integrate
+both the matrix flows and their canonical lifts using spectral line
+bundles and generalized BA functions
+\cite{AdamsHarnadPreviato1988,AdamsHarnadHurtubise1990II}.
+Here we identify a quartic specialization whose bilinear variables
+satisfy precisely our cubic multiwave equations after a fixed change
+of time and phase. A complete-fiber BA identity explains why these
+bilinear sums reduce to individual endpoint BA functions. This gives
+an explicit connection between the two canonical realizations.
+
+\subsection{A quartic canonical parent}
+
+Let $\mathsf F,\mathsf G\in\C^{q\times d}$, with
+$\{F_{ih},G_{jk}\}=-i\delta_{ij}\delta_{hk}$ for
+$1\leq i,j\leq q$, $1\leq h,k\leq d$, and all other basic brackets
+zero. The entries of $\mathsf G$ are independent partners of those
+of $\mathsf F$. Set
+\begin{equation}\label{eq:AHH-quartic-parent}
+ \mathsf M=\mathsf G^{\trans}\mathsf F,\qquad
+ \mathcal H_4=\tr(\mathsf D\mathsf M^2),\qquad
+ \mathsf C=\mathsf D\mathsf M+\mathsf M\mathsf D.
+\end{equation}
+Here $\mathsf D$ is the diagonal matrix in
+\cref{eq:canonical-pencil}; $\mathcal H_4$ is a selected pullback in
+the moment-map framework of \cite{AdamsHarnadPreviato1988}, rather
+than a separately distinguished model in that paper.
+In scalar modes its full dependence is
+\begin{equation}\label{eq:AHH-quartic-components}
+ \mathcal H_4=
+ \sum_{h=1}^{d}\sum_{k=1}^{d}\sum_{i=1}^{q}\sum_{j=1}^{q}
+ D_{hh}G_{ih}F_{ik}G_{jk}F_{jh}.
+\end{equation}
+Hamilton's equations and their closed bilinear projection are
+\begin{equation}\label{eq:AHH-parent-rates}
+ i\frac{d\mathsf F}{ds}=\mathsf F\mathsf C,\qquad
+ i\frac{d\mathsf G}{ds}=-\mathsf G\mathsf C^{\trans},\qquad
+ \widehat{\mathsf X}=-\mathsf G^{\trans}\mathsf F,
+ \qquad i\frac{d\widehat{\mathsf X}}{ds}
+       =[\mathsf D,\widehat{\mathsf X}^{,2}].
+\end{equation}
+The diagonal blocks of $\widehat{\mathsf X}$ are constant because
+$\mathsf D$ is scalar on each of the three groups. Fix them as in
+\cref{eq:canonical-X} and put
+\begin{equation}\label{eq:AHH-time-phase-map}
+ \mathsf K_{\rm ph}=\diag(-3\mathsf B_L,3\mathsf B_M,0_N),\qquad
+ \mathsf X(t)=e^{-it\mathsf K_{\rm ph}}
+       \widehat{\mathsf X}(-t)e^{it\mathsf K_{\rm ph}}.
+\end{equation}
+Then
+\begin{equation}\label{eq:AHH-cubic-projection}
+ i\dot{\mathsf X}=-[\mathsf D,\mathsf X^2]
+                         +[\mathsf K_{\rm ph},\mathsf X],
+\end{equation}
+whose off-diagonal blocks are exactly
+\cref{eq:canonical-matrix-rates} for every positive $L,M,N$.
+For $q=d$ every initial $\mathsf X$ admits a factorization, for example
+$\mathsf F(0)=\Id_d$, $\mathsf G(0)=-\mathsf X(0)^{\trans}$.
+Thus the equation-level projection includes arbitrary canonical
+initial modes of the cubic system. The adapted BA factorization is
+given in Appendix~\ref{sec:AHH-dictionary}.
+
+\subsection{The two matrix brackets}
+
+Both parent mode systems have constant canonical brackets. Their
+relationship is seen by distinguishing the two brackets on
+$\mathsf X$. In this subsection write $[f,h]_a=i\{f,h\}_a$ to
+suppress the common physical factor $-i$. The bilinear projection
+from $\mathsf F,\mathsf G$ induces the linear Lie--Poisson bracket
+\begin{equation}\label{eq:AHH-two-brackets}
+\begin{aligned}
+ [X_{hi},X_{jk}]_1&=\delta_{hk}X_{ji}-\delta_{ij}X_{hk},\\
+ [X_{hi},X_{jk}]_0&=(D_{hh}-D_{ii})\delta_{hk}\delta_{ij},
+ &&1\leq h,i,j,k\leq d.
+\end{aligned}
+\end{equation}
+The second, constant bracket is exactly
+\cref{eq:canonical-brackets} under the block scalings of
+\cref{eq:canonical-X}. Its same-group blocks are Casimirs, so their
+fixed values specify the canonical cubic mode space. With gradients
+defined by $dh=\tr((\nabla h)d\mathsf X)$, the two brackets give
+\begin{equation}\label{eq:AHH-Lenard}
+ [\mathsf X,\tr(\mathsf D\mathsf X^2)]_1
+ =[\mathsf X,\tr(\mathsf X^3)/3]_0
+ =[\mathsf D,\mathsf X^2].
+\end{equation}
+They are compatible: translating $\mathsf X$ by $a\mathsf D$ in the
+first bracket gives $P_1(\mathsf X+a\mathsf D)=P_1(\mathsf X)-aP_0$.
+This is the argument-shift Poisson pencil already underlying
+\cref{sec:canonical}; it explains the change from a quartic pullback
+to a cubic canonical Hamiltonian. Indeed, up to an additive constant,
+\begin{equation}\label{eq:AHH-cubic-H}
+ H=-\frac13\tr(\mathsf X^3)
+   +3\sum_{\ell=1}^{L}b_\ell^L Q_\ell^L
+   +3\sum_{m=1}^{M}b_m^M Q_m^M.
+\end{equation}
+The last two terms generate precisely the phase conjugation in
+\cref{eq:AHH-time-phase-map}. This compares vector fields on two
+Poisson realizations: the bilinear map is many-to-one, and the
+canonical spaces have $qd$ and $LM+MN+NL$ pairs, respectively.
+
+\subsection{BA convolution and interaction factorization}
+
+The functional counterpart of the bilinear map is a composition
+identity for the Szeg\H{o} kernel
+\cite[Proposition 5.2.1]{BenZviBiswas2003}. In scalar local
+half-differential frames it is
+\begin{equation}\label{eq:AHH-Szego}
+ \mathscr S_z(P,Q)=
+ \frac{\theta(z+A(P)-A(Q))}{\theta(z)E(P,Q)}.
+\end{equation}
+This is the theta/prime-form kernel underlying the BA pair functions
+used earlier; fixed frames and exponential BA factors restore their
+chosen normalization. Let $\Lambda,W$ be meromorphic functions
+with poles only at distinct points $P_1,\ldots,P_d$, with $\Lambda$
+having a simple pole at each. Choose a complete regular fiber
+$\Lambda^{-1}(\alpha)=Q_1+\cdots+Q_d$. In coordinates
+$t_h=1/\Lambda$ at $P_h$ and $s_i$ at $Q_i$, write
+\begin{equation}\label{eq:AHH-fiber-data}
+ \frac{W}{\Lambda-\alpha}
+       =y_h+c_ht_h+O(t_h^2),\qquad
+ \gamma_i=\frac{W(Q_i)}{\partial_{s_i}\Lambda(Q_i)},
+ \quad 1\leq h,i\leq d.
+\end{equation}
+Assume $W$ has at most simple poles at the $P_h$. Then
+\begin{equation}\label{eq:AHH-fiber-convolution}
+ \sum_{i=1}^{d}\gamma_i
+      \mathscr S_z(P_h,Q_i)\mathscr S_z(Q_i,P_k)
+ =\begin{cases}
+ (y_h-y_k)\mathscr S_z(P_h,P_k),&h\ne k,\\
+ c_h,&h=k.
+ \end{cases}
+\end{equation}
+The contracted half-differentials at $Q_i$ make the formula independent
+of the coordinates $s_i$. To see it directly, take residues in $Q$
+of $(W/(\Lambda-\alpha))\mathscr S_z(P_h,Q)
+\mathscr S_z(Q,P_k)$. For $h\ne k$, the endpoint residues are
+$-y_h\mathscr S_z(P_h,P_k)$ and
+$y_k\mathscr S_z(P_h,P_k)$. For $h=k$, the kernel product has
+expansion $(-t_h^{-2}+O(1))dt_h$, giving residue $-c_h$.
+The remaining residues are exactly the displayed sum. This also
+proves the cancellation of the extra theta-divisor pole in each
+product sum.
+
+For disjoint endpoint lists, assemble
+$\mathsf A_{hi}=\mathscr S_z(P_h,Q_i)$,
+$\mathsf B_{ik}=\mathscr S_z(Q_i,P_k)$,
+$\mathsf K_{hk}=\mathscr S_z(P_h,P_k)$ and
+$\mathsf\Gamma=\diag(\gamma_1,\ldots,\gamma_d)$, with
+$\mathsf Y_{\rm left},\mathsf Y_{\rm right}$ the corresponding
+endpoint diagonals of the $y$ values. The off-diagonal identity is
+\begin{equation}\label{eq:AHH-Sylvester}
+ \mathsf A\mathsf\Gamma\mathsf B
+   =\mathsf Y_{\rm left}\mathsf K-\mathsf K\mathsf Y_{\rm right}.
+\end{equation}
+This Sylvester displacement relation makes the interaction change
+explicit. For compatible vectors $\boldsymbol a,\boldsymbol b$,
+\[
+ \boldsymbol a^{\trans}
+ (\mathsf Y_{\rm left}\mathsf K-\mathsf K\mathsf Y_{\rm right})
+ \boldsymbol b
+ =\boldsymbol a^{\trans}\mathsf A\mathsf\Gamma\mathsf B\boldsymbol b.
+\]
+A cubic expression using endpoint pair modes is thereby a quartic
+expression in the intermediate evaluations. The weights and the
+complete fiber ensure that both sides remain BA functions. In the
+AHH realization this is the function-level counterpart of
+\cref{eq:AHH-parent-rates}; changing the list of independent modes
+also requires their brackets and evolution, supplied here by
+\cref{eq:AHH-two-brackets,eq:AHH-cubic-projection}.

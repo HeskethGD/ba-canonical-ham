@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{AdamsHarnadHurtubise1990II}
+M.~R. Adams, J.~Harnad, and J.~Hurtubise.
+\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions.
+  {II}. integration of flows.
+\newblock {\em Communications in Mathematical Physics}, 134:555--585, 1990.
+\newblock \href {https://doi.org/10.1007/BF02098447}
+  {\path{doi:10.1007/BF02098447}}.
+
 \bibitem{AdamsHarnadHurtubise1993}
 M.~R. Adams, J.~Harnad, and J.~Hurtubise.
 \newblock {Darboux} coordinates and {Liouville--Arnold} integration in loop
@@ -8,6 +16,14 @@ M.~R. Adams, J.~Harnad, and J.~Hurtubise.
 \newblock Author version: \url{https://arxiv.org/abs/hep-th/9210089}.
 \newblock \href {https://doi.org/10.1007/BF02097398}
   {\path{doi:10.1007/BF02097398}}.
+
+\bibitem{AdamsHarnadPreviato1988}
+M.~R. Adams, J.~Harnad, and E.~Previato.
+\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions.
+  {I}. generalized {Moser} systems and moment maps into loop algebras.
+\newblock {\em Communications in Mathematical Physics}, 117:451--500, 1988.
+\newblock \href {https://doi.org/10.1007/BF01223376}
+  {\path{doi:10.1007/BF01223376}}.
 
 \bibitem{AdlerVanMoerbeke2018}
 Mark Adler and Pierre van Moerbeke.
@@ -43,6 +59,15 @@ Arnaud Beauville.
 \newblock {\em Acta Mathematica}, 164:211--235, 1990.
 \newblock \href {https://doi.org/10.1007/BF02392754}
   {\path{doi:10.1007/BF02392754}}.
+
+\bibitem{BenZviBiswas2003}
+David Ben-Zvi and Indranil Biswas.
+\newblock Theta functions and {Szeg\H{o}} kernels.
+\newblock {\em International Mathematics Research Notices},
+  2003(24):1305--1340, 2003.
+\newblock Author version: \url{https://arxiv.org/abs/math/0211441}.
+\newblock \href {https://doi.org/10.1155/S1073792803211181}
+  {\path{doi:10.1155/S1073792803211181}}.
 
 \bibitem{Bertola2021}
 Marco Bertola.
