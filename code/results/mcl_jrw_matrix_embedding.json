@@ -1,0 +1,52 @@
+{
+  "restricted_star": [
+    {
+      "triads": 2,
+      "MCL_H_1_1_to_three_array_H_verified": true,
+      "canonical_partner_swap_verified": true,
+      "arbitrary_distinct_or_repeated_detunings": true
+    },
+    {
+      "triads": 3,
+      "MCL_H_1_1_to_three_array_H_verified": true,
+      "canonical_partner_swap_verified": true,
+      "arbitrary_distinct_or_repeated_detunings": true
+    }
+  ],
+  "checks": [
+    {
+      "sizes": [
+        1,
+        1,
+        2
+      ],
+      "canonical_H0_rates_match": true,
+      "MCL_equation_2_13_match": true,
+      "zero_same_group_blocks_preserved": true,
+      "all_phase_intercepts_symbolic": true
+    },
+    {
+      "sizes": [
+        2,
+        2,
+        1
+      ],
+      "canonical_H0_rates_match": true,
+      "MCL_equation_2_13_match": true,
+      "zero_same_group_blocks_preserved": true,
+      "all_phase_intercepts_symbolic": true
+    },
+    {
+      "sizes": [
+        2,
+        2,
+        2
+      ],
+      "canonical_H0_rates_match": true,
+      "MCL_equation_2_13_match": true,
+      "zero_same_group_blocks_preserved": true,
+      "all_phase_intercepts_symbolic": true
+    }
+  ],
+  "scope": "Exact equation-level embedding in MCL/Ablowitz-Haberman multiwave framework; does not identify every MCL completed network with the JRW three-block reduction."
+}

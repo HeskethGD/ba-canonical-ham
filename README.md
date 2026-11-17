@@ -1,7 +1,7 @@
-# Baker–Akhiezer functions in modified Jiang–Rauch-Wojciechowski systems
+# Canonical multiwave Baker–Akhiezer systems
 
-Manuscript and reproducibility code for *Baker–Akhiezer functions on
-arbitrary curves in modified Jiang–Rauch-Wojciechowski systems*.
+Manuscript and reproducibility code for *A canonical multiwave Hamiltonian
+realization of Baker–Akhiezer functions on arbitrary curves*.
 
 The paper studies a canonical cubic multiwave Hamiltonian, its integrals
 and spectral curves, and its correspondence with scalar Baker–Akhiezer

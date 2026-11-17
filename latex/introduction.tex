@@ -37,34 +37,26 @@ plasma waves and quadratic nonlinear optical media. Restricted
 multiple three-wave systems couple several triads through a common
 mode \cite{KostovTsiganov2008}; continuous-wave optical interactions
 also lead to finite-dimensional mode equations \cite{Hesketh2015}.
-Menyuk, Chen and Lee studied Hamiltonian integrability, Lax
-representations and admissible coupling coefficients for restricted
-multiple three-wave interactions
+Menyuk, Chen and Lee investigated integrable couplings through
+Hamiltonian, Lax and Painlev\'e analyses
 \cite{MenyukChenLee1982,MenyukChenLee1983Integrable,
-MenyukChenLee1983Painleve}. Stefan Rauch-Wojciechowski (published as
-S.~Wojciechowski), Jiang and Bullough gave an alternative matrix Lax
-representation and constructed a broader class of multiwave ordinary
-differential equations \cite{WJB1986}. Jiang and
-Rauch-Wojciechowski subsequently placed multiwave and related systems
-in a graded Lie algebra framework \cite{JRW1991}. Their completeness
-analysis treats the two- and three-row cases and leaves the
-four-row case unresolved. Kostov and Tsiganov later developed a
-hyperelliptic spectral description of restricted multiple three-wave
-interactions using a two-component Dirac problem, together with a
-bi-Hamiltonian structure \cite{KostovTsiganov2008}.
-Linear frequencies and independent triad detunings already occur in
-these restricted systems \cite[equations (1)--(4)]{MenyukChenLee1983Painleve} and
-\cite[equations (1)--(3)]{KostovTsiganov2008}.
-
-Binary nonlinearization gives a related route from spectral
-and adjoint eigenfunctions to canonical first-order systems
-\cite[Section~3.2 and Theorem~3.1]{Ma2001Binary}; its quartic
-Hamiltonians contain products of eigenfunction pairings. Ordinary
-and dual BA functions, their Cauchy kernels and the associated
-product identities provide established tools for studying such
-spectral constructions
-\cite{KricheverShiota2011,GrinevichOrlov1989,
-AratynNissimovPacheva1997,Bertola2021,Fay1973,Korotkin2003}.
+MenyukChenLee1983Painleve}. They obtained a complete commuting
+integral set for the equal-coupling shared-mode family, constructed
+broader wave networks, and integrated the equal-mismatch family
+using elliptic functions and phase quadratures.
+Rauch-Wojciechowski, Jiang and Bullough gave an alternative matrix
+Lax representation and constructed a broader class of multiwave
+ordinary differential equations \cite{WJB1986}. Jiang and
+Rauch-Wojciechowski then developed this approach in a graded Lie
+algebra framework, constructing canonical cubic systems with
+rectangular mode arrays and studying the completeness of their
+commuting integrals \cite{JRW1991}.
+Kostov and Tsiganov studied the restricted shared-mode family through
+a two-component Dirac problem. They constructed its hyperelliptic
+spectral curve and finite-gap eigenfunction representation, together
+with a classical $r$-matrix and bi-Hamiltonian structure; the
+single-triad case was evaluated explicitly in Weierstrass functions,
+including its phase \cite{KostovTsiganov2008}.
 
 \subsection{Our contribution}
 
@@ -73,25 +65,24 @@ a marked point and finitely many scalar one-point BA evaluations, we
 ask how to place them in a canonical polynomial Hamiltonian system.
 Which additional modes are needed, and how do the curve-point data
 determine the coupling weights and linear phase rates? We answer
-this realization question using a modification of the
-Jiang--Rauch-Wojciechowski system.
+this realization question within the canonical multiwave family
+developed in these earlier works.
 
-The modified Jiang--Rauch-Wojciechowski system provides a canonical
-Hamiltonian realization of the scalar BA function and its Abelian
-evolution. In the vector--matrix--vector case the correspondence works
-in both directions: generic initial modes reconstruct BA evaluations
-and their Cauchy kernels, while any finite collection of regular
-evaluations on any smooth curve with a marked point can be included
-after adjoining points. The prescribed curve is recovered as the
-normalization of the resulting spectral level. Moreover, the commuting
-spectral Hamiltonians generate all Abel directions, with the
-accompanying mode phases determined explicitly. The curve type changes
-the compatible phase coefficients, initial values and required mode
-counts, but the cubic Hamiltonian retains its form. Together with
-Liouville integrability for all matrix sizes and phase profiles, these
-results identify the vector--matrix--vector system as a common
-canonical model for scalar BA dynamics and motivate further study of
-its Hamiltonian hierarchy, reductions and functional identities.
+The vector--matrix--vector member provides a canonical Hamiltonian
+realization of the scalar BA function and its Abelian evolution.
+The correspondence works in both directions: generic initial modes
+reconstruct BA evaluations and their pair functions, while any finite
+collection of regular evaluations on any smooth curve with a marked
+point can be included after adjoining points. The prescribed curve
+is recovered as the normalization of the resulting spectral level.
+Moreover, the commuting spectral Hamiltonians generate all Abel
+directions, with the accompanying mode phases determined explicitly.
+The curve type changes the compatible phase coefficients, initial
+values and required mode counts, but the cubic Hamiltonian retains
+its form. We call this $N=1$ realization the \emph{canonical multiwave
+Baker--Akhiezer system} (CMBAS). Its two-way correspondence and
+Hamiltonian hierarchy make the system a common canonical setting
+for scalar BA dynamics across curve types.
 
 We write the multiwave modes as three rectangular matrices
 $\boldsymbol u\in\C^{L\times M}$,
@@ -120,11 +111,14 @@ with constant coupling $\kappa$. Each interaction joins one mode from
 each matrix; quadratic terms supply the linear phase rates. For
 $N=1$, the $v$ and $w$ matrices become two vectors. In our realization,
 ordinary and dual scalar BA evaluations supply these elementary
-vectors, while their Cauchy kernel supplies the pair-mode matrix $u$.
+vectors, while a normalized two-point BA function supplies the
+pair-mode matrix $u$.
 The pair modes are independent canonical variables of the Hamiltonian
-system. We study the full three-matrix family to establish its complete
-integral count and spectral geometry, and then use its $N=1$ member
-to realize prescribed scalar BA functions. Our key results are as follows.
+system. The full three-matrix family supplies the parent Hamiltonian and
+spectral framework. We establish the complete Liouville count for
+all sizes and phase profiles in \cref{thm:canonical-independence},
+with its independence proof in Appendix~\ref{sec:integrability-proof}.
+The main BA results concern $N=1$ and are as follows.
 
 \begin{itemize}
 \item \textbf{A necessary and sufficient BA realization criterion.}
@@ -154,36 +148,12 @@ evaluations.
 \Cref{thm:BA-higher-flows} identifies the commuting spectral flows on
 every prescribed BA realization. A meromorphic normalization computes
 their one-point BA times and constant reciprocal mode phases; the full
-spectral family spans the Jacobian directions. The construction also
+spectral family spans every Jacobian direction on each fixed spectral
+level. The required linear combinations depend on the curve data. The construction also
 applies when phases coincide or the plane spectral image is singular.
 \Cref{cor:BA-higher-reconstruction} extends the generic reconstruction
 to these higher flows using the same curve and reference BA data.
 
-\item \textbf{A phase modification accommodating prescribed BA functions.}
-We retain independent constant diagonal phase parameters relative to
-the Hamiltonian printed in \cite{JRW1991}, calling this form the
-\emph{modified Jiang--Rauch-Wojciechowski (JRW) system}.
-The realization criterion identifies their values from prescribed BA
-data. Commuting power charges present the phases symmetrically
-across the three mode families; Appendix~\ref{sec:JRW-dictionary}
-gives the exact coordinate dictionary.
-
-\item \textbf{The complete Liouville integral count.}
-For the full three-matrix system,
-\cref{thm:canonical-independence} establishes functional independence
-of a complete commuting family for all positive $L,M,N$ and every
-fixed phase profile. The proof proceeds by induction on the matrix
-dimensions and includes the principal-moment invariants needed when
-phases coincide. This extends the completeness treatment in
-\cite[Section II.C]{JRW1991} to arbitrary row and column sizes,
-using established argument-shift and moment-map ingredients.
-
-\item \textbf{A characterization of the regular spectral curves.}
-\Cref{thm:geometry-classification} describes the curves through
-marked plane models with three groups of branches at infinity and
-gives the converse pencil construction. The family includes different
-covering degrees, providing concrete geometric settings for further
-BA realizations.
 \end{itemize}
 
 The hyperelliptic specialization makes the realization criterion
@@ -197,8 +167,13 @@ on a genus-two hyperelliptic curve and a genus-three trigonal curve
 compare the sigma formulas with independent integration of the
 canonical equations.
 
-The paper proceeds from the modified JRW Hamiltonian and complete
-integral count to its spectral geometry, followed by the BA
-realization criterion and converse. The hyperelliptic specialization
-and Mumford connection follow. Numerical validation precedes the
-closing discussion.
+The independent phase parameters used here already fit the earlier
+multiwave framework. Our realization determines their compatible
+values from the BA curve-point data. Appendices~\ref{sec:MCL-dictionary}
+and~\ref{sec:JRW-dictionary} give the exact comparisons with
+Menyuk--Chen--Lee and Jiang--Rauch-Wojciechowski.
+The marked spectral-curve description explains the different covering
+types and the distinction between regular and special levels.
+The paper then develops the BA correspondence and its commuting flows,
+followed by the explicit hyperelliptic interpolation, Mumford projection
+and numerical validation.

@@ -42,9 +42,10 @@ dependencies. The mathematical proofs are in the manuscript.
 | Script | Purpose |
 | --- | --- |
 | `latex_final_section2_checks.py` | Symbolic Hamilton equations, matrix bracket, phase gauges, trace identities and the Jiang–Rauch-Wojciechowski dictionary. Uses geometric unit brackets; the physical conversion is checked separately. |
+| `mcl_jrw_matrix_embedding.py` | Exact restricted-star canonical dictionary and arbitrary-phase three-block reduction of Menyuk–Chen–Lee equation (2.13), supporting the MCL appendix. |
 | `physical_hamiltonian_convention_checks.py` | Physical `-i` convention, Hamiltonian finite differences, Lax equations and complex-conjugate real form. |
 | `latex_final_spectral_flows_checks.py` | Polynomial higher-flow time matrices and quartic interaction expansion. |
-| `jrw_three_group_integral_count.py` | Distinct-phase spectral-evaluation and spanning-tree independence witnesses, supporting Appendix B. |
+| `jrw_three_group_integral_count.py` | Distinct-phase spectral-evaluation and spanning-tree independence witnesses, supporting the distinct-phase integral appendix. |
 | `jrw_repeated_phase_general.py` | Exact finite-field ranks and evaluated Poisson brackets for spectral plus principal-moment families. |
 | `jrw_phase_cluster_insertion.py` | Induction insertion blocks, elimination identities and moment increments, supporting the complete count. |
 | `real_forms_regular_locus_checks.py` | Signed real-form identities and local node-smoothing coefficients. |

@@ -1,0 +1,208 @@
+\section{The complete Liouville count for arbitrary phases}
+\label{sec:integrability-proof}
+
+We prove \cref{thm:canonical-independence} using the commuting algebra
+$\mathcal A$ defined in \cref{sec:canonical-independence}.
+The argument inserts one index at a time; spectral invariants and
+equal-phase moment invariants together supply the new independent
+functions.
+
+The next lemma constructs an independence certificate in the mode
+coordinates. A vector $v$ is \emph{cyclic} for a matrix $\mathsf Z$ of size
+$a$ if $v,\mathsf Z v,\ldots,\mathsf Z^{a-1}v$ span $\C^a$.
+
+\begin{lemma}[Increasing a matrix dimension]\label{lem:canonical-insertion}
+Increase one of $L,M,N$ by one. Suppose the new phase already
+occurs $r$ times in that group and $c$ other indices there have
+different phases. Let the other group sizes be $m_1,m_2$, and put
+$n=m_1+m_2$. Assume either $r\geq n$ or
+\begin{equation}\label{eq:canonical-insertion-condition}
+ |m_1-m_2|\leq r+c+1.
+\end{equation}
+If the old algebra $\mathcal A$ supplies the complete Liouville count,
+the enlarged algebra does too. The insertion supplies
+$n-\min(r,n)$ new independent spectral functions and $\min(r,n)$
+new independent functions of the principal moments.
+\end{lemma}
+\begin{proof}
+Write the new outgoing entries as a row $\boldsymbol a\in\C^{1\times n}$ and
+the incoming entries as a column $\boldsymbol b\in\C^{n\times1}$.
+We test the Jacobian at $\boldsymbol a=0$. The enlarged determinant then equals
+$(\lambda-e-s\nu)F(\lambda,\nu)$, where $e,s$ are the new intercept
+and slope. More generally the bordered determinant is this product
+minus a term bilinear in the new outgoing and incoming entries.
+Multiplication by $\lambda-e-s\nu$ is an injective linear map on
+polynomial coefficients. A fixed left inverse therefore lifts each
+old spectral coefficient to a function of the enlarged coefficients.
+At $\boldsymbol a=0$ its old-coordinate derivative is unchanged,
+and its derivative in the new incoming column is zero. The old
+principal moments have the same properties. We need $n$ further
+functions with zero old-coordinate
+derivatives and independent derivatives in $\boldsymbol a$.
+
+Order the old indices as the $r$ equal-phase indices, the $c$
+different-phase indices of the same original group, and the $n$
+outside indices:
+\begin{equation}\label{eq:canonical-insertion-blocks}
+ \mathsf X=
+ \begin{pmatrix}e\Id_r&0&\mathsf F\\0&E_C&\mathsf F_C\\\mathsf G&\mathsf G_C&X_{\rm out}\end{pmatrix},
+ \qquad
+ \mathsf W=\diag\left(\frac1{s-s_h}\right)_{h\ {\rm outside}}.
+\end{equation}
+Here $e\Id_c-E_C$ is invertible. The growing moment block and its
+enlargement are
+\[
+ \mathsf J=\mathsf F\mathsf W \mathsf G,\qquad
+ \mathsf J_+=\begin{pmatrix}\mathsf J&\mathsf F\mathsf W \boldsymbol b\\\boldsymbol a\mathsf W \mathsf G&\boldsymbol a\mathsf W \boldsymbol b\end{pmatrix}.
+\]
+The principal-moment differences
+$\Delta_k=(\tr \mathsf J_+^k-\tr \mathsf J^k)/k$ vanish at $\boldsymbol a=0$, and
+\begin{equation}\label{eq:canonical-insertion-moment}
+ \left.\mathrm d\Delta_k\right|_{\delta \boldsymbol a}
+   =\delta \boldsymbol a\,\mathsf W \mathsf G \mathsf J^{k-2}\mathsf F\mathsf W \boldsymbol b,
+ \qquad 2\leq k\leq\min(r,n)+1.
+\end{equation}
+Newton's identities express the old trace of order $r+1$ in its
+first $r$ traces, so every $\Delta_k$ belongs to the enlarged algebra.
+The first difference, $\Delta_1$, has derivative
+$\delta\boldsymbol a\mathsf W\boldsymbol b$. We do not need it:
+the displayed higher differences will already span the moment
+directions, and the spectral functions will supply their complement.
+
+First suppose $0<r<n$. Generically $\mathsf J$ is invertible. Set
+\begin{equation}\label{eq:canonical-insertion-projection}
+ \Pi=\Id_n-\mathsf W \mathsf G \mathsf J^{-1}\mathsf F,\qquad
+ \C^n=\ker \mathsf F\oplus\operatorname{im}(\mathsf W \mathsf G).
+\end{equation}
+The $r$ vectors in \cref{eq:canonical-insertion-moment} span the
+second summand if $\mathsf F\mathsf W \boldsymbol b$ is cyclic for $\mathsf J$.
+For the other summand use the coefficients of
+$R(\nu)=F_+(e+s\nu,\nu)$, where $F_+$ is the enlarged determinant.
+They vanish at $\boldsymbol a=0$. With
+$\mathsf K(\nu)=(e+s\nu)\Id-\mathsf X-\nu\mathsf D_{\rm old}$,
+the Schur complement gives
+\[
+ R(\nu)=-\boldsymbol a\,
+       \operatorname{adj}(\mathsf K(\nu))_{\rm out,out}\boldsymbol b,
+ \qquad
+ \left.\mathrm dR(\nu)\right|_{\delta \boldsymbol a}
+ =-\delta \boldsymbol a\,\det \mathsf K(\nu)\,
+            (\mathsf K(\nu)^{-1})_{\rm out,out}\boldsymbol b.
+\]
+Eliminating the $c$ different-phase indices leaves an outside block
+$\nu\mathsf W^{-1}+\mathsf C$, with
+\[
+ \mathsf C=e\Id_n-X_{\rm out}-\mathsf G_C(e\Id_c-E_C)^{-1}\mathsf F_C,\qquad
+ \mathsf R_0=\left.\Pi\mathsf W \mathsf C\right|_{\ker \mathsf F},\quad \boldsymbol c=\Pi\mathsf W \boldsymbol b.
+\]
+The remaining linear equations give
+$(\mathsf K^{-1})_{\rm out,out}\boldsymbol b=(\nu\Id+\mathsf R_0)^{-1}\boldsymbol c$.
+To compute its determinant, first eliminate the $c$ different-phase
+indices, multiply the outside rows by $\mathsf W$, and use the
+decomposition in \cref{eq:canonical-insertion-projection}. The
+equal-phase rows pair with $\operatorname{im}(\mathsf W\mathsf G)$
+through $\mathsf J$, leaving $\nu\Id+\mathsf R_0$ on $\ker\mathsf F$.
+Consequently
+\[
+ \det\mathsf K(\nu)
+ =(-1)^r\det(e\Id_c-E_C)\det(\mathsf W^{-1})\det\mathsf J\,
+       \det(\nu\Id+\mathsf R_0).
+\]
+The prefactor is nonzero and independent of $\nu$.
+Hence the coefficient vectors of the new spectral
+derivatives span $\ker \mathsf F$ if $\boldsymbol c$ is cyclic for $\mathsf R_0$.
+These coefficients are triangular combinations of
+$\boldsymbol c,\mathsf R_0\boldsymbol c,\ldots,\mathsf R_0^{n-r-1}\boldsymbol c$.
+There are $n-r$ such coefficients, since $\deg R\leq n-r-1$.
+When $r=0$, use $\Pi=\Id_n$ and omit the moment differences.
+
+We verify that both cyclicity conditions occur. Choose $\mathsf F$ to select
+$r$ outside coordinate directions and $\mathsf G$ so that $\mathsf J$ is diagonal
+with distinct nonzero entries. Then $\Pi$ selects the remaining
+directions. Condition~\eqref{eq:canonical-insertion-condition} lets
+these directions have outside group sizes differing by at most $c+1$.
+Pair them across the two groups, leaving at most $c+1$ unpaired
+indices. At this test point $\mathsf R_0$ is a direct sum of blocks
+\[
+ \begin{pmatrix}d_h&a_h\\b_h&d'_h\end{pmatrix}
+ \quad\text{and scalar blocks}\quad d_j+\delta_j.
+\]
+The $d_h,d'_h,d_j$ are fixed by the outside phases; the products
+$a_hb_h$ are free. Each paired block can therefore have two distinct
+eigenvalues avoiding all eigenvalues already chosen. For all but at most one unpaired
+index, use a different-phase index to adjust its diagonal entry
+through the term $-\mathsf G_C(e\Id_c-E_C)^{-1}\mathsf F_C$;
+these are the independent shifts $\delta_j$. Thus at most one scalar
+eigenvalue remains fixed, and the full spectrum can be made simple.
+This explains the size hypothesis: even when all unpaired outside
+phases coincide, the $c$ available shifts separate all but one of
+the at most $c+1$ unpaired directions.
+Finally $\boldsymbol b\mapsto(\mathsf F\mathsf W \boldsymbol b,\Pi\mathsf W \boldsymbol b)$ is invertible onto
+$\C^r\oplus\ker \mathsf F$, so the two cyclic vectors can be chosen
+independently. The required conditions are nonempty Zariski-open
+conditions.
+
+If $r\geq n$, choose $\mathsf F,\mathsf G$ so that $\mathsf R=\mathsf W \mathsf G \mathsf F$ has distinct
+nonzero eigenvalues. The $n$ vectors in
+\cref{eq:canonical-insertion-moment} are now
+$\mathsf R^{k-1}\mathsf W \boldsymbol b$, $2\leq k\leq n+1$, and span $\C^n$ for a
+cyclic $\mathsf W \boldsymbol b$. No new spectral functions are needed.
+
+In either case the open conditions intersect the old nonzero-Jacobian
+locus. The old-coordinate and new-$\boldsymbol a$ derivatives form a block-triangular
+Jacobian with nonzero diagonal minors. This proves the insertion step.
+\end{proof}
+
+\subsection{Proof of the complete count}
+
+\begin{proof}[Proof of \cref{thm:canonical-independence}]
+For $(1,1,1)$ two quadratic spectral coefficients give independent
+power combinations. A third contains the sum of the oriented triangle
+products, which varies at fixed powers. Their rank is three for every
+phase triple.
+
+A positive size triple satisfying the triangle inequalities can be
+reduced to $(1,1,1)$ by decreasing a largest entry; the preceding triple
+still satisfies those inequalities. Reverse this process, appending
+indices last within their equal-phase blocks. At each step
+$|m_1-m_2|\leq r+c$, so \cref{lem:canonical-insertion} applies.
+
+If one group exceeds the sum of the others, first build the balanced
+triple where its size equals that sum, using initial segments of its
+prescribed phase blocks. Append the remaining indices. The growing
+group has size $r+c\geq m_1+m_2$, so the lemma applies at every step.
+Each insertion adds $n$ canonical pairs and $n$ independent commuting
+functions. This proves the full count. Since $H$ commutes with them,
+it is locally a function of a complete set and can replace a suitable
+member wherever $\mathrm dH\ne0$.
+\end{proof}
+
+\subsection{The spectral deficit at repeated phases}
+
+The proof also counts the spectral deficit explicitly. For each
+equal-phase block $B$, let $r_B=|B|$, let $o_B$ be the size outside its
+original group, and set
+\begin{equation}\label{eq:canonical-spectral-deficit}
+ k_B=\min(r_B,o_B),\qquad
+ q_B=r_Bk_B-\frac{k_B(k_B+1)}2.
+\end{equation}
+The generic spectral rank is $p-\sum_{B\in\mathcal B}q_B$; the proof
+supplies $\sum_{B\in\mathcal B}q_B$ additional independent
+principal-moment functions, where $\mathcal B$ is the set of all
+equal-phase blocks.
+For the lower bound, each insertion increases its block's $q_B$ by
+$\min(r,n)$ and leaves the other blocks' $q_B$ unchanged along the
+chosen construction. The spectral derivatives supply the complementary
+$n-\min(r,n)$ directions. For the upper bound, $\mathsf J_B$ has
+$k_B$ distinct nonzero eigenvalues and a semisimple zero eigenvalue of
+multiplicity $r_B-k_B$, so its conjugacy orbit has dimension $2q_B$.
+The moment-generated tangent space therefore has symplectic rank
+$2\sum_{B\in\mathcal B}q_B$. Commuting spectral fields lie in its
+symplectic orthogonal, whose maximal isotropic dimension is
+$p-\sum_{B\in\mathcal B}q_B$.
+
+For example, with $L=M=2$, $N=1$ and constant phases within each
+outer group, there are two size-two equal-phase blocks, each with
+$q_B=1$. The spectral rank is six; two additional principal-moment
+functions complete the eight-integral count.
+

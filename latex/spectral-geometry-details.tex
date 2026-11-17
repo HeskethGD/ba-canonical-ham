@@ -1,0 +1,88 @@
+\section{Details of the marked spectral-curve classification}
+\label{sec:geometry-details}
+
+These arguments support the statements in \cref{sec:spectral-geometry}.
+
+\subsection{Existence of regular spectral curves}
+
+The regular locus is nonempty for every positive $L,M,N$, with
+phases allowed to vary. To see this, choose intercepts $e_h$ distinct
+within each group so that the lines
+$\lambda-e_h-s_h\nu=0$, $1\leq h\leq d$, have no triple affine
+intersection. Set $X=\diag(e_h)+\varepsilon A$, with zero diagonal
+blocks in $A$ and $A_{hi}A_{ih}\ne0$ between different groups.
+At $\varepsilon=0$ the curve is the union of these lines.
+Near an intersection of lines $h,i$ of different slopes, use their
+equations as local coordinates $x,y$. A Schur complement gives,
+up to a nonvanishing factor,
+\[
+ xy-\varepsilon^2 A_{hi}A_{ih}
+   +O\bigl(\varepsilon^2x,\varepsilon^2y,\varepsilon^3\bigr).
+\]
+Its critical point has $x,y=O(\varepsilon^2)$, where the displayed
+nonzero quadratic term prevents a singularity for small nonzero
+$\varepsilon$. Blowing up the three infinity points separates their
+distinct tangent branches, which remain smooth. Compactness then
+excludes further singularities. On this blown-up surface the central
+fiber is a connected reduced union of lines, so nearby smooth fibers
+are connected, hence irreducible. Thus small generic couplings give
+regular curves. Smoothness and irreducibility are open conditions,
+so they hold on a nonempty Zariski-open subset of the parameter space.
+
+\subsection{Proof of the marked-curve characterization}
+
+\begin{proof}[Proof of \cref{thm:geometry-classification}]
+The implication from~1 to~2 follows from
+\cref{prop:geometry-genus}. The expansions
+\cref{eq:geometry-branches} give~3: subtracting or adding $\nu$
+cancels the pole on the indicated branch family. The two affine
+coordinates generate the function field because the plane model
+is birational to $C$.
+
+Conversely, the pole conditions in~3 imply that $\nu$ has exactly
+$d$ simple poles, one at each marked point. The functions
+$1,\lambda,\nu$ define a map to the plane with no base points:
+at each marked point at least one of $\lambda,\nu$ has a simple
+pole, and away from them the constant section is nonzero.
+The map is birational because $\lambda,\nu$ generate $\C(C)$.
+The image has degree $d$, since a generic linear combination of
+these three functions has $d$ poles. The three pole cancellations
+put the marked branches at $[1:1:0]$, $[-1:1:0]$, $[0:1:0]$.
+Their simple poles make the branches smooth and transverse to infinity.
+The genus assumption forces their total singularity defect to be
+exactly the sum in \cref{prop:geometry-genus}. Hence their tangents
+are distinct and there are no additional singularities, proving~2.
+
+Finally, a plane model in~2 can be reconstructed as a pencil
+$\mathsf X+\nu\mathsf D$. The spectral line-bundle construction
+\cite{Beauville1990} represents multiplication by $\lambda$ as an
+affine matrix function of $\nu$. Its leading matrix has eigenvalues
+$1,-1,0$, with multiplicities $L,M,N$. The distinct branch intercepts
+allow the three constant diagonal blocks to be diagonalized; the
+remaining six blocks are precisely the unrestricted mode blocks
+of \cref{eq:canonical-X}. \Cref{sec:geometry-converse}
+gives the construction, proving~1.
+\end{proof}
+
+\input{spectral-converse}
+
+\subsection{Proof of the hyperelliptic criterion}
+
+\begin{proof}[Proof of \cref{prop:geometry-hyperelliptic}]
+Two singleton groups give a degree-two map in
+\cref{eq:geometry-degrees}, proving sufficiency.
+For necessity, sort the three sizes as $a\leq b\leq c$ and
+suppose $b\geq2$. Two of the generating functions have degrees
+$a+b$ and $a+c$, and
+\[
+ G-(a+c-1)=(a+b-2)c+(a-1)(b-2)>0.
+\]
+Both degrees are therefore at most $G$.
+On a hyperelliptic curve of genus $G$, every meromorphic function
+of degree at most $G$ factors through the degree-two hyperelliptic
+map. Indeed, otherwise that map and the function would generate
+the function field, and the Castelnuovo--Severi inequality would give
+$G\leq\deg(f)-1$; see \cite[Theorem~14]{KhawajaSiksek2024}.
+Both generating functions would thus belong to the rational
+function field of the hyperelliptic map, a contradiction.
+\end{proof}

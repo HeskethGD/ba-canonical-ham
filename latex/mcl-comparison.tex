@@ -1,0 +1,104 @@
+\section{Comparison with Menyuk, Chen and Lee}
+\label{sec:MCL-dictionary}
+
+The restricted shared-mode Hamiltonian and the broader wave construction
+in \cite{MenyukChenLee1983Integrable} give two distinct comparisons
+with the canonical equations used here.
+
+\subsection{The restricted shared-mode family}
+
+Write the shared mode as $p$ and the remaining pairs as $q_j,r_j$,
+$1\leq j\leq R$. Complexify the conjugates as independent partners.
+With brackets $\{p,\bar p\}=-i$ and the same convention for the
+other pairs, the action--angle Hamiltonian in
+\cite[equation (1.1)]{MenyukChenLee1983Integrable} is
+\begin{equation}\label{eq:MCL-star-H}
+ H_{\rm MCL}=\sum_{j=1}^{R}\left[
+ \frac{\Delta_j}{2}(q_j\bar q_j-r_j\bar r_j)
+ -\frac{\epsilon_j}{2}
+ (p\bar q_jr_j+\bar p q_j\bar r_j)\right].
+\end{equation}
+Here $\Delta_j$ is the frequency mismatch and $\epsilon_j$ the
+coupling. For the equal-coupling family $\epsilon_j=\epsilon$, set
+\[
+ u=p,\quad\bar u=\bar p,\qquad
+ v_j=i\bar q_j,\quad\bar v_j=iq_j,\qquad
+ w_j=r_j,\quad\bar w_j=\bar r_j,
+ \qquad1\leq j\leq R.
+\]
+This is a complex canonical change: for example,
+$\{i\bar q_j,iq_j\}=-i$. It gives
+\begin{equation}\label{eq:MCL-star-map}
+ H_{\rm MCL}=-\frac12\sum_{j=1}^{R}\Delta_j
+ (v_j\bar v_j+w_j\bar w_j)
+ +\frac{i\epsilon}{2}\sum_{j=1}^{R}
+ (uv_jw_j+\bar u\bar v_j\bar w_j).
+\end{equation}
+Thus the restricted model has our interaction arrays with
+$(L,M,N)=(1,1,R)$, up to the constant coupling and time normalization.
+Its original physical real form becomes $\bar v_j=-v_j^*$,
+$\bar u=u^*$ and $\bar w_j=w_j^*$ under this complex dictionary;
+the transformed coupling is imaginary. This is a different convention
+from imposing actual conjugation on all partner arrays.
+
+Menyuk, Chen and Lee give a complete set of $2R+1$ independent
+commuting integrals for this restricted family, including coincident
+mismatches \cite[Section~III]{MenyukChenLee1983Integrable}.
+Their Section~V assumes equal mismatches as well as equal couplings:
+the shared power is elliptic, its phase is an elliptic integral of
+the third kind, and the remaining modes are recovered by quadratures.
+
+\subsection{The broader matrix wave construction}
+
+Their equation (2.13), attributed in its reality-reduced form to
+Ablowitz and Haberman, is
+\begin{equation}\label{eq:MCL-matrix-wave}
+ \alpha_{hi}\partial_x N_{hi}
+ =\partial_t N_{hi}
+ +\sum_{\substack{j=1\\j\ne h,i}}^{d}
+ N_{hj}N_{ji}(\alpha_{ji}-\alpha_{hj}),
+ \qquad1\leq h,i\leq d,\quad h\ne i.
+\end{equation}
+For unequal source spectral constants,
+$\alpha_{hi}=(c_i-c_h)/(i(a_i-a_h))$; coincident $a_h=a_i$,
+$c_h=c_i$ permit separate choices. Section~IV takes
+$N_{hi}(x,t)=N_{hi}(t)e^{\Delta_{hi}x}$ with
+$\Delta_{hi}=\Delta_{hj}+\Delta_{ji}$, producing linear rates and
+quadratic mode interactions.
+
+Here is the reduction to our arbitrary-size canonical system.
+Use the $H_0$ modes in \cref{eq:canonical-X} and write
+\[
+ \widetilde{\mathsf X}=E+Z,\qquad
+ E=\diag(-2\mathsf B_L,-2\mathsf B_M,\mathsf B_N).
+\]
+The matrix $Z$ has zero diagonal blocks. On the three groups of
+indices choose symmetric coefficients
+\[
+ \alpha_{LM}=0,\qquad\alpha_{LN}=1,\qquad
+ \alpha_{MN}=-1,
+\]
+and zero coefficients within each group. These follow from the
+complexified source parameters $a=i,-i,0$ and $c=0,0,1$ on the
+respective groups. Define $(T_0)_{hi}=\alpha_{hi}Z_{hi}$.
+Our $H_0$ equations give $i\dot Z=[E+Z,T_0]$. Substituting
+\begin{equation}\label{eq:MCL-matrix-map}
+ N(x,t)=i e^{-ixE}Z(t)e^{ixE}
+\end{equation}
+into \cref{eq:MCL-matrix-wave} gives exactly this commutator:
+at $x=0$, $\partial_xN_{hi}=(E_{hh}-E_{ii})Z_{hi}$ and the
+quadratic sum is $-[Z,T_0]_{hi}$. The exponential rates
+$\Delta_{hi}=-i(E_{hh}-E_{ii})$ obey the required consistency
+condition. Equal coefficients to the third group preserve the zero
+diagonal blocks. This comparison applies to all positive $L,M,N$;
+\cref{eq:canonical-phase-gauge} gives the symmetric phase convention.
+
+The broader wave framework therefore already permits these
+phase-dependent equations. The independent phase parameters are a
+constant-diagonal extension relative to the printed 1991 Hamiltonian,
+as detailed in Appendix~\ref{sec:JRW-dictionary}. Their determination
+from prescribed BA data is the role they play in the present paper.
+The explicit complete-integral calculation in the MCL paper concerns
+the restricted shared-mode family; the all-size canonical count used
+here is stated in \cref{thm:canonical-independence} and proved in
+Appendix~\ref{sec:integrability-proof}.
