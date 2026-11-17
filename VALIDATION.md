@@ -33,9 +33,9 @@ sextic, giving the generic genus two. Adjugate contractions recover
 three ordinary and three dual divisor points. Algebraic reconstruction
 recovers the initial modes to `2.6e-41` and the weights to `3.3e-41`,
 before any theta evaluation. Reconstructed theta evolution agrees with
-all ten canonical rates to `4.0e-40`. Independent RK4 over [0,2]
-has fine-grid discrepancy `4.2e-13`, with refinement ratio `16.01`;
-the direct and RK4 spectral drifts are `4.1e-14` and `3.7e-12`.
+all ten canonical rates to `3.9e-40`. Independent RK4 over [0,2]
+has fine-grid discrepancy `4.1e-13`, with refinement ratio `16.01`;
+the direct and RK4 spectral drifts are `4.1e-14` and `3.6e-12`.
 
 An independent elliptic check compares public Generapy theta jets
 through order three, ratios and logarithmic rates with
