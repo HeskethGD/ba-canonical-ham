@@ -1,11 +1,18 @@
 \section{Spectral curves and their classification}
 \label{sec:spectral-geometry}
 
-The Lax pencil converts the mode variables into an algebraic curve.
-We first explain this construction, then determine the curve's genus
-and the family of curves obtained as the phase parameters and initial
-modes vary. These geometric properties distinguish the regular
-hyperelliptic cases from special hyperelliptic levels of larger systems.
+The Lax pencil associates a spectral curve to each trajectory. For
+fixed matrix sizes $L,M,N$, the phase coefficients and initial modes
+determine a family of marked curves. We describe its regular members,
+their genus, and how special spectral levels accommodate curves of
+lower genus.
+
+This fixed-size question complements the BA construction of
+\cref{sec:general-BA-realization}: any prescribed smooth curve admits
+a compatible BA realization, enlarging the mode lists when needed.
+The classification here describes how curves appear within particular
+networks, while that construction chooses a network to accommodate
+the curve.
 
 \subsection{From the Lax pencil to a fixed curve}
 
@@ -113,7 +120,7 @@ The regular locus is nonempty when phases and initial modes vary;
 Appendix~\ref{sec:geometry-details} proves this by smoothing a
 union of lines.
 
-\subsection{Which curves occur?}
+\subsection{Regular curves at fixed matrix sizes}
 
 The infinity branches provide a characterization in terms of marked
 points and meromorphic functions. Write their divisors as
@@ -153,16 +160,11 @@ of genus $G$, the following statements are equivalent.
 \end{enumerate}
 \end{theorem}
 The equivalence is proved in Appendix~\ref{sec:geometry-details}.
-The marked functions describe the curve family at fixed matrix sizes;
-the BA realization theorem will instead start from a prescribed curve
-and choose compatible sizes and marked points.
-
-
-The phase coefficients and initial modes range over the family in
-\cref{thm:geometry-classification}; each resulting Hamiltonian
-trajectory keeps those coefficients and its spectral curve fixed.
-The characterization specifies the plane presentation and marked
-functions required of a curve of genus $G$.
+The marked functions specify the regular curve family at these sizes.
+Varying the phase coefficients and spectral integral values explores
+this family; each Hamiltonian trajectory preserves its own spectral
+curve. A prescribed curve of lower genus can occur at a special level,
+as described below.
 
 \subsection{Covering degrees and hyperelliptic cases}
 
@@ -260,5 +262,10 @@ Coincident phase coefficients can also change the infinity
 singularities and require their defects to be recomputed.
 
 For birational prescribed BA realizations,
-\cref{prop:BA-prescribed-spectral-curve} identifies the normalization
-and total excess genus defect explicitly.
+\cref{prop:BA-prescribed-spectral-curve} identifies the prescribed smooth
+curve with the normalization and gives the total excess defect $G-g$.
+For example, the $(L,M,N)=(3,3,1)$ network has regular genus nine,
+whereas the genus-three trigonal realization in
+\cref{sec:numerical-validation} has excess defect six. The additional
+singularities belong to its plane spectral image; the prescribed BA
+curve is its smooth normalization.

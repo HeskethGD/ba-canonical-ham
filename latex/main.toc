@@ -10,11 +10,11 @@
 \contentsline {section}{\numberline {3}Spectral curves and their classification}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}From the Lax pencil to a fixed curve}{12}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Branches at infinity and genus}{13}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Which curves occur?}{14}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Regular curves at fixed matrix sizes}{14}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Covering degrees and hyperelliptic cases}{14}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}A symmetric reduction and its Prym}{15}{subsection.3.5}%
 \contentsline {subsection}{\numberline {3.6}Special spectral levels}{15}{subsection.3.6}%
-\contentsline {section}{\numberline {4}Baker-Akhiezer realizations on a prescribed curve}{16}{section.4}%
+\contentsline {section}{\numberline {4}Baker-Akhiezer realizations on a prescribed curve}{15}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Scalar BA bases and their kernel}{16}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Mode arrays and meromorphic interpolation}{17}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}The kernel convolution identity}{18}{subsection.4.3}%

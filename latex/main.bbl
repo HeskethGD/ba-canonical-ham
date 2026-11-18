@@ -2,136 +2,105 @@
 
 \bibitem{AdamsHarnadHurtubise1990II}
 M.~R. Adams, J.~Harnad, and J.~Hurtubise.
-\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions.
-  {II}. integration of flows.
+\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions. {II}. integration of flows.
 \newblock {\em Communications in Mathematical Physics}, 134:555--585, 1990.
-\newblock \href {https://doi.org/10.1007/BF02098447}
-  {\path{doi:10.1007/BF02098447}}.
+\newblock \href {https://doi.org/10.1007/BF02098447} {\path{doi:10.1007/BF02098447}}.
 
 \bibitem{AdamsHarnadHurtubise1993}
 M.~R. Adams, J.~Harnad, and J.~Hurtubise.
-\newblock {Darboux} coordinates and {Liouville--Arnold} integration in loop
-  algebras.
+\newblock {Darboux} coordinates and {Liouville--Arnold} integration in loop algebras.
 \newblock {\em Communications in Mathematical Physics}, 155(2):385--413, 1993.
 \newblock Author version: \url{https://arxiv.org/abs/hep-th/9210089}.
-\newblock \href {https://doi.org/10.1007/BF02097398}
-  {\path{doi:10.1007/BF02097398}}.
+\newblock \href {https://doi.org/10.1007/BF02097398} {\path{doi:10.1007/BF02097398}}.
 
 \bibitem{AdamsHarnadPreviato1988}
 M.~R. Adams, J.~Harnad, and E.~Previato.
-\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions.
-  {I}. generalized {Moser} systems and moment maps into loop algebras.
+\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions. {I}. generalized {Moser} systems and moment maps into loop algebras.
 \newblock {\em Communications in Mathematical Physics}, 117:451--500, 1988.
-\newblock \href {https://doi.org/10.1007/BF01223376}
-  {\path{doi:10.1007/BF01223376}}.
+\newblock \href {https://doi.org/10.1007/BF01223376} {\path{doi:10.1007/BF01223376}}.
 
 \bibitem{AdlerVanMoerbeke2018}
 Mark Adler and Pierre van Moerbeke.
 \newblock The {AKS} theorem, {A.C.I.} systems and random matrix theory.
-\newblock {\em Journal of Physics A: Mathematical and Theoretical}, 51:423001,
-  2018.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical}, 51:423001, 2018.
 \newblock \url{https://arxiv.org/abs/1810.03168}.
-\newblock \href {https://doi.org/10.1088/1751-8121/aad82d}
-  {\path{doi:10.1088/1751-8121/aad82d}}.
+\newblock \href {https://doi.org/10.1088/1751-8121/aad82d} {\path{doi:10.1088/1751-8121/aad82d}}.
 
 \bibitem{AratynGomesNissimovPacheva2001}
 H.~Aratyn, J.~F. Gomes, E.~Nissimov, and S.~Pacheva.
-\newblock Loop-algebra and {Virasoro} symmetries of integrable hierarchies of
-  {KP} type.
+\newblock Loop-algebra and {Virasoro} symmetries of integrable hierarchies of {KP} type.
 \newblock {\em Applicable Analysis}, 78(3--4):233--253, 2001.
 \newblock Author version: \url{https://arxiv.org/abs/nlin/0004040}.
-\newblock \href {https://doi.org/10.1080/00036810108840937}
-  {\path{doi:10.1080/00036810108840937}}.
+\newblock \href {https://doi.org/10.1080/00036810108840937} {\path{doi:10.1080/00036810108840937}}.
 
 \bibitem{AratynNissimovPacheva1997}
 H.~Aratyn, E.~Nissimov, and S.~Pacheva.
-\newblock Method of squared eigenfunction potentials in integrable hierarchies
-  of {KP} type.
+\newblock Method of squared eigenfunction potentials in integrable hierarchies of {KP} type.
 \newblock {\em Communications in Mathematical Physics}, 193:493--525, 1998.
 \newblock Author version: \url{https://arxiv.org/abs/solv-int/9701017}.
-\newblock \href {https://doi.org/10.1007/s002200050338}
-  {\path{doi:10.1007/s002200050338}}.
+\newblock \href {https://doi.org/10.1007/s002200050338} {\path{doi:10.1007/s002200050338}}.
 
 \bibitem{Beauville1990}
 Arnaud Beauville.
-\newblock Jacobiennes des courbes spectrales et syst\`emes hamiltoniens
-  compl\`etement int\'egrables.
+\newblock Jacobiennes des courbes spectrales et syst\`emes hamiltoniens compl\`etement int\'egrables.
 \newblock {\em Acta Mathematica}, 164:211--235, 1990.
-\newblock \href {https://doi.org/10.1007/BF02392754}
-  {\path{doi:10.1007/BF02392754}}.
+\newblock \href {https://doi.org/10.1007/BF02392754} {\path{doi:10.1007/BF02392754}}.
 
 \bibitem{BenZviBiswas2003}
 David Ben-Zvi and Indranil Biswas.
 \newblock Theta functions and {Szeg\H{o}} kernels.
-\newblock {\em International Mathematics Research Notices},
-  2003(24):1305--1340, 2003.
+\newblock {\em International Mathematics Research Notices}, 2003(24):1305--1340, 2003.
 \newblock Author version: \url{https://arxiv.org/abs/math/0211441}.
-\newblock \href {https://doi.org/10.1155/S1073792803211181}
-  {\path{doi:10.1155/S1073792803211181}}.
+\newblock \href {https://doi.org/10.1155/S1073792803211181} {\path{doi:10.1155/S1073792803211181}}.
 
 \bibitem{Bertola2021}
 Marco Bertola.
 \newblock Pad\'e approximants on {Riemann} surfaces and {KP} tau functions.
 \newblock {\em Analysis and Mathematical Physics}, 11:149, 2021.
 \newblock \url{https://arxiv.org/abs/2101.09557}.
-\newblock \href {https://doi.org/10.1007/s13324-021-00585-2}
-  {\path{doi:10.1007/s13324-021-00585-2}}.
+\newblock \href {https://doi.org/10.1007/s13324-021-00585-2} {\path{doi:10.1007/s13324-021-00585-2}}.
 
 \bibitem{Bolsinov1992}
 A.~V. Bolsinov.
-\newblock Compatible {Poisson} brackets on {Lie} algebras and completeness of
-  families of functions in involution.
+\newblock Compatible {Poisson} brackets on {Lie} algebras and completeness of families of functions in involution.
 \newblock {\em Mathematics of the USSR-Izvestiya}, 38(1):69--90, 1992.
 \newblock Open text: \url{https://www.mathnet.ru/eng/im1026}.
-\newblock \href {https://doi.org/10.1070/IM1992v038n01ABEH002187}
-  {\path{doi:10.1070/IM1992v038n01ABEH002187}}.
+\newblock \href {https://doi.org/10.1070/IM1992v038n01ABEH002187} {\path{doi:10.1070/IM1992v038n01ABEH002187}}.
 
 \bibitem{Braden2005}
 Harry~W. Braden, Victor~Z. Enolskii, and Andrew N.~W. Hone.
-\newblock Bilinear recurrences and addition formulae for hyperelliptic sigma
-  functions.
-\newblock {\em Journal of Nonlinear Mathematical Physics}, 12(Supplement
-  2):46--62, 2005.
-\newblock \href {https://doi.org/10.2991/jnmp.2005.12.s2.5}
-  {\path{doi:10.2991/jnmp.2005.12.s2.5}}.
+\newblock Bilinear recurrences and addition formulae for hyperelliptic sigma functions.
+\newblock {\em Journal of Nonlinear Mathematical Physics}, 12(Supplement 2):46--62, 2005.
+\newblock \href {https://doi.org/10.2991/jnmp.2005.12.s2.5} {\path{doi:10.2991/jnmp.2005.12.s2.5}}.
 
 \bibitem{BradlowSchaposnik2016}
 Steven~B. Bradlow and Laura~P. Schaposnik.
 \newblock Higgs bundles and exceptional isogenies.
 \newblock {\em Research in the Mathematical Sciences}, 3:14, 2016.
-\newblock \href {https://doi.org/10.1186/s40687-016-0062-0}
-  {\path{doi:10.1186/s40687-016-0062-0}}.
+\newblock \href {https://doi.org/10.1186/s40687-016-0062-0} {\path{doi:10.1186/s40687-016-0062-0}}.
 
 \bibitem{BEL1997}
 Victor~M. Buchstaber, Victor~Z. Enolskii, and Dmitri~V. Leykin.
 \newblock Hyperelliptic {Kleinian} functions and applications.
-\newblock In {\em Solitons, Geometry, and Topology: On the Crossroad}, volume
-  179 of {\em American Mathematical Society Translations, Series 2}, pages
-  1--34. American Mathematical Society, 1997.
+\newblock In {\em Solitons, Geometry, and Topology: On the Crossroad}, volume 179 of {\em American Mathematical Society Translations, Series 2}, pages 1--34. American Mathematical Society, 1997.
 \newblock \url{https://arxiv.org/abs/solv-int/9603005}.
 
 \bibitem{Christiansen2000}
 P.~L. Christiansen, J.~C. Eilbeck, V.~Z. Enolskii, and N.~A. Kostov.
-\newblock Quasi-periodic and periodic solutions for systems of coupled
-  nonlinear {Schr\"odinger} equations of {Manakov} type.
-\newblock {\em Proceedings of the Royal Society of London A}, 456:2263--2281,
-  2000.
+\newblock Quasi-periodic and periodic solutions for systems of coupled nonlinear {Schr\"odinger} equations of {Manakov} type.
+\newblock {\em Proceedings of the Royal Society of London A}, 456:2263--2281, 2000.
 \newblock \url{https://arxiv.org/abs/solv-int/9904017}.
-\newblock \href {https://doi.org/10.1098/rspa.2000.0612}
-  {\path{doi:10.1098/rspa.2000.0612}}.
+\newblock \href {https://doi.org/10.1098/rspa.2000.0612} {\path{doi:10.1098/rspa.2000.0612}}.
 
 \bibitem{Eilbeck2000}
 J.~C. Eilbeck, V.~Z. Enolskii, and N.~A. Kostov.
-\newblock Quasiperiodic and periodic solutions for vector nonlinear
-  {Schr\"odinger} equations.
+\newblock Quasiperiodic and periodic solutions for vector nonlinear {Schr\"odinger} equations.
 \newblock {\em Journal of Mathematical Physics}, 41:8236--8248, 2000.
-\newblock \href {https://doi.org/10.1063/1.1318733}
-  {\path{doi:10.1063/1.1318733}}.
+\newblock \href {https://doi.org/10.1063/1.1318733} {\path{doi:10.1063/1.1318733}}.
 
 \bibitem{Fay1973}
 John~D. Fay.
-\newblock {\em Theta Functions on {Riemann} Surfaces}, volume 352 of {\em
-  Lecture Notes in Mathematics}.
+\newblock {\em Theta Functions on {Riemann} Surfaces}, volume 352 of {\em Lecture Notes in Mathematics}.
 \newblock Springer, 1973.
 
 \bibitem{FernandesVanhaecke2001}
@@ -139,58 +108,46 @@ Rui~Loja Fernandes and Pol Vanhaecke.
 \newblock Hyperelliptic {Prym} varieties and integrable systems.
 \newblock {\em Communications in Mathematical Physics}, 221(1):169--196, 2001.
 \newblock \url{https://arxiv.org/abs/math-ph/0011051}.
-\newblock \href {https://doi.org/10.1007/s002200100476}
-  {\path{doi:10.1007/s002200100476}}.
+\newblock \href {https://doi.org/10.1007/s002200100476} {\path{doi:10.1007/s002200100476}}.
 
 \bibitem{Griffiths1985}
 Phillip~A. Griffiths.
-\newblock Linearizing flows and a cohomological interpretation of {Lax}
-  equations.
+\newblock Linearizing flows and a cohomological interpretation of {Lax} equations.
 \newblock {\em American Journal of Mathematics}, 107(6):1445--1484, 1985.
-\newblock Open text:
-  \url{https://publications.ias.edu/sites/default/files/linearflow.pdf}.
+\newblock Open text: \url{https://publications.ias.edu/sites/default/files/linearflow.pdf}.
 \newblock \href {https://doi.org/10.2307/2374412} {\path{doi:10.2307/2374412}}.
 
 \bibitem{GrinevichOrlov1989}
 P.~G. Grinevich and A.~Yu. Orlov.
-\newblock Flag spaces in {KP} theory and {Virasoro} action on $\det d_j$ and
-  {Segal--Wilson} $\tau$-function.
-\newblock In A.~A. Belavin, A.~U. Klimyk, and A.~B. Zamolodchikov, editors,
-  {\em Problems of Modern Quantum Field Theory}, Research Reports in Physics,
-  pages 86--106. Springer, 1989.
+\newblock Flag spaces in {KP} theory and {Virasoro} action on $\det d_j$ and {Segal--Wilson} $\tau$-function.
+\newblock In A.~A. Belavin, A.~U. Klimyk, and A.~B. Zamolodchikov, editors, {\em Problems of Modern Quantum Field Theory}, Research Reports in Physics, pages 86--106. Springer, 1989.
 \newblock Author version: \url{https://arxiv.org/abs/math-ph/9804019}.
 
 \bibitem{GuilleminSternberg1983}
 Victor Guillemin and Shlomo Sternberg.
-\newblock The {Gelfand--Cetlin} system and quantization of the complex flag
-  manifolds.
+\newblock The {Gelfand--Cetlin} system and quantization of the complex flag manifolds.
 \newblock {\em Journal of Functional Analysis}, 52(1):106--128, 1983.
-\newblock \href {https://doi.org/10.1016/0022-1236(83)90092-7}
-  {\path{doi:10.1016/0022-1236(83)90092-7}}.
+\newblock \href {https://doi.org/10.1016/0022-1236(83)90092-7} {\path{doi:10.1016/0022-1236(83)90092-7}}.
 
 \bibitem{Harnad1994}
 John Harnad.
 \newblock Dual isomonodromic deformations and moment maps to loop algebras.
 \newblock {\em Communications in Mathematical Physics}, 166:337--366, 1994.
 \newblock Author version: \url{https://arxiv.org/abs/hep-th/9301076}.
-\newblock \href {https://doi.org/10.1007/BF02112319}
-  {\path{doi:10.1007/BF02112319}}.
+\newblock \href {https://doi.org/10.1007/BF02112319} {\path{doi:10.1007/BF02112319}}.
 
 \bibitem{Hartshorne1977}
 Robin Hartshorne.
-\newblock {\em Algebraic Geometry}, volume~52 of {\em Graduate Texts in
-  Mathematics}.
+\newblock {\em Algebraic Geometry}, volume~52 of {\em Graduate Texts in Mathematics}.
 \newblock Springer, 1977.
-\newblock \href {https://doi.org/10.1007/978-1-4757-3849-0}
-  {\path{doi:10.1007/978-1-4757-3849-0}}.
+\newblock \href {https://doi.org/10.1007/978-1-4757-3849-0} {\path{doi:10.1007/978-1-4757-3849-0}}.
 
 \bibitem{HelminckVanDeLeur1998}
 G.~F. Helminck and J.~W. van~de Leur.
 \newblock An analytic description of the vector constrained {KP} hierarchy.
 \newblock {\em Communications in Mathematical Physics}, 193(3):627--641, 1998.
 \newblock Author version: \url{https://arxiv.org/abs/solv-int/9706004}.
-\newblock \href {https://doi.org/10.1007/s002200050341}
-  {\path{doi:10.1007/s002200050341}}.
+\newblock \href {https://doi.org/10.1007/s002200050341} {\path{doi:10.1007/s002200050341}}.
 
 \bibitem{Generapy}
 Graham Hesketh.
@@ -200,100 +157,78 @@ Graham Hesketh.
 
 \bibitem{HeskethFWM2026}
 Graham Hesketh.
-\newblock Elliptic normal forms and {Frobenius--Stickelberger} identities for
-  continuous-wave four-wave mixing.
+\newblock Elliptic normal forms and {Frobenius--Stickelberger} identities for continuous-wave four-wave mixing.
 \newblock \url{https://arxiv.org/abs/2601.11740}, 2026.
 
 \bibitem{Hesketh2015}
 Graham~D. Hesketh.
-\newblock General complex envelope solutions of coupled-mode optics with
-  quadratic or cubic nonlinearity.
-\newblock {\em Journal of the Optical Society of America B}, 32:2391--2399,
-  2015.
+\newblock General complex envelope solutions of coupled-mode optics with quadratic or cubic nonlinearity.
+\newblock {\em Journal of the Optical Society of America B}, 32:2391--2399, 2015.
 \newblock \url{https://arxiv.org/abs/1512.03092}.
-\newblock \href {https://doi.org/10.1364/JOSAB.32.002391}
-  {\path{doi:10.1364/JOSAB.32.002391}}.
+\newblock \href {https://doi.org/10.1364/JOSAB.32.002391} {\path{doi:10.1364/JOSAB.32.002391}}.
 
 \bibitem{JRW1991}
 Z.~Jiang and S.~Rauch-Wojciechowski.
-\newblock Integrable dynamical systems with quadratic and cubic nonlinearities
-  related to graded {Lie} algebras.
+\newblock Integrable dynamical systems with quadratic and cubic nonlinearities related to graded {Lie} algebras.
 \newblock {\em Journal of Mathematical Physics}, 32(7):1720--1732, 1991.
-\newblock \href {https://doi.org/10.1063/1.529233}
-  {\path{doi:10.1063/1.529233}}.
+\newblock \href {https://doi.org/10.1063/1.529233} {\path{doi:10.1063/1.529233}}.
 
 \bibitem{KhawajaSiksek2024}
 Maleeha Khawaja and Samir Siksek.
 \newblock Primitive algebraic points on curves.
 \newblock {\em Research in Number Theory}, 10(2):57, 2024.
-\newblock \href {https://doi.org/10.1007/s40993-024-00543-4}
-  {\path{doi:10.1007/s40993-024-00543-4}}.
+\newblock \href {https://doi.org/10.1007/s40993-024-00543-4} {\path{doi:10.1007/s40993-024-00543-4}}.
 
 \bibitem{Korotkin2003}
 Dmitry Korotkin.
-\newblock Solution of matrix {Riemann--Hilbert} problems with quasi-permutation
-  monodromy matrices.
+\newblock Solution of matrix {Riemann--Hilbert} problems with quasi-permutation monodromy matrices.
 \newblock {\em Mathematische Annalen}, 329(2):335--364, 2004.
 \newblock Author version: \url{https://arxiv.org/abs/math-ph/0306061}.
-\newblock \href {https://doi.org/10.1007/s00208-004-0528-z}
-  {\path{doi:10.1007/s00208-004-0528-z}}.
+\newblock \href {https://doi.org/10.1007/s00208-004-0528-z} {\path{doi:10.1007/s00208-004-0528-z}}.
 
 \bibitem{KorotkinShramchenko2012}
 Dmitry Korotkin and Vasilisa Shramchenko.
 \newblock On higher genus {Weierstrass} sigma-function.
 \newblock {\em Physica D: Nonlinear Phenomena}, 241:2086--2094, 2012.
 \newblock Author version: \url{https://arxiv.org/abs/1201.3961}.
-\newblock \href {https://doi.org/10.1016/j.physd.2012.01.002}
-  {\path{doi:10.1016/j.physd.2012.01.002}}.
+\newblock \href {https://doi.org/10.1016/j.physd.2012.01.002} {\path{doi:10.1016/j.physd.2012.01.002}}.
 
 \bibitem{Kostov1999}
 N.~A. Kostov.
-\newblock Korteweg-de {Vries} hierarchy and related completely integrable
-  systems: {I}. {Algebro}-geometrical approach.
+\newblock Korteweg-de {Vries} hierarchy and related completely integrable systems: {I}. {Algebro}-geometrical approach.
 \newblock \url{https://arxiv.org/abs/solv-int/9904016}, 1999.
 
 \bibitem{KostovTsiganov2008}
 N.~A. Kostov and A.~V. Tsiganov.
-\newblock New {Lax} pair for restricted multiple three wave interaction system,
-  quasiperiodic solutions and bi-{Hamiltonian} structure.
+\newblock New {Lax} pair for restricted multiple three wave interaction system, quasiperiodic solutions and bi-{Hamiltonian} structure.
 \newblock {\em Regular and Chaotic Dynamics}, 13(6):593--601, 2008.
 \newblock \url{https://arxiv.org/abs/0705.4363}.
-\newblock \href {https://doi.org/10.1134/S1560354708060099}
-  {\path{doi:10.1134/S1560354708060099}}.
+\newblock \href {https://doi.org/10.1134/S1560354708060099} {\path{doi:10.1134/S1560354708060099}}.
 
 \bibitem{KricheverSelfConsistent1995}
 I.~Krichever.
-\newblock Linear operators with self-consistent coefficients and rational
-  reductions of {KP} hierarchy.
+\newblock Linear operators with self-consistent coefficients and rational reductions of {KP} hierarchy.
 \newblock {\em Physica D: Nonlinear Phenomena}, 87(1--4):14--19, 1995.
-\newblock Author-hosted published version:
-  \url{https://www.math.columbia.edu/department/krichever/pdfs/1995-1999/1995-LOWSCARROKH.pdf}.
-\newblock \href {https://doi.org/10.1016/0167-2789(95)00146-U}
-  {\path{doi:10.1016/0167-2789(95)00146-U}}.
+\newblock Author-hosted published version: \url{https://www.math.columbia.edu/department/krichever/pdfs/1995-1999/1995-LOWSCARROKH.pdf}.
+\newblock \href {https://doi.org/10.1016/0167-2789(95)00146-U} {\path{doi:10.1016/0167-2789(95)00146-U}}.
 
 \bibitem{Krichever1977}
 I.~M. Krichever.
 \newblock Methods of algebraic geometry in the theory of non-linear equations.
 \newblock {\em Russian Mathematical Surveys}, 32(6):185--213, 1977.
-\newblock \href {https://doi.org/10.1070/RM1977v032n06ABEH003862}
-  {\path{doi:10.1070/RM1977v032n06ABEH003862}}.
+\newblock \href {https://doi.org/10.1070/RM1977v032n06ABEH003862} {\path{doi:10.1070/RM1977v032n06ABEH003862}}.
 
 \bibitem{KricheverRational1995}
 I.~M. Krichever.
-\newblock General rational reductions of the {KP} hierarchy and their
-  symmetries.
+\newblock General rational reductions of the {KP} hierarchy and their symmetries.
 \newblock {\em Functional Analysis and Its Applications}, 29(2):75--80, 1995.
-\newblock Author-hosted published version:
-  \url{https://www.math.columbia.edu/department/krichever/pdfs/1995-1999/1995-GRROTKHATS0.pdf}.
-\newblock \href {https://doi.org/10.1007/BF01080005}
-  {\path{doi:10.1007/BF01080005}}.
+\newblock Author-hosted published version: \url{https://www.math.columbia.edu/department/krichever/pdfs/1995-1999/1995-GRROTKHATS0.pdf}.
+\newblock \href {https://doi.org/10.1007/BF01080005} {\path{doi:10.1007/BF01080005}}.
 
 \bibitem{KricheverShiota2011}
 Igor Krichever and Takahiro Shiota.
 \newblock Soliton equations and the {Riemann--Schottky} problem.
-\newblock In {\em Handbook of Moduli, Volume {II}}, volume~25 of {\em Advanced
-  Lectures in Mathematics}, pages 205--258. International Press, Somerville,
-  MA, 2013.
+\newblock In {\em Handbook of Moduli, Volume {II}}, volume~25 of {\em Advanced Lectures in Mathematics}, pages 205--258. International Press, Somerville, MA, 2013.
 \newblock Author version: \url{https://arxiv.org/abs/1111.0164}.
 
 \bibitem{MatsutaniPreviato2015}
@@ -301,76 +236,62 @@ Shigeki Matsutani and Emma Previato.
 \newblock The $\mathrm{al}$ function of a cyclic trigonal curve of genus three.
 \newblock {\em Collectanea Mathematica}, 66(3):311--349, 2015.
 \newblock Author version: \url{https://arxiv.org/abs/1312.4107}.
-\newblock \href {https://doi.org/10.1007/s13348-015-0138-y}
-  {\path{doi:10.1007/s13348-015-0138-y}}.
+\newblock \href {https://doi.org/10.1007/s13348-015-0138-y} {\path{doi:10.1007/s13348-015-0138-y}}.
 
 \bibitem{MenyukChenLee1982}
 C.~R. Menyuk, H.~H. Chen, and Y.~C. Lee.
 \newblock Integrable {Hamiltonian} systems and the {Lax} pair formalism.
 \newblock {\em Physical Review A}, 26:3731--3733, 1982.
-\newblock \href {https://doi.org/10.1103/PhysRevA.26.3731}
-  {\path{doi:10.1103/PhysRevA.26.3731}}.
+\newblock \href {https://doi.org/10.1103/PhysRevA.26.3731} {\path{doi:10.1103/PhysRevA.26.3731}}.
 
 \bibitem{MenyukChenLee1983Integrable}
 C.~R. Menyuk, H.~H. Chen, and Y.~C. Lee.
-\newblock Restricted multiple three-wave interactions: Integrable cases of this
-  system and other related systems.
+\newblock Restricted multiple three-wave interactions: Integrable cases of this system and other related systems.
 \newblock {\em Journal of Mathematical Physics}, 24:1073--1079, 1983.
-\newblock \href {https://doi.org/10.1063/1.525832}
-  {\path{doi:10.1063/1.525832}}.
+\newblock \href {https://doi.org/10.1063/1.525832} {\path{doi:10.1063/1.525832}}.
 
 \bibitem{MenyukChenLee1983Painleve}
 C.~R. Menyuk, H.~H. Chen, and Y.~C. Lee.
 \newblock Restricted multiple three-wave interactions: {Painlev\'e} analysis.
 \newblock {\em Physical Review A}, 27:1597--1611, 1983.
-\newblock \href {https://doi.org/10.1103/PhysRevA.27.1597}
-  {\path{doi:10.1103/PhysRevA.27.1597}}.
+\newblock \href {https://doi.org/10.1103/PhysRevA.27.1597} {\path{doi:10.1103/PhysRevA.27.1597}}.
 
 \bibitem{MishchenkoFomenko1978}
 A.~S. Mishchenko and A.~T. Fomenko.
 \newblock Euler equations on finite-dimensional {Lie} groups.
 \newblock {\em Mathematics of the USSR-Izvestiya}, 12(2):371--389, 1978.
 \newblock Open text: \url{https://www.mathnet.ru/eng/im1771}.
-\newblock \href {https://doi.org/10.1070/IM1978v012n02ABEH001859}
-  {\path{doi:10.1070/IM1978v012n02ABEH001859}}.
+\newblock \href {https://doi.org/10.1070/IM1978v012n02ABEH001859} {\path{doi:10.1070/IM1978v012n02ABEH001859}}.
 
 \bibitem{Mumford1984}
 David Mumford.
-\newblock {\em Tata Lectures on Theta {II}}, volume~43 of {\em Progress in
-  Mathematics}.
+\newblock {\em Tata Lectures on Theta {II}}, volume~43 of {\em Progress in Mathematics}.
 \newblock Birkh\"auser, 1984.
-\newblock \href {https://doi.org/10.1007/978-0-8176-4578-6}
-  {\path{doi:10.1007/978-0-8176-4578-6}}.
+\newblock \href {https://doi.org/10.1007/978-0-8176-4578-6} {\path{doi:10.1007/978-0-8176-4578-6}}.
 
 \bibitem{Nakayashiki2026}
 Atsushi Nakayashiki.
 \newblock Degenerate addition formulas of the {KP} hierarchy and applications.
 \newblock {\em SIGMA}, 22:067, 2026.
-\newblock \href {https://doi.org/10.3842/SIGMA.2026.067}
-  {\path{doi:10.3842/SIGMA.2026.067}}.
+\newblock \href {https://doi.org/10.3842/SIGMA.2026.067} {\path{doi:10.3842/SIGMA.2026.067}}.
 
 \bibitem{Onishi2005}
 Yoshihiro {\^O}nishi.
 \newblock Determinant expressions for hyperelliptic functions.
-\newblock {\em Proceedings of the Edinburgh Mathematical Society},
-  48(3):705--742, 2005.
+\newblock {\em Proceedings of the Edinburgh Mathematical Society}, 48(3):705--742, 2005.
 \newblock \url{https://arxiv.org/abs/math/0105189}.
-\newblock \href {https://doi.org/10.1017/S0013091503000695}
-  {\path{doi:10.1017/S0013091503000695}}.
+\newblock \href {https://doi.org/10.1017/S0013091503000695} {\path{doi:10.1017/S0013091503000695}}.
 
 \bibitem{Vanhaecke2001}
 Pol Vanhaecke.
-\newblock {\em Integrable Systems in the Realm of Algebraic Geometry}, volume
-  1638 of {\em Lecture Notes in Mathematics}.
+\newblock {\em Integrable Systems in the Realm of Algebraic Geometry}, volume 1638 of {\em Lecture Notes in Mathematics}.
 \newblock Springer, 2 edition, 2001.
-\newblock \href {https://doi.org/10.1007/3-540-44576-5}
-  {\path{doi:10.1007/3-540-44576-5}}.
+\newblock \href {https://doi.org/10.1007/3-540-44576-5} {\path{doi:10.1007/3-540-44576-5}}.
 
 \bibitem{WJB1986}
 S.~Wojciechowski, Z.~Jiang, and R.~K. Bullough.
 \newblock Integrable multiwave interaction systems of {ODEs}.
 \newblock {\em Physics Letters A}, 117(8):399--404, 1986.
-\newblock \href {https://doi.org/10.1016/0375-9601(86)90006-X}
-  {\path{doi:10.1016/0375-9601(86)90006-X}}.
+\newblock \href {https://doi.org/10.1016/0375-9601(86)90006-X} {\path{doi:10.1016/0375-9601(86)90006-X}}.
 
 \end{thebibliography}
