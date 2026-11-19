@@ -1,4 +1,4 @@
-\subsection{Higher Hamiltonians, BA times and mode phases}
+\subsection{Commuting Hamiltonians, Abel directions and mode phases}
 \label{sec:BA-higher-flows}
 
 The commuting spectral Hamiltonians evolve the same BA data in
@@ -8,8 +8,19 @@ and its principal-part description are classical
 \cite{Griffiths1985,Beauville1990,AdamsHarnadHurtubise1993}; the normalization here gives the
 rates for these canonical arrays. With several punctures, a fixed
 choice of time representatives replaces the one-point gap convention.
+Thus, on each fixed spectral level, the commuting Hamiltonians capture
+the full multidimensional BA evolution: their flows span every
+direction of the Abelian vector $z$, with the corresponding mode
+phases, rather than only the single direction selected by our original
+Hamiltonian.
 
-For a finite spectral value $\nu_0$ and an integer $r\geq2$, put
+\subsubsection{BA times and endpoint phases}
+
+Recall that $\mathsf L(\nu)=\mathsf X+\nu\mathsf D$ is the Lax
+matrix, with mode-dependent coefficient matrix $\mathsf X$ and fixed
+slope matrix $\mathsf D$ from \cref{eq:canonical-X,eq:canonical-pencil}.
+For a fixed finite spectral value $\nu_0$ and an integer trace order
+$r\geq2$, define
 \begin{equation}\label{eq:BA-shifted-flow}
 \begin{aligned}
  H_{r,\nu_0}&=\tfrac1r\tr(\mathsf X+\nu_0\mathsf D)^r,&
@@ -19,6 +30,11 @@ For a finite spectral value $\nu_0$ and an integer $r\geq2$, put
  q(P)&=\frac{\lambda(P)^{r-1}}{\nu(P)-\nu_0}.
 \end{aligned}
 \end{equation}
+Here $H_{r,\nu_0}$ is the spectral Hamiltonian, $\mathsf G$ its matrix
+gradient, and $\mathsf T_{r,\nu_0}$ its Lax time matrix.
+The scalar meromorphic function $q$ uses the spectral coordinates
+$\lambda(P),\nu(P)$ of a point $P$ on the normalized curve and
+determines the local BA exponential rates.
 The matrix quotient is polynomial, and
 $i\dot{\mathsf L}=[\mathsf L,\mathsf T_{r,\nu_0}]$.
 All coefficients of these Hamiltonians in $\nu_0$ commute.
@@ -80,7 +96,7 @@ $q=O(\nu^{-1})$, since $\lambda$ is finite there, and
 $\varphi_1^N=0$. These numbers depend only on the fixed marked
 curve and the chosen time normalization.
 
-\begin{theorem}[The spectral BA hierarchy]\label{thm:BA-higher-flows}
+\begin{theorem}[Main theorem, part III: The spectral BA hierarchy]\label{thm:BA-higher-flows}
 Every prescribed realization in \cref{thm:general-BA-realization}
 evolves under $H_{r,\nu_0}$ by the same multipoint BA bases and
 kernel, with ordinary and dual puncture exponentials

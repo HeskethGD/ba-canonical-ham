@@ -1,4 +1,4 @@
-\section{Spectral curves and their classification}
+\subsection{Regular spectral curves at fixed matrix sizes}
 \label{sec:spectral-geometry}
 
 The Lax pencil associates a spectral curve to each trajectory. For
@@ -10,13 +10,15 @@ lower genus.
 This fixed-size question complements the BA construction of
 \cref{sec:general-BA-realization}: any prescribed smooth curve admits
 a compatible BA realization, enlarging the mode lists when needed.
-The classification here describes how curves appear within particular
-networks, while that construction chooses a network to accommodate
-the curve.
+The classification here describes which curves occur at fixed matrix
+sizes, while that construction chooses compatible matrix sizes,
+parameters and initial modes to accommodate the curve.
 
-\subsection{From the Lax pencil to a fixed curve}
+\subsubsection{From the Lax pencil to a fixed curve}
 
-For each spectral parameter $\nu$, consider the eigenvalue equation
+For each spectral parameter $\nu$, the $d\times d$ Lax matrix
+$\mathsf L(\nu,t)$ in \cref{eq:canonical-pencil} has eigenvalue
+$\lambda$ and nonzero eigenvector $\psi\in\C^d$ when
 \begin{equation}\label{eq:geometry-eigenvalue}
  \mathsf L(\nu,t)\psi=\lambda\psi,\qquad \psi\ne0.
 \end{equation}
@@ -47,7 +49,7 @@ separates the local branches at singular points. We denote this smooth
 curve by $C$; its genus, rather than the degree of the determinant,
 is the genus relevant to the associated Abelian functions.
 
-\subsection{Branches at infinity and genus}
+\subsubsection{Branches at infinity and genus}
 
 Introduce a homogeneous coordinate $\tau$, with affine chart $\tau=1$.
 The projective equation and its restriction to the line at infinity are
@@ -120,7 +122,7 @@ The regular locus is nonempty when phases and initial modes vary;
 Appendix~\ref{sec:geometry-details} proves this by smoothing a
 union of lines.
 
-\subsection{Regular curves at fixed matrix sizes}
+\subsubsection{Marked-curve characterization}
 
 The infinity branches provide a characterization in terms of marked
 points and meromorphic functions. Write their divisors as
@@ -164,9 +166,9 @@ The marked functions specify the regular curve family at these sizes.
 Varying the phase coefficients and spectral integral values explores
 this family; each Hamiltonian trajectory preserves its own spectral
 curve. A prescribed curve of lower genus can occur at a special level,
-as described below.
+as described in \cref{sec:special-spectral-levels}.
 
-\subsection{Covering degrees and hyperelliptic cases}
+\subsubsection{Covering degrees and hyperelliptic cases}
 
 The three cancellations in \cref{eq:geometry-poles} give maps to
 the projective line of degrees
@@ -184,6 +186,15 @@ A regular spectral curve of genus $G\geq2$ is hyperelliptic if and
 only if at least two of $L,M,N$ equal one. The case $L=M=N=1$
 has genus one.
 \end{proposition}
+This criterion classifies the regular spectral curves at fixed matrix
+sizes. Hyperelliptic BA solutions also occur at special spectral levels
+when fewer than two of $L,M,N$ equal one. In particular, the
+genus-$g$ construction in \cref{sec:BA-realization} permits
+$L,M\geq g$ and $N=1$; for $g\geq2$, these hyperelliptic curves
+are smooth normalizations of special spectral levels of systems whose
+regular curves are non-hyperelliptic
+(\cref{sec:special-spectral-levels}).
+
 Two singleton groups give a degree-two map in
 \cref{eq:geometry-degrees}. Appendix~\ref{sec:geometry-details}
 proves the converse using the covering degrees.
@@ -201,8 +212,8 @@ holomorphic evaluation vectors.
 
 
 \noindent\begin{minipage}{\textwidth}
-For example, the following table lists the covering degrees from
-\cref{eq:geometry-degrees}, in increasing order.
+Examples of the covering degrees from \cref{eq:geometry-degrees},
+listed in increasing order, are
 \begin{center}
 \begin{tabular}{ccll}
  $(L,M,N)$ & $G$ & Covering degrees & Regular curve\\\hline
@@ -236,26 +247,28 @@ intercepts in \cref{eq:geometry-branches}. Consequently its genus is
  (L+N-1)(M+N-1)-N(N-1)=G.
 \]
 
-\subsection{A symmetric reduction and its Prym}
+\subsection{Special spectral levels and reductions}
+\label{sec:special-spectral-levels}
 
-A symmetric reduction with $L=M=s$, $N=1$ gives an involution
-$\iota(\lambda,\nu)=(\lambda,-\nu)$. The moving divisor then
-lies in a translate of its Prym, the connected part of the Jacobian
-reversed by $\iota$. On a regular level the curve has genus $s^2$,
-and the Prym has dimension $s(s+1)/2$.
-Appendix~\ref{sec:geometry-prym-proof} gives the mode constraints,
-the dimension count and the eigenvector-divisor proof.
+We explain how special integral values and mode constraints change the
+regular geometry, so that lower-genus BA curves and symmetric
+reductions can be located within the same Hamiltonian family.
 
-\subsection{Special spectral levels}
+\subsubsection{Special spectral levels}
 
 Keep the phase coefficients distinct within each group and suppose
 the plane curve remains irreducible. If particular integral values
-create affine singularities, its normalization has genus
+create affine singularities, the standard genus--delta formula for
+normalization gives
 \begin{equation}\label{eq:geometry-special-genus}
  g(C)=G-\sum_{P\in\operatorname{Sing}_{\mathrm{aff}}(F)}\delta_P.
 \end{equation}
-The sum runs over all affine singular points; $\delta_P$ is their
-local genus defect, equal to one at an ordinary node.
+Here $C$ is the smooth normalization of the plane spectral curve
+$F(\lambda,\nu)=0$, $g(C)$ is its genus, and $G$ is the regular genus
+in \cref{eq:geometry-genus}. The set
+$\operatorname{Sing}_{\mathrm{aff}}(F)$ consists of its affine singular
+points, and $\delta_P$ is the local genus defect at $P$, equal to one
+at an ordinary node.
 Thus the sizes determine the regular genus, while the spectral
 integrals determine whether a particular level has lower genus.
 Coincident phase coefficients can also change the infinity
@@ -264,8 +277,18 @@ singularities and require their defects to be recomputed.
 For birational prescribed BA realizations,
 \cref{prop:BA-prescribed-spectral-curve} identifies the prescribed smooth
 curve with the normalization and gives the total excess defect $G-g$.
-For example, the $(L,M,N)=(3,3,1)$ network has regular genus nine,
+For example, the $(L,M,N)=(3,3,1)$ system has regular genus nine,
 whereas the genus-three trigonal realization in
 \cref{sec:numerical-validation} has excess defect six. The additional
 singularities belong to its plane spectral image; the prescribed BA
 curve is its smooth normalization.
+
+\subsubsection{A symmetric reduction and its Prym}
+
+A symmetric reduction with $L=M=s$, $N=1$ gives an involution
+$\iota(\lambda,\nu)=(\lambda,-\nu)$. The moving divisor then
+lies in a translate of its Prym, the connected part of the Jacobian
+reversed by $\iota$. On a regular level the curve has genus $s^2$,
+and the Prym has dimension $s(s+1)/2$.
+Appendix~\ref{sec:geometry-prym-proof} gives the mode constraints,
+the dimension count and the eigenvector-divisor proof.

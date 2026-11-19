@@ -71,18 +71,19 @@ illustrate the construction and its numerical validation.
 \input{spectral-geometry}
 \input{ba-realization}
 \input{ba-reconstruction}
+\input{correspondences-specializations}
 \input{ahh-comparison}
 \input{ba-one-point}
 \input{constrained-kp}
 \input{hyperelliptic-realization}
-% Keep the Mumford heading and its subsections together in the contents.
-\addtocontents{toc}{\protect\newpage}
 \input{mumford-correspondence}
 \input{numerical-validation}
 \input{discussion}
 \input{ai-declaration}
 
 \appendix
+% Keep appendix proof details below the overview shown in the contents.
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \input{mcl-comparison}
 \input{jiang-comparison}
 \input{ahh-dictionary}

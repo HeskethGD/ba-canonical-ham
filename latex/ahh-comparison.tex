@@ -1,23 +1,39 @@
-\section{Quartic and cubic canonical realizations of BA dynamics}
+\subsection{Quartic and cubic canonical realizations}
 \label{sec:AHH-comparison}
 
+We compare the cubic modes with a quartic canonical lift to explain
+how the same matrix evolution can have different interaction orders.
 The moment-map construction of Adams, Harnad and Previato pulls
 matrix Hamiltonians back through bilinear maps; Adams, Harnad and
 Hurtubise integrate
 both the matrix flows and their canonical lifts using spectral line
 bundles and generalized BA functions
 \cite{AdamsHarnadPreviato1988,AdamsHarnadHurtubise1990II}.
-Here we identify a quartic specialization whose bilinear variables
-satisfy precisely our cubic multiwave equations after a fixed change
-of time and phase. A complete-fiber BA identity explains why these
-bilinear sums reduce to individual endpoint BA functions. This gives
-an explicit connection between the two canonical realizations.
+We relate a quartic canonical realization to our cubic system through
+a shared spectral matrix evolution, while identifying the different
+mode variables and matrix Poisson brackets underlying the two
+descriptions. A BA convolution identity supplies the functional
+connection: weighted bilinear sums of intermediate evaluations
+collapse to individual endpoint BA functions, explaining the change
+from quartic to cubic interaction expressions.
 
-\subsection{A quartic canonical parent}
+\subsubsection{A quartic canonical parent}
 
-Let $\mathsf F,\mathsf G\in\C^{q\times d}$, with
-$\{F_{ih},G_{jk}\}=-i\delta_{ij}\delta_{hk}$ for
-$1\leq i,j\leq q$, $1\leq h,k\leq d$, and all other basic brackets
+The moment-map framework of Adams, Harnad and Previato
+\cite{AdamsHarnadPreviato1988} generates many Hamiltonian systems. Because
+its matrix entries are bilinear in the canonical modes, polynomial
+matrix Hamiltonians pull back to expressions of even degree in those
+modes. The cubic Hamiltonian considered here therefore requires a
+different canonical realization.
+
+Let $\mathsf F(s),\mathsf G(s)\in\C^{q\times d}$ be matrices of
+canonical modes evolving in time $s$, in the moment-map framework
+of Adams, Harnad and Previato, whose flows were integrated by Adams,
+Harnad and Hurtubise
+\cite{AdamsHarnadPreviato1988,AdamsHarnadHurtubise1990II}.
+Their brackets are
+$\{F_{rh},G_{jk}\}=-i\delta_{rj}\delta_{hk}$ for
+$1\leq r,j\leq q$, $1\leq h,k\leq d$, and all other basic brackets
 zero. The entries of $\mathsf G$ are independent partners of those
 of $\mathsf F$. Set
 \begin{equation}\label{eq:AHH-quartic-parent}
@@ -32,9 +48,12 @@ than a separately distinguished model in that paper.
 In scalar modes its full dependence is
 \begin{equation}\label{eq:AHH-quartic-components}
  \mathcal H_4=
- \sum_{h=1}^{d}\sum_{k=1}^{d}\sum_{i=1}^{q}\sum_{j=1}^{q}
- D_{hh}G_{ih}F_{ik}G_{jk}F_{jh}.
+ \sum_{h=1}^{d}\sum_{k=1}^{d}\sum_{r=1}^{q}\sum_{j=1}^{q}
+ D_{hh}G_{rh}F_{rk}G_{jk}F_{jh}.
 \end{equation}
+Each interaction therefore contains four mode factors, in contrast to
+the three-mode products in the cubic Hamiltonian in
+\cref{eq:canonical-H} that is the focus of this work.
 Hamilton's equations and their closed bilinear projection are
 \begin{equation}\label{eq:AHH-parent-rates}
  i\frac{d\mathsf F}{ds}=\mathsf F\mathsf C,\qquad
@@ -45,12 +64,15 @@ Hamilton's equations and their closed bilinear projection are
 \end{equation}
 The diagonal blocks of $\widehat{\mathsf X}$ are constant because
 $\mathsf D$ is scalar on each of the three groups. Fix them as in
-\cref{eq:canonical-X} and put
+\cref{eq:canonical-X}. Define the constant block-diagonal phase-rate
+matrix $\mathsf K_{\rm ph}$ and the transformed coefficient matrix by
 \begin{equation}\label{eq:AHH-time-phase-map}
  \mathsf K_{\rm ph}=\diag(-3\mathsf B_L,3\mathsf B_M,0_N),\qquad
  \mathsf X(t)=e^{-it\mathsf K_{\rm ph}}
        \widehat{\mathsf X}(-t)e^{it\mathsf K_{\rm ph}}.
 \end{equation}
+The conjugation applies the required mode phase rotations, while
+$\widehat{\mathsf X}(-t)$ reverses the quartic evolution time $s=-t$.
 Then
 \begin{equation}\label{eq:AHH-cubic-projection}
  i\dot{\mathsf X}=-[\mathsf D,\mathsf X^2]
@@ -64,11 +86,13 @@ Thus the equation-level projection includes arbitrary canonical
 initial modes of the cubic system. The adapted BA factorization is
 given in Appendix~\ref{sec:AHH-dictionary}.
 
-\subsection{The two matrix brackets}
+\subsubsection{The two matrix brackets}
 
-Both parent mode systems have constant canonical brackets. Their
+The quartic mode system in $\mathsf F,\mathsf G$ and our cubic mode
+system in $\boldsymbol u,\boldsymbol v,\boldsymbol w$ and their barred
+partners both have constant canonical brackets. Their
 relationship is seen by distinguishing the two brackets on
-$\mathsf X$. In this subsection write $[f,h]_a=i\{f,h\}_a$ to
+$\mathsf X$. For this bracket comparison write $[f,h]_a=i\{f,h\}_a$ to
 suppress the common physical factor $-i$. The bilinear projection
 from $\mathsf F,\mathsf G$ induces the linear Lie--Poisson bracket
 \begin{equation}\label{eq:AHH-two-brackets}
@@ -92,7 +116,9 @@ They are compatible: translating $\mathsf X$ by $a\mathsf D$ in the
 first bracket gives $P_1(\mathsf X+a\mathsf D)=P_1(\mathsf X)-aP_0$.
 This is the argument-shift Poisson pencil already underlying
 \cref{sec:canonical}; it explains the change from a quartic pullback
-to a cubic canonical Hamiltonian. Indeed, up to an additive constant,
+to a cubic canonical Hamiltonian. Our cubic Hamiltonian in
+\cref{eq:canonical-H}, expressed through the common matrix
+$\mathsf X$ and the power charges, is, up to an additive constant,
 \begin{equation}\label{eq:AHH-cubic-H}
  H=-\frac13\tr(\mathsf X^3)
    +3\sum_{\ell=1}^{L}b_\ell^L Q_\ell^L
@@ -102,20 +128,31 @@ The last two terms generate precisely the phase conjugation in
 \cref{eq:AHH-time-phase-map}. This compares vector fields on two
 Poisson realizations: the bilinear map is many-to-one, and the
 canonical spaces have $qd$ and $LM+MN+NL$ pairs, respectively.
+Thus the two descriptions reproduce the same spectral matrix evolution,
+after the stated time and phase changes, but the bilinear projection
+is not a canonical transformation between their mode Hamiltonians.
+The quartic and cubic systems use different independent modes and
+induce different brackets on the common matrix variables.
 
-\subsection{BA convolution and interaction factorization}
+\subsubsection{BA convolution and interaction factorization}
 
-The functional counterpart of the bilinear map is a composition
-identity for the Szeg\H{o} kernel
-\cite[Proposition 5.2.1]{BenZviBiswas2003}. In scalar local
-half-differential frames it is
+At the function level, a weighted sum of products of two intermediate
+BA evaluations collapses to a single endpoint BA function. This
+provides a step-down mechanism from quartic to cubic interaction
+expressions. We use the Szeg\H{o}-kernel composition identity of
+Ben-Zvi and Biswas \cite[Proposition~5.2.1]{BenZviBiswas2003},
+expressed in the normalization appropriate to our BA modes.
+
+First introduce the theta-ratio part of the BA pair mode,
+written in scalar local half-differential frames as
 \begin{equation}\label{eq:AHH-Szego}
  \mathscr S_z(P,Q)=
  \frac{\theta(z+A(P)-A(Q))}{\theta(z)E(P,Q)}.
 \end{equation}
-This is the theta/prime-form kernel underlying the BA pair functions
-used earlier; fixed frames and exponential BA factors restore their
-chosen normalization. Let $\Lambda,W$ be meromorphic functions
+The fixed divisor factors and exponential BA normalization are
+temporarily suppressed; restoring them gives the BA pair functions
+defined in \cref{eq:general-kernel-normalization,eq:general-kernel-infinity}.
+Let $\Lambda,W$ be meromorphic functions
 with poles only at distinct points $P_1,\ldots,P_d$, with $\Lambda$
 having a simple pole at each. Choose a complete regular fiber
 $\Lambda^{-1}(\alpha)=Q_1+\cdots+Q_d$. In coordinates
@@ -135,6 +172,9 @@ Assume $W$ has at most simple poles at the $P_h$. Then
  c_h,&h=k.
  \end{cases}
 \end{equation}
+For distinct endpoints, the left-hand side contains products of two
+intermediate evaluations, while the right-hand side contains one
+endpoint evaluation multiplied by a constant.
 The contracted half-differentials at $Q_i$ make the formula independent
 of the coordinates $s_i$. To see it directly, take residues in $Q$
 of $(W/(\Lambda-\alpha))\mathscr S_z(P_h,Q)
@@ -165,10 +205,12 @@ explicit. For compatible vectors $\boldsymbol a,\boldsymbol b$,
  \boldsymbol b
  =\boldsymbol a^{\trans}\mathsf A\mathsf\Gamma\mathsf B\boldsymbol b.
 \]
-A cubic expression using endpoint pair modes is thereby a quartic
-expression in the intermediate evaluations. The weights and the
-complete fiber ensure that both sides remain BA functions. In the
-AHH realization this is the function-level counterpart of
+Inserting the convolution sum between the two outer mode factors
+turns the cubic endpoint expression on the left into the quartic
+intermediate expression on the right; collapsing the sum performs
+the reverse, step-down operation. The weights and the complete fiber
+ensure that the summed products reduce to endpoint BA functions. In the
+Adams--Harnad--Hurtubise realization this is the function-level counterpart of
 \cref{eq:AHH-parent-rates}; changing the list of independent modes
 also requires their brackets and evolution, supplied here by
 \cref{eq:AHH-two-brackets,eq:AHH-cubic-projection}.

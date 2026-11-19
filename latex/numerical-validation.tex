@@ -1,5 +1,12 @@
 \section{Numerical validation}\label{sec:numerical-validation}
 
+We test the forward realization, higher-flow normalization and inverse
+reconstruction separately, comparing BA formulas with independent
+Hamiltonian evolution.
+
+\subsection{Prescribed hyperelliptic and trigonal BA solutions}
+\label{sec:numeric-prescribed-BA}
+
 We compare the one-point BA construction ($N=1$) with independent integration of
 Hamilton's equations on a genus-two hyperelliptic curve and a smooth
 genus-three trigonal curve. Analytic BA values and derivatives use
@@ -10,7 +17,7 @@ normalizations. The canonical vector field is
 then evaluated separately from the polynomial Hamiltonian
 \cref{eq:BA-H0-flat}.
 
-\subsection{Curves and prescribed BA data}
+\subsubsection{Curves and prescribed BA data}
 
 The hyperelliptic example uses
 \begin{equation}\label{eq:numeric-hyperelliptic-curve}
@@ -102,7 +109,7 @@ $g_j\mathscr L_3 f_i-f_i\mathscr L_3^{\rm ad}g_j
 The kernel normalization fixes the primitive, and
 $i\dot\Omega(Q_i,Q_j)=f_ig_j$ along $z=z_0-it e_3$.
 
-\subsection{Independent evolution and accuracy}
+\subsubsection{Independent evolution and accuracy}
 
 Both examples use real time $t$, with $z=z_0-it e_g$,
 $0\leq t\leq6$, in the stated Abel coordinates. The independent
@@ -164,7 +171,13 @@ accompanying project repository at
 \url{https://github.com/HeskethGD/ba-canonical-ham}
 and reproduce the comparisons.
 
-\subsection{A multipuncture elliptic example}
+\subsection{Multipuncture solutions and independent Abel directions}
+\label{sec:numeric-multipuncture-flows}
+
+We test the full three-array construction and its higher-flow phases,
+including two independent Abel directions on one genus-two curve.
+
+\subsubsection{A multipuncture elliptic example}
 \label{sec:numeric-multipoint}
 
 To test all three nonsingleton arrays, take $L=M=N=2$ on
@@ -200,7 +213,7 @@ Each group sum is $-2$, the required genus-one Abel velocity.
 Thus $h_L=\Xi+\sum_{i=1}^{2}r_iE_1(P-Q_i)$ and
 $h_M=\Xi+\sum_{j=3}^{4}r_jE_1(P-Q_j)$ give the interpolation
 functions, weights and phases. This genus-one realization has
-excess spectral defect six, since the network's generic genus is seven.
+excess spectral defect six, since the system's generic genus is seven.
 
 Generapy's existing public theta jets evaluate the kernel and its
 analytic derivatives at $55$ digits. The multipuncture basis and
@@ -221,7 +234,7 @@ these residuals. Exact rational-curve checks and conserved block
 moments provide separate symbolic checks of the signs and the
 repeated-phase basis construction.
 
-\subsection{Two independent genus-two multipuncture flows}
+\subsubsection{Two independent genus-two multipuncture flows}
 \label{sec:numeric-multipoint-genus2}
 
 For a higher-genus test of the full arrays, retain $L=M=N=2$ and
@@ -268,7 +281,7 @@ residuals below $2\times10^{-29}$; the fourth-trace mode rates have
 residual below $3\times10^{-26}$. The distinct third-group phases
 also satisfy the birationality criterion of
 \cref{prop:BA-prescribed-spectral-curve}. This is a genus-two level
-of the generically genus-seven network, with spectral defect five.
+of the generically genus-seven system, with spectral defect five.
 
 \Cref{fig:numeric-multipoint-genus2} compares $65$ direct BA samples
 per flow with dense independent RK4 solutions. The cubic flow is
@@ -281,8 +294,11 @@ spectral traces:
 At $40$ digits the analytic residuals decrease further; both precision
 records and the trajectories accompany the code.
 
-\subsection{Reconstruction from canonical initial modes}
+\subsection{BA reconstruction from canonical initial modes}
 \label{sec:numeric-BA-converse}
+
+We start from canonical initial modes to test the inverse construction
+independently of examples initialized from prescribed BA data.
 
 To test the reverse construction of \cref{thm:BA-spectral-converse},
 start with $L=M=1$, $N=2$ and independent canonical launch data,

@@ -1,0 +1,52 @@
+\subsubsection{Gauge symmetries and Abel translations}
+\label{sec:gauge-Abel-symmetries}
+
+We interpret the conserved charges and spectral flows as symmetries,
+so that their roles in the integral count and the BA phase data can
+be distinguished. A conserved function $Q$ generates a canonical
+symmetry because $\{Q,H\}=0$ implies that its Hamiltonian flow
+commutes with the time evolution. This is the Hamiltonian form of
+Noether's correspondence.
+
+For arbitrary $L,M,N$, the power charges in
+\cref{eq:canonical-charges} generate the constant reciprocal gauges
+\begin{equation}\label{eq:general-mode-gauge-action}
+\begin{aligned}
+ u_{\ell m}&\longmapsto e^{\theta_\ell^L-\theta_m^M}u_{\ell m},\\
+ v_{mn}&\longmapsto e^{\theta_m^M-\theta_n^N}v_{mn},\\
+ w_{n\ell}&\longmapsto e^{\theta_n^N-\theta_\ell^L}w_{n\ell},
+ \qquad1\leq\ell\leq L,\quad1\leq m\leq M,\quad1\leq n\leq N.
+\end{aligned}
+\end{equation}
+The barred partners have inverse factors. The $\theta$ parameters
+are constant complex numbers; their common shift acts trivially,
+leaving $d-1$ independent gauges. Each cubic interaction is invariant
+because its three exponents sum to zero.
+
+On the regular spectral locus, the ambient integral count separates these gauge generators
+from the remaining spectral integrals:
+\begin{equation}\label{eq:gauge-translation-count}
+ p=(d-1)+G,\qquad d=L+M+N,
+ \qquad p=LM+MN+NL,
+\end{equation}
+where $G$ is the regular spectral genus in
+\cref{eq:canonical-genus-preview}. Locally, fixing the $d-1$ independent
+charges and quotienting their gauge actions leaves $G$ Hamiltonian
+degrees of freedom. Under eigenvector-divisor linearization, the
+commuting isospectral flows act as Abel translations
+\cite{Beauville1990,Vanhaecke2001}. The autonomous Hamiltonian selects
+the time direction within this commuting family; it is included in the
+complete integral set of \cref{thm:canonical-independence}.
+
+When phases coincide, the moment matrices
+\cref{eq:canonical-block-moment} extend the diagonal gauges to
+continuous changes of basis within equal-phase groups.
+Their principal-block invariants provide the additional integrals
+counted in \cref{eq:canonical-spectral-deficit}.
+
+On a prescribed birational BA realization,
+\cref{thm:BA-higher-flows} supplies the translations of its Jacobian
+and the accompanying endpoint phases. The power-charge flows change
+the multiplicative mode normalizations. These give the two symmetry
+actions visible in the BA formulas; the hyperelliptic divisor lift in
+\cref{sec:mumford-gauge-lift} makes their distinction explicit.

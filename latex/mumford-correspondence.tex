@@ -1,7 +1,7 @@
-\section{Mode powers and the Mumford subsystem}
+\subsection{Mode powers and the Mumford subsystem}
 \label{sec:mumford-correspondence}
 
-Throughout this section $N=1$, with the hyperelliptic data of
+Throughout this subsection $N=1$, with the hyperelliptic data of
 \cref{sec:BA-realization}.
 
 The elementary mode powers in \cref{thm:BA-realization} are
@@ -10,10 +10,10 @@ with their derivatives, they determine a closed projected subsystem
 in divisor coordinates, which we identify with the odd Mumford flow.
 We call this the Mumford subsystem. We reconstruct its polynomials
 from the modes and describe the mode information retained by the
-BA formulas. The curve, marked points and weights remain fixed throughout this section. We write $\mathcal P_{z_g}=\partial_{z_g}\mathcal P=i\dot{\mathcal P}$ and
+BA formulas. The curve, marked points and weights remain fixed throughout this subsection. We write $\mathcal P_{z_g}=\partial_{z_g}\mathcal P=i\dot{\mathcal P}$ and
 $\mathcal P_{z_gz_g}=\partial_{z_g}^2\mathcal P=-\ddot{\mathcal P}$.
 
-\subsection{Reconstructing the divisor polynomials}
+\subsubsection{Reconstructing the divisor polynomials}
 
 Define the elementary powers $I_k=\xi_k\bar{\xi}_k$, $1\leq k\leq K$.
 Their derivatives follow directly from the canonical Hamiltonian
@@ -78,7 +78,7 @@ ordinary odd Mumford system
 \cite[\S3.1]{FernandesVanhaecke2001}. Its monic spectral curve is
 obtained from ours by dividing the ordinate by two.
 
-\subsection{The projected equations of motion}
+\subsubsection{The projected equations of motion}
 
 Write the common scalar potential as
 \begin{equation}\label{eq:mumford-potential}
@@ -128,7 +128,7 @@ Then \cref{eq:mumford-flow} is equivalent to
 Thus the mode-power projection preserves both the divisor dynamics
 and the prescribed hyperelliptic curve.
 
-\subsection{Recovering the modes from divisor data}
+\subsubsection{Recovering the modes from divisor data}
 
 At a generic state of the fixed-curve Mumford fiber, set
 $\mathcal P_k=\mathcal P(a_k)$ and
@@ -158,7 +158,7 @@ $1\leq k\leq K$. Jacobi inversion supplies the corresponding
 $z$, and the constants $c_k$ in \cref{eq:BA-elementary} match the
 chosen elementary values. Under the conditions of
 \cref{thm:BA-realization}, the lifted modes then follow the
-canonical network equations.
+canonical mode equations.
 
 The polynomial triple determines the divisor state; the $K$
 elementary normalizations specify its mode lift. In particular,
@@ -170,16 +170,16 @@ Mumford fiber, a Jacobian with its theta divisor removed
 \cite[Proposition~3.1]{FernandesVanhaecke2001}. This identifies
 the fixed-curve solutions and their vector fields. A correspondence
 of Poisson structures would additionally require a reduction of
-the canonical network bracket.
+the canonical mode bracket.
 
-\subsection{Gauge symmetries and Abel translations}
-\label{sec:gauge-Abel-symmetries}
+\subsubsection{Mode gauges and the divisor lift}
+\label{sec:mumford-gauge-lift}
 
-The power charges of \cref{eq:canonical-charges} have a direct symmetry
-interpretation. A conserved function $Q$ generates a canonical symmetry
-because $\{Q,H\}=0$ implies that its Hamiltonian flow commutes with the
-time evolution. This is the Hamiltonian form of Noether's correspondence.
-For $N=1$, the $K=L+M$ independent charges generate the reciprocal
+We specialize the general symmetry interpretation of
+\cref{sec:gauge-Abel-symmetries} to identify the mode phases omitted
+by the divisor projection.
+
+The $K=L+M$ independent one-point charges generate the reciprocal
 mode gauges
 \begin{equation}\label{eq:BA-gauge-action}
 \begin{aligned}
@@ -197,27 +197,6 @@ invariant. These symmetries follow from the polynomial Hamiltonian
 itself; the BA realization identifies them with changes of the
 normalization constants $c_k$.
 
-On the regular spectral locus, the ambient integral count separates these gauge generators
-from the remaining spectral integrals:
-\begin{equation}\label{eq:gauge-translation-count}
- p=(d-1)+G,\qquad d=L+M+N,
- \qquad p=LM+MN+NL,
-\end{equation}
-where $G$ is the regular spectral genus in
-\cref{eq:canonical-genus-preview}. Locally, fixing the $d-1$ independent
-charges and quotienting their gauge actions leaves $G$ Hamiltonian
-degrees of freedom. Under eigenvector-divisor linearization, the
-commuting isospectral flows act as Abel translations
-\cite{Beauville1990,Vanhaecke2001}. The autonomous Hamiltonian selects
-the time direction within this commuting family; it is included in the
-complete integral set of \cref{thm:canonical-independence}.
-
-When phases coincide, the moment matrices
-\cref{eq:canonical-block-moment} extend the diagonal gauges to
-continuous changes of basis within equal-phase groups.
-Their principal-block invariants provide the additional integrals
-counted in \cref{eq:canonical-spectral-deficit}.
-
 For the prescribed hyperelliptic BA family, $g$ divisor coordinates and
 $K$ mode normalizations specify the lift described in
 \cref{eq:mumford-mode-inverse,eq:mumford-composite-inverse}.
@@ -229,7 +208,7 @@ with translations of this same BA family and the constant mode phases
 in \cref{eq:BA-higher-time-phase}. Their Abel directions span its
 Jacobian, while the power charges generate the reciprocal gauges.
 
-\subsection{Mechanical coordinate realizations}
+\subsubsection{Mechanical coordinate realizations}
 
 An explicit connection with Garnier coordinates follows by taking
 $L=g$. Then $q_L=1$ and $\kappa_i=1/(2R_L'(a_i))$,

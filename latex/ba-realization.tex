@@ -1,4 +1,17 @@
-\section{Baker-Akhiezer realizations on a prescribed curve}
+\section{The Baker-Akhiezer correspondence and its commuting flows}
+\label{sec:BA-correspondence}
+
+\Cref{sec:canonical} introduced the canonical Hamiltonian system,
+established its Liouville integrability and spectral properties, and
+described the associated algebraic curves. We now focus on the general
+solution of the system in terms of Baker-Akhiezer functions.
+
+We establish the correspondence in both directions: prescribed BA data
+produce canonical mode solutions, and generic canonical initial modes
+recover their BA data. We then identify the commuting evolution and
+its mode phases, making the Abel directions explicit.
+
+\subsection{From prescribed BA data to canonical dynamics}
 \label{sec:general-BA-realization}
 
 We construct solutions for arbitrary positive $L,M,N$ directly from a
@@ -11,14 +24,19 @@ For $N=1$ the basis has a single ordinary/dual pair, giving two
 mode vectors and their pair-mode matrix. We develop this specialization
 after the general reconstruction and Hamiltonian comparison.
 
-\subsection{Scalar BA bases and their kernel}
+\subsubsection{Scalar BA bases and their kernel}
 \label{sec:multipoint-BA-data}
 
 Fix a smooth compact connected curve $\mathcal C$ of genus $g$,
 distinct punctures $R_k$ with local parameters $s_k$, $1\leq k\leq N$,
 and an ordinary BA divisor $\mathscr D$ of degree $g+N-1$, disjoint
-from the punctures. Put $\mathscr R=\sum_{k=1}^{N}R_k$. Regularity at the
-reference time means $H^0(\mathcal O(\mathscr D-\mathscr R))=0$: the $N$
+from the punctures. Put $\mathscr R=\sum_{k=1}^{N}R_k$.
+For a divisor $E$, $H^0(\mathcal O(E))$ denotes the vector space of
+global sections of its associated line bundle: meromorphic functions
+$f$ satisfying $(f)+E\geq0$, together with the zero function.
+Regularity at the reference time means
+$H^0(\mathcal O(\mathscr D-\mathscr R))=0$, so no nonzero function
+with poles bounded by $\mathscr D$ vanishes at every puncture: the $N$
 leading values then determine a BA section uniquely.
 
 The dual divisor is determined by these data. Write $K_{\mathcal C}$
@@ -61,13 +79,16 @@ they need not be infinities in another plane equation for the curve.
 The zero divisor of the fixed duality differential is
 $\mathscr D+\mathscr D^\vee$.
 
-Choose normalized holomorphic differentials $\boldsymbol\omega$ and put
+Choose normalized holomorphic differentials $\boldsymbol\omega$.
+For each puncture $R_k$, define its Abel translation vector
+$\boldsymbol U_k\in\C^g$ by the local expansion
 \begin{equation}\label{eq:multipoint-Abel-direction}
  \boldsymbol\omega=(-\boldsymbol U_k+O(s_k))ds_k\quad(P\to R_k),
  \qquad \boldsymbol U=\sum_{k=1}^{N}\boldsymbol U_k,\qquad
  z(t)=z_0-it\boldsymbol U.
 \end{equation}
-The normalized second-kind integral $\Xi$ has expansions
+Their sum $\boldsymbol U$ is the common Abel direction of the selected
+time evolution. The normalized second-kind integral $\Xi$ has expansions
 $\Xi=s_k^{-1}+\Xi_k+O(s_k)$. Its principal parts give this common time.
 
 For a holomorphic basis $du$ and compatible second-kind basis $dr$,
@@ -84,8 +105,9 @@ characteristic. The theta-exponential sigma convention is
 \]
 The bases and characteristic fix this convention. Here
 $du=\boldsymbol\omega$ and $2\omega=\Id_g$; the explicit examples
-state their unnormalized bases. These conventions agree with Generapy
-\cite{Generapy}.
+state their unnormalized bases. These conventions agree with Generapy,
+the Python library used for our numerical validation in
+\cref{sec:numerical-validation} \cite{Generapy}.
 
 Base the Abel map $A$ at $R_1$, and put
 $\Delta_k(P)=A(P)-A(R_k)$ and $J_k(P)=\Xi(P)-\Xi_k$.
@@ -141,8 +163,13 @@ Subtracting the sum leaves a BA section with zero leading vector, hence
 zero. For $N=1$ this is the usual BA-product primitive
 \cite{GrinevichOrlov1989,AratynNissimovPacheva1997}.
 
-\subsection{Mode arrays and meromorphic interpolation}
+\subsubsection{Mode arrays and meromorphic interpolation}
 \label{sec:general-BA-interpolation}
+
+We assemble the BA evaluations into the three canonical mode arrays
+and show that two finite linear residue conditions determine the
+admissible weights for meromorphic interpolation, from which the
+phase rates are obtained.
 
 Put $K=L+M$. Choose distinct ordinary points $Q_a$, $1\leq a\leq K$,
 away from the punctures, fixed poles and zeros of $d\Omega_0$.
@@ -207,11 +234,15 @@ $n\geq g$ points have rank $g$ and $n-g$ free principal coefficients.
 Every coefficient must be nonzero to retain its modes. Special smaller
 groups obey the same consistency test.
 
-\subsection{The kernel convolution identity}
+\subsubsection{The kernel convolution identity}
 \label{sec:kernel-verification}
 
 The interpolation functions turn the kernel into weighted BA identities,
-coupling the three arrays.
+coupling the three arrays. The underlying Szeg\H{o}-kernel composition
+identity is given by Ben-Zvi and Biswas
+\cite[Proposition~5.2.1]{BenZviBiswas2003}; we write its weighted BA form
+with the puncture contributions explicit and give the residue proof in
+our normalization.
 
 \begin{lemma}[Convolution and weighted BA equations]
 \label{lem:general-kernel-convolution}
@@ -245,7 +276,7 @@ After that correction every leading value vanishes, so BA uniqueness
 applies. The dual proof has the reversed diagonal sign.
 \end{proof}
 
-\subsection{Realization and finite completion}
+\subsubsection{Realization and finite completion}
 
 For $1\leq i\leq L$, $1\leq j\leq M$, $1\leq k\leq N$,
 define the phase coefficients and auxiliary phase rates by
@@ -268,7 +299,7 @@ Use the cycle-preserving transformation
 with reciprocal partner factors. Its three rates sum to zero in
 every triad, preserving the mixing terms.
 
-\begin{theorem}[Canonical BA realization]\label{thm:general-BA-realization}
+\begin{theorem}[Main theorem, part I: Canonical BA realization]\label{thm:general-BA-realization}
 For regular multipoint data, \cref{eq:general-residue-criterion} gives
 a solution of \cref{eq:canonical-H} through
 \cref{eq:multipoint-mode-arrays,eq:general-phase-values,eq:multipoint-phase-gauge}.

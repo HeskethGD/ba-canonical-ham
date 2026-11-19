@@ -1,4 +1,4 @@
-\section{Hyperelliptic specialization}
+\subsection{Hyperelliptic BA modes and polynomial interpolation}
 \label{sec:BA-realization}
 
 The one-point system of \cref{sec:BA-one-point-specialization}
@@ -11,7 +11,7 @@ then retain the explicit weights needed for the Mumford correspondence.
 The mode counts and Hamiltonian remain
 \cref{eq:BA-mode-counts,eq:BA-H0-flat}.
 
-\subsection{Curve and function conventions}
+\subsubsection{Curve and function conventions}
 
 Fix a smooth odd-degree curve, its Abel map and ordered differentials:
 \begin{equation}\label{eq:BA-curve}
@@ -22,7 +22,7 @@ Fix a smooth odd-degree curve, its Abel map and ordered differentials:
 The sheet involution is $P=(a,y)\mapsto\iota(P)=(a,-y)$;
 compatible lifts give $A(\iota(P))=-A(P)$.
 This is Generapy's automatic odd-degree Baker basis \cite{Generapy}.
-The vector $z$ in this section uses these Baker Abel coordinates,
+The vector $z$ in this hyperelliptic description uses these Baker Abel coordinates,
 related by a fixed linear change to the normalized theta coordinates
 of \cref{eq:general-BA-theta}. The scalar time follows the same first BA direction, with first BA
 parameter $-it$.
@@ -92,10 +92,10 @@ the sign $(-1)^g$ in their product. We absorb that constant sign
 into the mode normalization so that their power is a weighted
 evaluation of the monic $\mathcal P$.
 
-\subsection{Sigma modes and the general normalization}
+\subsubsection{Sigma modes and the general normalization}
 
 Use the mode indices and canonical partners of
-\cref{eq:BA-mode-dictionary}. In this section the constants
+\cref{eq:BA-mode-dictionary}. For the hyperelliptic modes the constants
 $\kappa_k$ multiply the raw sigma products in
 \cref{eq:BA-powers-rates}; their conversion to the normalized
 residue weights of \cref{eq:general-residue-weights} is given in
@@ -158,7 +158,8 @@ the Cauchy--BA kernel construction
 \cite[Section~2.4, equation~(2.13)]{GrinevichOrlov1989} and in
 squared-eigenfunction-potential theory
 \cite[Corollary~3.1]{AratynNissimovPacheva1997}.
-The residue criterion takes the explicit polynomial form developed in the next subsection.
+The residue criterion takes the explicit polynomial form developed in
+\cref{sec:BA-interpolation}.
 
 Here is the explicit dictionary. Put $\epsilon=(-1)^g$ and
 $P_0(x)=\mathcal P(z_0,x)$. The ordinary and dual functions of
@@ -193,7 +194,7 @@ Substituting \cref{eq:BA-general-dictionary} into
 factors. Thus the elementary and pair functions are the same modes,
 expressed in normalized BA and raw sigma conventions.
 
-\subsection{Explicit interpolation weights and phases}
+\subsubsection{Explicit interpolation weights and phases}
 \label{sec:BA-interpolation}
 
 In the local parameter $s=x^{-1/2}$ at infinity,
@@ -303,7 +304,14 @@ distinct rates and to their coincident specializations.
 \Cref{prop:BA-prescribed-spectral-curve} identifies this hyperelliptic
 family as a spectral level of genus $g$ with total defect $LM-g$.
 
-\subsection{Half-period shifts and al functions}
+\subsection{Half-period shifts, al functions and elliptic examples}
+\label{sec:classical-BA-specializations}
+
+We specialize the explicit formulas to half-period shifts and genus
+one, connecting the construction to classical functions and providing
+examples with different mode counts.
+
+\subsubsection{Half-period shifts and al functions}
 \label{sec:BA-al-functions}
 
 Branch-point evaluations give a classical specialization of these
@@ -364,7 +372,7 @@ $\operatorname{div}(x-b_r)=3B_r-3\infty$ gives order-three shifts;
 trigonal al functions are developed in
 \cite[Section~8]{MatsutaniPreviato2015}.
 
-\subsection{Genus one and many elementary modes}
+\subsubsection{Genus one and many elementary modes}
 
 In Weierstrass coordinates take
 $y^2=4x^3-g_2x-g_3$. Then $A(P)=\mu$,
