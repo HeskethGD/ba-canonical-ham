@@ -44,7 +44,9 @@ def package():
             if child.is_absolute() or '..' in child.parts:
                 raise ValueError(f'Figure path leaves submission folder: {child}')
             required.add(child)
-    archive = PAPER/'submission-source.zip'
+    dist = ROOT/'.dist'
+    dist.mkdir(exist_ok=True)
+    archive = dist/'submission-source.zip'
     with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED) as out:
         for path in sorted(required):
             out.write(PAPER/path, path.as_posix())

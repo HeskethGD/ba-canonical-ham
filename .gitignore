@@ -8,6 +8,7 @@ __pycache__/
 .pytest_cache/
 .check-logs/
 /generapy_issues/
+/.dist/
 latex/build/
 latex/*.aux
 latex/*.log

@@ -1,7 +1,7 @@
 # Canonical multiwave Baker–Akhiezer systems
 
-Manuscript and reproducibility code for *A canonical multiwave Hamiltonian
-realization of Baker–Akhiezer functions on arbitrary curves*.
+Manuscript and reproducibility code for *Baker–Akhiezer realization and
+reconstruction for three-wave interactions in canonical multiwave Hamiltonians*.
 
 The paper studies a canonical cubic multiwave Hamiltonian, its integrals
 and spectral curves, and its correspondence with scalar Baker–Akhiezer
@@ -129,7 +129,7 @@ and figures:
 make package
 ```
 
-The archive is written to `latex/submission-source.zip`. Make targets use
+The archive is written to `.dist/submission-source.zip`. Make targets use
 `.venv/bin/python` by default; override it with `PYTHON=/path/to/venv/bin/python`.
 
 ## License
