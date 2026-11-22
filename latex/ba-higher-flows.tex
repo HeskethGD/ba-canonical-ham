@@ -86,7 +86,7 @@ Define the time polynomial and vertex phase rates by
 \begin{aligned}
  p_k&=-\operatorname{pp}_{R_k}\mathfrak f,&
  \varphi_k^N&=\operatorname{reg}_{R_k}(q+\mathfrak f),&&1\leq k\leq N,\\
- \varphi_i^L&=(q+\mathfrak f)(Q_i),&&&1\leq i\leq L,\\
+ \varphi_{\ell}^L&=(q+\mathfrak f)(Q_{\ell}),&&&1\leq\ell\leq L,\\
  \varphi_j^M&=(q+\mathfrak f)(Q_{L+j}),&&&1\leq j\leq M.
 \end{aligned}
 \end{equation}
@@ -94,7 +94,9 @@ Here $\operatorname{reg}$ means the constant Laurent coefficient.
 The outer sums are regular by construction. At $R_k$,
 $q=O(\nu^{-1})$, since $\lambda$ is finite there, and
 $\varphi_1^N=0$. These numbers depend only on the fixed marked
-curve and the chosen time normalization.
+curve and the chosen time normalization. Changing the complement
+$\mathcal G$ changes the mode phases by power-charge flows while
+preserving the Abel direction.
 
 \begin{theorem}[Main theorem, part III: The spectral BA hierarchy]\label{thm:BA-higher-flows}
 Every prescribed realization in \cref{thm:general-BA-realization}
@@ -102,18 +104,18 @@ evolves under $H_{r,\nu_0}$ by the same multipoint BA bases and
 kernel, with ordinary and dual puncture exponentials
 $e^{-itp_k}$ and $e^{itp_k}$.
 Use \cref{eq:multipoint-mode-arrays} with reciprocal gauges, for
-$1\leq i\leq L$, $1\leq j\leq M$ and $1\leq k\leq N$,
+$1\leq\ell\leq L$, $1\leq j\leq M$ and $1\leq k\leq N$,
 \begin{equation}\label{eq:multipoint-higher-gauges}
- c_i(t)=c_i e^{it\varphi_i^L},\quad
+ c_{\ell}(t)=c_{\ell} e^{it\varphi_{\ell}^L},\quad
  c_{L+j}(t)=c_{L+j}e^{-it\varphi_j^M},\quad
  e_k(t)=e_k e^{-it\varphi_k^N}.
 \end{equation}
 Thus the explicit mode factors, relative to the unphased BA formulas,
 are
 \begin{equation}\label{eq:multipoint-higher-phases}
- u_{ij}:e^{-it(\varphi_i^L-\varphi_j^M)},\qquad
+ u_{\ell j}:e^{-it(\varphi_{\ell}^L-\varphi_j^M)},\qquad
  v_{jk}:e^{-it(\varphi_j^M-\varphi_k^N)},\qquad
- w_{ki}:e^{-it(\varphi_k^N-\varphi_i^L)}.
+ w_{k\ell}:e^{-it(\varphi_k^N-\varphi_{\ell}^L)}.
 \end{equation}
 Partner factors are inverse. Finite constant linear combinations
 of Hamiltonians add their $p_k$ and phase rates.
@@ -127,7 +129,7 @@ suffice to generate all its Abel translations.
 The right eigenvector is \cref{eq:BA-prescribed-eigenvector}.
 A compatible left vector is
 \[
- \ell(P)=\bigl((-c_i\Omega(P,Q_i))_{i=1}^{L},
+ \ell(P)=\bigl((-c_{\ell}\Omega(P,Q_{\ell}))_{\ell=1}^{L},
  (\kappa_{L+j}\Omega(P,Q_{L+j})/c_{L+j})_{j=1}^{M},
  (\psi_k(P)/e_k)_{k=1}^{N}\bigr).
 \]
@@ -153,10 +155,10 @@ poles; the local factorization is used only near infinity.
 Dress the vectors reciprocally by
 $\widetilde r=e^{-it\mathfrak f}r_H$,
 $\widetilde\ell=e^{it\mathfrak f}\ell_H$.
-At $Q_i,Q_{L+j}$ the polar exponents cancel and the right leading
-coefficients acquire $e^{-it\varphi_i^L}$,
+At $Q_{\ell},Q_{L+j}$ the polar exponents cancel and the right leading
+coefficients acquire $e^{-it\varphi_{\ell}^L}$,
 $e^{-it\varphi_j^M}$. Their initial coefficients
-$-\nu/c_i$ and $c_{L+j}\nu/\kappa_{L+j}$ give the first two gauges.
+$-\nu/c_{\ell}$ and $c_{L+j}\nu/\kappa_{L+j}$ give the first two gauges.
 At $R_k$ the leading dual factor is
 $e^{itp_k}e^{-it\varphi_k^N}$, giving $e_k(t)$.
 After these gauges the leading vectors are normalized at all
@@ -207,12 +209,12 @@ Explicitly,
 \[
 \begin{aligned}
  H_{\rm gauge}={}&
- \sum_{i=1}^{L}\varphi_i^L
- \left(\sum_{j=1}^{M}I^u_{ij}-\sum_{k=1}^{N}I^w_{ki}\right)
+ \sum_{\ell=1}^{L}\varphi_{\ell}^L
+ \left(\sum_{j=1}^{M}I^u_{\ell j}-\sum_{k=1}^{N}I^w_{k\ell}\right)
  +\sum_{j=1}^{M}\varphi_j^M
- \left(\sum_{k=1}^{N}I^v_{jk}-\sum_{i=1}^{L}I^u_{ij}\right)\\
+ \left(\sum_{k=1}^{N}I^v_{jk}-\sum_{\ell=1}^{L}I^u_{\ell j}\right)\\
  &+\sum_{k=1}^{N}\varphi_k^N
- \left(\sum_{i=1}^{L}I^w_{ki}-\sum_{j=1}^{M}I^v_{jk}\right).
+ \left(\sum_{\ell=1}^{L}I^w_{k\ell}-\sum_{j=1}^{M}I^v_{jk}\right).
 \end{aligned}
 \]
 Subtracting this fixed-coefficient Hamiltonian removes the framing

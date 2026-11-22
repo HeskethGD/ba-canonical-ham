@@ -24,12 +24,12 @@
 \contentsline {subsubsection}{\numberline {3.1.3}The kernel convolution identity}{19}{subsubsection.3.1.3}%
 \contentsline {subsubsection}{\numberline {3.1.4}Realization and finite completion}{19}{subsubsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.2}From canonical initial modes to BA solutions}{21}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Identifying the prescribed spectral curve}{21}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1}Identifying the prescribed spectral curve}{22}{subsubsection.3.2.1}%
 \contentsline {paragraph}{Prescribed curves and spectral fibres.}{22}{section*.2}%
 \contentsline {subsubsection}{\numberline {3.2.2}Reconstruction from generic canonical data}{23}{subsubsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.3}Commuting Hamiltonians, Abel directions and mode phases}{25}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}BA times and endpoint phases}{25}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Gauge symmetries and Abel translations}{27}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2}Gauge symmetries and Abel translations}{28}{subsubsection.3.3.2}%
 \contentsline {section}{\numberline {4}Correspondences and explicit specializations}{28}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Correspondence with quartic moment-map systems}{28}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}A quartic canonical parent}{29}{subsubsection.4.1.1}%

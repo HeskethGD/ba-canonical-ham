@@ -67,18 +67,19 @@ dependencies. The mathematical proofs are in the manuscript.
 | `mumford_core_comparison.py` | Classical Mumford brackets, spectral coefficients and divisor flow, supporting Section 6. This does not assert a Poisson equivalence with the full canonical network. |
 | `package_manuscript.py` | Synchronize figures and build the source submission ZIP. |
 
-The `multipoint` suite contains four additional checks:
+The `multipoint` suite includes the following additional checks:
 
 | Script | Purpose |
 | --- | --- |
 | `multipoint_BA_network_check.py` | Exact rational L=M=N=2 BA kernel, interpolation, phase conversion and all 24 rates. |
 | `multipoint_BA_elliptic_check.py` | Generapy 0.2.0 theta jets: elliptic two-puncture basis, all rates, left/right spectral eigenvectors and normalized bilinear kernel. |
+| `matrix_kp_hierarchy_check.py` | Genus-two second matrix-KP time: ordinary, dual and kernel equations, canonical spectral-plus-gauge rates, and symbolic source brackets. |
 | `multipoint_higher_flow_check.py` | Finite-part BA times and vertex phases against independent shifted cubic/quartic trace fields. |
 | `multipoint_repeated_phase_moments.py` | Exact conservation of all three quadratic moments under the cubic and higher trace flows. |
 | `generate_multipoint_validation_table.py` | Generates the additional manuscript residual table and divisor values from the stored higher-flow JSON. |
 
 The last script is a table generator rather than a suite check. The complete
-suite now has 22 scripts. The multipuncture wrappers use the existing
+suite now has 30 scripts. The multipuncture wrappers use the existing
 public theta jets; no changes to Generapy are required. A native convenience
 API assembling general multipoint bases is not assumed.
 

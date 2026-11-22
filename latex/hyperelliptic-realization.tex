@@ -132,26 +132,26 @@ $2\wp_{gg}+\lambda_{2g}/4$ in \cref{eq:BA-identities}.
 For every cross-group pair set
 \begin{equation}\label{eq:BA-pair-composites}
 \begin{aligned}
- \xi_{ij}
- &=\frac{\sqrt2}{a_j-a_i}
-        W(\bar{\xi}_i,\bar{\xi}_j),\\
- \bar{\xi}_{ij}
- &=-\frac{\sqrt2}{a_j-a_i}
-        W(\xi_i,\xi_j),
- \qquad 1\leq i\leq L,\quad L+1\leq j\leq K.
+ \xi_{\ell j}
+ &=\frac{\sqrt2}{a_j-a_{\ell}}
+        W(\bar{\xi}_{\ell},\bar{\xi}_j),\\
+ \bar{\xi}_{\ell j}
+ &=-\frac{\sqrt2}{a_j-a_{\ell}}
+        W(\xi_{\ell},\xi_j),
+ \qquad 1\leq\ell\leq L,\quad L+1\leq j\leq K.
 \end{aligned}
 \end{equation}
 The kernel specialization in \cref{eq:BA-hyperelliptic-kernel} identifies these Wronskians with
-sigma ratios having shifts $A(Q_i)+A(Q_j)$ and its negative,
+sigma ratios having shifts $A(Q_{\ell})+A(Q_j)$ and its negative,
 with fixed normalizing factors
 \cite[Theorem~6.2, $n=2$]{Nakayashiki2026}. Their differential equations have
 a particularly direct explanation: the common potential cancels,
 leaving
 \begin{equation}\label{eq:BA-pair-rates}
- i\dot\xi_{ij}=\sqrt2\bar{\xi}_i\bar{\xi}_j,
+ i\dot\xi_{\ell j}=\sqrt2\bar{\xi}_{\ell}\bar{\xi}_j,
  \qquad
- i\dot{\bar{\xi}}_{ij}=-\sqrt2\xi_i\xi_j,
- \qquad1\leq i\leq L,\quad L+1\leq j\leq K.
+ i\dot{\bar{\xi}}_{\ell j}=-\sqrt2\xi_{\ell}\xi_j,
+ \qquad1\leq\ell\leq L,\quad L+1\leq j\leq K.
 \end{equation}
 These are exactly the pair-mode equations of $H_0$. The elementary equations are supplied by the general realization criterion.
 Primitives of products of ordinary and dual BA functions also occur in
@@ -176,7 +176,7 @@ initial chart $P_0(a_k)\ne0$, take the general construction's points,
 weights and gauges to be
 \begin{equation}\label{eq:BA-general-dictionary}
 \begin{aligned}
- \widehat Q_i&=Q_i,&&1\leq i\leq L,&
+ \widehat Q_{\ell}&=Q_{\ell},&&1\leq\ell\leq L,&
  \widehat Q_j&=\iota(Q_j),&&L+1\leq j\leq K,\\
  \widehat\kappa_k&=\kappa_kP_0(a_k),&&1\leq k\leq K,&
  \widehat c_k&=c_k\Psi(Q_k,z_0),&&1\leq k\leq K.
@@ -203,7 +203,7 @@ $du_\alpha=-s^{2g-2\alpha}(1+O(s^2))ds$ for
 $1\leq\alpha\leq g$. At the finite nodes, use $x-a_k$.
 The general residue conditions therefore become
 \begin{equation}\label{eq:BA-moments-final}
- \sum_{i=1}^{L}\kappa_i a_i^r
+ \sum_{\ell=1}^{L}\kappa_{\ell} a_{\ell}^r
  =\sum_{j=L+1}^{K}\kappa_j a_j^r
  =\begin{cases}
  0,&0\leq r\leq g-2,\\
@@ -217,13 +217,13 @@ for the two groups.
 To construct all weights with these moments, collect their simple
 fractions over the node polynomials
 \begin{equation}\label{eq:BA-node-polynomials}
- R_L(x)=\prod_{i=1}^{L}(x-a_i),\qquad
+ R_L(x)=\prod_{\ell=1}^{L}(x-a_{\ell}),\qquad
  R_M(x)=\prod_{j=L+1}^{K}(x-a_j).
 \end{equation}
 Define their numerator polynomials $q_L,q_M$ by
 \begin{equation}\label{eq:BA-weight-generating}
  \frac{q_L(x)}{R_L(x)}
- =2\sum_{i=1}^{L}\frac{\kappa_i}{x-a_i},\qquad
+ =2\sum_{\ell=1}^{L}\frac{\kappa_{\ell}}{x-a_{\ell}},\qquad
  \frac{q_M(x)}{R_M(x)}
  =2\sum_{j=L+1}^{K}\frac{\kappa_j}{x-a_j}.
 \end{equation}
@@ -232,8 +232,8 @@ $L-1,M-1$. The moments say precisely that each rational function has expansion
 $x^{-g}+O(x^{-g-1})$ at infinity. Hence $L,M\geq g$, and the
 numerators must be monic of degrees $L-g,M-g$. Taking residues gives
 \begin{equation}\label{eq:BA-residue-weights}
- \kappa_i=\frac{q_L(a_i)}{2R_L'(a_i)},
- \quad1\leq i\leq L,\qquad
+ \kappa_{\ell}=\frac{q_L(a_{\ell})}{2R_L'(a_{\ell})},
+ \quad1\leq\ell\leq L,\qquad
  \kappa_j=\frac{q_M(a_j)}{2R_M'(a_j)},
  \quad L+1\leq j\leq K.
 \end{equation}
@@ -245,7 +245,7 @@ parametrize the available interpolation weights: they equal $1$
 when the corresponding group has exactly $g$ points, while larger
 groups give free polynomial coefficients.
 
-\begin{corollary}\label{thm:BA-realization}
+\begin{corollary}\label{cor:BA-realization}
 Let the elementary modes and pair composites in
 \cref{eq:BA-elementary,eq:BA-pair-composites} range over a nonempty
 open subset of the Jacobian of the fixed curve
@@ -254,12 +254,12 @@ open subset of the Jacobian of the fixed curve
 moments \cref{eq:BA-moments-final} and their phase coefficients satisfy
 \begin{equation}\label{eq:BA-phase-final}
 \begin{aligned}
- b_i
+ b_{\ell}
  &=-\sum_{j=L+1}^{K}\kappa_j
-       \frac{y_j-y_i}{a_j-a_i},&&1\leq i\leq L,\\
+       \frac{y_j-y_{\ell}}{a_j-a_{\ell}},&&1\leq\ell\leq L,\\
  b_j
- &=-\sum_{i=1}^{L}\kappa_i
-       \frac{y_i-y_j}{a_i-a_j},&&L+1\leq j\leq K.
+ &=-\sum_{\ell=1}^{L}\kappa_{\ell}
+       \frac{y_{\ell}-y_j}{a_{\ell}-a_j},&&L+1\leq j\leq K.
 \end{aligned}
 \end{equation}
 \end{corollary}
@@ -267,10 +267,10 @@ moments \cref{eq:BA-moments-final} and their phase coefficients satisfy
 In the unnormalized hyperelliptic weights the two interpolation
 functions are
 \begin{equation}\label{eq:BA-hyperelliptic-h}
- h_L(P)=\sum_{i=1}^{L}\kappa_i\frac{y(P)+y_i}{x(P)-a_i},\qquad
+ h_L(P)=\sum_{\ell=1}^{L}\kappa_{\ell}\frac{y(P)+y_{\ell}}{x(P)-a_{\ell}},\qquad
  h_M(P)=\sum_{j=L+1}^{K}\kappa_j\frac{y(P)-y_j}{x(P)-a_j}.
 \end{equation}
-Their finite poles are at $Q_i$ and $\iota(Q_j)$, respectively.
+Their finite poles are at $Q_{\ell}$ and $\iota(Q_j)$, respectively.
 The moments make their puncture expansion $s^{-1}+O(s)$.
 With \cref{eq:BA-normalized-sigma}, half the residue of
 $h\,d\Omega_0$ is $\kappa_kP_0(a_k)$, precisely the normalized
@@ -340,7 +340,7 @@ the second group's abscissae, and use the weights in
 \cref{eq:BA-residue-weights}. They satisfy
 \cref{eq:BA-moments-final}. All ordinates are zero, so
 \cref{eq:BA-phase-final} gives $b_k=0$, $1\leq k\leq2g+1$.
-Thus \cref{thm:BA-realization} realizes the entire elementary al
+Thus \cref{cor:BA-realization} realizes the entire elementary al
 family in the purely cubic Hamiltonian \cref{eq:BA-H0-flat}.
 The cross-group pair modes are their Wronskians in
 \cref{eq:BA-pair-composites}, with half-period sums as shifts.
@@ -388,7 +388,7 @@ Its normalized mode powers are
 $\xi_k\bar{\xi}_k=\kappa_k(a_k-\wp(z))$, $1\leq k\leq K$.
 The only moment conditions are
 \[
- \sum_{i=1}^{L}\kappa_i
+ \sum_{\ell=1}^{L}\kappa_{\ell}
  =\sum_{j=L+1}^{K}\kappa_j=\tfrac12.
 \]
 Thus arbitrarily large groups of elementary elliptic modes fit the

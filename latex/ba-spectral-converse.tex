@@ -21,8 +21,8 @@ For the phase coefficients \cref{eq:general-phase-values}, put
  \lambda(P)=\tfrac12(h_M(P)-h_L(P)).
 \end{equation}
 The characteristic polynomial of the canonical pencil vanishes on
-this map. If the map is birational onto its image, $\mathcal C$
-normalizes the full characteristic curve. A sufficient condition is
+this map. If the map is birational onto its image (it induces an isomorphism
+of function fields), $\mathcal C$ normalizes the full characteristic curve. A sufficient condition is
 that one puncture has a finite limiting $\lambda$ distinct from the
 other punctures, in particular pairwise distinct $b_k^N$.
 For $N=1$ this condition is automatic.
@@ -35,7 +35,8 @@ multiple points is
  \sum_{q\in\operatorname{Sing}(\Gamma)}\delta_q
  -\binom L2-\binom M2-\binom N2=G-g.
 \end{equation}
-For distinct phases within groups the additional defect is affine.
+For distinct phases within groups the additional defect is affine;
+coincident phases can place it at infinity, as in \cref{sec:BA-al-functions}.
 \end{proposition}
 \begin{proof}
 Let $\mathsf X_{\rm BA}$ be the block matrix in
@@ -44,7 +45,7 @@ Let $\mathsf X_{\rm BA}$ be the block matrix in
 \cref{eq:general-phase-values}. The explicit vector is
 \begin{equation}\label{eq:BA-prescribed-eigenvector}
  r(P)=\begin{pmatrix}
- (-\kappa_i\Omega(Q_i,P)/c_i)_{i=1}^{L}\\
+ (-\kappa_{\ell}\Omega(Q_{\ell},P)/c_{\ell})_{\ell=1}^{L}\\
  (c_{L+j}\Omega(Q_{L+j},P))_{j=1}^{M}\\
  (e_k\psi_k^\vee(P))_{k=1}^{N}
  \end{pmatrix}.
@@ -54,7 +55,7 @@ $(\mathsf X_{\rm BA}+\nu(P)\mathsf D)r=\lambda(P)r$
 are the convolution identities for $h_M,h_L$. The third follows by
 subtracting their dual weighted equations:
 \[
- \sum_{i=1}^{L}\kappa_i\psi_k^\vee(Q_i)\Omega(Q_i,P)
+ \sum_{\ell=1}^{L}\kappa_{\ell}\psi_k^\vee(Q_{\ell})\Omega(Q_{\ell},P)
  -\sum_{j=L+1}^{K}\kappa_j\psi_k^\vee(Q_j)\Omega(Q_j,P)
  =(\lambda(P)-b_k^N)\psi_k^\vee(P).
 \]
@@ -65,7 +66,7 @@ pencil shifts $\lambda$ by $\rho$ and preserves the eigenvectors.
 
 The poles of $\nu$ are simple, at all $Q_a,R_k$. Their branches obey
 \[
- \lambda-\nu\to-2b_i^L\ (P\to Q_i),\qquad
+ \lambda-\nu\to-2b_{\ell}^L\ (P\to Q_{\ell}),\qquad
  \lambda+\nu\to-2b_j^M\ (P\to Q_{L+j}),\qquad
  \lambda\to b_k^N\ (P\to R_k).
 \]
@@ -139,14 +140,15 @@ formulas give solutions from canonical initial data rather than only
 from data chosen in advance on a curve.
 
 \begin{theorem}[Main theorem, part II: Generic BA reconstruction]\label{thm:BA-spectral-converse}
-Fix positive $L,M,N$ and arbitrary phase coefficients. Generic
+Fix positive $L,M,N$ and arbitrary phase coefficients. Zariski-generic
 canonical initial modes reconstruct scalar multipoint BA bases and
 their kernel on a smooth normalized active spectral curve.
 For distinct phases within groups all directions are active and the
 genus is $G=LM+MN+NL-L-M-N+1$; the last group supplies $N$
 punctures, and the ordinary and dual divisors have degree $G+N-1$.
 For repeated phases, use constant canonical bases within equal-phase
-blocks and remove inactive directions as in
+blocks and remove inactive directions (coordinates with zero incoming
+and outgoing couplings) as in
 Appendix~\ref{app:BA-active-converse}. Apply the construction with
 active dimensions $L_a,M_a,N_a$ and genus
 \cref{eq:BA-active-genus}, then restore the zero directions and bases.
@@ -167,7 +169,7 @@ blocks $-2\mathsf B_L,-2\mathsf B_M,\mathsf B_N$, and its time matrix is
 For distinct phases the regular normalized curve has branches
 \begin{equation}\label{eq:BA-converse-infinity}
 \begin{aligned}
- \lambda&=\nu-2b_i^L+O(\nu^{-1})&&\text{at }Q_i,\quad1\leq i\leq L,\\
+ \lambda&=\nu-2b_{\ell}^L+O(\nu^{-1})&&\text{at }Q_{\ell},\quad1\leq\ell\leq L,\\
  \lambda&=-\nu-2b_j^M+O(\nu^{-1})&&\text{at }Q_{L+j},\quad1\leq j\leq M,\\
  \lambda&=b_k^N+O(\nu^{-1})&&\text{at }R_k,\quad1\leq k\leq N.
 \end{aligned}
@@ -179,7 +181,7 @@ Put $s_k^{-1}=-\nu$ at $R_k$. The functions
  h_L=-\lambda-\nu,\qquad h_M=\lambda-\nu
 \end{equation}
 have the required poles and satisfy
-$h_M(Q_i)=-2b_i^L$, $h_L(Q_{L+j})=2b_j^M$,
+$h_M(Q_{\ell})=-2b_{\ell}^L$, $h_L(Q_{L+j})=2b_j^M$,
 $a_{L,k}=-b_k^N$, $a_{M,k}=b_k^N$.
 The interpolation and phase conditions thus come from the initial
 spectral curve, rather than restricting initial modes further.
@@ -227,9 +229,9 @@ at $R_k$, and its apparent projection-branch poles cancel with $d\nu$.
 The reference normalization gives a concrete recovery chart. Set
 \begin{equation}\label{eq:BA-converse-constants}
 \begin{aligned}
- c_i&=\sum_{k=1}^{N}w_{ki}(0),&
- \bar c_i&=\sum_{k=1}^{N}\bar w_{ki}(0),&
- \kappa_i&=c_i\bar c_i,\quad1\leq i\leq L,\\
+ c_{\ell}&=\sum_{k=1}^{N}w_{k\ell}(0),&
+ \bar c_{\ell}&=\sum_{k=1}^{N}\bar w_{k\ell}(0),&
+ \kappa_{\ell}&=c_{\ell}\bar c_{\ell},\quad1\leq\ell\leq L,\\
  c_{L+j}&=\sum_{k=1}^{N}v_{jk}(0),&
  \bar c_{L+j}&=\sum_{k=1}^{N}\bar v_{jk}(0),&
  \kappa_{L+j}&=c_{L+j}\bar c_{L+j},\quad1\leq j\leq M.
@@ -238,19 +240,19 @@ The reference normalization gives a concrete recovery chart. Set
 The barred constants are independent partner normalizations, not
 complex conjugates; the weights are products of initial sums.
 On the open chart where these sums are nonzero, outer eigenvector
-expansions give, for $1\leq i\leq L$, $1\leq j\leq M$ and $1\leq k\leq N$,
+expansions give, for $1\leq\ell\leq L$, $1\leq j\leq M$ and $1\leq k\leq N$,
 \begin{equation}\label{eq:BA-converse-recovery}
 \begin{aligned}
- \psi_k^\vee(Q_i)&=w_{ki}/c_i,&
- \psi_k(Q_i)&=\bar w_{ki}/\bar c_i,\\
+ \psi_k^\vee(Q_{\ell})&=w_{k\ell}/c_{\ell},&
+ \psi_k(Q_{\ell})&=\bar w_{k\ell}/\bar c_{\ell},\\
  \psi_k(Q_{L+j})&=v_{jk}/c_{L+j},&
  \psi_k^\vee(Q_{L+j})&=\bar v_{jk}/\bar c_{L+j},\\
- \Omega(Q_i,Q_{L+j})&=\frac{u_{ij}}{\sqrt2\bar c_i\bar c_{L+j}},&
- \Omega(Q_{L+j},Q_i)&=-\frac{\bar u_{ij}}{\sqrt2c_ic_{L+j}}.
+ \Omega(Q_{\ell},Q_{L+j})&=\frac{u_{\ell j}}{\sqrt2\bar c_{\ell}\bar c_{L+j}},&
+ \Omega(Q_{L+j},Q_{\ell})&=-\frac{\bar u_{\ell j}}{\sqrt2c_{\ell}c_{L+j}}.
 \end{aligned}
 \end{equation}
-For example $r_i\sim-\nu/c_i$ at $Q_i$, and the last eigenvector
-rows give $f_k^{\trans}r=w_{ki}/c_i$. The opposite outer block then
+For example $r_{\ell}\sim-\nu/c_{\ell}$ at $Q_{\ell}$, and the last eigenvector
+rows give $f_k^{\trans}r=w_{k\ell}/c_{\ell}$. The opposite outer block then
 gives the kernel recovery, with slope difference two. At an outer
 point, in coordinate $1/\nu$, the relevant $h$ has principal
 coefficient $-2$ and $d\Omega_0$ has coefficient $-\kappa_a$, so

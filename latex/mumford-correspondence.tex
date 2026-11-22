@@ -4,7 +4,7 @@
 Throughout this subsection $N=1$, with the hyperelliptic data of
 \cref{sec:BA-realization}.
 
-The elementary mode powers in \cref{thm:BA-realization} are
+The elementary mode powers in \cref{cor:BA-realization} are
 evaluations of the moving divisor polynomial $\mathcal P$. Together
 with their derivatives, they determine a closed projected subsystem
 in divisor coordinates, which we identify with the odd Mumford flow.
@@ -20,10 +20,10 @@ Their derivatives follow directly from the canonical Hamiltonian
 \cref{eq:BA-H0-flat}: the linear phase terms cancel, leaving
 \begin{equation}\label{eq:mumford-power-rates}
 \begin{aligned}
- i\dot I_i&=\sqrt2\sum_{j=L+1}^{K}
- (\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}-\xi_i\xi_j\xi_{ij}),&&1\leq i\leq L,\\
- i\dot I_j&=\sqrt2\sum_{i=1}^{L}
- (\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}-\xi_i\xi_j\xi_{ij}),&&L+1\leq j\leq K.
+ i\dot I_{\ell}&=\sqrt2\sum_{j=L+1}^{K}
+ (\bar{\xi}_{\ell}\bar{\xi}_j\bar{\xi}_{\ell j}-\xi_{\ell}\xi_j\xi_{\ell j}),&&1\leq\ell\leq L,\\
+ i\dot I_j&=\sqrt2\sum_{\ell=1}^{L}
+ (\bar{\xi}_{\ell}\bar{\xi}_j\bar{\xi}_{\ell j}-\xi_{\ell}\xi_j\xi_{\ell j}),&&L+1\leq j\leq K.
 \end{aligned}
 \end{equation}
 Thus $\dot I_k=\{I_k,H_0\}$ is a polynomial in the modes, rather
@@ -55,7 +55,9 @@ Any $g$ distinct marked abscissae give the same reconstruction on
 this family. The additional evaluations supply the remaining mode
 powers and their linear interpolation relations.
 
-Jacobi inversion gives $\mathcal P\mid f-\mathcal P_{z_g}^{\,2}$.
+Jacobi inversion gives $\mathcal P\mid f-\mathcal P_{z_g}^{\,2}$:
+at each moving divisor point $(x_r,y_r)$ one has
+$\mathcal P_{z_g}(z,x_r)=y_r$ and hence $f(x_r)=\mathcal P_{z_g}(z,x_r)^2$.
 Consequently define the polynomial
 \begin{equation}\label{eq:mumford-W}
  \mathcal W(z,x)=\frac{f(x)-\mathcal P_{z_g}(z,x)^2}
@@ -142,22 +144,22 @@ Substitution of the BA logarithmic rates into the Wronskians
 \cref{eq:BA-pair-composites} determines every composite algebraically:
 \begin{equation}\label{eq:mumford-composite-inverse}
 \begin{aligned}
- \xi_{ij}
- &=\frac{\bar{\xi}_i\bar{\xi}_j}{\sqrt2(a_j-a_i)}
+ \xi_{\ell j}
+ &=\frac{\bar{\xi}_{\ell}\bar{\xi}_j}{\sqrt2(a_j-a_{\ell})}
        \left(\frac{\mathcal P_{z_g,j}+y_j}{\mathcal P_j}
-             -\frac{\mathcal P_{z_g,i}+y_i}{\mathcal P_i}\right),\\
- \bar{\xi}_{ij}
- &=-\frac{\xi_i\xi_j}{\sqrt2(a_j-a_i)}
+             -\frac{\mathcal P_{z_g,i}+y_{\ell}}{\mathcal P_{\ell}}\right),\\
+ \bar{\xi}_{\ell j}
+ &=-\frac{\xi_{\ell}\xi_j}{\sqrt2(a_j-a_{\ell})}
        \left(\frac{\mathcal P_{z_g,j}-y_j}{\mathcal P_j}
-             -\frac{\mathcal P_{z_g,i}-y_i}{\mathcal P_i}\right),
- \qquad1\leq i\leq L<j\leq K.
+             -\frac{\mathcal P_{z_g,i}-y_{\ell}}{\mathcal P_{\ell}}\right),
+ \qquad1\leq\ell\leq L<j\leq K.
 \end{aligned}
 \end{equation}
 These formulas apply on the chart $\mathcal P_k\ne0$,
 $1\leq k\leq K$. Jacobi inversion supplies the corresponding
 $z$, and the constants $c_k$ in \cref{eq:BA-elementary} match the
 chosen elementary values. Under the conditions of
-\cref{thm:BA-realization}, the lifted modes then follow the
+\cref{cor:BA-realization}, the lifted modes then follow the
 canonical mode equations.
 
 The polynomial triple determines the divisor state; the $K$
@@ -186,9 +188,9 @@ mode gauges
  \xi_k&\longmapsto e^{\theta_k}\xi_k,&
  \bar{\xi}_k&\longmapsto e^{-\theta_k}\bar{\xi}_k,
  &&1\leq k\leq K,\\
- \xi_{ij}&\longmapsto e^{-(\theta_i+\theta_j)}\xi_{ij},&
- \bar{\xi}_{ij}&\longmapsto e^{\theta_i+\theta_j}\bar{\xi}_{ij},
- &&1\leq i\leq L<j\leq K.
+ \xi_{\ell j}&\longmapsto e^{-(\theta_{\ell}+\theta_j)}\xi_{\ell j},&
+ \bar{\xi}_{\ell j}&\longmapsto e^{\theta_{\ell}+\theta_j}\bar{\xi}_{\ell j},
+ &&1\leq\ell\leq L<j\leq K.
 \end{aligned}
 \end{equation}
 Here the $\theta_k$ are constant complex parameters; purely imaginary
@@ -211,21 +213,21 @@ Jacobian, while the power charges generate the reciprocal gauges.
 \subsubsection{Mechanical coordinate realizations}
 
 An explicit connection with Garnier coordinates follows by taking
-$L=g$. Then $q_L=1$ and $\kappa_i=1/(2R_L'(a_i))$,
-$1\leq i\leq g$. Introduce local coordinates $r_i$ by
-$r_i^2=4I_i$. Lagrange interpolation gives
+$L=g$. Then $q_L=1$ and $\kappa_{\ell}=1/(2R_L'(a_{\ell}))$,
+$1\leq\ell\leq g$. Introduce local coordinates $r_{\ell}$ by
+$r_{\ell}^2=4I_{\ell}$. Lagrange interpolation gives
 \begin{equation}\label{eq:mumford-garnier-potential}
- \sum_{i=1}^{g}r_i^2
- =2\left([x^{g-1}]\mathcal P+\sum_{i=1}^{g}a_i\right).
+ \sum_{\ell=1}^{g}r_{\ell}^2
+ =2\left([x^{g-1}]\mathcal P+\sum_{\ell=1}^{g}a_{\ell}\right).
 \end{equation}
 Using \cref{eq:mumford-product-identity} to differentiate these
 coordinates gives
 \begin{equation}\label{eq:mumford-garnier}
- -\ddot r_i
- =\left(\alpha_i-\sum_{j=1}^{g}r_j^2\right)r_i
-   -\frac{f(a_i)}{R_L'(a_i)^2r_i^3},\qquad
- \alpha_i=a_i+\frac{\lambda_{2g}}4+2\sum_{j=1}^{g}a_j,
- \quad1\leq i\leq g.
+ -\ddot r_{\ell}
+ =\left(\alpha_{\ell}-\sum_{j=1}^{g}r_j^2\right)r_{\ell}
+   -\frac{f(a_{\ell})}{R_L'(a_{\ell})^2r_{\ell}^3},\qquad
+ \alpha_{\ell}=a_{\ell}+\frac{\lambda_{2g}}4+2\sum_{j=1}^{g}a_j,
+ \quad1\leq\ell\leq g.
 \end{equation}
 In the geometric Abel time $-it$, this is the Garnier form with centrifugal terms
 \cite{Kostov1999,Vanhaecke2001}. At marked branch points the

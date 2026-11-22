@@ -6,20 +6,29 @@ The current requirements pin `generapy==0.2.0` from PyPI. Its runtime source
 matches the previously tested development revision. A clean installation
 was verified for the release; see the latest
 [release validation](#generapy-020-pypi-release) below.
-All 29 current check scripts pass with the release, as recorded in the
+The previous 29-check suite passed with the release, as recorded in the
 17 November validation below. The original 18 checks and both complete
 one-point numerical examples also passed on 16 November 2026. The [migration validation](#public-ba-jet-migration)
 records the BA adapter conventions and numerator-zero checks. The code and
 requirements are intended to be used together. Earlier records below
 describe historical checks, rather than the current installation status.
 
+## Manuscript cleanup (22 November 2026)
+
+The current manuscript is 73 pages. The local review cleanup clarifies
+hypotheses and phase conventions and removes notation clashes; it does
+not change the numerical equations or stored results. The runner now
+contains 30 checks. The new matrix-KP hierarchy check passed on the
+released Generapy environment; the earlier 29-check full-suite run is
+recorded below. The source archive is regenerated after this cleanup.
+Historical page and archive counts below refer to their dated snapshots.
+
 ## Current manuscript validation (17 November 2026)
 
-The revised manuscript builds to 67 pages, including its table of
-contents. The current source archive has 39 files and is independently
+That manuscript snapshot built to 67 pages, including its table of
+contents. Its source archive had 39 files and is independently
 rebuildable. There are no undefined references, multiply defined labels
-or overfull boxes. The page counts in the dated records below describe
-earlier revisions, not the current manuscript.
+or overfull boxes. The page counts in these dated records describe earlier revisions.
 
 All 29 scripts in `code/run_checks.py --suite all` pass on Generapy
 0.2.0 and the pinned requirements. Logs are in

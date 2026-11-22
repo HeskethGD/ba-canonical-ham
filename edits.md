@@ -1,6 +1,6 @@
 # Notes for editing paper
 
-Initial clarity and attribution pass completed on 22 November 2026. Checked items have been addressed; unchecked items remain deferred. The general KP correspondence and separate one-point subsection were subsequently incorporated on 22 November 2026, with normalization and flow-matching details in an appendix. The fuller elliptic example remains deferred.
+Initial clarity and attribution pass completed on 22 November 2026. Checked items have been addressed; unchecked items remain deferred. The general KP correspondence and separate one-point subsection were subsequently incorporated on 22 November 2026, with normalization and flow-matching details in an appendix. The fuller elliptic example remains deferred; the manuscript now includes a short pointer to the arbitrary-size genus-one family.
 
 ## Section 4 - Correspondences and explicit specializations
 

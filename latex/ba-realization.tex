@@ -43,10 +43,10 @@ The dual divisor is determined by these data. Write $K_{\mathcal C}$
 for a canonical divisor. The map from
 $H^0(K_{\mathcal C}+2\mathscr R)$ to the $N$ double-pole coefficients and the
 $g+N-1$ restriction values along $\mathscr D$ (including jets at
-multiple points) is an isomorphism. Its kernel is
+multiple points) has kernel
 $H^0(K_{\mathcal C}+\mathscr R-\mathscr D)$, which vanishes by Serre duality
 and Riemann--Roch, since $\deg(\mathscr D-\mathscr R)=g-1$ and its $H^0$
-vanishes. The source and target both have dimension $g+2N-1$.
+vanishes. The source and target both have dimension $g+2N-1$, so the map is an isomorphism.
 There is therefore a unique differential $d\Omega_0$ vanishing at
 $\mathscr D$ with double-pole leading parts $-ds_k/s_k^2$.
 Its remaining zero divisor is $\mathscr D^\vee$, of degree $g+N-1$,
@@ -134,8 +134,9 @@ $b_{\sigma,k}=b_k e^{z_0^{\trans}\varkappa\Delta_k-\Delta_k^{\trans}\varkappa\De
 The sigma versions are
 $\psi_k=a_{\sigma,k}e^{-itJ_{\sigma,k}}\sigma(z+\Delta_k)/\sigma(z)$ and
 $\psi_k^\vee=b_{\sigma,k}e^{itJ_{\sigma,k}}\sigma(z-\Delta_k)/\sigma(z)$.
-Finitely many additional BA times may be included to obtain an open
-Jacobian family; the dot continues to denote this selected first time.
+For necessity, an open Jacobian family means that $z_0$ ranges over
+an open set while the curve, punctures, evaluation points, weights and
+constant mode gauges remain fixed; the dot denotes the selected first time.
 
 The scalar Cauchy--BA kernel $\Omega(P,Q;t)$ has the fixed ordinary
 and dual divisors and diagonal normalization
@@ -176,18 +177,18 @@ away from the punctures, fixed poles and zeros of $d\Omega_0$.
 For nonzero weights $\kappa_a$ and reciprocal gauges $c_a,e_k$ define
 \begin{equation}\label{eq:multipoint-mode-arrays}
 \begin{aligned}
- u_{ij}^{\rm BA}&=\frac{\sqrt2\kappa_i\kappa_{L+j}}{c_ic_{L+j}}
-                  \Omega(Q_i,Q_{L+j}),&
- \bar u_{ij}^{\rm BA}&=-\sqrt2c_ic_{L+j}\Omega(Q_{L+j},Q_i),\\
+ u_{\ell j}^{\rm BA}&=\frac{\sqrt2\kappa_{\ell}\kappa_{L+j}}{c_{\ell}c_{L+j}}
+                  \Omega(Q_{\ell},Q_{L+j}),&
+ \bar u_{\ell j}^{\rm BA}&=-\sqrt2c_{\ell}c_{L+j}\Omega(Q_{L+j},Q_{\ell}),\\
  v_{jk}^{\rm BA}&=\frac{c_{L+j}}{e_k}\psi_k(Q_{L+j}),&
  \bar v_{jk}^{\rm BA}&=\frac{\kappa_{L+j}e_k}{c_{L+j}}\psi_k^\vee(Q_{L+j}),\\
- w_{ki}^{\rm BA}&=c_ie_k\psi_k^\vee(Q_i),&
- \bar w_{ki}^{\rm BA}&=\frac{\kappa_i}{c_ie_k}\psi_k(Q_i),
- \quad1\leq i\leq L,\ 1\leq j\leq M,\ 1\leq k\leq N.
+ w_{k\ell}^{\rm BA}&=c_{\ell}e_k\psi_k^\vee(Q_{\ell}),&
+ \bar w_{k\ell}^{\rm BA}&=\frac{\kappa_{\ell}}{c_{\ell}e_k}\psi_k(Q_{\ell}),
+ \quad1\leq\ell\leq L,\ 1\leq j\leq M,\ 1\leq k\leq N.
 \end{aligned}
 \end{equation}
 The bars are independent partner labels. The fixed normalizations have
-one redundancy: for any $s\ne0$, replacing $c_i$ by $sc_i$ in the
+one redundancy: for any $s\ne0$, replacing $c_{\ell}$ by $sc_{\ell}$ in the
 first group, $c_{L+j}$ by $s^{-1}c_{L+j}$ in the second, and $e_k$
 by $s^{-1}e_k$ leaves every mode unchanged. This is the single
 relation among the $d$ vertex gauge generators, leaving $d-1$
@@ -213,12 +214,12 @@ $a_{A,k}$ determine the third-group phase rates.
 \begin{lemma}[Meromorphic interpolation]\label{lem:general-BA-interpolation}
 The functions exist if and only if
 \begin{equation}\label{eq:general-residue-criterion}
- \sum_{i=1}^{L}r_iE_i=\boldsymbol U,\qquad
+ \sum_{\ell=1}^{L}r_{\ell}E_{\ell}=\boldsymbol U,\qquad
  \sum_{j=L+1}^{K}r_jE_j=\boldsymbol U.
 \end{equation}
 They are unique up to additive constants, and
 \begin{equation}\label{eq:general-residue-weights}
- \kappa_i=\tfrac12\operatorname{Res}_{Q_i}(h_Ld\Omega_0),\quad1\leq i\leq L,
+ \kappa_{\ell}=\tfrac12\operatorname{Res}_{Q_{\ell}}(h_Ld\Omega_0),\quad1\leq\ell\leq L,
  \qquad
  \kappa_j=\tfrac12\operatorname{Res}_{Q_j}(h_Md\Omega_0),\quad L+1\leq j\leq K.
 \end{equation}
@@ -278,51 +279,55 @@ applies. The dual proof has the reversed diagonal sign.
 
 \subsubsection{Realization and finite completion}
 
-For $1\leq i\leq L$, $1\leq j\leq M$, $1\leq k\leq N$,
+For $1\leq\ell\leq L$, $1\leq j\leq M$, $1\leq k\leq N$,
 define the phase coefficients and auxiliary phase rates by
 \begin{equation}\label{eq:general-phase-values}
 \begin{aligned}
- b_i^L&=-\tfrac12h_M(Q_i),&
+ b_{\ell}^L&=-\tfrac12h_M(Q_{\ell}),&
  b_j^M&=\tfrac12h_L(Q_{L+j}),&
  b_k^N&=\tfrac12(a_{M,k}-a_{L,k}),\\
- \ell_i^L&=-\tfrac12h_M(Q_i),&
+ \ell_{\ell}^L&=-\tfrac12h_M(Q_{\ell}),&
  \ell_j^M&=-\tfrac12h_L(Q_{L+j}),&
  \ell_k^N&=-\tfrac12(a_{M,k}+a_{L,k}).
 \end{aligned}
 \end{equation}
 Use the cycle-preserving transformation
 \begin{equation}\label{eq:multipoint-phase-gauge}
- u_{ij}=e^{-it(\ell_i^L-\ell_j^M)}u_{ij}^{\rm BA},\quad
+ u_{\ell j}=e^{-it(\ell_{\ell}^L-\ell_j^M)}u_{\ell j}^{\rm BA},\quad
  v_{jk}=e^{-it(\ell_j^M-\ell_k^N)}v_{jk}^{\rm BA},\quad
- w_{ki}=e^{-it(\ell_k^N-\ell_i^L)}w_{ki}^{\rm BA},
+ w_{k\ell}=e^{-it(\ell_k^N-\ell_{\ell}^L)}w_{k\ell}^{\rm BA},
 \end{equation}
 with reciprocal partner factors. Its three rates sum to zero in
 every triad, preserving the mixing terms.
 
+Regular multipoint data means the smooth-curve and divisor
+conditions of \cref{sec:multipoint-BA-data}, distinct evaluation points
+avoiding both divisors and the punctures, and nonzero weights and gauges.
+
 \begin{theorem}[Main theorem, part I: Canonical BA realization]\label{thm:general-BA-realization}
-For regular multipoint data, \cref{eq:general-residue-criterion} gives
-a solution of \cref{eq:canonical-H} through
+\emph{Sufficiency.} For regular multipoint data, \cref{eq:general-residue-criterion} gives
+a meromorphic solution of \cref{eq:canonical-H} through
 \cref{eq:multipoint-mode-arrays,eq:general-phase-values,eq:multipoint-phase-gauge}.
-Conversely, for $g\geq1$ and $\boldsymbol U\ne0$, these residue
+\emph{Necessity.} For $g\geq1$ and $\boldsymbol U\ne0$, these residue
 conditions are necessary for the displayed BA ansatz to solve the
 canonical equations on an open Jacobian family.
-For preassigned phases, compatibility up to cycle-preserving linear
-gauges is precisely
+\emph{Phase compatibility.} For preassigned $b^L,b^M,b^N$, such a BA solution
+can be matched by constant-rate reciprocal mode gauges if and only if
 \begin{equation}\label{eq:multipoint-phase-compatibility}
- 2(b_i^L+b_j^M+b_k^N)
- =h_L(Q_{L+j})-h_M(Q_i)+a_{M,k}-a_{L,k},
- \quad1\leq i\leq L,\ 1\leq j\leq M,\ 1\leq k\leq N.
+ 2(b_{\ell}^L+b_j^M+b_k^N)
+ =h_L(Q_{L+j})-h_M(Q_{\ell})+a_{M,k}-a_{L,k},
+ \quad1\leq\ell\leq L,\ 1\leq j\leq M,\ 1\leq k\leq N.
 \end{equation}
 \end{theorem}
 \begin{proof}
 The kernel and weighted identities give the raw equations
 \begin{equation}\label{eq:multipoint-raw-rates}
 \begin{aligned}
- i\dot u_{ij}^{\rm BA}&=\sqrt2\sum_{k=1}^{N}\bar v_{jk}^{\rm BA}\bar w_{ki}^{\rm BA},\\
+ i\dot u_{\ell j}^{\rm BA}&=\sqrt2\sum_{k=1}^{N}\bar v_{jk}^{\rm BA}\bar w_{k\ell}^{\rm BA},\\
  i\dot v_{jk}^{\rm BA}&=(h_L(Q_{L+j})-a_{L,k})v_{jk}^{\rm BA}
-              +\sqrt2\sum_{i=1}^{L}\bar u_{ij}^{\rm BA}\bar w_{ki}^{\rm BA},\\
- i\dot w_{ki}^{\rm BA}&=(-h_M(Q_i)+a_{M,k})w_{ki}^{\rm BA}
-              +\sqrt2\sum_{j=1}^{M}\bar u_{ij}^{\rm BA}\bar v_{jk}^{\rm BA},
+              +\sqrt2\sum_{\ell=1}^{L}\bar u_{\ell j}^{\rm BA}\bar w_{k\ell}^{\rm BA},\\
+ i\dot w_{k\ell}^{\rm BA}&=(-h_M(Q_{\ell})+a_{M,k})w_{k\ell}^{\rm BA}
+              +\sqrt2\sum_{j=1}^{M}\bar u_{\ell j}^{\rm BA}\bar v_{jk}^{\rm BA},
 \end{aligned}
 \end{equation}
 and negative partner equations. The phase transformation gives
@@ -369,40 +374,42 @@ Thus the diagonal identity follows from the kernel's regular part;
 the off-diagonal products are given separately by
 \cref{eq:general-Fay-power}.
 
-Let $\mathcal Q_i=Q_i^L/\kappa_i$, where $Q_i^L$ is the first-group
+Let $\mathcal Q_{\ell}=Q_{\ell}^L/\kappa_{\ell}$, where $Q_{\ell}^L$ is the first-group
 power charge of \cref{eq:canonical-charges}. The mode definitions give
 \[
- \mathcal Q_i=\sum_{k=1}^{N}\psi_k(Q_i)\psi_k^\vee(Q_i)
- +2\sum_{j=L+1}^{K}\kappa_j\Omega(Q_i,Q_j)\Omega(Q_j,Q_i).
+ \mathcal Q_{\ell}=\sum_{k=1}^{N}\psi_k(Q_{\ell})\psi_k^\vee(Q_{\ell})
+ +2\sum_{j=L+1}^{K}\kappa_j\Omega(Q_{\ell},Q_j)\Omega(Q_j,Q_{\ell}).
 \]
 Put $V_M=\sum_{j=L+1}^{K}r_jE_j-\boldsymbol U$ and let
-$B_{ij}$ denote the coefficient of $B(Q_i,Q_j)$ in the chosen
-coordinates at $Q_i,Q_j$. Substituting the two product identities,
+$B_{\ell j}$ denote the coefficient of $B(Q_{\ell},Q_j)$ in the chosen
+coordinates at $Q_{\ell},Q_j$. Substituting the two product identities,
 with $r_j=2\kappa_j/\beta_j$, yields
 \[
- \beta_i\mathcal Q_i
- =\Xi_s(Q_i)-\sum_{j=L+1}^{K}r_jB_{ij}
-       -\partial_{E_i}\partial_{V_M}\log\theta(z).
+ \beta_{\ell}\mathcal Q_{\ell}
+ =\Xi_s(Q_{\ell})-\sum_{j=L+1}^{K}r_jB_{\ell j}
+       -\partial_{E_{\ell}}\partial_{V_M}\log\theta(z).
 \]
-The first two terms are independent of $z$. Since $\mathcal Q_i$ is
+The first two terms are independent of $z$. Since $\mathcal Q_{\ell}$ is
 conserved and $\dot z=-i\boldsymbol U$, the ansatz on an open
 Jacobian family implies the meromorphic identity
 \[
- \partial_{\boldsymbol U}\partial_{E_i}\partial_{V_M}\log\theta=0.
+ \partial_{\boldsymbol U}\partial_{E_{\ell}}\partial_{V_M}\log\theta=0.
 \]
 At a smooth point of the theta divisor its leading cubic pole has
 coefficient
-$2(\partial_{\boldsymbol U}\theta)(\partial_{E_i}\theta)
+$2(\partial_{\boldsymbol U}\theta)(\partial_{E_{\ell}}\theta)
 (\partial_{V_M}\theta)$. The theta divisor of a smooth connected
-curve is irreducible, reduced and ample. Consequently one of these
-three factors must vanish identically along it. A constant direction
+curve is irreducible, reduced and ample \cite{Mumford1984}.
+The product therefore vanishes on its smooth locus only if one
+factor vanishes identically along the divisor. A constant direction
 everywhere tangent to this divisor lies in the Lie algebra of its
 translation stabilizer, which is finite. The first factor cannot
 vanish identically because $\boldsymbol U\ne0$, nor can the second:
-holomorphic differentials have no common zero, so $E_i\ne0$.
+holomorphic differentials have no common zero, so $E_{\ell}\ne0$.
 It follows that $V_M=0$. This is the second residue equation.
-A column charge gives the other residue equation. The weighted equations
-then fix the phase compatibility.
+A column charge gives the other residue equation. The linear rates
+in \cref{eq:multipoint-raw-rates} then force the triad sums in
+\cref{eq:multipoint-phase-compatibility}.
 \end{proof}
 Sufficiency applies also to genus zero and stationary Abel directions;
 the nonzero-direction hypothesis is used only for necessity.
@@ -436,7 +443,8 @@ With $a_L,a_M$ added evaluation points the resulting system has
 \]
 canonical mode pairs. The original evaluations are retained as
 entries of these enlarged arrays; their equations include the new
-modes. Completion therefore constructs a coupled enlargement.
+modes. Completion constructs a coupled enlargement and generally
+changes $h_L,h_M$ and the original modes' linear phase coefficients.
 
 Here $a_L=a_M=g+1$ for the basic completion, and
 $a_L=a_M=g+N$ when all regular puncture constants are prescribed.
