@@ -373,6 +373,15 @@ Pol Vanhaecke.
 \newblock \href {https://doi.org/10.1007/3-540-44576-5}
   {\path{doi:10.1007/3-540-44576-5}}.
 
+\bibitem{Weierstrass1856}
+Karl Weierstrass.
+\newblock Theorie der {Abel}'schen functionen.
+\newblock {\em Journal f\"ur die reine und angewandte Mathematik}, 52:285--380,
+  1856.
+\newblock Digitised offprint: \url{https://www.gutenberg.org/ebooks/29780}.
+\newblock \href {https://doi.org/10.1515/crll.1856.52.285}
+  {\path{doi:10.1515/crll.1856.52.285}}.
+
 \bibitem{WJB1986}
 S.~Wojciechowski, Z.~Jiang, and R.~K. Bullough.
 \newblock Integrable multiwave interaction systems of {ODEs}.

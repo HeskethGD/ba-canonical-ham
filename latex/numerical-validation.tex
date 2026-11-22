@@ -86,8 +86,11 @@ decimal places, are
 \input{ba-trigonal-parameters}
 The numerical integrations use the full stored values.
 
-For completeness, the trigonal kernel used here has an explicit
-third-order Green-pairing formula. Write $\partial=\partial_{z_3}$,
+To evaluate the trigonal pair-composite modes, we use an explicit
+bilinear formula for the kernel in terms of the BA functions and
+their derivatives. Differentiating it also gives analytic mode rates
+without substituting Hamilton's equations.
+Write $\partial=\partial_{z_3}$,
 $f_i=\psi_+(Q_i,z;z_0)$ and $g_j=\psi_-(Q_j,z;z_0)$.
 The scalar BA operator and its formal adjoint have the form
 \[
@@ -115,16 +118,17 @@ Both examples use real time $t$, with $z=z_0-it e_g$,
 $0\leq t\leq6$, in the stated Abel coordinates. The independent
 integrator solves Hamilton's equations for $H_0$ with brackets $-i$,
 exactly as in \cref{eq:general-network-rates}. The trigonal example
-uses genuinely complex weights and phases and retains independent
-Hamiltonian partners.
+uses genuinely complex weights $\kappa_k$ and phase coefficients $b_k$,
+$1\leq k\leq K$, and retains independent Hamiltonian partners.
 
 Sigma jets are evaluated at 24 decimal digits. Mode assembly and the
 independent fourth-order Runge--Kutta integration use double-precision
 complex arithmetic. We evaluate the BA formulas at 41 points and
 plot the numerical trajectory at 601 points. Integrations with
 6,000 and 12,000 steps test convergence. The kernel is evaluated
-from BA jets through the second-order Green pairing in the
-hyperelliptic case and the third-order pairing in the trigonal case.
+from BA jets through the two-function Wronskian in the hyperelliptic
+case and the bilinear formula \cref{eq:numeric-trigonal-kernel} in the
+trigonal case.
 Its derivative is computed by differentiating that pairing, without
 substituting Hamilton's equations.
 
@@ -346,13 +350,9 @@ The script \path{code/ba_genus2_converse_check.py} and its stored
 records contain the exact characteristic polynomial, both recovered
 divisors and the complete reconstruction data.
 
-As a separate implementation check, Generapy's elliptic theta jets
-through order three, theta ratios and logarithmic rates were compared
-with \texttt{mpmath.jtheta}, including period shifts and a point near
-a theta zero. The maximum scaled discrepancy was below $10^{-54}$
-at $55$ digits. This independent check is in
-\path{code/independent_elliptic_theta_check.py}; the manuscript's BA
-evaluations and plots continue to use Generapy.
+Generapy's tests against mathematical identities and its reproductions
+of published results are documented in its repository and
+documentation \cite{Generapy}.
 
 \begin{figure}[p]
  \centering

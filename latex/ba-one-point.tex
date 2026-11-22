@@ -24,21 +24,21 @@ We use single indices for the $K$ elementary pairs and double indices
 for the $LM$ cross-group pair composites. Their dictionary with the
 $H_0$ modes of \cref{eq:canonical-phase-gauge} is
 \begin{equation}\label{eq:BA-mode-dictionary}
- \xi_i=\tilde w_{1i},\qquad
+ \xi_{\ell}=\tilde w_{1\ell},\qquad
  \xi_{L+m}=\tilde v_{m1},\qquad
- \xi_{i,L+m}=\tilde u_{im},
- \quad1\leq i\leq L,\quad1\leq m\leq M,
+ \xi_{\ell,L+m}=\tilde u_{\ell m},
+ \quad1\leq\ell\leq L,\quad1\leq m\leq M,
 \end{equation}
 with the same rule for barred partners. Put
 \begin{equation}\label{eq:BA-phase-dictionary}
- b_i=2b_i^L+b_1^N,\qquad b_{L+m}=2b_m^M+b_1^N,
- \quad1\leq i\leq L,\quad1\leq m\leq M.
+ b_{\ell}=2b_{\ell}^L+b_1^N,\qquad b_{L+m}=2b_m^M+b_1^N,
+ \quad1\leq\ell\leq L,\quad1\leq m\leq M.
 \end{equation}
 The inherited brackets satisfy $\{\xi_k,\bar\xi_r\}=-i\delta_{kr}$, with the corresponding rule for pair modes, and
 \begin{equation}\label{eq:BA-H0-flat}
  H_0=\sum_{k=1}^{K}b_k\xi_k\bar{\xi}_k
- +\sqrt2\sum_{i=1}^{L}\sum_{j=L+1}^{K}
- (\xi_i\xi_j\xi_{ij}+\bar{\xi}_i\bar{\xi}_j\bar{\xi}_{ij}).
+ +\sqrt2\sum_{\ell=1}^{L}\sum_{j=L+1}^{K}
+ (\xi_{\ell}\xi_j\xi_{\ell j}+\bar{\xi}_{\ell}\bar{\xi}_j\bar{\xi}_{\ell j}).
 \end{equation}
 
 
@@ -66,17 +66,17 @@ $\Xi_\sigma=\Xi-\boldsymbol U^{\trans}\varkappa A(P)$, are
 In this notation the unphased BA modes are
 \begin{equation}\label{eq:general-elementary-modes}
 \begin{aligned}
- \xi_i&=c_i \psi^\vee(Q_i),&\bar{\xi}_i&=\kappa_i \psi(Q_i)/c_i,
- &&1\leq i\leq L,\\
+ \xi_{\ell}&=c_{\ell} \psi^\vee(Q_{\ell}),&\bar{\xi}_{\ell}&=\kappa_{\ell} \psi(Q_{\ell})/c_{\ell},
+ &&1\leq\ell\leq L,\\
  \xi_j&=c_j \psi(Q_j),&\bar{\xi}_j&=\kappa_j \psi^\vee(Q_j)/c_j,
  &&L+1\leq j\leq K,
 \end{aligned}
 \end{equation}
 and
 \begin{equation}\label{eq:general-pair-modes}
- \xi_{ij}=\frac{\sqrt2\kappa_i\kappa_j}{c_ic_j}\Omega(Q_i,Q_j),
- \qquad \bar{\xi}_{ij}=-\sqrt2c_ic_j\Omega(Q_j,Q_i),
- \quad1\leq i\leq L<j\leq K.
+ \xi_{\ell j}=\frac{\sqrt2\kappa_{\ell}\kappa_j}{c_{\ell}c_j}\Omega(Q_{\ell},Q_j),
+ \qquad \bar{\xi}_{\ell j}=-\sqrt2c_{\ell}c_j\Omega(Q_j,Q_{\ell}),
+ \quad1\leq\ell\leq L<j\leq K.
 \end{equation}
 
 An \emph{elementary mode} has the shift of one curve-point lift
@@ -90,20 +90,20 @@ one-point elementary vectors.
 
 The raw phase values and equations reduce to
 \begin{equation}\label{eq:one-point-phase-values}
- b_i=-h_M(Q_i),\quad1\leq i\leq L,\qquad
+ b_{\ell}=-h_M(Q_{\ell}),\quad1\leq\ell\leq L,\qquad
  b_j=h_L(Q_j),\quad L+1\leq j\leq K,
 \end{equation}
 \begin{equation}\label{eq:general-network-rates}
 \begin{aligned}
- i\dot\xi_i&=b_i\xi_i+\sqrt2\sum_{j=L+1}^{K}\bar{\xi}_j\bar{\xi}_{ij},&
- i\dot{\bar{\xi}}_i&=-b_i\bar{\xi}_i-\sqrt2\sum_{j=L+1}^{K}\xi_j\xi_{ij},
- &&1\leq i\leq L,\\
- i\dot\xi_j&=b_j\xi_j+\sqrt2\sum_{i=1}^{L}\bar{\xi}_i\bar{\xi}_{ij},&
- i\dot{\bar{\xi}}_j&=-b_j\bar{\xi}_j-\sqrt2\sum_{i=1}^{L}\xi_i\xi_{ij},
+ i\dot\xi_{\ell}&=b_{\ell}\xi_{\ell}+\sqrt2\sum_{j=L+1}^{K}\bar{\xi}_j\bar{\xi}_{\ell j},&
+ i\dot{\bar{\xi}}_{\ell}&=-b_{\ell}\bar{\xi}_{\ell}-\sqrt2\sum_{j=L+1}^{K}\xi_j\xi_{\ell j},
+ &&1\leq\ell\leq L,\\
+ i\dot\xi_j&=b_j\xi_j+\sqrt2\sum_{\ell=1}^{L}\bar{\xi}_{\ell}\bar{\xi}_{\ell j},&
+ i\dot{\bar{\xi}}_j&=-b_j\bar{\xi}_j-\sqrt2\sum_{\ell=1}^{L}\xi_{\ell}\xi_{\ell j},
  &&L+1\leq j\leq K,\\
- i\dot\xi_{ij}&=\sqrt2\bar{\xi}_i\bar{\xi}_j,&
- i\dot{\bar{\xi}}_{ij}&=-\sqrt2\xi_i\xi_j,
- &&1\leq i\leq L<j\leq K.
+ i\dot\xi_{\ell j}&=\sqrt2\bar{\xi}_{\ell}\bar{\xi}_j,&
+ i\dot{\bar{\xi}}_{\ell j}&=-\sqrt2\xi_{\ell}\xi_j,
+ &&1\leq\ell\leq L<j\leq K.
 \end{aligned}
 \end{equation}
 These are Hamilton's equations for \cref{eq:BA-H0-flat}.
@@ -139,17 +139,17 @@ For $N=1$, choose the ordinary gap complement at $P_\infty$.
 Then $p_1=\sum_{\alpha=1}^{g}v_\alpha s^{-n_\alpha}$ for its
 Weierstrass gaps $n_\alpha$, and $\varphi_1^N=0$.
 The elementary phase rates are
-$b_i^{(r,\nu_0)}=-\varphi_i^L$,
+$b_{\ell}^{(r,\nu_0)}=-\varphi_{\ell}^L$,
 $b_{L+j}^{(r,\nu_0)}=\varphi_j^M$; pair phases are the opposite
 sums of these rates. For example, in the one-point $H_0$ pencil
 \cref{eq:BA-H0-pencil}, with optional spectral origin $\rho$, the
 fourth trace has $q=\lambda^3/\nu$. Put $\epsilon_a=\rho-b_a$,
 $\chi_a=1$ in the first ordinary group and $\chi_a=-1$ in the second.
 Write $I_a=\xi_a\bar\xi_a$, $1\leq a\leq K$, and
-$I_{ij}=\xi_{ij}\bar\xi_{ij}$, $1\leq i\leq L<j\leq K$.
+$I_{\ell j}=\xi_{\ell j}\bar\xi_{\ell j}$, $1\leq\ell\leq L<j\leq K$.
 For the conserved power combinations
-$C_i=I_i-\sum_{j=L+1}^{K}I_{ij}$ and
-$C_j=I_j-\sum_{i=1}^{L}I_{ij}$, perturbation at infinity gives
+$C_{\ell}=I_{\ell}-\sum_{j=L+1}^{K}I_{\ell j}$ and
+$C_j=I_j-\sum_{\ell=1}^{L}I_{\ell j}$, perturbation at infinity gives
 \[
  \lambda=\chi_a\nu+\epsilon_a-\chi_aC_a/\nu+O(\nu^{-2}),\qquad
  \operatorname{reg}_{Q_a}q=3\chi_a(\epsilon_a^2-C_a).
