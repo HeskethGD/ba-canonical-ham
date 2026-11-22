@@ -1,32 +1,55 @@
-\section{The canonical multiwave Hamiltonian}
+\section{The Hamiltonian system and its spectral geometry}
 \label{sec:canonical}
 
-We first give the complex canonical system in the three-matrix notation
-of \cref{eq:intro-mixing}. An explicit change of coordinates identifies
-its cubic interactions with the multiwave construction of Jiang and
-Rauch-Wojciechowski \cite[Section II]{JRW1991}. Retaining independent
-constant diagonal blocks supplies the mode-dependent linear rates
-required by compatible prescribed BA data in
-\cref{thm:general-BA-realization}. We refer to this constant-diagonal
-extension as the modified JRW system. Commuting power charges then redistribute
-these rates into the symmetric phase convention used here. The resulting
-pencil supplies commuting integrals through the AKS construction;
-their functional independence is considered separately. The detailed
-comparison with the original system is given in Appendix~\ref{sec:JRW-dictionary}.
+We establish the Hamiltonian and spectral framework needed for the BA
+correspondence. The phase parameters specify the rates to be matched,
+the commuting integrals provide Liouville integrability, and the pencil
+identifies the curve carried by a solution.
 
-\subsection{Modes, brackets and Hamilton equations}
+We use the canonical cubic multiwave family developed in the earlier
+wave and matrix constructions
+\cite{MenyukChenLee1983Integrable,WJB1986,JRW1991}.
+Independent constant diagonal phases accommodate the rates determined
+by prescribed BA data in \cref{thm:general-BA-realization}; power
+charges redistribute them into a symmetric convention. We first give
+the full three-matrix system, which supplies the pencil and commuting
+Hamiltonians used by its BA realization for all three group sizes. The coordinate
+comparisons with the earlier systems are in
+Appendices~\ref{sec:MCL-dictionary} and~\ref{sec:JRW-dictionary}.
+
+\subsection{Canonical modes and phase parameters}
+\label{sec:canonical-phase-setup}
+
+We fix the modes, brackets and phase conventions so that the BA
+formulas in \cref{sec:BA-correspondence} can be compared directly with
+Hamilton's equations.
+
+\subsubsection{Modes, brackets and Hamilton equations}
 \label{sec:canonical-modes}
 
-There are $p=LM+MN+NL$ canonical mode pairs. Their nonzero basic
-brackets are
+The mode matrices are $\boldsymbol u\in\C^{L\times M}$,
+$\boldsymbol v\in\C^{M\times N}$ and
+$\boldsymbol w\in\C^{N\times L}$, for positive integers $L,M,N$.
+Each entry has an independent barred Hamiltonian partner.
+Their common cubic interaction has the matrix form
+\begin{equation}\label{eq:intro-mixing}
+ H_{\mathrm{mix}}=\sqrt2\,\tr\!\left(
+ \boldsymbol u\boldsymbol v\boldsymbol w
+ +\bar{\boldsymbol u}\bar{\boldsymbol v}\bar{\boldsymbol w}\right).
+\end{equation}
+Each term joins one mode from each matrix; the constants in
+\cref{eq:canonical-H} supply its linear phase rates.
+
+There are $p=LM+MN+NL$ canonical mode pairs. Writing $i$ for the
+imaginary unit, their nonzero basic brackets are
 \begin{equation}\label{eq:canonical-brackets}
 \begin{aligned}
- \{u_{\ell m},\bar{u}_{ij}\}&=-i\delta_{\ell i}\delta_{mj},
- &&1\leq\ell,i\leq L,\quad1\leq m,j\leq M,\\
- \{v_{mn},\bar{v}_{jk}\}&=-i\delta_{mj}\delta_{nk},
- &&1\leq m,j\leq M,\quad1\leq n,k\leq N,\\
- \{w_{n\ell},\bar{w}_{ki}\}&=-i\delta_{nk}\delta_{\ell i},
- &&1\leq n,k\leq N,\quad1\leq\ell,i\leq L.
+ \{u_{\ell m},\bar{u}_{\hat\ell\hat m}\}&=-i\delta_{\ell\hat\ell}\delta_{m\hat m},
+ &&1\leq\ell,\hat\ell\leq L,\quad1\leq m,\hat m\leq M,\\
+ \{v_{mn},\bar{v}_{\hat m\hat n}\}&=-i\delta_{m\hat m}\delta_{n\hat n},
+ &&1\leq m,\hat m\leq M,\quad1\leq n,\hat n\leq N,\\
+ \{w_{n\ell},\bar{w}_{\hat n\hat\ell}\}&=-i\delta_{n\hat n}\delta_{\ell\hat\ell},
+ &&1\leq n,\hat n\leq N,\quad1\leq\ell,\hat\ell\leq L.
 \end{aligned}
 \end{equation}
 All other basic brackets vanish, apart from antisymmetry. Bars label
@@ -60,7 +83,7 @@ $1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$.
 The superscripts distinguish the three groups of phase coefficients.
 
 \begin{samepage}
-With coupling normalization $\kappa=\sqrt2$, the Hamiltonian is
+The Hamiltonian is
 \begin{align}\label{eq:canonical-H}
 H={}&\sum_{\ell=1}^{L}\sum_{m=1}^{M}
  (b_\ell^{L}+b_m^{M})u_{\ell m}\bar{u}_{\ell m}
@@ -83,7 +106,8 @@ The three mode powers are
  I^w_{n\ell}=w_{n\ell}\bar{w}_{n\ell},
  \quad1\leq\ell\leq L,\ 1\leq m\leq M,\ 1\leq n\leq N.
 \end{equation}
-They become squared moduli when the partners are actual complex
+The superscripts $u,v,w$ label the associated mode families and are
+not exponents. These powers become squared moduli when the partners are actual complex
 conjugates.
 
 The Hamilton equations are, for
@@ -95,9 +119,9 @@ $1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$,
  i\dot{\bar{u}}_{\ell m}&=-(b_\ell^L+b_m^M)\bar{u}_{\ell m}
             -\sqrt2\sum_{k=1}^{N}v_{mk}w_{k\ell},\\
  i\dot v_{mn}&=(b_m^{M}+b_n^N)v_{mn}
-       +\sqrt2\sum_{i=1}^{L}\bar{u}_{im}\bar{w}_{ni},\\
+       +\sqrt2\sum_{\ell=1}^{L}\bar{u}_{\ell m}\bar{w}_{n\ell},\\
  i\dot{\bar{v}}_{mn}&=-(b_m^{M}+b_n^N)\bar{v}_{mn}
-       -\sqrt2\sum_{i=1}^{L}u_{im}w_{ni},\\
+       -\sqrt2\sum_{\ell=1}^{L}u_{\ell m}w_{n\ell},\\
  i\dot w_{n\ell}&=(b_n^N+b_\ell^{L})w_{n\ell}
        +\sqrt2\sum_{j=1}^{M}\bar{u}_{\ell j}\bar{v}_{jn},\\
  i\dot{\bar{w}}_{n\ell}&=-(b_n^N+b_\ell^{L})\bar{w}_{n\ell}
@@ -105,7 +129,13 @@ $1\leq\ell\leq L$, $1\leq m\leq M$, $1\leq n\leq N$,
 \end{aligned}
 \end{equation}
 
-\subsection{Power symmetries and phase conventions}
+\Cref{eq:canonical-H,eq:canonical-rates} define the canonical multiwave
+system at the centre of this work. In \cref{sec:BA-correspondence},
+we show that its simple cubic Hamiltonian provides a common setting
+for BA functions on arbitrary smooth algebraic curves, and reconstruct
+its generic solution from the associated spectral data.
+
+\subsubsection{Power symmetries and phase conventions}
 \label{sec:canonical-phase-gauges}
 
 The linear terms cancel from the mode-power derivatives. The conserved
@@ -143,8 +173,7 @@ Rauch-Wojciechowski. Define
    +\sum_{m=1}^{M}\sum_{n=1}^{N}
        (2b_m^M+b_n^N)v_{mn}\bar{v}_{mn}+H_{\mathrm{mix}},
 \end{align}
-where $H_{\mathrm{mix}}$ is \cref{eq:intro-mixing} with
-$\kappa=\sqrt2$. Let
+where $H_{\mathrm{mix}}$ is \cref{eq:intro-mixing}. Let
 $(\tilde{\boldsymbol u},\tilde{\boldsymbol v},\tilde{\boldsymbol w})$
 and their barred partners denote solutions of Hamilton's equations
 generated by $H_0$. The corresponding solutions of $H$ are
@@ -163,7 +192,7 @@ inverse factors. This time-dependent change is canonical at each
 fixed time. Its exponents cancel in every cubic mixing product, so
 both those products and all mode powers are identical in the two
 descriptions. Appendix~\ref{sec:JRW-dictionary} identifies $H_0$ with the
-constant-diagonal extension of the 1991 Hamiltonian.
+constant-diagonal extension of the 1991 Hamiltonian \cite{JRW1991}.
 
 The independent diagonal parameters and this change of phase convention
 have distinct roles. In each mixing product $u_{\ell m}v_{mn}w_{n\ell}$,
@@ -175,7 +204,14 @@ The outer diagonal parameters therefore supply interaction-dependent
 linear rates that remain present in either convention. Their values
 are fixed by the marked curve data in the BA realization.
 
-\subsection{The matrix pencil and its Lax equation}
+\subsection{Commuting Hamiltonians and complete integrability}
+\label{sec:canonical-integrable-framework}
+
+We construct the Lax pencil and its commuting Hamiltonians, then give
+the complete integral count needed to place the BA solutions in an
+integrable canonical system.
+
+\subsubsection{The matrix pencil and its Lax equation}
 \label{sec:canonical-lax}
 
 A Lax representation packages the mode equations into a matrix
@@ -227,7 +263,7 @@ $\mathsf X(t)$, where $d=L+M+N$:
  -\boldsymbol w&-\bar{\boldsymbol v}^{\trans}&\mathsf B_N
  \end{pmatrix}.
 \end{equation}
-The matrix pencil is the affine family
+The Lax matrix $\mathsf L(\nu,t)$ forms the affine matrix pencil
 \begin{equation}\label{eq:canonical-pencil}
  \mathsf L(\nu,t)=\mathsf X(t)+\nu\mathsf D,\qquad
  \mathsf D=\diag(\Id_L,-\Id_M,0_N).
@@ -254,7 +290,7 @@ The spectral determinant is
 Its coefficients are polynomials in the modes and are conserved by
 \cref{eq:canonical-lax}.
 
-\subsection{The AKS framework and commuting integrals}
+\subsubsection{The AKS framework and commuting integrals}
 \label{sec:canonical-AKS}
 
 To establish integrability, the conserved quantities must also commute
@@ -262,11 +298,11 @@ under the canonical bracket. The AKS framework explains this
 commutativity by expressing the mode bracket in terms of the same
 matrices $\mathsf X,\mathsf D$ used in
 \cref{eq:canonical-X,eq:canonical-pencil}.
-Write $X_{hi},D_{hi}$ for their entries. The canonical mode brackets give
+Write $X_{hr},D_{hr}$ for their entries. The canonical mode brackets give
 \begin{equation}\label{eq:canonical-frozen}
- \{X_{hi},X_{jk}\}
- =-i(D_{hh}-D_{ii})\delta_{hk}\delta_{ij},
- \qquad1\leq h,i,j,k\leq d.
+ \{X_{hr},X_{jk}\}
+ =-i(D_{hh}-D_{rr})\delta_{hk}\delta_{rj},
+ \qquad1\leq h,r,j,k\leq d.
 \end{equation}
 Its coefficients depend only on the fixed matrix $\mathsf D$.
 Fixing the three diagonal blocks of $\mathsf X$ leaves precisely the

@@ -1,8 +1,10 @@
-\section{Hyperelliptic specialization}
+\subsection{Hyperelliptic BA modes and polynomial interpolation}
 \label{sec:BA-realization}
 
-The general construction becomes especially explicit on an odd-degree
-hyperelliptic curve. Sheet reflection identifies ordinary and dual
+We specialize to $N=1$ with its puncture at infinity on an odd-degree
+hyperelliptic curve. The general meromorphic residue criterion applies
+for arbitrary $L,M,N$; the compact polynomial formulas derived here
+use this one-point marking. Sheet reflection identifies ordinary and dual
 functions, the kernel becomes a two-function Wronskian, and the residue
 conditions become polynomial interpolation moments. We give the sigma
 normalization and the conversion to \cref{thm:general-BA-realization},
@@ -10,7 +12,7 @@ then retain the explicit weights needed for the Mumford correspondence.
 The mode counts and Hamiltonian remain
 \cref{eq:BA-mode-counts,eq:BA-H0-flat}.
 
-\subsection{Curve and function conventions}
+\subsubsection{Curve and function conventions}
 
 Fix a smooth odd-degree curve, its Abel map and ordered differentials:
 \begin{equation}\label{eq:BA-curve}
@@ -20,8 +22,9 @@ Fix a smooth odd-degree curve, its Abel map and ordered differentials:
 \end{equation}
 The sheet involution is $P=(a,y)\mapsto\iota(P)=(a,-y)$;
 compatible lifts give $A(\iota(P))=-A(P)$.
-This is Generapy's automatic odd-degree Baker basis \cite{Generapy}.
-The vector $z$ in this section uses these Baker Abel coordinates,
+This is the Baker basis used in hyperelliptic sigma-function theory
+\cite{BEL1997,Onishi2005}.
+The vector $z$ in this hyperelliptic description uses these Baker Abel coordinates,
 related by a fixed linear change to the normalized theta coordinates
 of \cref{eq:general-BA-theta}. The scalar time follows the same first BA direction, with first BA
 parameter $-it$.
@@ -40,8 +43,6 @@ where indices stop at $g$ and an empty list means $\sigma$ itself
 \cite{BEL1997,Onishi2005}. To fix the multiplicative sigma constant,
 its lowest ordinary-degree term is
 $\det(z_{i+j-1})_{1\leq i,j\leq\lfloor(g+1)/2\rfloor}$.
-These are the normalization and derivative order used by Generapy's
-\texttt{kleinian\_sigma} and \texttt{kleinian\_baker\_akhiezer}.
 
 The compatible second-kind vector is
 \begin{equation}\label{eq:BA-second-kind}
@@ -61,9 +62,10 @@ the minus sign
  {\sigma_\sharp(A(P))\sigma(z)}
  \exp\bigl(-\boldsymbol R(P)^{\trans}z\bigr).
 \end{equation}
-This is the Generapy convention; see also the second-kind and
-Schr\"odinger conventions in \cite{Christiansen2000} and the
-normalized genus-two formula in \cite[equation (3.3)]{Braden2005}.
+The second-kind and Schr\"odinger conventions follow
+\cite{Christiansen2000}; see also the normalized genus-two formula in
+\cite[equation (3.3)]{Braden2005}. These conventions agree with
+Generapy \cite{Generapy}.
 
 The physical time follows the last Abel direction:
 \begin{equation}\label{eq:BA-time-polynomial}
@@ -91,10 +93,10 @@ the sign $(-1)^g$ in their product. We absorb that constant sign
 into the mode normalization so that their power is a weighted
 evaluation of the monic $\mathcal P$.
 
-\subsection{Sigma modes and the general normalization}
+\subsubsection{Sigma modes and the general normalization}
 
 Use the mode indices and canonical partners of
-\cref{eq:BA-mode-dictionary}. In this section the constants
+\cref{eq:BA-mode-dictionary}. For the hyperelliptic modes the constants
 $\kappa_k$ multiply the raw sigma products in
 \cref{eq:BA-powers-rates}; their conversion to the normalized
 residue weights of \cref{eq:general-residue-weights} is given in
@@ -130,26 +132,26 @@ $2\wp_{gg}+\lambda_{2g}/4$ in \cref{eq:BA-identities}.
 For every cross-group pair set
 \begin{equation}\label{eq:BA-pair-composites}
 \begin{aligned}
- \xi_{ij}
- &=\frac{\sqrt2}{a_j-a_i}
-        W(\bar{\xi}_i,\bar{\xi}_j),\\
- \bar{\xi}_{ij}
- &=-\frac{\sqrt2}{a_j-a_i}
-        W(\xi_i,\xi_j),
- \qquad 1\leq i\leq L,\quad L+1\leq j\leq K.
+ \xi_{\ell j}
+ &=\frac{\sqrt2}{a_j-a_{\ell}}
+        W(\bar{\xi}_{\ell},\bar{\xi}_j),\\
+ \bar{\xi}_{\ell j}
+ &=-\frac{\sqrt2}{a_j-a_{\ell}}
+        W(\xi_{\ell},\xi_j),
+ \qquad 1\leq\ell\leq L,\quad L+1\leq j\leq K.
 \end{aligned}
 \end{equation}
 The kernel specialization in \cref{eq:BA-hyperelliptic-kernel} identifies these Wronskians with
-sigma ratios having shifts $A(Q_i)+A(Q_j)$ and its negative,
+sigma ratios having shifts $A(Q_{\ell})+A(Q_j)$ and its negative,
 with fixed normalizing factors
 \cite[Theorem~6.2, $n=2$]{Nakayashiki2026}. Their differential equations have
 a particularly direct explanation: the common potential cancels,
 leaving
 \begin{equation}\label{eq:BA-pair-rates}
- i\dot\xi_{ij}=\sqrt2\bar{\xi}_i\bar{\xi}_j,
+ i\dot\xi_{\ell j}=\sqrt2\bar{\xi}_{\ell}\bar{\xi}_j,
  \qquad
- i\dot{\bar{\xi}}_{ij}=-\sqrt2\xi_i\xi_j,
- \qquad1\leq i\leq L,\quad L+1\leq j\leq K.
+ i\dot{\bar{\xi}}_{\ell j}=-\sqrt2\xi_{\ell}\xi_j,
+ \qquad1\leq\ell\leq L,\quad L+1\leq j\leq K.
 \end{equation}
 These are exactly the pair-mode equations of $H_0$. The elementary equations are supplied by the general realization criterion.
 Primitives of products of ordinary and dual BA functions also occur in
@@ -157,7 +159,8 @@ the Cauchy--BA kernel construction
 \cite[Section~2.4, equation~(2.13)]{GrinevichOrlov1989} and in
 squared-eigenfunction-potential theory
 \cite[Corollary~3.1]{AratynNissimovPacheva1997}.
-The residue criterion takes the explicit polynomial form developed in the next subsection.
+The residue criterion takes the explicit polynomial form developed in
+\cref{sec:BA-interpolation}.
 
 Here is the explicit dictionary. Put $\epsilon=(-1)^g$ and
 $P_0(x)=\mathcal P(z_0,x)$. The ordinary and dual functions of
@@ -173,7 +176,7 @@ initial chart $P_0(a_k)\ne0$, take the general construction's points,
 weights and gauges to be
 \begin{equation}\label{eq:BA-general-dictionary}
 \begin{aligned}
- \widehat Q_i&=Q_i,&&1\leq i\leq L,&
+ \widehat Q_{\ell}&=Q_{\ell},&&1\leq\ell\leq L,&
  \widehat Q_j&=\iota(Q_j),&&L+1\leq j\leq K,\\
  \widehat\kappa_k&=\kappa_kP_0(a_k),&&1\leq k\leq K,&
  \widehat c_k&=c_k\Psi(Q_k,z_0),&&1\leq k\leq K.
@@ -192,7 +195,7 @@ Substituting \cref{eq:BA-general-dictionary} into
 factors. Thus the elementary and pair functions are the same modes,
 expressed in normalized BA and raw sigma conventions.
 
-\subsection{Explicit interpolation weights and phases}
+\subsubsection{Explicit interpolation weights and phases}
 \label{sec:BA-interpolation}
 
 In the local parameter $s=x^{-1/2}$ at infinity,
@@ -200,7 +203,7 @@ $du_\alpha=-s^{2g-2\alpha}(1+O(s^2))ds$ for
 $1\leq\alpha\leq g$. At the finite nodes, use $x-a_k$.
 The general residue conditions therefore become
 \begin{equation}\label{eq:BA-moments-final}
- \sum_{i=1}^{L}\kappa_i a_i^r
+ \sum_{\ell=1}^{L}\kappa_{\ell} a_{\ell}^r
  =\sum_{j=L+1}^{K}\kappa_j a_j^r
  =\begin{cases}
  0,&0\leq r\leq g-2,\\
@@ -214,13 +217,13 @@ for the two groups.
 To construct all weights with these moments, collect their simple
 fractions over the node polynomials
 \begin{equation}\label{eq:BA-node-polynomials}
- R_L(x)=\prod_{i=1}^{L}(x-a_i),\qquad
+ R_L(x)=\prod_{\ell=1}^{L}(x-a_{\ell}),\qquad
  R_M(x)=\prod_{j=L+1}^{K}(x-a_j).
 \end{equation}
 Define their numerator polynomials $q_L,q_M$ by
 \begin{equation}\label{eq:BA-weight-generating}
  \frac{q_L(x)}{R_L(x)}
- =2\sum_{i=1}^{L}\frac{\kappa_i}{x-a_i},\qquad
+ =2\sum_{\ell=1}^{L}\frac{\kappa_{\ell}}{x-a_{\ell}},\qquad
  \frac{q_M(x)}{R_M(x)}
  =2\sum_{j=L+1}^{K}\frac{\kappa_j}{x-a_j}.
 \end{equation}
@@ -229,8 +232,8 @@ $L-1,M-1$. The moments say precisely that each rational function has expansion
 $x^{-g}+O(x^{-g-1})$ at infinity. Hence $L,M\geq g$, and the
 numerators must be monic of degrees $L-g,M-g$. Taking residues gives
 \begin{equation}\label{eq:BA-residue-weights}
- \kappa_i=\frac{q_L(a_i)}{2R_L'(a_i)},
- \quad1\leq i\leq L,\qquad
+ \kappa_{\ell}=\frac{q_L(a_{\ell})}{2R_L'(a_{\ell})},
+ \quad1\leq\ell\leq L,\qquad
  \kappa_j=\frac{q_M(a_j)}{2R_M'(a_j)},
  \quad L+1\leq j\leq K.
 \end{equation}
@@ -242,7 +245,7 @@ parametrize the available interpolation weights: they equal $1$
 when the corresponding group has exactly $g$ points, while larger
 groups give free polynomial coefficients.
 
-\begin{corollary}\label{thm:BA-realization}
+\begin{corollary}\label{cor:BA-realization}
 Let the elementary modes and pair composites in
 \cref{eq:BA-elementary,eq:BA-pair-composites} range over a nonempty
 open subset of the Jacobian of the fixed curve
@@ -251,12 +254,12 @@ open subset of the Jacobian of the fixed curve
 moments \cref{eq:BA-moments-final} and their phase coefficients satisfy
 \begin{equation}\label{eq:BA-phase-final}
 \begin{aligned}
- b_i
+ b_{\ell}
  &=-\sum_{j=L+1}^{K}\kappa_j
-       \frac{y_j-y_i}{a_j-a_i},&&1\leq i\leq L,\\
+       \frac{y_j-y_{\ell}}{a_j-a_{\ell}},&&1\leq\ell\leq L,\\
  b_j
- &=-\sum_{i=1}^{L}\kappa_i
-       \frac{y_i-y_j}{a_i-a_j},&&L+1\leq j\leq K.
+ &=-\sum_{\ell=1}^{L}\kappa_{\ell}
+       \frac{y_{\ell}-y_j}{a_{\ell}-a_j},&&L+1\leq j\leq K.
 \end{aligned}
 \end{equation}
 \end{corollary}
@@ -264,10 +267,10 @@ moments \cref{eq:BA-moments-final} and their phase coefficients satisfy
 In the unnormalized hyperelliptic weights the two interpolation
 functions are
 \begin{equation}\label{eq:BA-hyperelliptic-h}
- h_L(P)=\sum_{i=1}^{L}\kappa_i\frac{y(P)+y_i}{x(P)-a_i},\qquad
+ h_L(P)=\sum_{\ell=1}^{L}\kappa_{\ell}\frac{y(P)+y_{\ell}}{x(P)-a_{\ell}},\qquad
  h_M(P)=\sum_{j=L+1}^{K}\kappa_j\frac{y(P)-y_j}{x(P)-a_j}.
 \end{equation}
-Their finite poles are at $Q_i$ and $\iota(Q_j)$, respectively.
+Their finite poles are at $Q_{\ell}$ and $\iota(Q_j)$, respectively.
 The moments make their puncture expansion $s^{-1}+O(s)$.
 With \cref{eq:BA-normalized-sigma}, half the residue of
 $h\,d\Omega_0$ is $\kappa_kP_0(a_k)$, precisely the normalized
@@ -302,7 +305,14 @@ distinct rates and to their coincident specializations.
 \Cref{prop:BA-prescribed-spectral-curve} identifies this hyperelliptic
 family as a spectral level of genus $g$ with total defect $LM-g$.
 
-\subsection{Half-period shifts and al functions}
+\subsection{Half-period shifts, al functions and elliptic examples}
+\label{sec:classical-BA-specializations}
+
+We specialize the explicit formulas to half-period shifts and genus
+one, connecting the construction to classical functions and providing
+examples with different mode counts.
+
+\subsubsection{Half-period shifts and al functions}
 \label{sec:BA-al-functions}
 
 Branch-point evaluations give a classical specialization of these
@@ -313,7 +323,8 @@ $2\delta_k\in\Lambda$, where
 $\Lambda=2\omega\mathbb Z^g+2\omega'\mathbb Z^g$.
 The two sheet-partner functions are then proportional, and their
 Wronskian vanishes. After a constant normalization they are
-Weierstrass's hyperelliptic al functions, satisfying
+Weierstrass's hyperelliptic al functions
+\cite{Weierstrass1856,MatsutaniPreviato2015}, satisfying
 \begin{equation}\label{eq:BA-al-power}
  \operatorname{al}_k(z)=d_k\Psi(B_k,z),\qquad
  \operatorname{al}_k(z)^2=\mathcal P(z,a_k),\qquad d_k^2=(-1)^g.
@@ -329,7 +340,7 @@ the second group's abscissae, and use the weights in
 \cref{eq:BA-residue-weights}. They satisfy
 \cref{eq:BA-moments-final}. All ordinates are zero, so
 \cref{eq:BA-phase-final} gives $b_k=0$, $1\leq k\leq2g+1$.
-Thus \cref{thm:BA-realization} realizes the entire elementary al
+Thus \cref{cor:BA-realization} realizes the entire elementary al
 family in the purely cubic Hamiltonian \cref{eq:BA-H0-flat}.
 The cross-group pair modes are their Wronskians in
 \cref{eq:BA-pair-composites}, with half-period sums as shifts.
@@ -342,12 +353,17 @@ Appendix~\ref{sec:JRW-dictionary}; its complete integral count is
 provided by the repeated-phase part of
 \cref{thm:canonical-independence}, with moment integrals from blocks
 of sizes $g$ and $g+1$.
-In the product-surface curve $\Gamma$ of
+In the plane characteristic curve $\Gamma$ of
 \cref{prop:BA-prescribed-spectral-curve}, these groups meet the boundary
 at two points of multiplicities $g$ and $g+1$.
-Their defects are at least $g(g-1)/2$ and $g(g+1)/2$,
-whose sum $g^2=LM-g$ accounts for the entire defect.
-Consequently the affine curve is smooth.
+Within each group the coincident intercepts give pairwise branch
+contact order two. A point of multiplicity $m$ therefore has total
+defect $m(m-1)$, of which $\binom m2$ is excess over the ordinary
+multiple-point defect. The two excesses are $g(g-1)/2$ and
+$g(g+1)/2$. Their sum $g^2=LM-g$ accounts for the entire additional
+defect; the total defect is $2g^2$. Consequently the affine curve
+is smooth. In the product-surface model the ordinary infinity
+contributions have been separated, leaving total boundary defect $g^2$.
 
 For genus at least two, the elementary half-period mechanism is
 specific to hyperelliptic curves: $2A(P)\in\Lambda$ for $P\ne P_\infty$ makes
@@ -358,7 +374,7 @@ $\operatorname{div}(x-b_r)=3B_r-3\infty$ gives order-three shifts;
 trigonal al functions are developed in
 \cite[Section~8]{MatsutaniPreviato2015}.
 
-\subsection{Genus one and many elementary modes}
+\subsubsection{Genus one and many elementary modes}
 
 In Weierstrass coordinates take
 $y^2=4x^3-g_2x-g_3$. Then $A(P)=\mu$,
@@ -372,11 +388,16 @@ Its normalized mode powers are
 $\xi_k\bar{\xi}_k=\kappa_k(a_k-\wp(z))$, $1\leq k\leq K$.
 The only moment conditions are
 \[
- \sum_{i=1}^{L}\kappa_i
+ \sum_{\ell=1}^{L}\kappa_{\ell}
  =\sum_{j=L+1}^{K}\kappa_j=\tfrac12.
 \]
 Thus arbitrarily large groups of elementary elliptic modes fit the
 same cubic-interaction construction, with their $LM$ pair composites.
+Consequently, for arbitrary positive $L,M$, the Hamiltonian
+\cref{eq:BA-H0-flat} admits a genus-one BA realization with
+$L+M+LM$ canonical mode pairs. This gives a family of cubic
+multiwave Hamiltonians with elliptic solutions extending beyond the
+three-wave case; its explicit Weierstrass formulation merits further study.
 
 For $L=M=1$, so $K=2$, write
 $Y=(y_2-y_1)/(2(a_2-a_1))$.

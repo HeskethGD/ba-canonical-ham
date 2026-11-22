@@ -1,0 +1,117 @@
+{
+  "dps": 40,
+  "L_M_N": [
+    1,
+    1,
+    3
+  ],
+  "active_L_M_N": [
+    1,
+    1,
+    2
+  ],
+  "normalization_genus": 1,
+  "inactive_directions": 1,
+  "canonical_pairs": 7,
+  "all_original_mode_rates": true,
+  "launch_origin": "Direct rational canonical modes, not BA samples",
+  "source_matrix": [
+    [
+      "-2/7",
+      "7/10 + I/5",
+      "17/40",
+      "-7/40",
+      "-1/40"
+    ],
+    [
+      "2/5 - 3*I/10",
+      "4/9",
+      "21/20",
+      "-9/20",
+      "-1/20"
+    ],
+    [
+      "-17/10",
+      "-7/10",
+      "1/3",
+      "0",
+      "0"
+    ],
+    [
+      "-11/5",
+      "-9/10",
+      "0",
+      "1/3",
+      "0"
+    ],
+    [
+      "-19/10",
+      "-4/5",
+      "0",
+      "0",
+      "1/3"
+    ]
+  ],
+  "constant_basis": [
+    [
+      "1",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "1/2",
+      "2",
+      "1/3"
+    ],
+    [
+      "0",
+      "0",
+      "1/2",
+      "3",
+      "2/3"
+    ],
+    [
+      "0",
+      "0",
+      "1",
+      "1",
+      "1"
+    ]
+  ],
+  "moment_eigenvalues": [
+    "0",
+    "1/100",
+    "-1/100"
+  ],
+  "forced_linear_factor": "lambda - 1/3",
+  "forced_discriminant_square": "(lambda - 1/3)**2",
+  "normalized_quartic": "4*lambda**4 - 208*lambda**3/63 + lambda**2*(183856/99225 + 13*I/25) + lambda*(2997383/1488375 + 26*I/375) - 71787539/89302500 - 91*I/1125",
+  "quartic_squarefree": true,
+  "algebraic_initial_recovery_error": "3.21431753068260205466785540499091446112e-38",
+  "restored_initial_error": "4.572091209101137885025543234106744448315e-38",
+  "restored_mode_rate_error": "4.897776091942626103705258820134556448239e-37",
+  "rk4_steps": [
+    32,
+    64
+  ],
+  "rk4_duration": ".2",
+  "rk4_errors": [
+    "0.00000000001056429342915947328798146412969132932649",
+    "6.603410579205720229758409035904195800978e-13"
+  ],
+  "rk4_refinement_ratio": "15.99823803539743090014560238380295673329",
+  "generapy_backend": "Curve periods/Abel maps and public rtheta_jet",
+  "generapy_version": "0.3.0",
+  "scope": "One smooth active elliptic normalization with a genuine inactive direction; not every phase profile."
+}

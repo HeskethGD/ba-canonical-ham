@@ -1,296 +1,279 @@
-\subsection{The prescribed spectral curve and BA reconstruction}
+\subsection{From canonical initial modes to BA solutions}
 \label{sec:BA-spectral-converse}
+\label{sec:BA-reconstruction-flows}
 
-The forward construction starts with a curve and determines a compatible
-Hamiltonian. Conversely, the spectral pencil of a fixed Hamiltonian
-recovers the curve and BA data from generic initial modes. The point
-groups obtained this way are generally special divisors: their sizes
-need not reach the genus of the reconstructed curve.
+We identify the curve carried by a prescribed realization and recover
+BA solutions from generic canonical initial modes, completing the
+reverse direction of the correspondence.
 
-Write $\boldsymbol\xi_L=(\xi_1,\ldots,\xi_L)^{\trans}$,
-$\boldsymbol\xi_M=(\xi_{L+1},\ldots,\xi_K)^{\trans}$, and
-$\boldsymbol\xi_{LM}=[\xi_{ij}]_{1\leq i\leq L<j\leq K}$.
-Bars label independent partners as in \cref{sec:canonical-modes}. For an auxiliary constant
-$\rho$, put $\mathsf A_L=\diag(b_1,\ldots,b_L)$ and
-$\mathsf A_M=\diag(b_{L+1},\ldots,b_K)$. The $H_0$ pencil and time
-matrix are
-\begin{equation}\label{eq:BA-H0-pencil}
-\begin{aligned}
- \mathsf L_0(\nu)&=\begin{pmatrix}
- \rho\Id_L-\mathsf A_L+\nu\Id_L&\sqrt2\boldsymbol\xi_{LM}&\bar{\boldsymbol\xi}_L\\
- \sqrt2\bar{\boldsymbol\xi}_{LM}^{\trans}&\rho\Id_M-\mathsf A_M-\nu\Id_M&\boldsymbol\xi_M\\
- -\boldsymbol\xi_L^{\trans}&-\bar{\boldsymbol\xi}_M^{\trans}&\rho
- \end{pmatrix},\\
- \mathsf T_0(\nu)&=\begin{pmatrix}
- 0&0&\bar{\boldsymbol\xi}_L\\0&0&-\boldsymbol\xi_M\\
- -\boldsymbol\xi_L^{\trans}&\bar{\boldsymbol\xi}_M^{\trans}&-\nu
- \end{pmatrix},\qquad
- i\dot{\mathsf L}_0=[\mathsf L_0,\mathsf T_0].
-\end{aligned}
-\end{equation}
-They are \cref{eq:canonical-pencil,eq:canonical-lax} after the
-$H_0$ phase gauge. The scalar shift $\rho$ changes the spectral
-coordinate origin, not the mode equations.
+The interpolation functions $h_L,h_M$ give spectral coordinates on
+the prescribed curve. With several punctures, identifying that curve
+with the normalized characteristic curve requires the birationality
+condition in \cref{prop:BA-prescribed-spectral-curve}.
 
-The interpolation functions give spectral coordinates on the
-prescribed curve. This identifies the curve used to construct the
-BA modes with the curve carried by their matrix pencil.
+\subsubsection{Identifying the prescribed spectral curve}
 
 \begin{proposition}[The spectral curve of a prescribed realization]
 \label{prop:BA-prescribed-spectral-curve}
-For a realization satisfying
-\cref{eq:general-residue-criterion,eq:general-phase-values}, set
+For the phase coefficients \cref{eq:general-phase-values}, put
 \begin{equation}\label{eq:BA-prescribed-spectral-map}
- \nu(P)=-\tfrac12\bigl(h_L(P)+h_M(P)\bigr),\qquad
- \lambda(P)=\rho+\tfrac12\bigl(h_M(P)-h_L(P)\bigr).
+ \nu(P)=-\tfrac12(h_L(P)+h_M(P)),\qquad
+ \lambda(P)=\tfrac12(h_M(P)-h_L(P)).
 \end{equation}
-For the resulting modes, the characteristic polynomial
-$F(\lambda,\nu)=\det(\lambda\Id_{K+1}-\mathsf L_0(\nu))$
-vanishes on this map. It is irreducible, and its projective curve
-has normalization $\mathcal C$. In the product coordinates
-$(\lambda-\nu,\lambda+\nu)$, its closure $\Gamma$ has
-bidegree $(L+1,M+1)$. Consequently $g\leq LM$, and its total
-singularity defect, for every phase profile, is
+The characteristic polynomial of the canonical pencil vanishes on
+this map. If the map is birational onto its image (it induces an isomorphism
+of function fields), $\mathcal C$ normalizes the full characteristic curve. A sufficient condition is
+that one puncture has a finite limiting $\lambda$ distinct from the
+other punctures, in particular pairwise distinct $b_k^N$.
+For $N=1$ this condition is automatic.
+
+Let $\Gamma$ be the projective plane characteristic curve. Write
+$d=L+M+N$ and $G=LM+MN+NL-d+1$. On this birational locus
+the total singularity defect beyond the ordinary three infinity
+multiple points is
 \begin{equation}\label{eq:BA-prescribed-genus-defect}
- \sum_{q\in\operatorname{Sing}(\Gamma)}\delta_q=LM-g.
+ \sum_{q\in\operatorname{Sing}(\Gamma)}\delta_q
+ -\binom L2-\binom M2-\binom N2=G-g.
 \end{equation}
+For distinct phases within groups the additional defect is affine;
+coincident phases can place it at infinity, as in \cref{sec:BA-al-functions}.
 \end{proposition}
 \begin{proof}
-The residue identities provide an explicit eigenvector. Put
+Let $\mathsf X_{\rm BA}$ be the block matrix in
+\cref{eq:canonical-pencil} with the raw arrays
+\cref{eq:multipoint-mode-arrays} and the phase diagonals
+\cref{eq:general-phase-values}. The explicit vector is
 \begin{equation}\label{eq:BA-prescribed-eigenvector}
- r(P,t)=\begin{pmatrix}
- \bigl(-\kappa_i\Omega(Q_i,P)/c_i\bigr)_{i=1}^{L}\\
- \bigl(c_j\Omega(Q_j,P)\bigr)_{j=L+1}^{K}\\
- \psi^\vee(P)
+ r(P)=\begin{pmatrix}
+ (-\kappa_{\ell}\Omega(Q_{\ell},P)/c_{\ell})_{\ell=1}^{L}\\
+ (c_{L+j}\Omega(Q_{L+j},P))_{j=1}^{M}\\
+ (e_k\psi_k^\vee(P))_{k=1}^{N}
  \end{pmatrix}.
 \end{equation}
-Then $\mathsf L_0(\nu(P))r=\lambda(P)r$.
-For example, its $i$th row, divided by $\kappa_i/c_i$, is
+The first two block rows of
+$(\mathsf X_{\rm BA}+\nu(P)\mathsf D)r=\lambda(P)r$
+are the convolution identities for $h_M,h_L$. The third follows by
+subtracting their dual weighted equations:
 \[
- \bigl(h_M(P)-h_M(Q_i)\bigr)\Omega(Q_i,P)
- +2\sum_{j=L+1}^{K}\kappa_j\Omega(Q_i,Q_j)\Omega(Q_j,P)
- +\psi(Q_i)\psi^\vee(P)=0.
+ \sum_{\ell=1}^{L}\kappa_{\ell}\psi_k^\vee(Q_{\ell})\Omega(Q_{\ell},P)
+ -\sum_{j=L+1}^{K}\kappa_j\psi_k^\vee(Q_j)\Omega(Q_j,P)
+ =(\lambda(P)-b_k^N)\psi_k^\vee(P).
 \]
-This is \cref{eq:general-kernel-convolution} for $h_M$ at
-$(Q_i,P)$. The second block follows from the same identity for
-$h_L$ at $(Q_j,P)$. Subtracting the two dual identities in
-\cref{eq:general-weighted-BA} gives
+The phase transformation \cref{eq:multipoint-phase-gauge} conjugates
+the pencil and vector by the same diagonal matrix, preserving this
+spectral equation. Adding a scalar origin $\rho\Id_d$ to the
+pencil shifts $\lambda$ by $\rho$ and preserves the eigenvectors.
+
+The poles of $\nu$ are simple, at all $Q_a,R_k$. Their branches obey
 \[
- \sum_{i=1}^{L}\kappa_i\psi^\vee(Q_i)\Omega(Q_i,P)
- -\sum_{j=L+1}^{K}\kappa_j\psi^\vee(Q_j)\Omega(Q_j,P)
- =\tfrac12(h_M(P)-h_L(P))\psi^\vee(P),
+ \lambda-\nu\to-2b_{\ell}^L\ (P\to Q_{\ell}),\qquad
+ \lambda+\nu\to-2b_j^M\ (P\to Q_{L+j}),\qquad
+ \lambda\to b_k^N\ (P\to R_k).
 \]
-which is the last row. Since $r$ is nonzero for generic $P$,
-$F(\lambda(P),\nu(P))=0$.
-The kernel derivative and the average of the dual identities also
-give $i\dot r=-\mathsf T_0(\nu(P))r$.
-
-We next show that these coordinates recover the prescribed curve
-birationally. Their expansions are
-\[
- \nu=-s^{-1}+O(s),\quad\lambda=\rho+O(s)
-       \quad\text{at }P_\infty,
-\]
-while at the group points
-\[
-\begin{aligned}
- \lambda-\nu&\longrightarrow\rho-b_i,&\lambda/\nu&\longrightarrow1,
- &&1\leq i\leq L,\\
- \lambda+\nu&\longrightarrow\rho-b_j,&\lambda/\nu&\longrightarrow-1,
- &&L+1\leq j\leq K.
-\end{aligned}
-\]
-Both $\lambda,\nu$ have simple poles at every $Q_k$.
-Thus $P_\infty$ is the only pole of $\nu$ at which $\lambda$
-stays finite, and that pole is simple.
-
-Let $\pi:\mathcal C\to\mathcal C'$ be the finite map to the
-normalization of the image. Any other point over $\pi(P_\infty)$
-would also be a pole of $\nu$ with finite $\lambda$, which is
-impossible. The simple pole makes $P_\infty$ unramified for $\pi$.
-This fiber therefore consists of one point with multiplicity one,
-so $\deg\pi=1$.
-
-Moreover $(\nu)_\infty=P_\infty+\sum_{k=1}^{K}Q_k$, giving
-$\deg\nu=K+1$. Since $\lambda,\nu$ generate the curve's function
-field, the minimal polynomial of $\lambda$ over $\C(\nu)$ has
-degree $K+1$. The monic characteristic polynomial has that same
-degree and vanishes on the map, so it is the minimal polynomial.
-It follows that $F$ is irreducible and $\mathcal C$ normalizes its
-whole projective curve.
-
-Finally $\lambda-\nu=\rho+h_M$ and $\lambda+\nu=\rho-h_L$ have degrees $M+1$ and
-$L+1$, respectively. Since they generate the function field, the
-image in $\mathbb P^1\times\mathbb P^1$ has bidegree $(L+1,M+1)$
-and arithmetic genus $LM$. The normalization genus formula gives
-\cref{eq:BA-prescribed-genus-defect}, including singularities on
-the boundary when phases repeat. This is the product-surface form
-of the Castelnuovo--Severi bound. For distinct phases the boundary
-branches are separated, so the entire defect is affine.
+If one $R_k$ has a unique finite limiting ordinate, it is the sole
+point over its image in the normalization. Its simple pole of $\nu$
+makes this point unramified, so the covering degree is one.
+The same argument applies to a uniquely separated outer branch.
+For a birational map, $\deg\nu=d$ implies that the minimal polynomial
+of $\lambda$ over $\C(\nu)$ has degree $d$. The monic characteristic
+polynomial has that degree and vanishes, so it is this minimal
+polynomial. The plane degree is $d$; subtracting the ordinary
+infinity defects gives \cref{eq:BA-prescribed-genus-defect}.
 \end{proof}
 
-The residue and pole arguments apply to every admissible prescribed
-realization. In particular, a realization with $g<LM$ lies on a
-special spectral level of the same canonical family. We now turn
-to reconstruction from generic initial coordinates, whose spectral
-curve is determined by those coordinates.
+\paragraph{Prescribed curves and spectral fibres.}
+Fix the marked spectral curve and its functions $\lambda,\nu$,
+with distinct phase intercepts. On the regular framed spectral
+correspondence, a smooth genus-$G$ level has $G$ divisor-class
+parameters and $d-1$ independent mode gauges, hence dimension
+$G+d-1=p$. A prescribed genus-$g$ normalization instead supplies
+$g+d-1$ parameters after identifying equivalent meromorphic frames.
+Relative to an expected-dimensional spectral fibre, this realized
+family has codimension $G-g$. It is an invariant normalization-based
+family on a special level when $g<G$, and is open in the regular
+fibre when $g=G$.
 
-\begin{theorem}[Generic BA reconstruction]\label{thm:BA-spectral-converse}
-Fix positive $L,M$ and arbitrary phase coefficients
-$b_k$, $1\leq k\leq K$. On a nonempty Zariski-open set of canonical
-initial modes, the solution of \cref{eq:BA-H0-flat} is reconstructed
-from scalar one-point BA functions and their Cauchy kernel on a smooth
-normalized spectral curve. For distinct phases within each group,
-this is the normalization of
-$\det(\lambda\Id_{K+1}-\mathsf L_0(\nu))=0$, with genus $G=LM$,
-the $K$ outer points $Q_k$ and singleton point $P_\infty$ specified
-by \cref{eq:BA-converse-infinity}. The ordinary and dual BA functions
-and kernel are the eigenvector expressions
-\cref{eq:BA-converse-functions}. They recover every mode through
-\cref{eq:general-elementary-modes,eq:general-pair-modes}, with
-\begin{equation}\label{eq:BA-converse-constants}
- \kappa_k=\xi_k(0)\bar\xi_k(0),\qquad c_k=\xi_k(0),
- \quad1\leq k\leq K.
-\end{equation}
-For repeated phases, make a constant canonical basis change within
-each equal-phase group and delete inactive zero directions as in
-\cref{eq:BA-block-bases,eq:BA-inactive-splitting}. The same recovery
-formulas hold for the active modes on the normalized active spectral
-curve, with genus $G_a$ given by \cref{eq:BA-active-genus}, using their initial values
-in \cref{eq:BA-converse-constants}. Reinsert the zero directions and
-invert the basis change to obtain every original coordinate.
+This family has a concrete spectral-sheaf interpretation. Separate
+the forced ordinary infinity points, and let
+$n:\mathcal C\to\Gamma_{\mathrm{sp}}$ normalize the remaining
+integral spectral model. At the reference time the components of
+\cref{eq:BA-prescribed-eigenvector} are sections of the line bundle
+\[
+ \mathscr L=\mathcal O\left(\mathscr D^\vee+
+                         \sum_{a=1}^{K}Q_a\right).
+\]
+Here $\mathcal O(E)$ denotes the line bundle associated with a divisor
+$E$; thus $\mathscr L$ allows poles along $\mathscr D^\vee$ and at
+the evaluation points $Q_a$, with the indicated multiplicities.
+Subtracting the full pole fibre of $\nu$ gives
+$\mathscr L(-\nu^{-1}(\infty))=\mathcal O(\mathscr D^\vee-
+\sum_{k=1}^{N}R_k)$, with both cohomology groups zero.
+Its leading-value sequence shows that the $d$ components form a
+basis and that $\nu_*\mathscr L\simeq\mathcal O^d$.
+Multiplication by $\lambda$ induces a map
+$\mathcal O^d\to\mathcal O(1)^d$, represented by the pencil.
+The component spectral sheaf on $\Gamma_{\mathrm{sp}}$ is $n_*\mathscr L$.
+Thus the realized family is the stratum obtained by pushing line
+bundles forward from the normalization, with the mode framings
+retained. Its divisor-class dimension is $g$.
+The full compactified spectral fibre can also contain sheaves with
+singularity gluing data \cite{AdamsHarnadHurtubise1990II,Beauville1990}.
+The general solution of
+\cref{thm:BA-spectral-converse} reconstructs the curve belonging to
+generic initial modes. For repeated phases its active dimensions,
+moment data and restored block bases are accounted for separately
+in Appendix~\ref{app:BA-active-converse}.
+
+With several punctures, the interpolation functions can instead factor
+through a covering; curve identification then requires birationality.
+The stronger completion in \cref{cor:BA-finite-list} permits distinct
+differences $a_{M,k}-a_{L,k}$ to be prescribed, giving the sufficient
+branch separation used in the proposition.
+For $N=1$, the product coordinates $\lambda-\nu,\lambda+\nu$ have
+degrees $M+1,L+1$; their image has bidegree $(L+1,M+1)$ and arithmetic
+genus $LM$, recovering the one-point defect $LM-g$.
+
+\subsubsection{Reconstruction from generic canonical data}
+
+The spectral eigenvectors now recover every mode, so that the BA
+formulas give solutions from canonical initial data rather than only
+from data chosen in advance on a curve.
+
+\begin{theorem}[Main theorem, part II: Generic BA reconstruction]\label{thm:BA-spectral-converse}
+Fix positive $L,M,N$ and arbitrary phase coefficients. Zariski-generic
+canonical initial modes reconstruct scalar multipoint BA bases and
+their kernel on a smooth normalized active spectral curve.
+For distinct phases within groups all directions are active and the
+genus is $G=LM+MN+NL-L-M-N+1$; the last group supplies $N$
+punctures, and the ordinary and dual divisors have degree $G+N-1$.
+For repeated phases, use constant canonical bases within equal-phase
+blocks and remove inactive directions (coordinates with zero incoming
+and outgoing couplings) as in
+Appendix~\ref{app:BA-active-converse}. Apply the construction with
+active dimensions $L_a,M_a,N_a$ and genus
+\cref{eq:BA-active-genus}, then restore the zero directions and bases.
+The original coordinates can then be constant linear combinations
+of the active scalar BA evaluations.
 \end{theorem}
-
 \begin{proof}
-First suppose that phases are distinct within each group. Normalize
-the curve $\det(\lambda\Id_{K+1}-\mathsf L_0(\nu))=0$.
-\Cref{prop:BA-active-regularity}, applied to singleton phase blocks,
-gives a nonempty open set with irreducible spectral curve, smooth
-affine part and nonspecial BA divisors. Its genus is $G=LM$ by
-\cref{sec:spectral-geometry}. Its infinity points have branches
+Work in the $H_0$ phase gauge of \cref{eq:canonical-phase-gauge},
+omitting its tildes during this proof. The pencil retains the diagonal
+blocks $-2\mathsf B_L,-2\mathsf B_M,\mathsf B_N$, and its time matrix is
+\begin{equation}\label{eq:multipoint-H0-time}
+ \mathsf T_0(\nu)=
+ \begin{pmatrix}0&0&\bar{\boldsymbol w}^{\trans}\\
+ 0&0&-\boldsymbol v\\
+ -\boldsymbol w&\bar{\boldsymbol v}^{\trans}&-\nu\Id_N
+ \end{pmatrix}.
+\end{equation}
+For distinct phases the regular normalized curve has branches
 \begin{equation}\label{eq:BA-converse-infinity}
 \begin{aligned}
- \lambda&=\nu+\rho-b_i+O(\nu^{-1})&&\text{at }Q_i,\quad1\leq i\leq L,\\
- \lambda&=-\nu+\rho-b_j+O(\nu^{-1})&&\text{at }Q_j,\quad L+1\leq j\leq K,\\
- \lambda&=\rho+O(\nu^{-1})&&\text{at }P_\infty.
+ \lambda&=\nu-2b_{\ell}^L+O(\nu^{-1})&&\text{at }Q_{\ell},\quad1\leq\ell\leq L,\\
+ \lambda&=-\nu-2b_j^M+O(\nu^{-1})&&\text{at }Q_{L+j},\quad1\leq j\leq M,\\
+ \lambda&=b_k^N+O(\nu^{-1})&&\text{at }R_k,\quad1\leq k\leq N.
 \end{aligned}
 \end{equation}
-Take $s^{-1}=-\nu$ at the singleton point $P_\infty$. The functions
+The nonempty regular locus, including repeated-phase active
+normalizations, is proved in \cref{prop:BA-active-regularity}.
+Put $s_k^{-1}=-\nu$ at $R_k$. The functions
 \begin{equation}\label{eq:BA-converse-h}
- h_L=\rho-\lambda-\nu,\qquad h_M=\lambda-\nu-\rho
+ h_L=-\lambda-\nu,\qquad h_M=\lambda-\nu
 \end{equation}
-have precisely the required pole groups and principal part $s^{-1}$.
-The opposite-group values are $-h_M(Q_i)=b_i$ and $h_L(Q_j)=b_j$.
-Thus the spectral curve already carries the interpolation data for
-the prescribed phases.
+have the required poles and satisfy
+$h_M(Q_{\ell})=-2b_{\ell}^L$, $h_L(Q_{L+j})=2b_j^M$,
+$a_{L,k}=-b_k^N$, $a_{M,k}=b_k^N$.
+The interpolation and phase conditions thus come from the initial
+spectral curve, rather than restricting initial modes further.
 
-Let $e$ be the last coordinate vector. Choose right and left
-eigenvectors $r(P,t),\ell(P,t)$ with
-\[
- \mathsf L_0r=\lambda r,\quad\ell\mathsf L_0=\lambda\ell,
- \qquad i\dot r=-\mathsf T_0r,\quad i\dot\ell=\ell\mathsf T_0,
-\]
-normalized by $e^{\trans}r(P,0)=\ell(P,0)e=1$.
-Define
+Let $f_k$ be the last $N$ coordinate vectors, $\mathsf J$ their
+coordinate projection, and $a=\sum_{k=1}^{N}f_k$.
+Choose right and left spectral eigenvectors $r,\ell$ with
+$i\dot r=-\mathsf T_0r$, $i\dot\ell=\ell\mathsf T_0$ and reference
+normalizations $a^{\trans}r(P,0)=\ell(P,0)a=1$. Define
 \begin{equation}\label{eq:BA-converse-functions}
- \psi(P,t)=\ell(P,t)e,\qquad \psi^\vee(P,t)=e^{\trans}r(P,t),\qquad
- \Omega(P,Q)=-\frac{\ell(P,t)r(Q,t)}{\nu(P)-\nu(Q)}.
+ \psi_k(P)=\ell(P)f_k,\qquad
+ \psi_k^\vee(P)=f_k^{\trans}r(P),\qquad
+ \Omega(P,Q)=-\frac{\ell(P)r(Q)}{\nu(P)-\nu(Q)}.
 \end{equation}
-The first two functions have essential parts $e^{-it/s}$ and $e^{it/s}$
-only at $P_\infty$. The spectral eigenline correspondence gives
-their degree-$G$ ordinary and dual pole divisors
-\cite{Beauville1990,KricheverShiota2011}.
-For an explicit pole count, the eigenvector component line bundle
-$\mathscr L$ has degree $G+K$ and
-$\nu_*\mathscr L=\mathcal O^{K+1}$. Its last component vanishes
-simply at the $K$ outer points. The remaining zero divisor has degree
-$G$. Put $\mathscr E=\mathscr L(-\nu^{-1}(\infty))$; then
-$H^0(\mathscr E)=H^0(\mathcal O(-1)^{K+1})=0$.
-The remaining divisor bundle is $\mathscr E(P_\infty)$, which has
-exactly one section by the point exact sequence and Riemann--Roch.
-It is therefore nonspecial. The transpose construction gives the
-dual statement.
-
 Since $\mathsf T_0(\nu(P))-\mathsf T_0(\nu(Q))
-=-(\nu(P)-\nu(Q))ee^{\trans}$,
-\cref{eq:BA-converse-functions} gives $i\dot\Omega=\psi(P)\psi^\vee(Q)$.
-Apparent poles at distinct points with equal $\nu$ are removable:
-the eigenvalue equations give
-\[
- (\lambda(P)-\lambda(Q))\ell(P)r(Q)
- =(\nu(P)-\nu(Q))\ell(P)\mathsf D r(Q).
-\]
-The divisor and puncture conditions identify this as the same
-normalized Cauchy kernel used in \cref{eq:general-pair-modes}.
-Writing $S(P)=\ell(P,t)r(P,t)$, which is time independent, its
-duality differential is
-\begin{equation}\label{eq:BA-converse-duality}
- d\Omega_0=-\frac{d\nu}{S(P)}
- =-\frac{\operatorname{cof}_{ee}(\lambda\Id-\mathsf L_0(\nu,0))}
- {\partial_\lambda\det(\lambda\Id-\mathsf L_0(\nu,0))}\,d\nu.
-\end{equation}
-This differential is regular away from $P_\infty$; at ordinary
-projection branch points the zero of $d\nu$ cancels the denominator.
-Its zero divisor consists of the two BA divisors.
+=-(\nu(P)-\nu(Q))\mathsf J$, this kernel satisfies
+\cref{eq:general-kernel-rate}. The eigenvalue equations remove apparent
+poles at distinct points of an equal-$\nu$ fiber. At $R_k$, the leading
+eigenvectors are its coordinate direction and the temporal equation
+gives exactly \cref{eq:general-BA-asymptotics}.
 
-The leading eigenvector equations at the outer points now give
+For the divisor count use the positive-degree spectral component
+line bundle $\mathscr L$, whose pushforward under $\nu$ is
+$\mathcal O^d$ \cite{Beauville1990}. Its degree is $G+d-1$.
+The last $N$ components vanish simply at the $L+M$ outer infinity
+points. Their remaining common BA divisor has degree $G+N-1$.
+More explicitly, put $\mathscr E=\mathscr L(-\nu^{-1}(\infty))$.
+Here $H^0$ and $H^1$ denote zeroth and first sheaf-cohomology
+groups, respectively, whereas $H_0$ denotes the Hamiltonian in
+\cref{eq:canonical-H0}.
+Then $H^0(\mathscr E)=H^1(\mathscr E)=0$, since its pushforward is
+$\mathcal O(-1)^d$. Adding the $N$ punctures gives an exact
+leading-value isomorphism
+$H^0(\mathscr E(\sum_{k=1}^{N}R_k))\simeq\C^N$.
+This proves the required BA uniqueness. The transpose module gives
+the dual statement; the analytic infinity justification for repeated
+phases is given in Appendix~\ref{app:BA-active-converse}.
+The duality differential is
+\begin{equation}\label{eq:BA-converse-duality}
+ d\Omega_0=-\frac{d\nu}{\ell(P)r(P)}.
+\end{equation}
+It is regular at the outer branches, has the required double poles
+at $R_k$, and its apparent projection-branch poles cancel with $d\nu$.
+
+The reference normalization gives a concrete recovery chart. Set
+\begin{equation}\label{eq:BA-converse-constants}
+\begin{aligned}
+ c_{\ell}&=\sum_{k=1}^{N}w_{k\ell}(0),&
+ \bar c_{\ell}&=\sum_{k=1}^{N}\bar w_{k\ell}(0),&
+ \kappa_{\ell}&=c_{\ell}\bar c_{\ell},\quad1\leq\ell\leq L,\\
+ c_{L+j}&=\sum_{k=1}^{N}v_{jk}(0),&
+ \bar c_{L+j}&=\sum_{k=1}^{N}\bar v_{jk}(0),&
+ \kappa_{L+j}&=c_{L+j}\bar c_{L+j},\quad1\leq j\leq M.
+\end{aligned}
+\end{equation}
+The barred constants are independent partner normalizations, not
+complex conjugates; the weights are products of initial sums.
+On the open chart where these sums are nonzero, outer eigenvector
+expansions give, for $1\leq\ell\leq L$, $1\leq j\leq M$ and $1\leq k\leq N$,
 \begin{equation}\label{eq:BA-converse-recovery}
 \begin{aligned}
- \psi^\vee(Q_i,t)&=\frac{\xi_i(t)}{\xi_i(0)},&
- \psi(Q_i,t)&=\frac{\bar{\xi}_i(t)}{\bar{\xi}_i(0)},&&1\leq i\leq L,\\
- \psi(Q_j,t)&=\frac{\xi_j(t)}{\xi_j(0)},&
- \psi^\vee(Q_j,t)&=\frac{\bar{\xi}_j(t)}{\bar{\xi}_j(0)},&&L+1\leq j\leq K,\\
- \Omega(Q_i,Q_j)&=\frac{\xi_{ij}(t)}{\sqrt2\bar{\xi}_i(0)\bar{\xi}_j(0)},&
- \Omega(Q_j,Q_i)&=-\frac{\bar{\xi}_{ij}(t)}{\sqrt2\xi_i(0)\xi_j(0)},
- &&1\leq i\leq L<j\leq K.
+ \psi_k^\vee(Q_{\ell})&=w_{k\ell}/c_{\ell},&
+ \psi_k(Q_{\ell})&=\bar w_{k\ell}/\bar c_{\ell},\\
+ \psi_k(Q_{L+j})&=v_{jk}/c_{L+j},&
+ \psi_k^\vee(Q_{L+j})&=\bar v_{jk}/\bar c_{L+j},\\
+ \Omega(Q_{\ell},Q_{L+j})&=\frac{u_{\ell j}}{\sqrt2\bar c_{\ell}\bar c_{L+j}},&
+ \Omega(Q_{L+j},Q_{\ell})&=-\frac{\bar u_{\ell j}}{\sqrt2c_{\ell}c_{L+j}}.
 \end{aligned}
 \end{equation}
-For example, the right eigenvector at $Q_i$ has last-to-$i$th
-component ratio $-\xi_i(t)/\nu+O(\nu^{-2})$; the temporal equation
-keeps its leading $i$th component constant. This gives the first
-ratio. For the forward kernel, taking $P\to Q_i$ in
-\cref{eq:BA-converse-functions} gives $-r_i(Q,t)/\bar{\xi}_i(0)$;
-then taking $Q\to Q_j$ gives the third-line expression. The
-remaining formulas follow from the other components in the same way.
-The constants are those of \cref{eq:BA-converse-constants}:
-$h_L$ or $h_M$ has principal coefficient $-2$ in the local
-coordinate $1/\nu$ at its outer point, while $d\Omega_0$ has
-leading coefficient $-\xi_k(0)\bar{\xi}_k(0)$.
-Substituting these constants into
-\cref{eq:general-elementary-modes,eq:general-pair-modes} reproduces
-every initial mode, including both unrestricted pair matrices.
-\Cref{thm:general-BA-realization} supplies the same canonical evolution;
-uniqueness of the polynomial ODE identifies the solutions.
+For example $r_{\ell}\sim-\nu/c_{\ell}$ at $Q_{\ell}$, and the last eigenvector
+rows give $f_k^{\trans}r=w_{k\ell}/c_{\ell}$. The opposite outer block then
+gives the kernel recovery, with slope difference two. At an outer
+point, in coordinate $1/\nu$, the relevant $h$ has principal
+coefficient $-2$ and $d\Omega_0$ has coefficient $-\kappa_a$, so
+the recovered weights agree with \cref{eq:general-residue-weights}.
+Thus \cref{eq:multipoint-mode-arrays} recovers every mode, with
+$e_k=1$. Weighted reference anchors give other generic charts.
+The forward theorem and uniqueness of the polynomial ODE identify
+the evolution. Applying the phase transformation
+\cref{eq:canonical-phase-gauge} recovers the solutions generated by
+the Hamiltonian $H$ in \cref{eq:canonical-H}.
 
-For repeated phases, first split oversized blocks into active
-couplings and inactive zero directions using
-\cref{eq:BA-inactive-splitting}. Diagonalize each conserved active
-moment in a constant canonical basis. Its distinct eigenvalues
-separate the infinity branches at order $\nu^{-1}$, even though
-their leading slope and intercept coincide.
-\Cref{prop:BA-active-regularity} supplies the regular normalized
-curve and nonspecial divisors in this basis.
-
-The recovery calculation remains unchanged. A simple moment
-eigenvalue selects one limiting coordinate direction for each
-resolved branch. The last row of the pencil then gives the same
-leading last-component ratio as in
-\cref{eq:BA-converse-recovery}; the time matrix has zero leading
-action on that outer direction, so its normalization is constant.
-The kernel limits and duality residues consequently have the same
-form, with active initial coordinates replacing the original ones.
-This proves the asserted formulas in the active basis. The constant
-basis changes in \cref{eq:BA-block-bases} preserve the Hamiltonian
-and canonical bracket, so restoring zero directions and reversing
-these changes gives the solution in the original coordinates.
+For repeated phases apply this argument in the constant active bases
+of Appendix~\ref{app:BA-active-converse}. Their resolved infinity
+directions supply the same normalized leading values. Restore
+inactive zero directions and invert the canonical bases afterwards.
 \end{proof}
 
-For distinct phases the reconstructed genus is $LM$, and the two
-groups of sizes $L,M$ obey the residue criterion because the explicit
-functions \cref{eq:BA-converse-h} exist. For example $L=M=2$ gives
-genus four with groups of only two points. This explains why the
-generic point-list threshold in the forward construction cannot be
-imposed on spectral point lists. Repeated phases can reduce the genus;
-the active genus formula is \cref{eq:BA-active-genus}.
-The phase gauge \cref{eq:canonical-phase-gauge} then returns the
-corresponding solutions of the symmetric Hamiltonian $H$.
+For comparison with a prescribed realization, its fixed $e_k$ gauges
+are set to one by the puncture-vertex canonical gauge transformations.
+The common rescaling of \cref{sec:general-BA-interpolation} accounts
+for the single redundancy among all vertex normalization constants.
+The reference partition of unity in \cref{sec:multipoint-BA-data}
+then makes \cref{eq:BA-converse-constants} recover the original
+weights and gauges directly.

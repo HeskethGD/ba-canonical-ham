@@ -1,0 +1,80 @@
+{
+  "checks": [
+    {
+      "name": "genus-one r=3 nu0=0.0",
+      "scaled_error": 1.916851529145419e-15,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "genus-one r=4 nu0=0.0",
+      "scaled_error": 6.6200202636845506e-15,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "genus-one r=4 nu0=(0.4-0.3j)",
+      "scaled_error": 7.275842484785023e-15,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "genus-one r=5 nu0=0.2j",
+      "scaled_error": 1.4323228487087043e-13,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "stored genus-two cubic trajectory",
+      "scaled_error": 1.8401532146272363e-15,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "genus-two power interpolation",
+      "scaled_error": 4.351060930359643e-30,
+      "tolerance": 1e-20
+    },
+    {
+      "name": "genus-two divisor velocity r=3 nu0=0.0",
+      "scaled_error": 8.763767489483846e-11,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "genus-two divisor velocity r=4 nu0=0.0",
+      "scaled_error": 5.560512911825803e-11,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "genus-two divisor velocity r=4 nu0=0.35",
+      "scaled_error": 5.890645256591765e-11,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "genus-two divisor velocity r=5 nu0=0.0",
+      "scaled_error": 1.161399393086829e-09,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "genus-two cubic phase match",
+      "scaled_error": 4.470319063570834e-15,
+      "tolerance": 1e-09
+    },
+    {
+      "name": "genus-two flow composition (4, 0.0) to (4, 0.35)",
+      "scaled_error": 3.568053326925623e-13,
+      "tolerance": 2e-05
+    },
+    {
+      "name": "genus-two flow composition (4, 0.0) to (5, 0.0)",
+      "scaled_error": 5.241766752220348e-08,
+      "tolerance": 2e-05
+    },
+    {
+      "name": "genus-two flow composition (4, 0.35) to (5, 0.0)",
+      "scaled_error": 5.2415105322030684e-08,
+      "tolerance": 2e-05
+    },
+    {
+      "name": "fifth trace with 40-digit phase interpolation",
+      "scaled_error": 1.536432483121552e-14,
+      "tolerance": 1e-09
+    }
+  ],
+  "scope": "Fixed genus-one/two fixtures; tolerances include integration and interpolation errors."
+}

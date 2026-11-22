@@ -1,0 +1,159 @@
+\subsection{The one-point specialization}
+\label{sec:BA-one-point-specialization}
+
+The general construction becomes a vector--matrix--vector system
+when $N=1$. We give its elementary-mode notation, specialize the
+higher-flow phases and display the scalar conserved operator coefficients.
+The curve remains arbitrary throughout this subsection.
+
+\subsubsection{Elementary modes and their canonical equations}
+\label{sec:BA-one-point}
+
+For $N=1$ put $R_1=P_\infty$, $s_1=s$ and $e_1=1$.
+The divisors have degree $g$ and there is a single ordinary/dual pair
+$\psi,\psi^\vee$. Choose reference normalization
+$\psi(P,0)=\psi^\vee(P,0)=1$, and subtract the constant term of
+each $h$ at $P_\infty$. Thus $a_{L,1}=a_{M,1}=0$.
+This member has two elementary vectors and a pair-mode matrix.
+
+The combined index and number of canonical pairs are
+\begin{equation}\label{eq:BA-mode-counts}
+ K=L+M,\qquad p=K+LM.
+\end{equation}
+We use single indices for the $K$ elementary pairs and double indices
+for the $LM$ cross-group pair composites. Their dictionary with the
+$H_0$ modes of \cref{eq:canonical-phase-gauge} is
+\begin{equation}\label{eq:BA-mode-dictionary}
+ \xi_{\ell}=\tilde w_{1\ell},\qquad
+ \xi_{L+m}=\tilde v_{m1},\qquad
+ \xi_{\ell,L+m}=\tilde u_{\ell m},
+ \quad1\leq\ell\leq L,\quad1\leq m\leq M,
+\end{equation}
+with the same rule for barred partners. Put
+\begin{equation}\label{eq:BA-phase-dictionary}
+ b_{\ell}=2b_{\ell}^L+b_1^N,\qquad b_{L+m}=2b_m^M+b_1^N,
+ \quad1\leq\ell\leq L,\quad1\leq m\leq M.
+\end{equation}
+The inherited brackets satisfy $\{\xi_k,\bar\xi_r\}=-i\delta_{kr}$, with the corresponding rule for pair modes, and
+\begin{equation}\label{eq:BA-H0-flat}
+ H_0=\sum_{k=1}^{K}b_k\xi_k\bar{\xi}_k
+ +\sqrt2\sum_{\ell=1}^{L}\sum_{j=L+1}^{K}
+ (\xi_{\ell}\xi_j\xi_{\ell j}+\bar{\xi}_{\ell}\bar{\xi}_j\bar{\xi}_{\ell j}).
+\end{equation}
+
+
+The equivalent one-point theta and sigma formulas, with
+$\Xi=s^{-1}+O(s)$ and
+$\Xi_\sigma=\Xi-\boldsymbol U^{\trans}\varkappa A(P)$, are
+\begin{equation}\label{eq:general-BA-theta}
+\begin{aligned}
+ \psi(P,t)
+ &=e^{-it\Xi(P)}
+ \tfrac{\theta(z(t)+A(P))\theta(z_0)}
+ {\theta(z(t))\theta(z_0+A(P))}
+ =e^{-it\Xi_\sigma(P)}
+ \tfrac{\sigma(z(t)+A(P))\sigma(z_0)}
+ {\sigma(z(t))\sigma(z_0+A(P))},\\[4pt]
+ \psi^\vee(P,t)
+ &=e^{it\Xi(P)}
+ \tfrac{\theta(z(t)-A(P))\theta(z_0)}
+ {\theta(z(t))\theta(z_0-A(P))}
+ =e^{it\Xi_\sigma(P)}
+ \tfrac{\sigma(z(t)-A(P))\sigma(z_0)}
+ {\sigma(z(t))\sigma(z_0-A(P))}.
+\end{aligned}
+\end{equation}
+In this notation the unphased BA modes are
+\begin{equation}\label{eq:general-elementary-modes}
+\begin{aligned}
+ \xi_{\ell}&=c_{\ell} \psi^\vee(Q_{\ell}),&\bar{\xi}_{\ell}&=\kappa_{\ell} \psi(Q_{\ell})/c_{\ell},
+ &&1\leq\ell\leq L,\\
+ \xi_j&=c_j \psi(Q_j),&\bar{\xi}_j&=\kappa_j \psi^\vee(Q_j)/c_j,
+ &&L+1\leq j\leq K,
+\end{aligned}
+\end{equation}
+and
+\begin{equation}\label{eq:general-pair-modes}
+ \xi_{\ell j}=\frac{\sqrt2\kappa_{\ell}\kappa_j}{c_{\ell}c_j}\Omega(Q_{\ell},Q_j),
+ \qquad \bar{\xi}_{\ell j}=-\sqrt2c_{\ell}c_j\Omega(Q_j,Q_{\ell}),
+ \quad1\leq\ell\leq L<j\leq K.
+\end{equation}
+
+An \emph{elementary mode} has the shift of one curve-point lift
+relative to $P_\infty$. A \emph{pair composite} has the difference
+of the two lifts; in the hyperelliptic sheet convention this becomes
+the sum of the elementary shifts. The terms specify the shift data,
+not a factorization at a common $z$. For $N>1$, the basis sections
+instead have shifts $A(P)-A(R_k)$; all sections share the same curve
+and kernel, but generally no single base point makes both arrays
+one-point elementary vectors.
+
+The raw phase values and equations reduce to
+\begin{equation}\label{eq:one-point-phase-values}
+ b_{\ell}=-h_M(Q_{\ell}),\quad1\leq\ell\leq L,\qquad
+ b_j=h_L(Q_j),\quad L+1\leq j\leq K,
+\end{equation}
+\begin{equation}\label{eq:general-network-rates}
+\begin{aligned}
+ i\dot\xi_{\ell}&=b_{\ell}\xi_{\ell}+\sqrt2\sum_{j=L+1}^{K}\bar{\xi}_j\bar{\xi}_{\ell j},&
+ i\dot{\bar{\xi}}_{\ell}&=-b_{\ell}\bar{\xi}_{\ell}-\sqrt2\sum_{j=L+1}^{K}\xi_j\xi_{\ell j},
+ &&1\leq\ell\leq L,\\
+ i\dot\xi_j&=b_j\xi_j+\sqrt2\sum_{\ell=1}^{L}\bar{\xi}_{\ell}\bar{\xi}_{\ell j},&
+ i\dot{\bar{\xi}}_j&=-b_j\bar{\xi}_j-\sqrt2\sum_{\ell=1}^{L}\xi_{\ell}\xi_{\ell j},
+ &&L+1\leq j\leq K,\\
+ i\dot\xi_{\ell j}&=\sqrt2\bar{\xi}_{\ell}\bar{\xi}_j,&
+ i\dot{\bar{\xi}}_{\ell j}&=-\sqrt2\xi_{\ell}\xi_j,
+ &&1\leq\ell\leq L<j\leq K.
+\end{aligned}
+\end{equation}
+These are Hamilton's equations for \cref{eq:BA-H0-flat}.
+For this phase gauge, write $\mathsf A_L=\diag(b_1,\ldots,b_L)$,
+$\mathsf A_M=\diag(b_{L+1},\ldots,b_K)$.
+An optional scalar spectral origin $\rho$ gives
+\begin{equation}\label{eq:BA-H0-pencil}
+\begin{aligned}
+ \mathsf L_0(\nu)&=\begin{pmatrix}
+ \rho\Id_L-\mathsf A_L+\nu\Id_L&\sqrt2\boldsymbol\xi_{LM}&\bar{\boldsymbol\xi}_L\\
+ \sqrt2\bar{\boldsymbol\xi}_{LM}^{\trans}&\rho\Id_M-\mathsf A_M-\nu\Id_M&\boldsymbol\xi_M\\
+ -\boldsymbol\xi_L^{\trans}&-\bar{\boldsymbol\xi}_M^{\trans}&\rho
+ \end{pmatrix},\\
+ \mathsf T_0(\nu)&=\begin{pmatrix}
+ 0&0&\bar{\boldsymbol\xi}_L\\0&0&-\boldsymbol\xi_M\\
+ -\boldsymbol\xi_L^{\trans}&\bar{\boldsymbol\xi}_M^{\trans}&-\nu
+ \end{pmatrix}.
+\end{aligned}
+\end{equation}
+Here $\boldsymbol\xi_L,\boldsymbol\xi_M$ are the column vectors of
+the two elementary groups and $\boldsymbol\xi_{LM}$ is their pair
+matrix. This is the one-point form of the canonical pencil after
+its phase gauge; $\rho$ only shifts the spectral ordinate.
+
+\subsubsection{Higher-flow phases in the one-point notation}
+\label{sec:BA-one-point-higher-flows}
+
+We specialize \cref{thm:BA-higher-flows} using the modes and pencil
+just defined. This gives a modal-power expression for the finite
+phase constants of a higher Hamiltonian.
+
+For $N=1$, choose the ordinary gap complement at $P_\infty$.
+Then $p_1=\sum_{\alpha=1}^{g}v_\alpha s^{-n_\alpha}$ for its
+Weierstrass gaps $n_\alpha$, and $\varphi_1^N=0$.
+The elementary phase rates are
+$b_{\ell}^{(r,\nu_0)}=-\varphi_{\ell}^L$,
+$b_{L+j}^{(r,\nu_0)}=\varphi_j^M$; pair phases are the opposite
+sums of these rates. For example, in the one-point $H_0$ pencil
+\cref{eq:BA-H0-pencil}, with optional spectral origin $\rho$, the
+fourth trace has $q=\lambda^3/\nu$. Put $\epsilon_a=\rho-b_a$,
+$\chi_a=1$ in the first ordinary group and $\chi_a=-1$ in the second.
+Write $I_a=\xi_a\bar\xi_a$, $1\leq a\leq K$, and
+$I_{\ell j}=\xi_{\ell j}\bar\xi_{\ell j}$, $1\leq\ell\leq L<j\leq K$.
+For the conserved power combinations
+$C_{\ell}=I_{\ell}-\sum_{j=L+1}^{K}I_{\ell j}$ and
+$C_j=I_j-\sum_{\ell=1}^{L}I_{\ell j}$, perturbation at infinity gives
+\[
+ \lambda=\chi_a\nu+\epsilon_a-\chi_aC_a/\nu+O(\nu^{-2}),\qquad
+ \operatorname{reg}_{Q_a}q=3\chi_a(\epsilon_a^2-C_a).
+\]
+The phase is this constant plus the finite part of $\mathfrak f$,
+with the elementary sign just specified. Thus the one-point
+modal-power interpretation is retained inside the multipoint theorem.

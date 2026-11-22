@@ -80,9 +80,13 @@ for g, branch, alpha, div_x in cases:
     need = rhs_prime(z, L, M)
     res = max(abs(p - q) / (1 + abs(p)) for p, q in zip(dz, need))
     spread = max(abs(p - pot[0]) for p in pot)
+    assert mp.isfinite(res) and res < mp.mpf('1e-25'), (g, 'Hamilton residual', res)
+    assert mp.isfinite(spread) and spread < mp.mpf('1e-25'), (g, 'potential spread', spread)
     print('g=%d, L=%d, M=%d: Hamilton residual with all phases zero %.1e | spread of Schroedinger potential over the %d branch points %.1e'
           % (g, L, M, res, 2 * g + 1, spread))
     if g <= 2:
         deg, sep = discriminant_roots(z, L, M)
+        assert deg == 2*g-2+2*(L+M+1), (g, 'discriminant degree', deg)
+        assert min(sep) > mp.mpf('1e-8'), (g, 'unresolved discriminant roots', min(sep))
         print('     discriminant of F in lambda: degree %d (a genus-%d curve with no affine singularity predicts %d), smallest root separation %.2e'
               % (deg, g, 2 * g - 2 + 2 * (L + M + 1), float(min(sep))))

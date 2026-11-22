@@ -6,6 +6,14 @@
 # curve alone and compared with direct integration of the matrix flow  i X' = [D, (X+nu0 D)^(r-1)].
 from pathlib import Path
 import numpy as np
+import json
+checks = []
+
+def require(name, error, tolerance):
+    error = float(error)
+    assert np.isfinite(error) and error < tolerance, (name, error, tolerance)
+    checks.append(dict(name=name, scaled_error=error, tolerance=tolerance))
+
 rng = np.random.default_rng(7)
 
 def flow(X, D, field, T, n=4000):
@@ -75,6 +83,7 @@ for r, nu0 in [(3, 0.0), (4, 0.0), (4, 0.4 - 0.3j), (5, 0.2j)]:
     t = 0.25
     direct = flow(X0, D, higher_field(D, r, nu0), t)
     predicted = gauge(flow(X0, D, h0_field(L, M), v1*t), L, M, t*b)
+    require(f'genus-one r={r} nu0={nu0}', scaled(direct, predicted), 1e-9)
     print('  r=%d nu0=%s: v1=%.6f%+.6fi | flow of H_r vs (H0 flow for time v1*t, then the predicted gauge): %.1e | without the gauge: %.1e'
           % (r, nu0, v1.real, v1.imag, scaled(direct, predicted), scaled(direct, flow(X0, D, h0_field(L, M), v1*t))))
 
@@ -96,6 +105,9 @@ nu_ = lambda x, y: -(hL(x, y) + hM(x, y))/2
 lam_ = lambda x, y: (hM(x, y) - hL(x, y))/2
 dk = [1, 1, -1, -1]
 # H0 check of the matrix form against the stored trajectory
+require('stored genus-two cubic trajectory',
+        scaled(flow(X0, D, h0_field(L, M), 6.0*4/40, 8000)[K, :K],
+               np.concatenate([-d['BA'][4][:L], -d['BA'][4][K+L:2*K]])), 1e-9)
 print('  H0 matrix flow vs stored BA values at the fourth stored time: %.1e' % (
       scaled(flow(X0, D, h0_field(L, M), 6.0*4/40, 8000)[K, :K], np.concatenate([-d['BA'][4][:L], -d['BA'][4][K+L:2*K]]))))
 
@@ -136,6 +148,7 @@ def divisor_velocity(X, field):
     return roots, np.array([-(dc[0]*x + dc[1]) / (2*x + c1) for x in roots]), res
 
 roots, vel0, res = divisor_velocity(X0, h0_field(L, M))
+require('genus-two power interpolation', max(abs(res)) if len(res) else 0, 1e-20)
 print('  mode powers lie on one monic quadratic in a_k (four points, two unknowns): residual %.1e' % (res[0] if len(res) else 0))
 pred = {}
 for r, nu0 in [(3, 0.0), (4, 0.0), (4, 0.35), (5, 0.0)]:
@@ -143,12 +156,14 @@ for r, nu0 in [(3, 0.0), (4, 0.0), (4, 0.35), (5, 0.0)]:
     _, vel, _ = divisor_velocity(X0, higher_field(D, r, nu0))
     ratio = vel / vel0
     expect = np.array([v1 - roots[1]*v3, v1 - roots[0]*v3])
+    require(f'genus-two divisor velocity r={r} nu0={nu0}', np.abs(ratio-expect).max()/np.abs(expect).max(), 1e-6)
     print('  r=%d nu0=%.2f: v1=%.5f%+.5fi v3=%.5f%+.5fi | divisor velocity relative to H0, measured vs predicted v1 - x_other*v3: %.1e'
           % (r, nu0, v1.real, v1.imag, v3.real, v3.imag, np.abs(ratio - expect).max() / np.abs(expect).max()))
 # consistency between flows, which also tests the phases
 t = 0.02
 v1, v3, b = pred[(3, 0.0)]                                        # the third trace moves along U_1 only
 direct = flow(X0, D, higher_field(D, 3, 0.0), t, 6000); comp = flow(X0, D, h0_field(L, M), v1*t, 6000)
+require('genus-two cubic phase match', scaled(direct, gauge(comp, L, M, t*b)), 1e-9)
 print('  flow (3, 0.0) vs H0 for time v1*t with gauge t*b: %.1e | without the gauge: %.1e'
       % (scaled(direct, gauge(comp, L, M, t*b)), scaled(direct, comp)))
 for Bk, Ck in [((4, 0.0), (4, 0.35)), ((4, 0.0), (5, 0.0)), ((4, 0.35), (5, 0.0))]:
@@ -156,6 +171,8 @@ for Bk, Ck in [((4, 0.0), (4, 0.35)), ((4, 0.0), (5, 0.0)), ((4, 0.35), (5, 0.0)
     beta = v3C / v3B; alpha = v1C - beta*v1B                      # direction of C = alpha*U_1 + beta*(direction of B)
     direct = flow(X0, D, higher_field(D, *Ck), t, 6000)
     comp = flow(flow(X0, D, higher_field(D, *Bk), beta*t, 20000), D, h0_field(L, M), alpha*t, 20000)
+    require(f'genus-two flow composition {Bk} to {Ck}',
+            scaled(direct, gauge(comp, L, M, t*(bC-beta*bB))), 2e-5)
     print('  flow %s vs [H0 for %.4f t, flow %s for %.4f t] with gauge t(b^C - beta b^B): %.1e | without the gauge: %.1e'
           % (Ck, alpha.real, Bk, beta.real, scaled(direct, gauge(comp, L, M, t*(bC - beta*bB))), scaled(direct, comp)))
 
@@ -201,3 +218,8 @@ beta = v3C / v3B; alpha = v1C - beta*v1B
 direct = flow(X0, D, higher_field(D, 5, 0.0), t, 20000)
 comp = flow(flow(X0, D, higher_field(D, 4, 0.0), beta*t, 40000), D, h0_field(L, M), alpha*t, 40000)
 print('  fifth trace vs [H0, fourth trace] with 40-digit directions and phases: %.1e' % scaled(direct, gauge(comp, L, M, t*(bC - beta*bB))))
+
+require('fifth trace with 40-digit phase interpolation',
+        scaled(direct, gauge(comp, L, M, t*(bC-beta*bB))), 1e-9)
+(Path(__file__).resolve().parent/'results/higher_flow_evolution_diagnostic.json').write_text(
+    json.dumps({'checks': checks, 'scope': 'Fixed genus-one/two fixtures; tolerances include integration and interpolation errors.'}, indent=2)+'\n')

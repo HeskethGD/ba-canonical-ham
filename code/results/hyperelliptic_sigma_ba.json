@@ -8,7 +8,7 @@
   "canonical_pairs": 8,
   "curve": "y^2=4*x*(x^2-1)*(x^2-4)",
   "dps": 24,
-  "generapy_version": "0.2.0",
+  "generapy_version": "0.3.0",
   "duration": 6.0,
   "analytic_samples": 41,
   "dense_ode_samples": 601,
@@ -73,13 +73,13 @@
   "infinity_characteristic_rounding": 0.0,
   "minimum_sigma_denominator": 2.054139222668925,
   "sigma_backend": "Generapy baker_akhiezer_jet (reference) and kleinian_sigma_directional_jet",
-  "setup_seconds": 0.5749437087215483,
+  "setup_seconds": 0.5727066667750478,
   "evaluation_benchmark_seconds": [
-    0.009838582947850227,
-    0.0565670826472342,
-    0.009954790584743023
+    0.010359541978687048,
+    0.055136790964752436,
+    0.010457583237439394
   ],
-  "mean_sample_seconds": 0.05031143085713067,
+  "mean_sample_seconds": 0.05040383639904421,
   "plotted_modes": [
     "Re xi_1",
     "Re xi_3",

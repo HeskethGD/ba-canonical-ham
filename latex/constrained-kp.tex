@@ -1,66 +1,15 @@
-\subsection{The constrained KP interpretation}
-\label{sec:BA-constrained-KP}
+\subsubsection{Scalar constrained operators and conserved coefficients}
 
-The weighted identities also connect this realization to constrained
-KP theory. In this subsection put $\partial=i\partial_t$, the
-derivative in the first geometric BA time. The kernel identity
-\cref{eq:general-kernel-rate} specifies the product primitive
-\[
- \partial^{-1}\bigl(\psi^\vee(Q_k)\psi(P)\bigr)=\Omega(P,Q_k),
- \qquad1\leq k\leq K,
-\]
-with its integration constant fixed by the kernel normalization.
-Thus \cref{eq:general-weighted-BA} becomes the pair of spectral
-problems
-\begin{equation}\label{eq:BA-constrained-operators}
-\begin{aligned}
- \mathcal A_L&=\partial+
-   2\sum_{i=1}^{L}\kappa_i\psi(Q_i)\partial^{-1}\psi^\vee(Q_i),&
- \mathcal A_L\psi(P)&=h_L(P)\psi(P),\\
- \mathcal A_M&=\partial+
-   2\sum_{j=L+1}^{K}\kappa_j\psi(Q_j)\partial^{-1}\psi^\vee(Q_j),&
- \mathcal A_M\psi(P)&=h_M(P)\psi(P).
-\end{aligned}
-\end{equation}
-Here $f\partial^{-1}g$ means multiplication by $g$, the specified
-primitive, and multiplication by $f$. The dual weighted identities
-give $\mathcal A_L^{\rm ad}\psi^\vee=h_L\psi^\vee$ and
-$\mathcal A_M^{\rm ad}\psi^\vee=h_M\psi^\vee$, where $\mathrm{ad}$
-denotes formal adjoint and $\partial^{\rm ad}=-\partial$.
-
-The operator form in \cref{eq:BA-constrained-operators} is that of
-vector-constrained KP with differential order one. Its equivalence
-to rational reductions and its finite-codimension Grassmannian
-description are established in
-\cite[Theorems 4.1 and 5.1]{HelminckVanDeLeur1998}; see also
-\cite{KricheverRational1995}. Residue-based BA self-consistency is
-developed in \cite[Section~1]{KricheverSelfConsistent1995}.
-The two functions $h_L,h_M$ give compatible scalar operators:
-if $\mathcal L\psi=s^{-1}\psi$ is the formal KP operator, their
-Laurent expansions at $P_\infty$ give
-$\mathcal A_L=h_L(\mathcal L)$ and
-$\mathcal A_M=h_M(\mathcal L)$, hence
-$[\mathcal A_L,\mathcal A_M]=0$. Each choice of $h_L$ or $h_M$
-as the local spectral coordinate gives an order-one constrained
-reduction, with the corresponding higher-time normalization.
-
-Evaluating each spectral problem at the opposite group's points
-gives the elementary equations in \cref{eq:general-network-rates};
-the cross-group product primitives supply the pair modes.
-Multiwave equations expressed through eigenfunctions, adjoint
-eigenfunctions and their pair potentials already occur in
-\cite[equations (57)--(58)]{AratynGomesNissimovPacheva2001}.
-The prescribed-point criterion in
-\cref{thm:general-BA-realization} specifies the weights, phase rates
-and normalizations for the present finite canonical coupling,
-including its necessity on an open Jacobian family.
-
-This interpretation also makes two conserved quantities visible.
-Expanding $\partial^{-1}f=f\partial^{-1}-(\partial f)\partial^{-2}
+For $N=1$, the additive constants of $h_L,h_M$ may be chosen so that
+$\mathsf C_L=\mathsf C_M=0$. The matrix operators in
+\cref{eq:BA-constrained-operators} are then scalar, with
+$\boldsymbol\psi=\psi$ and $\boldsymbol\psi^\vee=\psi^\vee$.
+This specialization also exposes two conserved quantities.
+Write $I_k=\xi_k\bar\xi_k$, $1\leq k\leq K$. Expanding $\partial^{-1}f=f\partial^{-1}-(\partial f)\partial^{-2}
 +O(\partial^{-3})$ and using \cref{eq:general-network-rates} gives
 \begin{equation}\label{eq:BA-constrained-H-coefficient}
  \mathcal A_L-\mathcal A_M
- =2\left(\sum_{i=1}^{L}I_i-\sum_{j=L+1}^{K}I_j\right)\partial^{-1}
+ =2\left(\sum_{\ell=1}^{L}I_\ell-\sum_{j=L+1}^{K}I_j\right)\partial^{-1}
       -2H_0\partial^{-2}+O(\partial^{-3}).
 \end{equation}
 The first two negative-order coefficients of the commutator are

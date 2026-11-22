@@ -1,5 +1,13 @@
 \begin{thebibliography}{10}
 
+\bibitem{AdamsHarnadHurtubise1990II}
+M.~R. Adams, J.~Harnad, and J.~Hurtubise.
+\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions.
+  {II}. integration of flows.
+\newblock {\em Communications in Mathematical Physics}, 134:555--585, 1990.
+\newblock \href {https://doi.org/10.1007/BF02098447}
+  {\path{doi:10.1007/BF02098447}}.
+
 \bibitem{AdamsHarnadHurtubise1993}
 M.~R. Adams, J.~Harnad, and J.~Hurtubise.
 \newblock {Darboux} coordinates and {Liouville--Arnold} integration in loop
@@ -9,6 +17,14 @@ M.~R. Adams, J.~Harnad, and J.~Hurtubise.
 \newblock \href {https://doi.org/10.1007/BF02097398}
   {\path{doi:10.1007/BF02097398}}.
 
+\bibitem{AdamsHarnadPreviato1988}
+M.~R. Adams, J.~Harnad, and E.~Previato.
+\newblock Isospectral {Hamiltonian} flows in finite and infinite dimensions.
+  {I}. generalized {Moser} systems and moment maps into loop algebras.
+\newblock {\em Communications in Mathematical Physics}, 117:451--500, 1988.
+\newblock \href {https://doi.org/10.1007/BF01223376}
+  {\path{doi:10.1007/BF01223376}}.
+
 \bibitem{AdlerVanMoerbeke2018}
 Mark Adler and Pierre van Moerbeke.
 \newblock The {AKS} theorem, {A.C.I.} systems and random matrix theory.
@@ -17,6 +33,16 @@ Mark Adler and Pierre van Moerbeke.
 \newblock \url{https://arxiv.org/abs/1810.03168}.
 \newblock \href {https://doi.org/10.1088/1751-8121/aad82d}
   {\path{doi:10.1088/1751-8121/aad82d}}.
+
+\bibitem{AlberLutherMarsdenRobbins1998}
+Mark~S. Alber, Gregory~G. Luther, Jerrold~E. Marsden, and Jonathan~M. Robbins.
+\newblock Geometric phases, reduction and {Lie--Poisson} structure for the
+  resonant three-wave interaction.
+\newblock {\em Physica D: Nonlinear Phenomena}, 123(1--4):271--290, 1998.
+\newblock Author version:
+  \url{https://www.cds.caltech.edu/~marsden/bib/1998/07-AlLuMaRo1998/AlLuMaRo1998.pdf}.
+\newblock \href {https://doi.org/10.1016/S0167-2789(98)00127-4}
+  {\path{doi:10.1016/S0167-2789(98)00127-4}}.
 
 \bibitem{AratynGomesNissimovPacheva2001}
 H.~Aratyn, J.~F. Gomes, E.~Nissimov, and S.~Pacheva.
@@ -43,6 +69,15 @@ Arnaud Beauville.
 \newblock {\em Acta Mathematica}, 164:211--235, 1990.
 \newblock \href {https://doi.org/10.1007/BF02392754}
   {\path{doi:10.1007/BF02392754}}.
+
+\bibitem{BenZviBiswas2003}
+David Ben-Zvi and Indranil Biswas.
+\newblock Theta functions and {Szeg\H{o}} kernels.
+\newblock {\em International Mathematics Research Notices},
+  2003(24):1305--1340, 2003.
+\newblock Author version: \url{https://arxiv.org/abs/math/0211441}.
+\newblock \href {https://doi.org/10.1155/S1073792803211181}
+  {\path{doi:10.1155/S1073792803211181}}.
 
 \bibitem{Bertola2021}
 Marco Bertola.
@@ -95,6 +130,14 @@ P.~L. Christiansen, J.~C. Eilbeck, V.~Z. Enolskii, and N.~A. Kostov.
 \newblock \href {https://doi.org/10.1098/rspa.2000.0612}
   {\path{doi:10.1098/rspa.2000.0612}}.
 
+\bibitem{ChvartatskyiSydorenko2013}
+O.~I. Chvartatskyi and Yu.~M. Sydorenko.
+\newblock A new $(1+1)$-dimensional matrix $k$-constrained {KP} hierarchy.
+\newblock {\em Matematychni Studii}, 39(2):164--177, 2013.
+\newblock Author version: \url{https://arxiv.org/abs/1303.7064}.
+\newblock \href {https://doi.org/10.30970/ms.39.2.164-177}
+  {\path{doi:10.30970/ms.39.2.164-177}}.
+
 \bibitem{Eilbeck2000}
 J.~C. Eilbeck, V.~Z. Enolskii, and N.~A. Kostov.
 \newblock Quasiperiodic and periodic solutions for vector nonlinear
@@ -116,6 +159,16 @@ Rui~Loja Fernandes and Pol Vanhaecke.
 \newblock \url{https://arxiv.org/abs/math-ph/0011051}.
 \newblock \href {https://doi.org/10.1007/s002200100476}
   {\path{doi:10.1007/s002200100476}}.
+
+\bibitem{GengGuanDu2022}
+Xue Geng, Liang Guan, and Dianlou Du.
+\newblock Action-angle variables for the {Lie--Poisson Hamiltonian} systems
+  associated with the three-wave resonant interaction system.
+\newblock {\em AIMS Mathematics}, 7(6):9989--10008, 2022.
+\newblock
+  \url{https://www.aimspress.com/aimspress-data/math/2022/6/PDF/math-07-06-557.pdf}.
+\newblock \href {https://doi.org/10.3934/math.2022557}
+  {\path{doi:10.3934/math.2022557}}.
 
 \bibitem{Griffiths1985}
 Phillip~A. Griffiths.
@@ -178,6 +231,13 @@ Graham Hesketh.
 \newblock Elliptic normal forms and {Frobenius--Stickelberger} identities for
   continuous-wave four-wave mixing.
 \newblock \url{https://arxiv.org/abs/2601.11740}, 2026.
+
+\bibitem{HeskethHyperelliptic2026}
+Graham Hesketh.
+\newblock Hyperelliptic sigma solutions of polynomial {Hamiltonian} systems.
+\newblock \url{https://arxiv.org/abs/2610.22784}, 2026.
+\newblock \href {https://doi.org/10.48550/arXiv.2610.22784}
+  {\path{doi:10.48550/arXiv.2610.22784}}.
 
 \bibitem{Hesketh2015}
 Graham~D. Hesketh.
@@ -271,14 +331,6 @@ Igor Krichever and Takahiro Shiota.
   MA, 2013.
 \newblock Author version: \url{https://arxiv.org/abs/1111.0164}.
 
-\bibitem{Ma2001Binary}
-Wen-Xiu Ma.
-\newblock The theory of binary nonlinearization and its applications to soliton
-  equations.
-\newblock In {\em Proceedings of the Third Asian Mathematical Conference},
-  pages 337--351. World Scientific, River Edge, NJ, 2002.
-\newblock Author version: \url{https://arxiv.org/abs/nlin/0112026}.
-
 \bibitem{MatsutaniPreviato2015}
 Shigeki Matsutani and Emma Previato.
 \newblock The $\mathrm{al}$ function of a cyclic trigonal curve of genus three.
@@ -341,6 +393,14 @@ Yoshihiro {\^O}nishi.
 \newblock \href {https://doi.org/10.1017/S0013091503000695}
   {\path{doi:10.1017/S0013091503000695}}.
 
+\bibitem{PedroniVanhaecke1998}
+Marco Pedroni and Pol Vanhaecke.
+\newblock A {Lie} algebraic generalization of the {Mumford} system, its
+  symmetries and its multi-hamiltonian structure.
+\newblock {\em Regular and Chaotic Dynamics}, 3(3):132--160, 1998.
+\newblock \href {https://doi.org/10.1070/RD1998v003n03ABEH000086}
+  {\path{doi:10.1070/RD1998v003n03ABEH000086}}.
+
 \bibitem{Vanhaecke2001}
 Pol Vanhaecke.
 \newblock {\em Integrable Systems in the Realm of Algebraic Geometry}, volume
@@ -348,6 +408,15 @@ Pol Vanhaecke.
 \newblock Springer, 2 edition, 2001.
 \newblock \href {https://doi.org/10.1007/3-540-44576-5}
   {\path{doi:10.1007/3-540-44576-5}}.
+
+\bibitem{Weierstrass1856}
+Karl Weierstrass.
+\newblock Theorie der {Abel}'schen functionen.
+\newblock {\em Journal f\"ur die reine und angewandte Mathematik}, 52:285--380,
+  1856.
+\newblock Digitised offprint: \url{https://www.gutenberg.org/ebooks/29780}.
+\newblock \href {https://doi.org/10.1515/crll.1856.52.285}
+  {\path{doi:10.1515/crll.1856.52.285}}.
 
 \bibitem{WJB1986}
 S.~Wojciechowski, Z.~Jiang, and R.~K. Bullough.

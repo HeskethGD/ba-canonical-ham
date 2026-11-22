@@ -17,6 +17,7 @@ SUITES={
     ],
     'symbolic':[
         'latex_final_section2_checks.py',
+        'mcl_jrw_matrix_embedding.py',
         'jrw_three_group_integral_count.py',
         'jrw_repeated_phase_general.py',
         'jrw_phase_cluster_insertion.py',
@@ -27,8 +28,26 @@ SUITES={
     ],
     'sigma':[
         'reference_ba_jet_checks.py',
+        'independent_elliptic_theta_check.py',
         'latex_final_ba_conventions.py',
         'quartic_hyperelliptic_direction.py',
+    ],
+    'multipoint':[
+        'multipoint_BA_network_check.py',
+        'multipoint_BA_elliptic_check.py',
+        'multipoint_BA_genus2_check.py',
+        'matrix_kp_hierarchy_check.py',
+        'ba_genus2_converse_check.py',
+        'ba_completion_compatibility_check.py',
+        'ba_repeated_phase_converse_check.py',
+        'multipoint_higher_flow_check.py',
+        'multipoint_repeated_phase_moments.py',
+    ],
+    'ahh':[
+        'ahh_quartic_to_cubic.py',
+        'ahh_general_multiwave_map.py',
+        'ahh_quartic_cubic_brackets.py',
+        'ahh_fiber_kernel_residues.py',
     ],
     'diagnostics':[
         'higher_flow_evolution_diagnostic.py',

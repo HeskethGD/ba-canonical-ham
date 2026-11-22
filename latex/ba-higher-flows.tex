@@ -1,215 +1,236 @@
-\subsection{Higher Hamiltonians and one-point BA times}
+\subsection{Commuting Hamiltonians, Abel directions and mode phases}
 \label{sec:BA-higher-flows}
 
-The commuting Hamiltonians of \cref{sec:spectral-flows} act on
-the same BA data in different directions. We now compute those
-directions and the accompanying constant mode phases. Jacobian
-linearization and its description by principal parts are classical
-\cite[\S\S6--7]{Griffiths1985}; see also
-\cite{Beauville1990,AdamsHarnadHurtubise1993}.
-Here a gap normalization converts the direction into a one-point BA
-time, and finite parts give the explicit phases of the canonical
-modes. The construction applies to every prescribed realization,
-including coincident phases and singular plane spectral images.
+The commuting spectral Hamiltonians evolve the same BA data in
+different directions. We compute their puncture times and constant
+mode phases by meromorphic interpolation. Jacobian linearization
+and its principal-part description are classical
+\cite{Griffiths1985,Beauville1990,AdamsHarnadHurtubise1993}; the normalization here gives the
+rates for these canonical arrays. With several punctures, a fixed
+choice of time representatives replaces the one-point gap convention.
+Thus, on each fixed spectral level, the commuting Hamiltonians capture
+the full multidimensional BA evolution: their flows span every
+direction of the Abelian vector $z$, with the corresponding mode
+phases, rather than only the single direction selected by our original
+Hamiltonian.
 
-Fix a complex spectral value $\nu_0$ and an integer $r\geq2$. On the
-$H_0$ pencil \cref{eq:BA-H0-pencil}, put
+\subsubsection{BA times and endpoint phases}
+
+Recall that $\mathsf L(\nu)=\mathsf X+\nu\mathsf D$ is the Lax
+matrix, with mode-dependent coefficient matrix $\mathsf X$ and fixed
+slope matrix $\mathsf D$ from \cref{eq:canonical-X,eq:canonical-pencil}.
+For a fixed finite spectral value $\nu_0$ and an integer trace order
+$r\geq2$, define
 \begin{equation}\label{eq:BA-shifted-flow}
 \begin{aligned}
- H_{r,\nu_0}&=\tfrac1r\tr(\mathsf X+\nu_0\mathsf D)^r,
- &\mathsf G&=(\mathsf X+\nu_0\mathsf D)^{r-1},\\
- \mathsf T_{r,\nu_0}(\nu)
- &=\frac{\mathsf G-\mathsf L_0(\nu)^{r-1}}{\nu-\nu_0},
- &q(P)&=\frac{\lambda(P)^{r-1}}{\nu(P)-\nu_0}.
+ H_{r,\nu_0}&=\tfrac1r\tr(\mathsf X+\nu_0\mathsf D)^r,&
+ \mathsf G&=(\mathsf X+\nu_0\mathsf D)^{r-1},\\
+ \mathsf T_{r,\nu_0}(\nu)&=
+ \frac{\mathsf G-\mathsf L(\nu)^{r-1}}{\nu-\nu_0},&
+ q(P)&=\frac{\lambda(P)^{r-1}}{\nu(P)-\nu_0}.
 \end{aligned}
 \end{equation}
-The quotient defining $\mathsf T_{r,\nu_0}$ is polynomial, and
-$i\dot{\mathsf L}_0=[\mathsf L_0,\mathsf T_{r,\nu_0}]$.
-Indeed $[\mathsf L_0,\mathsf G]=(\nu-\nu_0)[\mathsf D,\mathsf G]$.
-All coefficients of $H_{r,\nu_0}$ in $\nu_0$ are commuting spectral
-Hamiltonians. The unshifted traces are $H_{r,0}$.
+Here $H_{r,\nu_0}$ is the spectral Hamiltonian, $\mathsf G$ its matrix
+gradient, and $\mathsf T_{r,\nu_0}$ its Lax time matrix.
+The scalar meromorphic function $q$ uses the spectral coordinates
+$\lambda(P),\nu(P)$ of a point $P$ on the normalized curve and
+determines the local BA exponential rates.
+The matrix quotient is polynomial, and
+$i\dot{\mathsf L}=[\mathsf L,\mathsf T_{r,\nu_0}]$.
+All coefficients of these Hamiltonians in $\nu_0$ commute.
 
-For $g\geq1$, let $n_1<\cdots<n_g\leq2g-1$ be the Weierstrass
-gaps at $P_\infty$: these are the positive integers that cannot be
-the pole order of a function having its only pole there. Write
-$\operatorname{pp}_Q$ for the principal part at a point $Q$.
-
-\begin{lemma}[One-point normalization]\label{lem:BA-higher-normalization}
-There is a unique meromorphic function $\mathfrak f$ with poles only
-at $Q_1,\ldots,Q_K,P_\infty$ such that
+Let $\operatorname{pp}_P$ denote the principal part at $P$.
+Choose a puncture divisor $D_R=\sum_{k=1}^{N}m_kR_k$ with
+$H^1(\mathcal O(D_R))=0$. For $g\geq1$ a safe choice is
+$m_1=2g-1$, $m_k=1$ for $2\leq k\leq N$.
+The space $\mathcal V_R$ of these puncture principal parts has
+quotient
 \[
- \operatorname{pp}_{Q_k}\mathfrak f=-\operatorname{pp}_{Q_k}q,
- \quad1\leq k\leq K,\qquad
- \mathfrak f=-\sum_{\alpha=1}^{g}v_\alpha s^{-n_\alpha}+O(s)
- \quad(P\to P_\infty).
+ \mathcal V_R/
+ \operatorname{pp}H^0(\mathcal O(D_R))\simeq H^1(\mathcal O),
 \]
-Both $\mathfrak f$ and the coefficients $v_\alpha$ are obtained by a
-finite linear meromorphic interpolation problem. In genus zero the
-central condition is $\mathfrak f=O(s)$ and the sum is empty.
+of dimension $g$. Fix a $g$-dimensional complement $\mathcal G$
+to the meromorphic image. It selects representatives of the Abel
+times. When $\boldsymbol U\ne0$, it may be chosen to contain the
+original vector $(s_1^{-1},\ldots,s_N^{-1})$, retaining our first
+time among those representatives. For $N=1$, the ordinary
+Weierstrass gap powers give this complement. The local parameters
+and $\mathcal G$ are fixed throughout the hierarchy.
+
+\begin{lemma}[Meromorphic time normalization]\label{lem:BA-higher-normalization}
+There is a unique meromorphic function $\mathfrak f$ with outer
+principal parts
+\[
+ \operatorname{pp}_{Q_a}\mathfrak f=-\operatorname{pp}_{Q_a}q,
+ \qquad1\leq a\leq K,
+\]
+whose further poles lie in $D_R$, whose puncture principal-part
+vector belongs to $\mathcal G$, and whose regular constant at $R_1$
+is zero. Its coefficients are obtained by a finite linear
+meromorphic interpolation problem.
+For $g=0$ take no puncture poles and normalize $\mathfrak f(R_1)=0$.
 \end{lemma}
 \begin{proof}
-For $g\geq1$, Riemann--Roch gives
-$H^1(\mathcal O((2g-1)P_\infty))=0$. Thus arbitrary outer principal
-parts extend to a meromorphic function with an additional central
-pole of order at most $2g-1$ \cite[Chapter~IV]{Hartshorne1977}.
-Subtract functions with their only pole at $P_\infty$ to remove the
-nongap powers in descending order, then subtract the central constant.
-A difference of two normalized solutions would have its only pole
-at $P_\infty$ with largest order a gap, which is impossible; its zero
-constant then makes it vanish. On the sphere the outer principal
-parts extend without a central pole, and fixing the central value
-gives the same conclusion.
+The vanishing of $H^1(\mathcal O(D_R))$ extends arbitrary outer
+principal parts with extra poles in $D_R$
+\cite[Chapter~IV]{Hartshorne1977}. Subtract a meromorphic function
+supported on $D_R$ to remove the principal-part component outside
+$\mathcal G$, then subtract the regular constant at $R_1$.
+A difference has principal parts in both the meromorphic image and
+its complement, hence has no poles. Its normalized constant makes
+it zero. On the sphere the outer parts extend without extra poles.
 \end{proof}
 
-Use $1/\nu$ as coordinate at the outer points. Put $d_i=1$ for
-$1\leq i\leq L$ and $d_j=-1$ for $L+1\leq j\leq K$, and define
+Define the time polynomial and vertex phase rates by
 \begin{equation}\label{eq:BA-higher-time-phase}
- p(s^{-1})=\sum_{\alpha=1}^{g}v_\alpha s^{-n_\alpha},\qquad
- b_k^{(r,\nu_0)}=-d_k(\mathfrak f+q)(Q_k),\qquad
- c_k(t)=c_k e^{-it b_k^{(r,\nu_0)}},\quad1\leq k\leq K.
+\begin{aligned}
+ p_k&=-\operatorname{pp}_{R_k}\mathfrak f,&
+ \varphi_k^N&=\operatorname{reg}_{R_k}(q+\mathfrak f),&&1\leq k\leq N,\\
+ \varphi_{\ell}^L&=(q+\mathfrak f)(Q_{\ell}),&&&1\leq\ell\leq L,\\
+ \varphi_j^M&=(q+\mathfrak f)(Q_{L+j}),&&&1\leq j\leq M.
+\end{aligned}
 \end{equation}
-The sum $\mathfrak f+q$ is regular at every $Q_k$. Its values and
-the coefficients of $p$ depend only on the fixed marked spectral data.
-Let $\boldsymbol U_{n_\alpha}$ be the BA direction of the normalized
-second-kind differential with principal part $d(s^{-n_\alpha})$.
-The split into $p$ and mode phases uses the fixed local parameter $s$.
-Changing that parameter changes this representation of the same
-Hamiltonian evolution.
+Here $\operatorname{reg}$ means the constant Laurent coefficient.
+The outer sums are regular by construction. At $R_k$,
+$q=O(\nu^{-1})$, since $\lambda$ is finite there, and
+$\varphi_1^N=0$. These numbers depend only on the fixed marked
+curve and the chosen time normalization. Changing the complement
+$\mathcal G$ changes the mode phases by power-charge flows while
+preserving the Abel direction.
 
-\begin{theorem}[The spectral BA hierarchy]\label{thm:BA-higher-flows}
+\begin{theorem}[Main theorem, part III: The spectral BA hierarchy]\label{thm:BA-higher-flows}
 Every prescribed realization in \cref{thm:general-BA-realization}
-evolves under $H_{r,\nu_0}$ by the same ordinary and dual BA functions
-and Cauchy kernel, with one-point time $p$ and gauges $c_k(t)$ from
-\cref{eq:BA-higher-time-phase}. Explicitly, use those gauges in
-\cref{eq:general-elementary-modes,eq:general-pair-modes}, and replace
-the first-time exponentials by $e^{-itp}$ and $e^{itp}$ at the puncture.
-The Abel argument is
-\begin{equation}\label{eq:BA-higher-Abel-direction}
- z(t)=z_0-it\sum_{\alpha=1}^{g}v_\alpha\boldsymbol U_{n_\alpha}.
+evolves under $H_{r,\nu_0}$ by the same multipoint BA bases and
+kernel, with ordinary and dual puncture exponentials
+$e^{-itp_k}$ and $e^{itp_k}$.
+Use \cref{eq:multipoint-mode-arrays} with reciprocal gauges, for
+$1\leq\ell\leq L$, $1\leq j\leq M$ and $1\leq k\leq N$,
+\begin{equation}\label{eq:multipoint-higher-gauges}
+ c_{\ell}(t)=c_{\ell} e^{it\varphi_{\ell}^L},\quad
+ c_{L+j}(t)=c_{L+j}e^{-it\varphi_j^M},\quad
+ e_k(t)=e_k e^{-it\varphi_k^N}.
 \end{equation}
-The elementary partner phases are reciprocal; each pair mode has
-phase $e^{it(b_i^{(r,\nu_0)}+b_j^{(r,\nu_0)})}$ and its partner
-has the inverse phase. The statement holds locally on the nonspecial
-BA chart, without a distinct-phase assumption.
-Finite constant linear combinations of the Hamiltonians use the
-corresponding sums of $p$ and the phase rates.
+Thus the explicit mode factors, relative to the unphased BA formulas,
+are
+\begin{equation}\label{eq:multipoint-higher-phases}
+ u_{\ell j}:e^{-it(\varphi_{\ell}^L-\varphi_j^M)},\qquad
+ v_{jk}:e^{-it(\varphi_j^M-\varphi_k^N)},\qquad
+ w_{k\ell}:e^{-it(\varphi_k^N-\varphi_{\ell}^L)}.
+\end{equation}
+Partner factors are inverse. Finite constant linear combinations
+of Hamiltonians add their $p_k$ and phase rates.
 
-As $\nu_0$ varies, the flows with $2\leq r\leq K+1$ span all
-Jacobian directions. Consequently finitely many commuting polynomial
-spectral coefficients suffice to generate those translations.
+On a birational prescribed spectral level, the family with
+$2\leq r\leq d=L+M+N$ and varying $\nu_0$ spans every Jacobian
+direction. Finitely many polynomial spectral coefficients therefore
+suffice to generate all its Abel translations.
 \end{theorem}
 \begin{proof}
-Start with the prescribed BA modes and the right eigenvector
-\cref{eq:BA-prescribed-eigenvector}. The left vector is
+The right eigenvector is \cref{eq:BA-prescribed-eigenvector}.
+A compatible left vector is
 \[
- \ell(P)=\bigl((-c_i\Omega(P,Q_i))_{i=1}^{L},
- (\kappa_j\Omega(P,Q_j)/c_j)_{j=L+1}^{K},\psi(P)\bigr).
+ \ell(P)=\bigl((-c_{\ell}\Omega(P,Q_{\ell}))_{\ell=1}^{L},
+ (\kappa_{L+j}\Omega(P,Q_{L+j})/c_{L+j})_{j=1}^{M},
+ (\psi_k(P)/e_k)_{k=1}^{N}\bigr).
 \]
-The convolution identities give its spectral equation and
+Their convolution identities give the spectral equations and
 \begin{equation}\label{eq:BA-higher-initial-kernel}
  \ell(P)r(Q)=-(\nu(P)-\nu(Q))\Omega(P,Q).
 \end{equation}
-Evolve the matrix by the canonical Hamiltonian and these vectors by
+Evolve the vectors under
 $i\dot r_H=-\mathsf T_{r,\nu_0}r_H$ and
-$i\dot\ell_H=\ell_H\mathsf T_{r,\nu_0}$. Polynomiality of the time
-matrix preserves their finite pole divisors.
-
-At infinity, write $\partial=i\partial_t$. The eigenvalue equation
-gives the convergent local factorization
+$i\dot\ell_H=\ell_H\mathsf T_{r,\nu_0}$.
+Near every infinity branch the eigenvalue equation gives the
+convergent local factorization
 \begin{equation}\label{eq:BA-higher-local-factorization}
  r_H=e^{-itq(P)}\mathsf V(t,\nu(P))r(P,0),\qquad
- \partial\mathsf V=-\frac{\mathsf G}{\nu-\nu_0}\mathsf V,
- \qquad \mathsf V(0,\nu)=\Id.
+ i\dot{\mathsf V}=-\frac{\mathsf G}{\nu-\nu_0}\mathsf V,\qquad
+ \mathsf V(0)=\Id.
 \end{equation}
 Since $\mathsf V=\Id+O(\nu^{-1})$, every leading coordinate direction
-is preserved, even when branch intercepts coincide. Dress the vectors
-reciprocally by
-$\widetilde r=e^{-it\mathfrak f}r_H$ and
+is preserved, including coincident-phase branches. At finite points
+the original polynomial time matrix preserves the fixed divisor
+poles; the local factorization is used only near infinity.
+
+Dress the vectors reciprocally by
+$\widetilde r=e^{-it\mathfrak f}r_H$,
 $\widetilde\ell=e^{it\mathfrak f}\ell_H$.
-At the central point $q=O(\nu^{-1})$, so the last components have
-the normalized dual and ordinary factors $e^{itp}$ and $e^{-itp}$;
-all other components are $O(s)$ times those factors.
-At each outer point the polar exponent cancels. If $R_k$ is the
-finite part of $q+\mathfrak f$, the right vector's leading
-coefficients are
-\[
- -\nu e^{-itR_i}/c_i\quad(1\leq i\leq L),\qquad
- c_j\nu e^{-itR_j}/\kappa_j\quad(L+1\leq j\leq K).
-\]
-These are precisely $-\nu/c_i(t)$ and $c_j(t)\nu/\kappa_j$.
+At $Q_{\ell},Q_{L+j}$ the polar exponents cancel and the right leading
+coefficients acquire $e^{-it\varphi_{\ell}^L}$,
+$e^{-it\varphi_j^M}$. Their initial coefficients
+$-\nu/c_{\ell}$ and $c_{L+j}\nu/\kappa_{L+j}$ give the first two gauges.
+At $R_k$ the leading dual factor is
+$e^{itp_k}e^{-it\varphi_k^N}$, giving $e_k(t)$.
+After these gauges the leading vectors are normalized at all
+punctures. BA uniqueness identifies every ordinary and dual basis
+function. Each outer component has its fixed divisor, its one
+additional simple outer pole, the calculated residue and zero
+leading vector at all punctures, so the same argument identifies
+the kernel components.
 
-BA uniqueness identifies the last components. Each remaining component
-has the fixed BA divisor, one additional simple pole at its own
-outer point, the calculated residue and zero leading coefficient at
-the central puncture. The same uniqueness identifies the kernel
-components. No new poles arise at distinct points of equal $\nu$:
-the derivative of $\ell_H(P)r_H(Q)$ is divisible by
-$\nu(P)-\nu(Q)$, because the time matrix is polynomial. Thus all
-initially removable poles in \cref{eq:BA-higher-initial-kernel}
-remain removable. The diagonal pairing is constant, so the duality
-differential and weights are unchanged. The central row and the
-opposite outer blocks of the spectral equation now recover all modes
-as in \cref{eq:BA-converse-recovery}. This proves their asserted
-BA formulas, including every pair phase.
+No finite equal-$\nu$ poles are introduced: the derivative of
+$\ell_H(P)r_H(Q)$ is divisible by $\nu(P)-\nu(Q)$ because the
+time matrix is polynomial. Initially removable poles remain
+removable. Reciprocal dressing is regular there and leaves the
+diagonal pairing unchanged. Thus $d\Omega_0$ and the weights are
+fixed. The spectral equations recover all arrays as in
+\cref{eq:BA-converse-recovery}, proving their higher-flow formulas.
 
-For the spanning assertion, choose an unramified finite fiber
-$\nu=\nu_0$ with distinct eigenvalues $\lambda_h$, $1\leq h\leq K+1$.
-The function $\mathfrak f+q$ has poles only at the central point,
-with principal part $-p$, and on this fiber, with the principal parts
-of $q$. For a holomorphic differential $du=w(P)d\nu$, the residue
-theorem therefore gives
+For spanning choose an unramified finite fiber $\nu=\nu_0$
+with $d$ distinct $\lambda$ values. Birationality guarantees such
+fibers. For a holomorphic differential $du=w(P)d\nu$, the residue
+theorem for $(q+\mathfrak f)du$ gives
 \[
- \operatorname{Res}_{P_\infty}(p\,du)
- =\sum_{h=1}^{K+1}\lambda_h^{r-1}w(P_h).
+ \sum_{k=1}^{N}\operatorname{Res}_{R_k}(p_kdu)
+ =\sum_{h=1}^{d}\lambda(P_h)^{r-1}w(P_h).
 \]
-If $du$ annihilates every such BA direction, the left side vanishes
-for $2\leq r\leq K+1$. The same vanishing for $r=1$ follows by
-applying the residue theorem to $du/(\nu-\nu_0)$.
-The Vandermonde matrix is invertible, so $w$ vanishes on every such
-fiber, hence $du=0$. Residue duality proves spanning.
-Finite-dimensionality and expansion in $\nu_0$ give the final assertion.
+A differential annihilating all these directions has zero right side
+for $2\leq r\leq d$. The $r=1$ relation follows from residues of
+$du/(\nu-\nu_0)$. Vandermonde inversion forces $w$ to vanish on
+every such fiber, hence $du=0$. Residue duality proves spanning;
+the normalized Jacobian has dimension $g$, so $g$ independent
+directions can be selected from this family (none are needed for
+$g=0$). Expanding in $\nu_0$ also permits the selection from $g$
+polynomial spectral coefficients. All these directions belong to
+the Jacobian of the normalization.
 \end{proof}
 
-On a fixed spectral level the vectors in
-\cref{eq:BA-higher-Abel-direction} are constant, and constant linear
-combinations of the Hamiltonians select any Abel direction.
-The required combination depends on the spectral data: the theorem
-identifies polynomial Hamiltonian flows with level-dependent
-combinations of normalized BA times.
+On each fixed spectral level the chosen time coefficients and phase
+rates are constants. Linear combinations selecting a normalized Abel
+direction depend on that level; this is not a globally fixed
+polynomial generator for every separately normalized puncture time.
+If the prescribed curve map has covering degree greater than one,
+the distinct-$\lambda$ fiber argument does not apply; the spanning
+statement concerns the birational curve identified in
+\cref{prop:BA-prescribed-spectral-curve}.
+
+The vertex phases are generated by the diagonal power charges.
+Explicitly,
+\[
+\begin{aligned}
+ H_{\rm gauge}={}&
+ \sum_{\ell=1}^{L}\varphi_{\ell}^L
+ \left(\sum_{j=1}^{M}I^u_{\ell j}-\sum_{k=1}^{N}I^w_{k\ell}\right)
+ +\sum_{j=1}^{M}\varphi_j^M
+ \left(\sum_{k=1}^{N}I^v_{jk}-\sum_{\ell=1}^{L}I^u_{\ell j}\right)\\
+ &+\sum_{k=1}^{N}\varphi_k^N
+ \left(\sum_{\ell=1}^{L}I^w_{k\ell}-\sum_{j=1}^{M}I^v_{jk}\right).
+\end{aligned}
+\]
+Subtracting this fixed-coefficient Hamiltonian removes the framing
+phases on that level. Treating its coefficients as globally variable
+spectral functions would introduce derivatives of those coefficients.
 
 \begin{corollary}[Higher flows from generic initial modes]
 \label{cor:BA-higher-reconstruction}
-On the generic initial-data domains of \cref{thm:BA-spectral-converse},
-the same reconstructed curve and BA data solve the commuting flows
-$H_{r,\nu_0}$ with \cref{eq:BA-higher-time-phase}.
-For repeated phases, use the same constant active bases and restore
-the original coordinates after the BA evolution.
+The reconstructed data of \cref{thm:BA-spectral-converse} solve the
+commuting flows with \cref{eq:BA-higher-time-phase,eq:multipoint-higher-gauges}.
+For repeated phases use the same active bases and restore the original
+coordinates after BA evolution.
 \end{corollary}
 \begin{proof}
-Apply \cref{thm:BA-higher-flows} to the reconstructed data. Every
-spectral Hamiltonian is invariant under equal-phase block conjugations,
-so their moment matrices are conserved and the diagonalizing bases
-remain constant. Inactive directions are direct summands of the
-pencil; matrix powers preserve their zero couplings. Thus the reduction
-and restoration in \cref{eq:BA-block-bases,eq:BA-inactive-splitting}
-apply to all these flows.
+Every spectral Hamiltonian is invariant under equal-phase block
+conjugations, so their moment matrices and adapted bases remain
+constant. Inactive summands stay uncoupled under every matrix power.
+Apply the forward theorem to the active data and restore the bases.
 \end{proof}
-
-For the fourth trace, $q=\lambda^3/\nu$. Its finite part has a useful
-modal-power interpretation. Write $e_k=\rho-b_k$ and let
-$C_i=I_i-\sum_{j=L+1}^{K}I_{ij}$,
-$C_j=I_j-\sum_{i=1}^{L}I_{ij}$, where
-$I_k=\xi_k\bar\xi_k$ and $I_{ij}=\xi_{ij}\bar\xi_{ij}$.
-On a prescribed realization, the eigenvector's pure coordinate pole
-at each $Q_k$ makes the corresponding moment block diagonal in that
-basis, also when phases coincide.
-Second-order perturbation at infinity gives
-\[
- \lambda=d_k\nu+e_k-d_kC_k/\nu+O(\nu^{-2}),\qquad
- q=d_k\nu^2+3e_k\nu+3d_k(e_k^2-C_k)+O(\nu^{-1}).
-\]
-Thus the phase in \cref{eq:BA-higher-time-phase} is computed from
-the outer finite part of $\mathfrak f$ and conserved power charges.
-On a fixed spectral level these constant phase rates can also be
-removed by subtracting $\sum_{k=1}^{K}b_k^{(r,\nu_0)}C_k$ from the
-Hamiltonian. The resulting flow has the normalized one-point BA time.

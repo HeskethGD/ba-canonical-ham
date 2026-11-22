@@ -2,15 +2,176 @@
 
 ## Current supported version
 
-The current requirements pin `generapy==0.2.0` from PyPI. Its runtime source
-matches the previously tested development revision. A clean installation
-was verified for the release; see the latest
-[release validation](#generapy-020-pypi-release) below.
-All 18 check scripts and both complete numerical examples passed with the
-release on 16 November 2026. The [migration validation](#public-ba-jet-migration)
-records the BA adapter conventions and numerator-zero checks. The code and
-requirements are intended to be used together. Earlier records below
-describe historical checks, rather than the current installation status.
+The current requirements pin `generapy==0.3.0` from PyPI. A fresh
+`.venv-generapy-030/` installation passes `pip check`, all 33 current
+check scripts, and all full numerical examples. The preceding Generapy
+0.2.0 environment is retained for comparison. The code and requirements
+are intended to be used together; dated records below describe earlier
+snapshots.
+
+## Generapy 0.3.0 PyPI release (22 November 2026)
+
+The comparison baseline is project commit
+`52b42f32e890cf5e409c07db17c89ee84f0ac16c`, using Generapy 0.2.0.
+Only the Generapy pin changes: Python 3.14.7, the pinned SymPy revision,
+mpmath 1.4.1, NumPy 2.5.3 and Matplotlib 3.11.2 are unchanged.
+
+### Installation
+
+A fresh ignored `.venv-generapy-030/` environment was installed from
+`requirements.txt`. Generapy imports from that environment's site-packages,
+reports 0.3.0, and is neither editable nor VCS-installed. `pip check`
+reports no broken requirements.
+
+The published PyPI wheel is `generapy-0.3.0-py3-none-any.whl`, SHA256:
+
+```text
+cfac81a9d0e117d7a7fbaf9cf2113599fed1e6e6e8fc625fdee0685978277643
+```
+
+### Validation and comparison
+
+- All 33 check scripts pass, including completion/incompatible-weight
+  tests, repeated-phase BA reconstruction, matrix-KP normalization and
+  the previously strengthened diagnostics.
+- Both complete one-point examples were regenerated from freshly computed
+  geometry, with 41 BA samples over `[0,6]` and independent RK4 trajectories.
+- Both genus-two multipuncture flows and the generic genus-two converse
+  were regenerated with their full independent RK4 comparisons. The
+  40-digit multipuncture check was also rerun.
+- Every saved NPZ array is exactly equal to the 0.2.0 baseline, including
+  trajectories, mode parameters and sample grids. Validation errors and
+  conserved-quantity drifts are unchanged. The numerical summary records
+  differ only in Generapy version and timings.
+- All three regenerated PNG figures are byte-identical. Figure PDFs differ
+  only in date metadata, so the existing PDFs were retained. All manuscript
+  tables were regenerated and are unchanged. No manuscript equations or
+  BA adapters needed modification, and the existing manuscript PDF remains
+  applicable without a content change.
+- The spectral-image check was repeated after regenerating the geometry.
+  The convergence integrations were not repeated: their saved inputs and
+  reference trajectories are exactly unchanged, and that solver does not
+  call Generapy.
+
+The machine-readable comparison is
+`code/results/generapy_030_validation.json`. Per-script logs are in
+`.check-logs/generapy-030/` (ignored).
+
+Reproduce the installation and checks with:
+
+```sh
+python3 -m venv .venv-generapy-030
+.venv-generapy-030/bin/python -m pip install -r requirements.txt
+.venv-generapy-030/bin/python -m pip check
+.venv-generapy-030/bin/python code/run_checks.py --suite all
+MPLBACKEND=Agg .venv-generapy-030/bin/python code/ba_numeric_examples.py --case both
+MPLBACKEND=Agg .venv-generapy-030/bin/python code/multipoint_BA_genus2_check.py --numerics
+.venv-generapy-030/bin/python code/multipoint_BA_genus2_check.py --dps 40 --output code/results/multipoint_BA_genus2_precision40.json
+.venv-generapy-030/bin/python code/ba_genus2_converse_check.py --numerics
+.venv-generapy-030/bin/python code/prescribed_curve_spectral_image.py
+make tables PYTHON=.venv-generapy-030/bin/python
+```
+
+## Coverage extension and complete suite (22 November 2026)
+
+All 33 scripts in `code/run_checks.py --suite all` passed in the pinned
+Generapy 0.2.0 release environment. Logs are in
+`.check-logs/submission-coverage/` (ignored). This run includes the
+previously separate MCL dictionary checker and the following additions:
+
+- **Finite completion and incompatible weights.** On the genus-two curve
+  `y^2 = 4*x*(x^2-1)*(x^2-4)`, retain one prescribed point/weight in each
+  group and adjoin three points per group. Exact rational interpolation
+  gives nonzero completed weights for `(L,M,N)=(4,4,1)`. Direct public
+  Generapy BA jets check all 48 canonical rates at three geometric Abel
+  times: maximum scaled residual `8.5e-35` at 36 digits. Perturbing either
+  group's weights produces residuals above `0.38` and changes the phase
+  coefficients required at different times. This tests the criterion's
+  mechanism; it does not replace its necessity proof.
+- **Repeated-phase converse with active reduction.** Direct rational
+  `(1,1,3)` canonical initial modes have a rank-two third-group moment
+  and one inactive direction. A constant canonical basis reduces to an
+  active `(1,1,2)` pencil. Its discriminant has a forced square and a
+  square-free quartic normalization, giving genus one. Both BA divisors
+  and algebraic reference sections are recovered before theta evaluation.
+  Algebraic initial recovery is `3.2e-38`; restored original-mode rate
+  residuals are below `4.9e-37` at 40 digits. Direct Hamiltonian RK4 in
+  all seven original pairs over `[0,0.2]` gives errors `1.06e-11` and
+  `6.60e-13` at 32 and 64 steps, with refinement ratio `15.998`.
+- **Failure enforcement.** The repeated-phase rank checker now requires
+  the complete spectral-plus-moment rank. The al-function Hamiltonian
+  residuals/common-potential checks and the higher-flow evolution
+  diagnostics have explicit tolerances. Higher-flow residuals and their
+  thresholds are saved in `code/results/higher_flow_evolution_diagnostic.json`.
+
+Commands:
+
+```sh
+python code/run_checks.py --suite all --log-dir .check-logs/submission-coverage
+python code/ba_completion_compatibility_check.py
+python code/ba_repeated_phase_converse_check.py
+```
+
+The code inventory and recorded results are updated without expanding the
+manuscript. The existing long-time figures and refinement tables were not
+regenerated: these changes add checks rather than alter their equations.
+Remaining extensions include a generic non-hyperelliptic converse and
+positive-genus BA reconstruction with three active punctures. The new
+three-puncture launch has two active punctures after reduction and is not
+claimed as that latter test. Only one active-reduction profile is exercised.
+
+## Manuscript cleanup (22 November 2026)
+
+The current manuscript is 73 pages. The local review cleanup clarifies
+hypotheses and phase conventions and removes notation clashes; it does
+not change the numerical equations or stored results. The runner now
+contains 30 checks. The new matrix-KP hierarchy check passed on the
+released Generapy environment; the earlier 29-check full-suite run is
+recorded below. The source archive is regenerated after this cleanup.
+Historical page and archive counts below refer to their dated snapshots.
+
+## Current manuscript validation (17 November 2026)
+
+That manuscript snapshot built to 67 pages, including its table of
+contents. Its source archive had 39 files and is independently
+rebuildable. There are no undefined references, multiply defined labels
+or overfull boxes. The page counts in these dated records describe earlier revisions.
+
+All 29 scripts in `code/run_checks.py --suite all` pass on Generapy
+0.2.0 and the pinned requirements. Logs are in
+`.check-logs/sonnet-revision/` (ignored). The two elliptic multipoint
+checks were rerun after adding the diagonal BA-product identity; its
+maximum scaled residual is `1.1e-55` at 55 digits.
+
+The new converse example starts from directly specified canonical
+(1,1,2) modes. Its exact characteristic discriminant is a square-free
+sextic, giving the generic genus two. Adjugate contractions recover
+three ordinary and three dual divisor points. Algebraic reconstruction
+recovers the initial modes to `2.6e-41` and the weights to `3.3e-41`,
+before any theta evaluation. Reconstructed theta evolution agrees with
+all ten canonical rates to `3.9e-40`. Independent RK4 over [0,2]
+has fine-grid discrepancy `4.1e-13`, with refinement ratio `16.01`;
+the direct and RK4 spectral drifts are `4.1e-14` and `3.6e-12`.
+
+An independent elliptic check compares public Generapy theta jets
+through order three, ratios and logarithmic rates with
+`mpmath.jtheta`. Maximum scaled discrepancies are below `1e-54` at
+55 digits. This separate implementation is used for validation, not
+by the production BA plots.
+
+```sh
+python code/run_checks.py --suite all
+python code/ba_genus2_converse_check.py --numerics
+python code/generate_converse_validation_table.py
+python code/independent_elliptic_theta_check.py
+```
+
+The existing multipuncture genus-two example still checks two independent
+Abel directions on a genus-two specialization of the genus-seven network.
+The converse example instead tests a generic genus-two spectral level.
+Previously validated long-time one-point trajectories and figures retain
+their recorded values; those full integrations were not rerun for these
+proof and validation additions.
 
 ## Original baseline
 
@@ -277,3 +438,82 @@ python3 -m venv .venv-generapy-release
 MPLBACKEND=Agg .venv-generapy-release/bin/python code/ba_numeric_examples.py --case both
 .venv-generapy-release/bin/python code/generate_ba_validation_table.py
 ```
+
+
+## Multipuncture generalization (17 November 2026)
+
+The manuscript now treats all positive L,M,N. Its explicit hyperelliptic,
+Mumford and constrained-KP specializations remain one-point results.
+Four additional scripts form the `multipoint` suite; `all` now runs 22
+checks. No Generapy source was modified.
+
+A fresh ignored `.venv-generapy-release/` was installed with the existing
+requirements: Generapy 0.2.0, pinned SymPy 1.15.0.dev0, mpmath 1.4.1,
+NumPy 2.5.3 and Matplotlib 3.11.2. `pip check` and all 22 suite scripts
+passed. The new elliptic wrapper uses only public Generapy theta jets
+with fixed data and a precision-fixed complete-jet cache.
+
+At 55 digits, the L=M=N=2 elliptic example verifies all 24 analytic
+canonical rates, both spectral eigenvectors, and the reference-normalized
+kernel, with maximum scaled residual below 3e-55. The shifted cubic and
+quartic trace checks, with spectral shift 0.17+0.09i, have residuals below
+7e-55, including nonzero third-group phase corrections. Their finite-part
+rates are constructed independently rather than fitted to the fields.
+Exact rational and repeated-phase moment checks also pass.
+
+The numerical geometry has two punctures and degree-two ordinary/dual
+divisors on an elliptic curve: it is a genus-one special level of a
+network whose generic genus is seven. It does not numerically construct
+genus-seven theta data. The general proof is in the manuscript.
+
+The new parameter and residual tables are generated from stored JSON by
+`code/generate_multipoint_validation_table.py`. Previous long-time
+hyperelliptic/trigonal trajectory and convergence records are retained:
+their BA evaluator, coefficients and integration algorithms are unchanged.
+The full suite includes their stored spectral-image and BA convention
+checks; the long trajectory/convergence calculations were not repeated.
+
+Reproduce the new checks from the repository root:
+
+```sh
+.venv-generapy-release/bin/python code/run_checks.py --suite multipoint
+.venv-generapy-release/bin/python code/generate_multipoint_validation_table.py
+```
+
+The complete run logs are in `.check-logs/multipoint-release/` (ignored).
+
+The initial multipoint revision built to 56 pages (54 before that
+extension), with no undefined references or overfull boxes. Its 33-file
+source archive also rebuilt independently to 56 pages. Reviewed monochrome figure PDFs are
+retained when source copies differ only in creation/modification dates.
+
+## Adams–Harnad–Hurtubise comparison
+
+The `ahh` suite checks the selected quartic pullback and its bilinear
+projection exactly, verifies the cubic Hamiltonian and phase dictionary
+for unequal group sizes including (2,2,2), and derives both matrix
+Poisson brackets from their stated definitions. An independent 55-digit
+elliptic residue check verifies all six ordered off-diagonal identities
+and all three diagonal limits on a complete three-point fiber. The
+arbitrary-curve proof is the residue calculation in the manuscript; the
+elliptic check is a numerical validation of its signs and frames.
+
+## Genus-two multipuncture flows
+
+The L=M=N=2 genus-two example uses distinct finite punctures and
+three-point ordinary/dual BA divisors. The 32-digit checks compare all
+24 BA rates with the canonical matrix field, both left and right Lax
+eigenvectors with the prescribed curve map, and a fourth-trace flow
+with its independently assembled matrix field. An additional 40-digit
+run records the precision dependence of these analytic residuals.
+
+The two Abel directions have determinant approximately -0.17423333.
+Thus this example tests two independent directions, unlike the elliptic
+multipuncture example. Its genus-two curve is a special spectral level
+of the generic genus-seven network, with defect five.
+
+The cubic trajectory uses 8000/16000 RK4 steps over [0,8]; the
+fourth-trace trajectory uses 32000/64000 steps over [0,1.5]. Each is
+compared with 65 direct BA samples. The figure shows 801 dense RK4
+samples per flow. Full results and step-halving comparisons are in
+`code/results/multipoint_BA_genus2_numerics.json`.

@@ -1,0 +1,9 @@
+{
+  "dps": 55,
+  "fiber_degree": 3,
+  "complete_regular_fiber": true,
+  "scaled_residue_identity_error": "2.17149880164e-52",
+  "derived_zero_sum_weight_error": "0.0",
+  "diagonal_and_all_off_diagonal_entries": true,
+  "scope": "Elliptic verification of an arbitrary-curve residue theorem. The curve functions and weights are constructed together; the weights are not freely chosen."
+}

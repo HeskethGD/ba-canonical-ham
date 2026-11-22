@@ -1,15 +1,24 @@
-\section{Spectral curves and their classification}
+\subsection{Regular spectral curves at fixed matrix sizes}
 \label{sec:spectral-geometry}
 
-The Lax pencil converts the mode variables into an algebraic curve.
-We first explain this construction, then determine the curve's genus
-and the family of curves obtained as the phase parameters and initial
-modes vary. These geometric properties distinguish the regular
-hyperelliptic cases from special hyperelliptic levels of larger systems.
+The Lax pencil associates a spectral curve to each trajectory. For
+fixed matrix sizes $L,M,N$, the phase coefficients and initial modes
+determine a family of marked curves. We describe its regular members,
+their genus, and how special spectral levels accommodate curves of
+lower genus.
 
-\subsection{From the Lax pencil to a fixed curve}
+This fixed-size question complements the BA construction of
+\cref{sec:general-BA-realization}: any prescribed smooth curve admits
+a compatible BA realization, enlarging the mode lists when needed.
+The classification here describes which curves occur at fixed matrix
+sizes, while that construction chooses compatible matrix sizes,
+parameters and initial modes to accommodate the curve.
 
-For each spectral parameter $\nu$, consider the eigenvalue equation
+\subsubsection{From the Lax pencil to a fixed curve}
+
+For each spectral parameter $\nu$, the $d\times d$ Lax matrix
+$\mathsf L(\nu,t)$ in \cref{eq:canonical-pencil} has eigenvalue
+$\lambda$ and nonzero eigenvector $\psi\in\C^d$ when
 \begin{equation}\label{eq:geometry-eigenvalue}
  \mathsf L(\nu,t)\psi=\lambda\psi,\qquad \psi\ne0.
 \end{equation}
@@ -40,7 +49,7 @@ separates the local branches at singular points. We denote this smooth
 curve by $C$; its genus, rather than the degree of the determinant,
 is the genus relevant to the associated Abelian functions.
 
-\subsection{Branches at infinity and genus}
+\subsubsection{Branches at infinity and genus}
 
 Introduce a homogeneous coordinate $\tau$, with affine chart $\tau=1$.
 The projective equation and its restriction to the line at infinity are
@@ -109,31 +118,11 @@ the number of mode pairs is $p=G+(d-1)$, with $d-1$ independent
 power charges. The spectral curve supplies the remaining geometric
 part of that count.
 
-The regular locus is nonempty for every positive $L,M,N$, with
-phases allowed to vary. To see this, choose intercepts $e_h$ distinct
-within each group so that the lines
-$\lambda-e_h-s_h\nu=0$, $1\leq h\leq d$, have no triple affine
-intersection. Set $X=\diag(e_h)+\varepsilon A$, with zero diagonal
-blocks in $A$ and $A_{hi}A_{ih}\ne0$ between different groups.
-At $\varepsilon=0$ the curve is the union of these lines.
-Near an intersection of lines $h,i$ of different slopes, use their
-equations as local coordinates $x,y$. A Schur complement gives,
-up to a nonvanishing factor,
-\[
- xy-\varepsilon^2 A_{hi}A_{ih}
-   +O\bigl(\varepsilon^2x,\varepsilon^2y,\varepsilon^3\bigr).
-\]
-Its critical point has $x,y=O(\varepsilon^2)$, where the displayed
-nonzero quadratic term prevents a singularity for small nonzero
-$\varepsilon$. Blowing up the three infinity points separates their
-distinct tangent branches, which remain smooth. Compactness then
-excludes further singularities. On this blown-up surface the central
-fiber is a connected reduced union of lines, so nearby smooth fibers
-are connected, hence irreducible. Thus small generic couplings give
-regular curves. Smoothness and irreducibility are open conditions,
-so they hold on a nonempty Zariski-open subset of the parameter space.
+The regular locus is nonempty when phases and initial modes vary;
+Appendix~\ref{sec:geometry-details} proves this by smoothing a
+union of lines.
 
-\subsection{Which curves occur?}
+\subsubsection{Marked-curve characterization}
 
 The infinity branches provide a characterization in terms of marked
 points and meromorphic functions. Write their divisors as
@@ -172,46 +161,14 @@ of genus $G$, the following statements are equivalent.
  \end{equation}
 \end{enumerate}
 \end{theorem}
-\begin{proof}
-The implication from~1 to~2 follows from
-\cref{prop:geometry-genus}. The expansions
-\cref{eq:geometry-branches} give~3: subtracting or adding $\nu$
-cancels the pole on the indicated branch family. The two affine
-coordinates generate the function field because the plane model
-is birational to $C$.
+The equivalence is proved in Appendix~\ref{sec:geometry-details}.
+The marked functions specify the regular curve family at these sizes.
+Varying the phase coefficients and spectral integral values explores
+this family; each Hamiltonian trajectory preserves its own spectral
+curve. A prescribed curve of lower genus can occur at a special level,
+as described in \cref{sec:special-spectral-levels}.
 
-Conversely, the pole conditions in~3 imply that $\nu$ has exactly
-$d$ simple poles, one at each marked point. The functions
-$1,\lambda,\nu$ define a map to the plane with no base points:
-at each marked point at least one of $\lambda,\nu$ has a simple
-pole, and away from them the constant section is nonzero.
-The map is birational because $\lambda,\nu$ generate $\C(C)$.
-The image has degree $d$, since a generic linear combination of
-these three functions has $d$ poles. The three pole cancellations
-put the marked branches at $[1:1:0]$, $[-1:1:0]$, $[0:1:0]$.
-Their simple poles make the branches smooth and transverse to infinity.
-The genus assumption forces their total singularity defect to be
-exactly the sum in \cref{prop:geometry-genus}. Hence their tangents
-are distinct and there are no additional singularities, proving~2.
-
-Finally, a plane model in~2 can be reconstructed as a pencil
-$\mathsf X+\nu\mathsf D$. The spectral line-bundle construction
-\cite{Beauville1990} represents multiplication by $\lambda$ as an
-affine matrix function of $\nu$. Its leading matrix has eigenvalues
-$1,-1,0$, with multiplicities $L,M,N$. The distinct branch intercepts
-allow the three constant diagonal blocks to be diagonalized; the
-remaining six blocks are precisely the unrestricted mode blocks
-of \cref{eq:canonical-X}. Appendix~\ref{sec:geometry-converse}
-gives the construction, proving~1.
-\end{proof}
-
-The phase coefficients and initial modes range over the family in
-\cref{thm:geometry-classification}; each resulting Hamiltonian
-trajectory keeps those coefficients and its spectral curve fixed.
-The characterization specifies the plane presentation and marked
-functions required of a curve of genus $G$.
-
-\subsection{Covering degrees and hyperelliptic cases}
+\subsubsection{Covering degrees and hyperelliptic cases}
 
 The three cancellations in \cref{eq:geometry-poles} give maps to
 the projective line of degrees
@@ -229,28 +186,34 @@ A regular spectral curve of genus $G\geq2$ is hyperelliptic if and
 only if at least two of $L,M,N$ equal one. The case $L=M=N=1$
 has genus one.
 \end{proposition}
-\begin{proof}
+This criterion classifies the regular spectral curves at fixed matrix
+sizes. Hyperelliptic BA solutions also occur at special spectral levels
+when fewer than two of $L,M,N$ equal one. In particular, the
+genus-$g$ construction in \cref{sec:BA-realization} permits
+$L,M\geq g$ and $N=1$; for $g\geq2$, these hyperelliptic curves
+are smooth normalizations of special spectral levels of systems whose
+regular curves are non-hyperelliptic
+(\cref{sec:special-spectral-levels}).
+
 Two singleton groups give a degree-two map in
-\cref{eq:geometry-degrees}, proving sufficiency.
-For necessity, sort the three sizes as $a\leq b\leq c$ and
-suppose $b\geq2$. Two of the generating functions have degrees
-$a+b$ and $a+c$, and
-\[
- G-(a+c-1)=(a+b-2)c+(a-1)(b-2)>0.
-\]
-Both degrees are therefore at most $G$.
-On a hyperelliptic curve of genus $G$, every meromorphic function
-of degree at most $G$ factors through the degree-two hyperelliptic
-map. Indeed, otherwise that map and the function would generate
-the function field, and the Castelnuovo--Severi inequality would give
-$G\leq\deg(f)-1$; see \cite[Theorem~14]{KhawajaSiksek2024}.
-Both generating functions would thus belong to the rational
-function field of the hyperelliptic map, a contradiction.
-\end{proof}
+\cref{eq:geometry-degrees}. Appendix~\ref{sec:geometry-details}
+proves the converse using the covering degrees.
+For example, in the regular $(1,M,1)$ case the degree-two function
+$\lambda+\nu$ has pole divisor $Q_1+R_1$: its involution exchanges
+these points, so the BA puncture is not a branch point. The
+odd-degree specialization of \cref{sec:BA-realization} instead marks
+a Weierstrass point as its single puncture. Its conditions $L,M\geq g$
+come from interpolation at that marking, not from a restriction on
+all hyperelliptic spectral curves. The general residue criterion
+covers both settings; in the singleton group, the principal divisor
+of $\lambda+\nu$ supplies the required relation between the two
+holomorphic evaluation vectors.
+
+
 
 \noindent\begin{minipage}{\textwidth}
-For example, the following table lists the covering degrees from
-\cref{eq:geometry-degrees}, in increasing order.
+Examples of the covering degrees from \cref{eq:geometry-degrees},
+listed in increasing order, are
 \begin{center}
 \begin{tabular}{ccll}
  $(L,M,N)$ & $G$ & Covering degrees & Regular curve\\\hline
@@ -284,70 +247,48 @@ intercepts in \cref{eq:geometry-branches}. Consequently its genus is
  (L+N-1)(M+N-1)-N(N-1)=G.
 \]
 
-\subsection{A symmetric reduction and its Prym}
-\label{sec:geometry-prym}
+\subsection{Special spectral levels and reductions}
+\label{sec:special-spectral-levels}
 
-Extra symmetry of the modes can confine the divisor motion to a
-smaller Abelian variety inside the spectral Jacobian. For
-$L=M=s$, $N=1$, impose
-\begin{equation}\label{eq:geometry-fold}
- \mathsf B_L=\mathsf B_M,\qquad
- \boldsymbol u=\boldsymbol u^{\trans},\qquad
- \bar{\boldsymbol u}=(\bar{\boldsymbol u})^{\trans},\qquad
- \boldsymbol w=\boldsymbol v^{\trans},\qquad
- \bar{\boldsymbol w}=(\bar{\boldsymbol v})^{\trans}.
-\end{equation}
-Here bars on matrices label the independent partner arrays;
-$\trans$ is ordinary transpose. The equations in \cref{eq:canonical-matrix-rates}
-preserve these constraints. The restricted symplectic form is
-nondegenerate, with $s$ vector-mode pairs and $s(s+1)/2$ symmetric
-matrix-mode pairs. Constant rescalings put it in canonical form.
+We explain how special integral values and mode constraints change the
+regular geometry, so that lower-genus BA curves and symmetric
+reductions can be located within the same Hamiltonian family.
 
-The resulting pencil satisfies a transpose symmetry giving
-\begin{equation}\label{eq:geometry-involution}
- F(\lambda,\nu)=F(\lambda,-\nu),\qquad
- \iota:C\longrightarrow C,\quad
- \iota(\lambda,\nu)=(\lambda,-\nu).
-\end{equation}
-Assume the curve is regular and $F(\lambda,0)$ has distinct roots.
-Its genus is $s^2$. The involution has $2s+1$ fixed points over
-$\nu=0$ and one at the central infinity branch; it exchanges the
-other two infinity groups. Riemann--Hurwitz therefore gives
-\begin{equation}\label{eq:geometry-prym-dimensions}
- g(C/\iota)=\frac{s(s-1)}2,\qquad
- \dim\operatorname{Prym}(C/(C/\iota))=\frac{s(s+1)}2.
-\end{equation}
-The Prym is the identity component of the kernel of the norm map
-$\operatorname{Jac}(C)\to\operatorname{Jac}(C/\iota)$; it describes
-the divisor classes reversed by $\iota$
-\cite[\S3.1]{BradlowSchaposnik2016}.
-For this reduction, the moving eigenvector-divisor class lies in a
-translate of the Prym. Appendix~\ref{sec:geometry-prym-proof}
-proves this assertion from the pencil's transpose symmetry.
-
-For $s=2$, there are five canonical pairs: the spectral curve has
-genus four, its quotient is elliptic, and the reduced divisor motion
-has three Prym coordinates. Two mode-gauge directions complete the
-count of five. More generally, the count is
-$s(s+3)/2=s+\dim\operatorname{Prym}(C/(C/\iota))$.
-This family illustrates how a spectral involution reduces the
-Abelian variety carrying the motion, even when the spectral curve
-itself is non-hyperelliptic.
-
-\subsection{Special spectral levels}
+\subsubsection{Special spectral levels}
 
 Keep the phase coefficients distinct within each group and suppose
 the plane curve remains irreducible. If particular integral values
-create affine singularities, its normalization has genus
+create affine singularities, the standard genus--delta formula for
+normalization gives
 \begin{equation}\label{eq:geometry-special-genus}
  g(C)=G-\sum_{P\in\operatorname{Sing}_{\mathrm{aff}}(F)}\delta_P.
 \end{equation}
-The sum runs over all affine singular points; $\delta_P$ is their
-local genus defect, equal to one at an ordinary node.
+Here $C$ is the smooth normalization of the plane spectral curve
+$F(\lambda,\nu)=0$, $g(C)$ is its genus, and $G$ is the regular genus
+in \cref{eq:geometry-genus}. The set
+$\operatorname{Sing}_{\mathrm{aff}}(F)$ consists of its affine singular
+points, and $\delta_P$ is the local genus defect at $P$, equal to one
+at an ordinary node.
 Thus the sizes determine the regular genus, while the spectral
 integrals determine whether a particular level has lower genus.
 Coincident phase coefficients can also change the infinity
 singularities and require their defects to be recomputed.
 
-For prescribed BA realizations, \cref{prop:BA-prescribed-spectral-curve}
-identifies the normalization and the total genus defect explicitly.
+For birational prescribed BA realizations,
+\cref{prop:BA-prescribed-spectral-curve} identifies the prescribed smooth
+curve with the normalization and gives the total excess defect $G-g$.
+For example, the $(L,M,N)=(3,3,1)$ system has regular genus nine,
+whereas the genus-three trigonal realization in
+\cref{sec:numerical-validation} has excess defect six. The additional
+singularities belong to its plane spectral image; the prescribed BA
+curve is its smooth normalization.
+
+\subsubsection{A symmetric reduction and its Prym}
+
+A symmetric reduction with $L=M=s$, $N=1$ gives an involution
+$\iota(\lambda,\nu)=(\lambda,-\nu)$. The moving divisor then
+lies in a translate of its Prym, the connected part of the Jacobian
+reversed by $\iota$. On a regular level the curve has genus $s^2$,
+and the Prym has dimension $s(s+1)/2$.
+Appendix~\ref{sec:geometry-prym-proof} gives the mode constraints,
+the dimension count and the eigenvector-divisor proof.

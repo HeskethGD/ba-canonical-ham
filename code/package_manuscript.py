@@ -15,9 +15,16 @@ PAPER = ROOT/'latex'
 def sync_figures():
     target = PAPER/'figures'
     target.mkdir(exist_ok=True)
-    for kind in ['hyperelliptic', 'trigonal']:
-        name = f'{kind}_sigma_ba.pdf'
-        shutil.copy2(ROOT/'code/figures'/name, target/name)
+    for name in ['hyperelliptic_sigma_ba.pdf', 'trigonal_sigma_ba.pdf',
+                 'multipoint_genus2_ba.pdf']:
+        source = ROOT/'code/figures'/name
+        destination = target/name
+        # Preserve the reviewed figure when only PDF timestamps differ.
+        dates = rb'/(?:CreationDate|ModDate)\s*\([^)]*\)'
+        if destination.exists() and re.sub(dates, b'', source.read_bytes()) == re.sub(
+                dates, b'', destination.read_bytes()):
+            continue
+        shutil.copy2(source, destination)
 
 
 def package():

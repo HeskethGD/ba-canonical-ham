@@ -1,0 +1,107 @@
+\section{Comparison with Adams, Harnad and Hurtubise}
+\label{sec:AHH-dictionary}
+
+We record the source and BA evaluation dictionaries to make the
+quartic--cubic correspondence of \cref{sec:AHH-comparison} explicit.
+
+We use the polynomial-flow convention of
+\cite[equation (2.1)]{AdamsHarnadHurtubise1990II}. Their matrix size
+$r$ is our $d=L+M+N$, and we take polynomial degree one. After
+translating a single source pole to the origin, write
+\begin{equation}\label{eq:AHH-source-flow}
+ \widehat{\mathsf L}(\nu)=\widehat{\mathsf X}+\nu\mathsf D,
+ \qquad
+ \frac{d\widehat{\mathsf L}}{d\upsilon}
+   =[\widehat{\mathsf B},\widehat{\mathsf L}],\qquad
+ \widehat{\mathsf B}
+   =(\widehat{\mathsf L}^{,2}/\nu)_+
+   =\nu\mathsf D^2+\mathsf D\widehat{\mathsf X}
+                           +\widehat{\mathsf X}\mathsf D.
+\end{equation}
+The subscript $+$ means the polynomial part in $\nu$.
+The source complex time is $\upsilon=it$, followed by conjugation
+by $e^{-it\mathsf K_{\rm ph}}$. Equivalently, in the physical
+quartic convention \cref{eq:AHH-parent-rates}, set $s=-t$.
+The time matrix of our pencil is
+\begin{equation}\label{eq:AHH-source-time}
+ \mathsf T=\mathsf B-\mathsf K_{\rm ph}-\nu\Id_d.
+\end{equation}
+The scalar last term does not affect the commutator. The blocks of
+$\mathsf X$ are exactly those of \cref{eq:canonical-X}; explicitly,
+\[
+ u_{\ell m}=X_{\ell,L+m}/\sqrt2,\quad
+ \bar u_{\ell m}=X_{L+m,\ell}/\sqrt2,\quad
+ v_{mn}=X_{L+m,L+M+n},\quad
+ \bar v_{mn}=-X_{L+M+n,L+m},
+\]
+\[
+ w_{n\ell}=-X_{L+M+n,\ell},\qquad
+ \bar w_{n\ell}=X_{\ell,L+M+n},
+ \qquad1\leq\ell\leq L,\ 1\leq m\leq M,\ 1\leq n\leq N.
+\]
+This gives the dictionary for unequal sizes and for $N>1$ without
+changing the matrix evolution. In the moment-map convention
+$\mathsf X=-\mathsf G^{\trans}\mathsf F$, reversing the sign of the
+source bilinear matrix reverses the corresponding spectral ordinate.
+
+\subsection*{The BA evaluation map}
+
+Sections 2c--2g and 4 of \cite{AdamsHarnadHurtubise1990II} reconstruct
+the polynomial matrix and its canonical lift from a line bundle on
+the normalized curve. The normalized sections in equations
+(4.17), (4.21)--(4.22) and (4.25)--(4.26), evaluated by
+(2.24)--(2.25), yield the following concrete comparison. Use a single
+source pole with a complete regular fiber of $d$ points and an
+adapted row basis for its full-rank moment level. In the plus
+convention $\mathsf B=\mathsf G^{\trans}\mathsf F$, take
+\[
+ \mathsf Y=-\mathsf D,\qquad
+ \mathsf L_{\rm src}=(\Lambda-\alpha)\mathsf Y+\mathsf B,
+ \qquad \det(W\Id_d-\mathsf L_{\rm src})=0.
+\]
+Let $R(P)$ denote the common fixed meromorphic section appearing in
+the source theta formulas; it has simple zeros at the infinity
+points $P_h$. Put $T(P)=(\Lambda(P)-\alpha)R(P)$, whose zeros
+are the fiber points $Q_i$. In compatible fixed local frames,
+with $R'_h=\partial_{t_h}R(P_h)$ and
+$\Lambda'_i=\partial_{s_i}\Lambda(Q_i)$, their evaluation formulas
+become
+\begin{equation}\label{eq:AHH-evaluation-dictionary}
+ F_{ih}=\frac{R(Q_i)}{R'_h}\mathscr S_z(Q_i,P_h),\qquad
+ G_{ih}=\frac{W(Q_i)R'_h}{\Lambda'_iR(Q_i)}
+                 \mathscr S_z(P_h,Q_i),\quad1\leq i,h\leq d.
+\end{equation}
+Here fixed exponential BA gauges have been suppressed. They cancel
+at the intermediate point and leave the endpoint difference rate
+in each product. The source row-moment eigenvalues are $W(Q_i)$.
+Since $\partial_{s_i}T(Q_i)=\Lambda'_iR(Q_i)$ and $T(P_h)=R'_h$,
+\cref{eq:AHH-fiber-convolution} gives
+\begin{equation}\label{eq:AHH-BA-projection}
+ B_{hk}=\frac{R'_h}{R'_k}(y_h-y_k)\mathscr S_z(P_h,P_k)
+ \quad(h\ne k),\qquad B_{hh}=c_h.
+\end{equation}
+Thus a fixed diagonal similarity removes $R'_h/R'_k$ and the
+bilinear sums become single endpoint BA ratios. Here $\mathsf B=-\widehat{\mathsf X}$ and
+$\mathsf L_{\rm src}=-\widehat{\mathsf L}$, with
+$\nu=\Lambda-\alpha$; hence its ordinate is the negative of
+that for $\widehat{\mathsf L}$. This fixes both the leading-matrix
+and ordinate signs in converting the plus moment map to our minus
+convention. Within a repeated-slope group
+$y_h=y_k$, so its off-diagonal entries vanish in this adapted basis;
+the constants $c_h$ supply its diagonal entries. Normalization
+separates the infinity branches even when leading slopes repeat.
+
+Choose $\alpha$ away from the BA essential fiber so that these are
+regular evaluations. Translating the source spectral coordinate
+changes the polynomial generator only by a constant diagonal term:
+\[
+ (\mathsf L_{\rm src}^{,2}/(\Lambda-\alpha))_+
+ -(\mathsf L_{\rm src}^{,2}/\Lambda)_+=\alpha\mathsf Y^2=\alpha\mathsf D^2.
+\]
+Its effect is another fixed diagonal phase conjugation. These
+formulas apply on the regular spectral locus with an unramified
+chosen fiber and nonspecial evaluation data. They identify the
+quartic lift and the cubic realization at the equation and BA
+function levels; the finite prescribed-point interpolation and
+completion criterion of \cref{thm:general-BA-realization,cor:BA-finite-list}
+are developed directly in this paper.

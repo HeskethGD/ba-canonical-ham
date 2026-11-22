@@ -1,0 +1,42 @@
+{
+  "genus": 2,
+  "L_M_N": [
+    4,
+    4,
+    1
+  ],
+  "canonical_pairs": 24,
+  "dps": 36,
+  "generapy_version": "0.3.0",
+  "prescribed_weights": [
+    "2/7",
+    "-3/8"
+  ],
+  "completed_weights": [
+    "2/7",
+    "-453/364",
+    "321/364",
+    "1/13",
+    "-3/8",
+    "1/13",
+    "23/104",
+    "1/13"
+  ],
+  "all_new_weights_nonzero": true,
+  "exact_moment_equations": true,
+  "all_48_mode_rate_error": "8.49910315219422419341801882816840365e-35",
+  "compatible_phase_variation": "5.19485133881452964060652760705719241e-34",
+  "incompatible_cases": [
+    {
+      "perturbed_group": "L",
+      "mode_rate_residual": "0.408011533006780554573567160136158672",
+      "required_phase_variation": "0.4283294275368525141480620662424271"
+    },
+    {
+      "perturbed_group": "M",
+      "mode_rate_residual": "0.388695628237586866880364364496847863",
+      "required_phase_variation": "12.929656214990933080780608967478602"
+    }
+  ],
+  "scope": "A positive-genus completion and two negative fixtures; not a numerical proof of necessity."
+}

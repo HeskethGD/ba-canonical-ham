@@ -8,7 +8,7 @@ now `latex/`.
 Install the root [`requirements.txt`](../requirements.txt) before running
 the checks, including when updating an existing environment. The supported
 Generapy version is pinned there; the spectral BA checks use its public
-`baker_akhiezer` API. See the root [setup instructions](../README.md#python-environment)
+`baker_akhiezer` API. See the root [setup instructions](../README.md#installation)
 and [validation record](../VALIDATION.md) for the tested versions and results.
 The commands below use `.venv/bin/python`; substitute your environment's
 Python if it has another name.
@@ -20,6 +20,7 @@ Python if it has another name.
 .venv/bin/python code/run_checks.py --suite symbolic
 .venv/bin/python code/run_checks.py --suite sigma
 .venv/bin/python code/run_checks.py --suite diagnostics
+.venv/bin/python code/run_checks.py --suite multipoint
 .venv/bin/python code/run_checks.py --suite all
 ```
 
@@ -42,9 +43,10 @@ dependencies. The mathematical proofs are in the manuscript.
 | Script | Purpose |
 | --- | --- |
 | `latex_final_section2_checks.py` | Symbolic Hamilton equations, matrix bracket, phase gauges, trace identities and the Jiang–Rauch-Wojciechowski dictionary. Uses geometric unit brackets; the physical conversion is checked separately. |
+| `mcl_jrw_matrix_embedding.py` | Exact restricted-star canonical dictionary and arbitrary-phase three-block reduction of Menyuk–Chen–Lee equation (2.13), supporting the MCL appendix. |
 | `physical_hamiltonian_convention_checks.py` | Physical `-i` convention, Hamiltonian finite differences, Lax equations and complex-conjugate real form. |
 | `latex_final_spectral_flows_checks.py` | Polynomial higher-flow time matrices and quartic interaction expansion. |
-| `jrw_three_group_integral_count.py` | Distinct-phase spectral-evaluation and spanning-tree independence witnesses, supporting Appendix B. |
+| `jrw_three_group_integral_count.py` | Distinct-phase spectral-evaluation and spanning-tree independence witnesses, supporting the distinct-phase integral appendix. |
 | `jrw_repeated_phase_general.py` | Exact finite-field ranks and evaluated Poisson brackets for spectral plus principal-moment families. |
 | `jrw_phase_cluster_insertion.py` | Induction insertion blocks, elimination identities and moment increments, supporting the complete count. |
 | `real_forms_regular_locus_checks.py` | Signed real-form identities and local node-smoothing coefficients. |
@@ -65,6 +67,24 @@ dependencies. The mathematical proofs are in the manuscript.
 | `mumford_core_comparison.py` | Classical Mumford brackets, spectral coefficients and divisor flow, supporting Section 6. This does not assert a Poisson equivalence with the full canonical network. |
 | `package_manuscript.py` | Synchronize figures and build the source submission ZIP. |
 
+The `multipoint` suite includes the following additional checks:
+
+| Script | Purpose |
+| --- | --- |
+| `multipoint_BA_network_check.py` | Exact rational L=M=N=2 BA kernel, interpolation, phase conversion and all 24 rates. |
+| `multipoint_BA_elliptic_check.py` | Generapy 0.3.0 theta jets: elliptic two-puncture basis, all rates, left/right spectral eigenvectors and normalized bilinear kernel. |
+| `matrix_kp_hierarchy_check.py` | Genus-two second matrix-KP time: ordinary, dual and kernel equations, canonical spectral-plus-gauge rates, and symbolic source brackets. |
+| `ba_completion_compatibility_check.py` | Genus-two completion preserving prescribed point weights, all 48 canonical rates, and rejection of perturbed weights requiring nonconstant phases. |
+| `ba_repeated_phase_converse_check.py` | Direct repeated-phase (1,1,3) initial modes, exact active reduction, elliptic BA reconstruction and restoration, and independent Hamiltonian RK4 refinement. |
+| `multipoint_higher_flow_check.py` | Finite-part BA times and vertex phases against independent shifted cubic/quartic trace fields. |
+| `multipoint_repeated_phase_moments.py` | Exact conservation of all three quadratic moments under the cubic and higher trace flows. |
+| `generate_multipoint_validation_table.py` | Generates the additional manuscript residual table and divisor values from the stored higher-flow JSON. |
+
+The last script is a table generator rather than a suite check. The complete
+suite now has 33 scripts. The multipuncture wrappers use the existing
+public theta jets; no changes to Generapy are required. A native convenience
+API assembling general multipoint bases is not assumed.
+
 `support/` contains only the symbolic pencil constructor, the exact
 genus-two mode embedding and the numerical matrix reference required
 by these checks. It does not import another repository or historical
@@ -83,3 +103,84 @@ The global sigma scale cancels in the reference-normalized ratios.
 The exponent rate, Abel basis and lift still need to be mutually
 compatible. Sigma calculations use multiprecision arithmetic, while
 the assembled example modes and standard RK4 solver use complex128.
+
+### Quartic-to-cubic comparison
+
+Run `python code/run_checks.py --suite ahh` to check the quartic canonical
+parent, the arbitrary-size block/time/phase dictionary, the induced and
+frozen matrix brackets, and complete-fiber BA convolution. The first
+three scripts use exact SymPy algebra; the last uses an independent
+55-digit elliptic theta calculation with a complete regular fiber.
+Reports are stored in `code/results/ahh_*.json`.
+
+### Genus-two two-puncture construction
+
+`multipoint_BA_genus2_check.py` constructs ordinary and dual reference
+sections algebraically on a smooth genus-two curve. Generapy 0.3.0
+provides the periods, Abel maps and complete first-order theta jets.
+The fixed algebraic data are initialized once; each evaluation returns
+all modes and their analytic time derivatives.
+
+With `--numerics`, it compares both the cubic flow and a fourth-trace
+flow with independent RK4 integration, monitors Hamiltonian, power
+charges and shifted spectral traces, and writes the single-page
+black-and-white figure. Use `generate_genus2_multipoint_table.py` to
+regenerate its manuscript table from the stored numerical report.
+The `.npz` trajectory record contains both sparse analytic samples
+and dense RK4 samples; no new BA evaluator is implemented.
+
+The precision check is reproducible with:
+
+```sh
+python code/multipoint_BA_genus2_check.py --dps 40 --output code/results/multipoint_BA_genus2_precision40.json
+```
+
+### Reconstruction from canonical initial modes
+
+`ba_genus2_converse_check.py` starts from a specified generic complex
+(1,1,2) launch. SymPy computes its characteristic curve and checks its
+sextic discriminant is square-free. Adjugate contractions recover the
+ordinary and dual BA divisors. Algebraic reference sections recover all
+ten initial modes before any theta evaluation; public Generapy periods,
+Abel maps and theta jets then give the full time evolution.
+
+```sh
+python code/ba_genus2_converse_check.py --numerics
+python code/generate_converse_validation_table.py
+```
+
+The resulting genus is the generic network genus two. This is a converse
+test, unlike examples launched from prescribed BA data. The default
+command performs the reconstruction and analytic rate checks; `--numerics`
+also compares with independent RK4 integration.
+
+`independent_elliptic_theta_check.py` checks public Generapy theta jets
+and ratios against mpmath's Jacobi theta implementation. This backend
+is for independent validation only and is not used by the BA plots.
+
+### Completion and repeated-phase reconstruction
+
+`ba_completion_compatibility_check.py` retains one prescribed point and
+weight per group and adjoins three points to each on a genus-two curve.
+It solves the moment equations exactly with nonzero new weights, then
+checks all 48 canonical rates using public Generapy BA jets. Perturbing
+either group's weights must yield a nonzero residual and incompatible
+constant phases across the sampled states.
+
+`ba_repeated_phase_converse_check.py` starts from rational canonical
+(1,1,3) modes with a repeated third-group phase. The conserved block
+moment determines a constant canonical basis and one inactive direction.
+The active (1,1,2) pencil normalizes to a smooth elliptic curve. The check
+recovers both BA divisors and the initial modes algebraically, evaluates
+the BA evolution with Generapy theta jets, restores all original modes,
+and compares them with direct Hamiltonian RK4 integration at two step sizes.
+This checks one active-reduction profile, not arbitrary phase clusters.
+
+```sh
+python code/ba_completion_compatibility_check.py
+python code/ba_repeated_phase_converse_check.py
+```
+
+The repeated-phase rank checker enforces the full spectral-plus-moment
+rank. The al-function and higher-flow diagnostics also enforce residual
+tolerances; a printed discrepancy cannot silently pass those checks.

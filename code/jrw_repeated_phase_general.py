@@ -109,7 +109,7 @@ def check(sizes, pattern="source", seed=913):
     poisson=(mm((R[:,:p]*weights) % PRIME,R[:,p:].T)
              -mm((R[:,p:]*weights) % PRIME,R[:,:p].T)) % PRIME
     assert not np.any(poisson), (sizes,pattern,"noncommuting candidate gradients")
-    assert len(basis)<=p
+    assert len(basis)==p, (sizes,pattern,"incomplete spectral-plus-moment family",len(basis),p)
     orbit_half_dimensions=[]
     for cluster in clusters:
         r=len(cluster)

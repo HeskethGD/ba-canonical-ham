@@ -2,31 +2,39 @@
 \label{app:BA-active-converse}
 
 This appendix supplies the regularity step in
-\cref{thm:BA-spectral-converse}. Throughout, $N=1$ and the two
-phase lists are fixed, with arbitrary repetitions. A change of basis
-is allowed only inside an equal-phase block; it then preserves both
-the Hamiltonian and the fixed phase coefficients.
+\cref{thm:BA-spectral-converse} for arbitrary positive $L,M,N$ and
+every fixed phase profile. Bases may change only within equal-phase
+blocks, preserving the canonical bracket and Hamiltonian.
 
 \subsection{Constant canonical bases and inactive directions}
 
-For constant invertible block-diagonal matrices $\mathsf S_L,\mathsf S_M$ respecting
-the phase lists, the coordinate changes
+For constant invertible matrices $\mathsf S_L,\mathsf S_M,\mathsf S_N$
+respecting the phase blocks, the canonical transformations are
 \begin{equation}\label{eq:BA-block-bases}
 \begin{aligned}
- \boldsymbol\xi_L&\mapsto \mathsf S_L^{-\trans}\boldsymbol\xi_L,&
- \bar{\boldsymbol\xi}_L&\mapsto \mathsf S_L\bar{\boldsymbol\xi}_L,\\
- \boldsymbol\xi_M&\mapsto \mathsf S_M\boldsymbol\xi_M,&
- \bar{\boldsymbol\xi}_M&\mapsto \mathsf S_M^{-\trans}\bar{\boldsymbol\xi}_M,\\
- \boldsymbol\xi_{LM}&\mapsto \mathsf S_L\boldsymbol\xi_{LM}\mathsf S_M^{-1},&
- \bar{\boldsymbol\xi}_{LM}&\mapsto \mathsf S_L^{-\trans}\bar{\boldsymbol\xi}_{LM}\mathsf S_M^{\trans}
+ \boldsymbol u&\mapsto\mathsf S_L\boldsymbol u\mathsf S_M^{-1},&
+ \bar{\boldsymbol u}&\mapsto\mathsf S_L^{-\trans}\bar{\boldsymbol u}\mathsf S_M^{\trans},\\
+ \boldsymbol v&\mapsto\mathsf S_M\boldsymbol v\mathsf S_N^{-1},&
+ \bar{\boldsymbol v}&\mapsto\mathsf S_M^{-\trans}\bar{\boldsymbol v}\mathsf S_N^{\trans},\\
+ \boldsymbol w&\mapsto\mathsf S_N\boldsymbol w\mathsf S_L^{-1},&
+ \bar{\boldsymbol w}&\mapsto\mathsf S_N^{-\trans}\bar{\boldsymbol w}\mathsf S_L^{\trans}.
 \end{aligned}
 \end{equation}
-are canonical and preserve \cref{eq:BA-H0-flat}. The corresponding
-block moments transform by conjugation. Since they are conserved,
-their diagonalizing bases can be chosen once at the initial time.
+They conjugate the pencil by the corresponding three-block matrix.
+For an equal-phase block $B$ in group $A$, the conserved moment is
+\[
+ \mathsf Q_B=\sum_{\substack{h=1\\h\ne A}}^{3}
+ \frac{\mathsf X_{B,h}\mathsf X_{h,B}}{d_A-d_h},\qquad
+ (d_1,d_2,d_3)=(1,-1,0).
+\]
+Here $\mathsf X_{B,h}$ has rows in $B$ and columns in the entire
+$h$th group. Conservation follows from the moment map of the block
+conjugation symmetry; these moments also give the second-order
+spectral corrections at infinity. Their diagonalizing bases are
+therefore constant in time.
 
 For a block of size $r$, let $n$ be the number of outside directions:
-$n=M+1$ in the first group and $n=L+1$ in the second. Absorbing the
+$n=M+N$, $L+N$ or $L+M$ in the three groups respectively. Absorbing the
 nonzero slope denominators into the incoming couplings writes its
 moment as $\mathsf F\mathsf G$, with $\mathsf F$ of size $r\times n$ and $\mathsf G$ of size
 $n\times r$. If $r>n$, then generically $\mathsf G\mathsf F$ is invertible and
@@ -39,7 +47,7 @@ directions in the second summand have zero incoming and outgoing
 couplings. They stay zero and contribute only the spectral factor
 $(\lambda-e_B-s_B\nu)^{r-n}$, where $e_B,s_B$ are their intercept
 and slope. Delete them and repeat. The process terminates with
-positive active dimensions $L_a,M_a$ such that every remaining block
+positive active dimensions $L_a,M_a,N_a$ such that every remaining block
 has size at most its number of outside directions. Inverse basis
 changes restore all original coordinates.
 
@@ -57,17 +65,22 @@ normalization has distinct resolved infinity branches and nonspecial
 scalar BA divisors. Each active moment block has simple nonzero
 spectrum. The normalization genus is
 \begin{equation}\label{eq:BA-active-genus}
- G_a=L_aM_a
- -\sum_{B\in\mathcal B_L}\frac{|B|(|B|-1)}2
- -\sum_{B\in\mathcal B_M}\frac{|B|(|B|-1)}2,
+ G_a=L_aM_a+M_aN_a+N_aL_a-L_a-M_a-N_a+1
+ -\sum_{h=1}^{3}\sum_{j=1}^{m_h}
+       \frac{|B_{h,j}|(|B_{h,j}|-1)}2,
 \end{equation}
-where $\mathcal B_L,\mathcal B_M$ are the partitions into equal-phase
-blocks of the active groups.
+where $B_{h,1},\ldots,B_{h,m_h}$ are the equal-phase blocks in active
+group $h$. The ordinary and dual multipoint divisors have degree
+$G_a+N_a-1$ and give normalized bases of $N_a$ sections.
 \end{proposition}
 
 \begin{proof}
 We check the affine curve, its connectivity, and its infinity data
-separately. For a block of size $r\leq n$, the product $\mathsf F\mathsf G$ can have
+separately. Generic smoothness and the spectral line-bundle
+correspondence are standard \cite{Hartshorne1977,Beauville1990,AdamsHarnadHurtubise1990II}.
+Explicit coupling and insertion arguments verify their
+regularity hypotheses uniformly for the fixed repeated-phase profiles
+of this mode space. For a block of size $r\leq n$, the product $\mathsf F\mathsf G$ can have
 arbitrary distinct nonzero eigenvalues: choose $\mathsf F$ to select $r$
 outside directions and $\mathsf G$ to give a prescribed diagonal product.
 Thus maximal coupling ranks and simple nonzero moment spectra are
@@ -100,20 +113,20 @@ corank-one determinant hypersurface is smooth, and generic smoothness
 of its projection to parameter space gives smooth affine fibers
 \cite[Chapter~III]{Hartshorne1977}.
 
-For irreducibility, insert one index at a time, always keeping a
-block's size at most its current outside dimension. Such an order
-exists: if both groups had pending indices and neither insertion
-were possible, the saturated blocks would imply both
-$L_{\rm cur}\geq M_{\rm cur}+1$ and
-$M_{\rm cur}\geq L_{\rm cur}+1$. If only one group has pending
-indices, the final block-size bound allows its next insertion.
-The $(1,1)$ base has an irreducible specialization
+For irreducibility, insert one index at a time while a block's
+size remains at most its outside dimension. Such an order exists.
+Two blocked groups would have current sizes satisfying, after
+relabeling, $L_{\rm cur}\geq M_{\rm cur}+N_{\rm cur}$ and
+$M_{\rm cur}\geq L_{\rm cur}+N_{\rm cur}$, impossible because the
+third group is positive. If only one group has pending indices,
+its final active bound permits the next insertion.
+The $(1,1,1)$ base has an irreducible specialization
 \[
- (\lambda-\rho)(\lambda-\nu-e_L)(\lambda+\nu-e_M)-\delta_0=0,
+ (\lambda-e_N)(\lambda-\nu-e_L)(\lambda+\nu-e_M)-\delta_0=0,
  \qquad \delta_0\ne0.
 \]
 As a quadratic in $\nu$ its discriminant has an odd pole at
-$\lambda=\rho$, so is not a square.
+$\lambda=e_N$, so is not a square.
 
 For an insertion, at zero new outgoing coupling the characteristic
 polynomial is $\ell F_{\rm old}$, with
@@ -140,8 +153,12 @@ A factorization deforming the coprime monic factors
 $\ell,F_{\rm old}$ would force the first perturbation into
 $(\ell,F_{\rm old})$, hence to vanish at every intersection.
 This obstruction also excludes a factorization after finite algebraic
-parameter extension. Indeed, put $\varepsilon=\tau^k$ and suppose
-monic factors specialize to $\ell$ and $F_{\rm old}$. Write them as
+parameter extension. Monicity and Gauss's lemma keep the factor coefficients integral
+at $\varepsilon=0$. After a finite ramified parameter change they
+admit power-series expansions. Put $\varepsilon=\tau^k$ and suppose
+monic factors specialize to $\ell$ and $F_{\rm old}$. These are the
+only nontrivial special factors, and monicity preserves their positive
+$\lambda$-degrees under specialization. Write them as
 \[
  G=\ell+\sum_{m\geq1}\tau^m a_m,\qquad
  J=F_{\rm old}+\sum_{m\geq1}\tau^m b_m,
@@ -167,23 +184,33 @@ eigenvalues $\vartheta_i$ give the infinity expansions
 Branches in different phase blocks of one group have contact order
 one, and those in the same block have contact order two. They are
 distinct smooth points on the normalization. Counting these contacts
-relative to the distinct-phase genus $L_aM_a$ gives
-\cref{eq:BA-active-genus}. The singleton point remains smooth.
+relative to the distinct-phase genus $L_aM_a+M_aN_a+N_aL_a-L_a-M_a-N_a+1$ gives
+\cref{eq:BA-active-genus}. The same calculation includes the resolved branches in the third group.
 
-In the moment eigenbasis the leading spectral eigenvectors at infinity
-form an invertible basis. The eigenline module is therefore saturated
-on the normalization, including these tangent plane branches. Its
-pushforward under $\nu$ is the original trivial bundle of rank
-$L_a+M_a+1$. The line-bundle degree, last-component zeros and exact
-sequence argument in \cref{thm:BA-spectral-converse} apply with genus
-$G_a$, giving degree-$G_a$ nonspecial scalar divisors. The bilinear
-kernel and differential \cref{eq:BA-converse-duality} have the same
-divisor and puncture properties, so all reconstruction formulas apply.
+For the eigenline step set $t=1/\nu$ and consider the analytic
+matrix $\mathsf D+t\mathsf X$. Slopes split at order zero, distinct
+intercepts at order $t$, and moment eigenvalues at order $t^2$ within
+an equal-phase block. In the fixed moment basis the resolved
+analytic eigenvectors form a matrix $\mathsf V(t)$ with invertible
+$\mathsf V(0)$. Thus the branch modules at infinity are identified
+with the original free matrix module by an invertible analytic
+matrix. At finite points the smooth affine curve has corank one,
+so its spectral module is already a line bundle. The normalized
+component line bundle consequently has pushforward
+$\mathcal O^{L_a+M_a+N_a}$.
+
+Subtract the complete infinity fiber to obtain a bundle $\mathscr E$
+with pushforward $\mathcal O(-1)^{L_a+M_a+N_a}$; both its zeroth
+and first cohomology vanish. Adding the $N_a$ punctures gives the
+exact leading-value isomorphism
+$H^0(\mathscr E(\sum_{k=1}^{N_a}R_k))\simeq\C^{N_a}$.
+Its degree is $G_a+N_a-1$, and the transpose module gives the dual
+statement. These are precisely the nonspecial multipoint bases and
+kernel required in \cref{thm:BA-spectral-converse}.
 \end{proof}
 
-The original elementary coordinates are thus constant linear
-combinations of the scalar BA evaluations in the active basis; the
-pair matrix and its partner transform on both sides as in
-\cref{eq:BA-block-bases}. This handles generic initial modes for
-every fixed phase list. Additional singular spectral levels and
-nonsemisimple moment specializations require separate limiting data.
+The original coordinates are restored by the constant canonical
+bases \cref{eq:BA-block-bases}; individual entries may therefore be
+linear combinations of the active BA evaluations. This handles
+generic initial modes for every fixed phase profile. Singular levels
+and nonsemisimple moment specializations need additional limiting data.
