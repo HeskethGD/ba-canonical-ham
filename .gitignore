@@ -1,6 +1,7 @@
 .venv/
 .venv-generapy/
 .venv-generapy-release/
+.venv-generapy-030/
 __pycache__/
 *.py[cod]
 .DS_Store

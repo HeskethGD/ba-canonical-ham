@@ -79,7 +79,7 @@
       "(1.159244454975756175470343687524873465057 - 3.686064208206982963639302574754486853997j)"
     ]
   ],
-  "generapy_version": "0.2.0",
+  "generapy_version": "0.3.0",
   "reference_eigenline_and_kernel_error": "5.81230529585566042263863994022673824995e-41",
   "all_ten_mode_rate_error": "3.942890663055852785626654506897861568694e-40",
   "normalized_Abel_direction": [

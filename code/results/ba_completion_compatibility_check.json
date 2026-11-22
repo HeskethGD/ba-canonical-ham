@@ -7,7 +7,7 @@
   ],
   "canonical_pairs": 24,
   "dps": 36,
-  "generapy_version": "0.2.0",
+  "generapy_version": "0.3.0",
   "prescribed_weights": [
     "2/7",
     "-3/8"

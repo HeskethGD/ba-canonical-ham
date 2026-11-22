@@ -1,0 +1,107 @@
+{
+  "generapy_version": "0.3.0",
+  "baseline_generapy_version": "0.2.0",
+  "baseline_project_commit": "52b42f32e890cf5e409c07db17c89ee84f0ac16c",
+  "python_version": "3.14.7",
+  "platform": "Darwin arm64",
+  "dependencies": {
+    "sympy": "1.15.0.dev0",
+    "mpmath": "1.4.1",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2"
+  },
+  "generapy_editable_or_vcs_install": false,
+  "published_wheel": "generapy-0.3.0-py3-none-any.whl",
+  "published_wheel_sha256": "cfac81a9d0e117d7a7fbaf9cf2113599fed1e6e6e8fc625fdee0685978277643",
+  "pip_check_passed": true,
+  "full_suite_scripts_passed": 33,
+  "all_examples_regenerated": true,
+  "genus_two_precision40_regenerated": true,
+  "comparison": {
+    "code/results/hyperelliptic_sigma_ba.npz": {
+      "all_arrays_exactly_equal": true,
+      "arrays": [
+        "analytic_t",
+        "ode_t",
+        "BA",
+        "ODE",
+        "weights",
+        "phases",
+        "z0"
+      ]
+    },
+    "code/results/multipoint_genus2_trajectories.npz": {
+      "all_arrays_exactly_equal": true,
+      "arrays": [
+        "cubic_direct_t",
+        "cubic_direct_modes",
+        "cubic_RK4_t",
+        "cubic_RK4_modes",
+        "fourth_trace_direct_t",
+        "fourth_trace_direct_modes",
+        "fourth_trace_RK4_t",
+        "fourth_trace_RK4_modes"
+      ]
+    },
+    "code/results/trigonal_sigma_ba.npz": {
+      "all_arrays_exactly_equal": true,
+      "arrays": [
+        "analytic_t",
+        "ode_t",
+        "BA",
+        "ODE",
+        "weights",
+        "phases",
+        "z0"
+      ]
+    },
+    "code/figures/hyperelliptic_sigma_ba.pdf": {
+      "identical_except_pdf_dates": true
+    },
+    "code/figures/hyperelliptic_sigma_ba.png": {
+      "identical": true
+    },
+    "code/figures/multipoint_genus2_ba.pdf": {
+      "identical_except_pdf_dates": true
+    },
+    "code/figures/multipoint_genus2_ba.png": {
+      "identical": true
+    },
+    "code/figures/trigonal_sigma_ba.pdf": {
+      "identical_except_pdf_dates": true
+    },
+    "code/figures/trigonal_sigma_ba.png": {
+      "identical": true
+    },
+    "code/results/hyperelliptic_sigma_ba.json": {
+      "changed_top_level_fields": [
+        "generapy_version",
+        "setup_seconds",
+        "evaluation_benchmark_seconds",
+        "mean_sample_seconds"
+      ]
+    },
+    "code/results/trigonal_sigma_ba.json": {
+      "changed_top_level_fields": [
+        "generapy_version",
+        "setup_seconds",
+        "evaluation_benchmark_seconds",
+        "mean_sample_seconds"
+      ]
+    },
+    "code/results/multipoint_BA_genus2_numerics.json": {
+      "changed_top_level_fields": [
+        "generapy_version",
+        "numerical_seconds"
+      ]
+    },
+    "code/results/ba_genus2_converse_numerics.json": {
+      "changed_top_level_fields": [
+        "generapy_version"
+      ]
+    }
+  },
+  "convergence_integrations_rerun": false,
+  "convergence_note": "Saved trajectory arrays, parameters and reference samples are exactly unchanged. The convergence solver does not call Generapy.",
+  "scope": "Dependency migration check; no API adaptations were required."
+}

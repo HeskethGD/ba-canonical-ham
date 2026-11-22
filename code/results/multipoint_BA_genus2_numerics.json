@@ -1,4 +1,6 @@
 {
+  "backend": "Generapy periods, Abel maps and complete first-order theta jets",
+  "generapy_version": "0.3.0",
   "dps": 32,
   "genus": 2,
   "L_M_N": [
@@ -174,8 +176,6 @@
       "maximum_sampled_mode_size": 360.41246711782793
     }
   ],
-  "numerical_seconds": 28.103358791209757,
-  "figure": "figures/multipoint_genus2_ba.pdf",
-  "backend": "Generapy periods, Abel maps and complete first-order theta jets",
-  "generapy_version": "0.2.0"
+  "numerical_seconds": 28.30244016693905,
+  "figure": "figures/multipoint_genus2_ba.pdf"
 }

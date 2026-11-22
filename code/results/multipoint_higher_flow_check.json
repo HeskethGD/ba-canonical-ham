@@ -1,6 +1,6 @@
 {
   "backend": "Generapy rtheta_jet, order 3; cached complete jets",
-  "generapy_version": "0.2.0",
+  "generapy_version": "0.3.0",
   "dps": 55,
   "genus": 1,
   "L_M_N": [

@@ -8,7 +8,7 @@
   "canonical_pairs": 15,
   "curve": "y^3=x^4+2*x^3+3*x^2+5*x+7",
   "dps": 24,
-  "generapy_version": "0.2.0",
+  "generapy_version": "0.3.0",
   "duration": 6.0,
   "analytic_samples": 41,
   "dense_ode_samples": 601,
@@ -93,13 +93,13 @@
   "infinity_characteristic_rounding": 0.0,
   "minimum_sigma_denominator": 7.537920401213218,
   "sigma_backend": "Generapy baker_akhiezer_jet (reference) and kleinian_sigma_directional_jet",
-  "setup_seconds": 5.230480041820556,
+  "setup_seconds": 5.182156042195857,
   "evaluation_benchmark_seconds": [
-    0.02414133306592703,
-    0.9675427908077836,
-    0.031384500209242105
+    0.024707292206585407,
+    0.9664248330518603,
+    0.02484362479299307
   ],
-  "mean_sample_seconds": 0.9644791667077054,
+  "mean_sample_seconds": 0.9816246352317494,
   "plotted_modes": [
     "Re xi_1",
     "Re xi_4",

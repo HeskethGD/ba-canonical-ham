@@ -2,16 +2,75 @@
 
 ## Current supported version
 
-The current requirements pin `generapy==0.2.0` from PyPI. Its runtime source
-matches the previously tested development revision. A clean installation
-was verified for the release; see the latest
-[release validation](#generapy-020-pypi-release) below.
-All 33 checks in the current suite passed with the release on
-22 November, as recorded below. The original 18 checks and both complete
-one-point numerical examples also passed on 16 November 2026. The [migration validation](#public-ba-jet-migration)
-records the BA adapter conventions and numerator-zero checks. The code and
-requirements are intended to be used together. Earlier records below
-describe historical checks, rather than the current installation status.
+The current requirements pin `generapy==0.3.0` from PyPI. A fresh
+`.venv-generapy-030/` installation passes `pip check`, all 33 current
+check scripts, and all full numerical examples. The preceding Generapy
+0.2.0 environment is retained for comparison. The code and requirements
+are intended to be used together; dated records below describe earlier
+snapshots.
+
+## Generapy 0.3.0 PyPI release (22 November 2026)
+
+The comparison baseline is project commit
+`52b42f32e890cf5e409c07db17c89ee84f0ac16c`, using Generapy 0.2.0.
+Only the Generapy pin changes: Python 3.14.7, the pinned SymPy revision,
+mpmath 1.4.1, NumPy 2.5.3 and Matplotlib 3.11.2 are unchanged.
+
+### Installation
+
+A fresh ignored `.venv-generapy-030/` environment was installed from
+`requirements.txt`. Generapy imports from that environment's site-packages,
+reports 0.3.0, and is neither editable nor VCS-installed. `pip check`
+reports no broken requirements.
+
+The published PyPI wheel is `generapy-0.3.0-py3-none-any.whl`, SHA256:
+
+```text
+cfac81a9d0e117d7a7fbaf9cf2113599fed1e6e6e8fc625fdee0685978277643
+```
+
+### Validation and comparison
+
+- All 33 check scripts pass, including completion/incompatible-weight
+  tests, repeated-phase BA reconstruction, matrix-KP normalization and
+  the previously strengthened diagnostics.
+- Both complete one-point examples were regenerated from freshly computed
+  geometry, with 41 BA samples over `[0,6]` and independent RK4 trajectories.
+- Both genus-two multipuncture flows and the generic genus-two converse
+  were regenerated with their full independent RK4 comparisons. The
+  40-digit multipuncture check was also rerun.
+- Every saved NPZ array is exactly equal to the 0.2.0 baseline, including
+  trajectories, mode parameters and sample grids. Validation errors and
+  conserved-quantity drifts are unchanged. The numerical summary records
+  differ only in Generapy version and timings.
+- All three regenerated PNG figures are byte-identical. Figure PDFs differ
+  only in date metadata, so the existing PDFs were retained. All manuscript
+  tables were regenerated and are unchanged. No manuscript equations or
+  BA adapters needed modification, and the existing manuscript PDF remains
+  applicable without a content change.
+- The spectral-image check was repeated after regenerating the geometry.
+  The convergence integrations were not repeated: their saved inputs and
+  reference trajectories are exactly unchanged, and that solver does not
+  call Generapy.
+
+The machine-readable comparison is
+`code/results/generapy_030_validation.json`. Per-script logs are in
+`.check-logs/generapy-030/` (ignored).
+
+Reproduce the installation and checks with:
+
+```sh
+python3 -m venv .venv-generapy-030
+.venv-generapy-030/bin/python -m pip install -r requirements.txt
+.venv-generapy-030/bin/python -m pip check
+.venv-generapy-030/bin/python code/run_checks.py --suite all
+MPLBACKEND=Agg .venv-generapy-030/bin/python code/ba_numeric_examples.py --case both
+MPLBACKEND=Agg .venv-generapy-030/bin/python code/multipoint_BA_genus2_check.py --numerics
+.venv-generapy-030/bin/python code/multipoint_BA_genus2_check.py --dps 40 --output code/results/multipoint_BA_genus2_precision40.json
+.venv-generapy-030/bin/python code/ba_genus2_converse_check.py --numerics
+.venv-generapy-030/bin/python code/prescribed_curve_spectral_image.py
+make tables PYTHON=.venv-generapy-030/bin/python
+```
 
 ## Coverage extension and complete suite (22 November 2026)
 

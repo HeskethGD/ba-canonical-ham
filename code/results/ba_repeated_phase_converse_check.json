@@ -112,6 +112,6 @@
   ],
   "rk4_refinement_ratio": "15.99823803539743090014560238380295673329",
   "generapy_backend": "Curve periods/Abel maps and public rtheta_jet",
-  "generapy_version": "0.2.0",
+  "generapy_version": "0.3.0",
   "scope": "One smooth active elliptic normalization with a genuine inactive direction; not every phase profile."
 }

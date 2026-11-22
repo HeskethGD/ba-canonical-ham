@@ -23,7 +23,7 @@ multipuncture example compares two independent commuting BA flows.
 
 ## Installation
 
-Calculations used Python 3.14.7 on macOS ARM64 with Generapy 0.2.0,
+Calculations used Python 3.14.7 on macOS ARM64 with Generapy 0.3.0,
 SymPy 1.15.0.dev0, mpmath 1.4.1, NumPy 2.5.3 and Matplotlib 3.11.2.
 Exact dependencies are pinned in [requirements.txt](requirements.txt).
 Git is required to install the pinned SymPy source revision.
@@ -76,7 +76,7 @@ complete example plots or the convergence tables.
 
 ## Multipuncture BA checks
 
-The public Generapy 0.2.0 theta jets evaluate the new elliptic basis,
+The public Generapy 0.3.0 theta jets evaluate the new elliptic basis,
 kernel and derivatives. The scripts assemble the fixed divisor and
 puncture normalization; they do not add a theta-series implementation.
 Sigma jets can evaluate the equivalent ratios when those data are supplied.
