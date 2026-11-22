@@ -151,6 +151,21 @@ and an independent fourth-trace Abel direction. The numerical run
 compares sparse direct BA evaluations with dense RK4 trajectories for
 both flows and writes the black-and-white figure and result records.
 
+### Matrix constrained-KP correspondence
+
+```sh
+.venv/bin/python code/matrix_kp_hierarchy_check.py
+.venv/bin/python code/generate_matrix_kp_validation_table.py
+```
+
+This genus-two, two-puncture check evaluates the second normalized KP
+time from BA data and compares the ordinary/dual source and kernel
+equations with complete Generapy theta jets. It also matches all 24
+canonical mode rates to one fixed combination of cubic, fourth-trace
+and gauge flows, and checks the ambient source brackets symbolically.
+The finite KP time normalization is levelwise; a KP field-Poisson
+reduction is not assumed.
+
 ### Converse reconstruction
 
 ```sh

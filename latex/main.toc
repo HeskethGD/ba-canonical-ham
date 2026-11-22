@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Our contribution}{3}{subsection.1.1}%
-\contentsline {section}{\numberline {2}The Hamiltonian system and its spectral geometry}{5}{section.2}%
+\contentsline {section}{\numberline {2}The Hamiltonian system and its spectral geometry}{6}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Canonical modes and phase parameters}{6}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Modes, brackets and Hamilton equations}{6}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Power symmetries and phase conventions}{7}{subsubsection.2.1.2}%
@@ -35,51 +35,59 @@
 \contentsline {subsubsection}{\numberline {4.1.1}A quartic canonical parent}{29}{subsubsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}The two matrix brackets}{29}{subsubsection.4.1.2}%
 \contentsline {subsubsection}{\numberline {4.1.3}BA convolution and interaction factorization}{30}{subsubsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.2}The one-point specialization and constrained KP}{31}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Elementary modes and their canonical equations}{31}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Higher-flow phases in the one-point notation}{32}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}The constrained KP interpretation}{32}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Hyperelliptic BA modes and polynomial interpolation}{33}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Curve and function conventions}{34}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Sigma modes and the general normalization}{35}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Explicit interpolation weights and phases}{36}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.4}Half-period shifts, al functions and elliptic examples}{37}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Half-period shifts and al functions}{37}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Genus one and many elementary modes}{38}{subsubsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.5}Mode powers and the Mumford subsystem}{38}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Reconstructing the divisor polynomials}{39}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}The projected equations of motion}{39}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Recovering the modes from divisor data}{40}{subsubsection.4.5.3}%
-\contentsline {subsubsection}{\numberline {4.5.4}Mode gauges and the divisor lift}{41}{subsubsection.4.5.4}%
-\contentsline {subsubsection}{\numberline {4.5.5}Mechanical coordinate realizations}{41}{subsubsection.4.5.5}%
-\contentsline {section}{\numberline {5}Numerical validation}{41}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Prescribed hyperelliptic and trigonal BA solutions}{41}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Curves and prescribed BA data}{42}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Independent evolution and accuracy}{43}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Multipuncture solutions and independent Abel directions}{44}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}A multipuncture elliptic example}{44}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Two independent genus-two multipuncture flows}{45}{subsubsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.3}BA reconstruction from canonical initial modes}{46}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Discussion}{50}{section.6}%
+\contentsline {subsection}{\numberline {4.2}The matrix constrained-KP correspondence}{31}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Matrix operators from the BA bases}{31}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Normalized KP times and source evolution}{32}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Relation to the canonical mode flows}{32}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}The one-point specialization}{33}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Elementary modes and their canonical equations}{33}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Higher-flow phases in the one-point notation}{34}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Scalar constrained operators and conserved coefficients}{34}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Hyperelliptic BA modes and polynomial interpolation}{35}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Curve and function conventions}{35}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Sigma modes and the general normalization}{36}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Explicit interpolation weights and phases}{37}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Half-period shifts, al functions and elliptic examples}{38}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Half-period shifts and al functions}{39}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Genus one and many elementary modes}{39}{subsubsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.6}Mode powers and the Mumford subsystem}{40}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Reconstructing the divisor polynomials}{40}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}The projected equations of motion}{41}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Recovering the modes from divisor data}{41}{subsubsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.4}Mode gauges and the divisor lift}{42}{subsubsection.4.6.4}%
+\contentsline {subsubsection}{\numberline {4.6.5}Mechanical coordinate realizations}{42}{subsubsection.4.6.5}%
+\contentsline {section}{\numberline {5}Numerical validation}{43}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Prescribed hyperelliptic and trigonal BA solutions}{43}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Curves and prescribed BA data}{43}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Independent evolution and accuracy}{44}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Multipuncture solutions and independent Abel directions}{45}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}A multipuncture elliptic example}{45}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Two independent genus-two multipuncture flows}{46}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}The second normalized matrix-KP time}{47}{subsubsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.3}BA reconstruction from canonical initial modes}{47}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Discussion}{52}{section.6}%
 \setcounter {tocdepth}{1}
-\contentsline {section}{\numberline {A}Comparison with Menyuk, Chen and Lee}{51}{appendix.A}%
-\contentsline {subsection}{\numberline {A.1}The restricted shared-mode family}{51}{subsection.A.1}%
-\contentsline {subsection}{\numberline {A.2}The broader matrix wave construction}{52}{subsection.A.2}%
-\contentsline {section}{\numberline {B}Comparison with Jiang and Rauch-Wojciechowski}{52}{appendix.B}%
-\contentsline {section}{\numberline {C}Comparison with Adams, Harnad and Hurtubise}{54}{appendix.C}%
-\contentsline {section}{\numberline {D}The complete Liouville count for arbitrary phases}{55}{appendix.D}%
-\contentsline {subsection}{\numberline {D.1}Proof of the complete count}{57}{subsection.D.1}%
-\contentsline {subsection}{\numberline {D.2}The spectral deficit at repeated phases}{57}{subsection.D.2}%
-\contentsline {section}{\numberline {E}Explicit spectral integrals for distinct phase coefficients}{58}{appendix.E}%
-\contentsline {section}{\numberline {F}Details of the marked spectral-curve classification}{59}{appendix.F}%
-\contentsline {subsection}{\numberline {F.1}Existence of regular spectral curves}{59}{subsection.F.1}%
-\contentsline {subsection}{\numberline {F.2}Proof of the marked-curve characterization}{60}{subsection.F.2}%
-\contentsline {subsection}{\numberline {F.3}Reconstructing a pencil from its spectral curve}{60}{subsection.F.3}%
-\contentsline {subsection}{\numberline {F.4}Proof of the hyperelliptic criterion}{61}{subsection.F.4}%
-\contentsline {section}{\numberline {G}Generic BA reconstruction with repeated phases}{61}{appendix.G}%
-\contentsline {subsection}{\numberline {G.1}Constant canonical bases and inactive directions}{61}{subsection.G.1}%
-\contentsline {subsection}{\numberline {G.2}Regularity of the active spectral curve}{62}{subsection.G.2}%
-\contentsline {section}{\numberline {H}The Prym condition for the symmetric reduction}{64}{appendix.H}%
-\contentsline {subsection}{\numberline {H.1}The symmetric reduction}{64}{subsection.H.1}%
-\contentsline {subsection}{\numberline {H.2}The eigenvector-divisor proof}{64}{subsection.H.2}%
-\contentsline {section}{\numberline {I}The quartic spectral Hamiltonian}{65}{appendix.I}%
+\contentsline {section}{\numberline {A}Comparison with Menyuk, Chen and Lee}{53}{appendix.A}%
+\contentsline {subsection}{\numberline {A.1}The restricted shared-mode family}{53}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.2}The broader matrix wave construction}{54}{subsection.A.2}%
+\contentsline {section}{\numberline {B}Comparison with Jiang and Rauch-Wojciechowski}{55}{appendix.B}%
+\contentsline {section}{\numberline {C}Comparison with Adams, Harnad and Hurtubise}{56}{appendix.C}%
+\contentsline {section}{\numberline {D}The complete Liouville count for arbitrary phases}{57}{appendix.D}%
+\contentsline {subsection}{\numberline {D.1}Proof of the complete count}{59}{subsection.D.1}%
+\contentsline {subsection}{\numberline {D.2}The spectral deficit at repeated phases}{59}{subsection.D.2}%
+\contentsline {section}{\numberline {E}Explicit spectral integrals for distinct phase coefficients}{60}{appendix.E}%
+\contentsline {section}{\numberline {F}Details of the marked spectral-curve classification}{61}{appendix.F}%
+\contentsline {subsection}{\numberline {F.1}Existence of regular spectral curves}{61}{subsection.F.1}%
+\contentsline {subsection}{\numberline {F.2}Proof of the marked-curve characterization}{62}{subsection.F.2}%
+\contentsline {subsection}{\numberline {F.3}Reconstructing a pencil from its spectral curve}{62}{subsection.F.3}%
+\contentsline {subsection}{\numberline {F.4}Proof of the hyperelliptic criterion}{63}{subsection.F.4}%
+\contentsline {section}{\numberline {G}Generic BA reconstruction with repeated phases}{63}{appendix.G}%
+\contentsline {subsection}{\numberline {G.1}Constant canonical bases and inactive directions}{63}{subsection.G.1}%
+\contentsline {subsection}{\numberline {G.2}Regularity of the active spectral curve}{64}{subsection.G.2}%
+\contentsline {section}{\numberline {H}The Prym condition for the symmetric reduction}{66}{appendix.H}%
+\contentsline {subsection}{\numberline {H.1}The symmetric reduction}{66}{subsection.H.1}%
+\contentsline {subsection}{\numberline {H.2}The eigenvector-divisor proof}{66}{subsection.H.2}%
+\contentsline {section}{\numberline {I}The quartic spectral Hamiltonian}{67}{appendix.I}%
+\contentsline {section}{\numberline {J}Constrained-KP normalization and canonical flow matching}{68}{appendix.J}%
+\contentsline {subsection}{\numberline {J.1}Wave normalization, commutativity and source evolution}{68}{subsection.J.1}%
+\contentsline {subsection}{\numberline {J.2}Selecting the canonical generator on a fixed level}{69}{subsection.J.2}%

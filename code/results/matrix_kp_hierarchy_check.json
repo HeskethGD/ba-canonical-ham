@@ -1,0 +1,38 @@
+{
+  "genus": 2,
+  "L_M_N": [
+    2,
+    2,
+    2
+  ],
+  "generapy_version": "0.2.0",
+  "dps": 32,
+  "second_KP_source_error": "3.7993879636099020517644720434672e-31",
+  "second_KP_dual_source_error": "2.2561738523201356468406827315435e-31",
+  "second_KP_kernel_error": "6.4585103184054112495755201888737e-31",
+  "canonical_spectral_and_gauge_flow_error": "2.3192418851172612939975036829601e-30",
+  "cubic_and_fourth_trace_coefficients": [
+    "(-0.073645318959495833691890071469569 + 0.0j)",
+    "(-1.7604325440394965686701170968734 + 0.0j)"
+  ],
+  "vertex_gauge_rates_last_fixed_zero": [
+    "(439.27267290468036936729471973921 + 8.645204513078463349519465286102e-28j)",
+    "(127.48139680241920089056952319519 + 1.8209145813592573137133665921745e-27j)",
+    "(26.244776006148923047751082949473 + 8.4238151995167923532304675110581e-28j)",
+    "(70.266882618885914923930329549996 + 4.949588300436552559318648610799e-28j)",
+    "(-43.35149141891759944091461193289 + 6.0622735112421672973666017259202e-28j)",
+    "0"
+  ],
+  "reduced_simple_pole_weights": [
+    "15.109624489306292793433002100554",
+    "9.2807338406999945755811736646882"
+  ],
+  "KP_local_time": "h_L(P)^2 at both punctures; geometric derivative i*d/dt2",
+  "source_bracket_check": {
+    "exact_symbolic_bracket_checks": 192,
+    "source_pairs": 8,
+    "additional_pair_composite_pairs": 4,
+    "scope": "Ambient finite canonical coordinates, not a KP field-Poisson reduction."
+  },
+  "Poisson_scope": "Canonical combination on this fixed spectral level; no KP field-bracket pullback asserted."
+}

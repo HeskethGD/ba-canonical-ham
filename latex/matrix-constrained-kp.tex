@@ -1,0 +1,167 @@
+\subsection{The matrix constrained-KP correspondence}
+\label{sec:BA-constrained-KP}
+
+The weighted BA identities also have a constrained-KP operator
+interpretation for arbitrary positive $L,M,N$. We give the operator
+dictionary and its higher-time normalization, then relate those times
+to the canonical flows. The one-point specialization in
+\cref{sec:BA-one-point-specialization} recovers scalar operators.
+
+\subsubsection{Matrix operators from the BA bases}
+
+For this operator comparison put $x=-it$ and
+$\partial=\partial_x=i\partial_t$. Assemble the
+ordinary and dual BA bases into columns
+\[
+ \boldsymbol\psi(P)=(\psi_1(P),\ldots,\psi_N(P))^{\trans},\qquad
+ \boldsymbol\psi^\vee(P)=(\psi_1^\vee(P),\ldots,\psi_N^\vee(P))^{\trans}.
+\]
+The kernel rate in \cref{eq:general-kernel-rate} specifies the paired
+primitive
+\begin{equation}\label{eq:KP-paired-primitive}
+ \partial^{-1}\!\left(
+ (\boldsymbol\psi^\vee(Q))^{\trans}\boldsymbol\psi(P)\right)
+ =\Omega(P,Q),
+\end{equation}
+with its integration constant fixed by the kernel normalization.
+Define the diagonal puncture-constant matrices
+$\mathsf C_A=\diag(a_{A,1},\ldots,a_{A,N})$, $A\in\{L,M\}$,
+using \cref{eq:general-h-normalization}. The weighted equations give
+\begin{equation}\label{eq:BA-constrained-operators}
+\begin{aligned}
+ \mathcal A_L&=\Id_N\partial+\mathsf C_L+
+  2\sum_{\ell=1}^{L}\kappa_\ell\boldsymbol\psi(Q_\ell)
+     \partial^{-1}(\boldsymbol\psi^\vee(Q_\ell))^{\trans},\\
+ \mathcal A_M&=\Id_N\partial+\mathsf C_M+
+  2\sum_{j=L+1}^{K}\kappa_j\boldsymbol\psi(Q_j)
+     \partial^{-1}(\boldsymbol\psi^\vee(Q_j))^{\trans},
+ \qquad K=L+M.
+\end{aligned}
+\end{equation}
+The matrix size $N$ counts punctures; the two sums contain $L$ and
+$M$ source columns, respectively. Each integral term pairs an input
+column with the dual row, takes the
+scalar primitive and multiplies by the ordinary column. Thus
+\begin{equation}\label{eq:KP-matrix-spectral}
+ \mathcal A_A\boldsymbol\psi(P)=h_A(P)\boldsymbol\psi(P),\qquad
+ \mathcal A_A^{\rm ad}\boldsymbol\psi^\vee(P)
+        =h_A(P)\boldsymbol\psi^\vee(P),\qquad A\in\{L,M\}.
+\end{equation}
+Here $\mathrm{ad}$ is formal transpose-adjoint, with
+$\partial^{\rm ad}=-\partial$ and no complex conjugation.
+The normalized expansions at all $N$ punctures determine an
+invertible matrix wave operator. Both $\mathcal A_L,\mathcal A_M$
+dress time-independent diagonal Laurent operators, so
+\begin{equation}\label{eq:KP-matrix-commutation}
+ [\mathcal A_L,\mathcal A_M]=0.
+\end{equation}
+Appendix~\ref{app:KP-normalization} supplies this formal argument and
+the higher-time details.
+
+Finite-rank integral operators of this form belong to established
+matrix constrained-KP theory
+\cite[equations (7)--(14)]{ChvartatskyiSydorenko2013}.
+The scalar vector-constrained case, its rational reductions and
+Grassmannian description are treated in
+\cite[Theorems~4.1 and~5.1]{HelminckVanDeLeur1998} and
+\cite{KricheverRational1995}. Residue-based BA self-consistency is
+developed in \cite[Section~1]{KricheverSelfConsistent1995}.
+The explicit dictionary here uses the two separate interpolation
+groups and their puncture constants.
+
+\subsubsection{Normalized KP times and source evolution}
+
+The puncture constants determine how this operator form is normalized.
+Define the diagonal gauge matrix $\mathsf T(x)=e^{-x\mathsf C_L}$ and put
+$\widetilde{\boldsymbol\psi}=\mathsf T^{-1}\boldsymbol\psi$,
+$\widetilde{\boldsymbol\psi}^{\vee}=\mathsf T^{\trans}\boldsymbol\psi^\vee$.
+Then the first operator becomes
+\begin{equation}\label{eq:KP-normalized-L}
+ \mathcal L_{\rm KP}=\mathsf T^{-1}\mathcal A_L\mathsf T
+ =\Id_N\partial+
+ 2\sum_{\ell=1}^{L}\kappa_\ell\widetilde{\boldsymbol\psi}(Q_\ell)
+ \partial^{-1}(\widetilde{\boldsymbol\psi}^{\vee}(Q_\ell))^{\trans}.
+\end{equation}
+The second, $\mathcal M_{\rm KP}=\mathsf T^{-1}\mathcal A_M\mathsf T$,
+retains the constant term
+\begin{equation}\label{eq:KP-residual-phase}
+ \mathsf C_M-\mathsf C_L
+ =2\diag(b_1^N,\ldots,b_N^N).
+\end{equation}
+Thus the residual matrix is precisely the third-group phase data of
+the canonical Hamiltonian. A common gauge removes both constant
+terms, after additive shifts of $h_L,h_M$, only when their difference
+is scalar; this holds automatically for $N=1$.
+
+Use $h_L(P)$ as the local spectral coordinate at every puncture.
+The normalized KP times $x_n$, with $x_1=x$, prescribe leading
+ordinary factors $\exp(\sum_{n=1}^{n_*}x_n h_L(P)^n)e_k$ at $R_k$;
+the dual factors have the opposite exponent. Here $n_*$ is any finite
+number of active times and $e_k$ is the $k$th coordinate vector.
+In the original coordinates,
+\[
+ \operatorname{pp}_{R_k}h_L^2=s_k^{-2}+2a_{L,k}s_k^{-1}.
+\]
+The regular constant $\operatorname{reg}_{R_k}h_L^2$ also supplies a
+component phase. These terms explain why the second KP time
+need not coincide with an uncorrected double-pole BA time.
+
+\begin{proposition}[Constrained-KP evolution on the BA realization]
+\label{prop:KP-hierarchy}
+Let $\mathcal B_n=(\mathcal L_{\rm KP}^{\,n})_+$, where $+$ retains
+the nonnegative differential powers. On a regular BA time domain,
+\begin{equation}\label{eq:KP-source-flows}
+\begin{aligned}
+ \partial_{x_n}\widetilde{\boldsymbol\psi}(P)
+   &=\mathcal B_n\widetilde{\boldsymbol\psi}(P),\\
+ \partial_{x_n}\widetilde{\boldsymbol\psi}^{\vee}(P)
+   &=-\mathcal B_n^{\rm ad}\widetilde{\boldsymbol\psi}^{\vee}(P),
+ \qquad n\geq1.
+\end{aligned}
+\end{equation}
+Both operators retain their finite-rank representations and satisfy
+\begin{equation}\label{eq:KP-operator-flows}
+ \partial_{x_n}\mathcal L_{\rm KP}
+       =[\mathcal B_n,\mathcal L_{\rm KP}],\qquad
+ \partial_{x_n}\mathcal M_{\rm KP}
+       =[\mathcal B_n,\mathcal M_{\rm KP}].
+\end{equation}
+In particular, evaluation of \cref{eq:KP-source-flows} at the fixed
+$Q_a$ gives the ordinary and dual source evolution for both groups.
+\end{proposition}
+\begin{proof}
+In the $h_L$ local coordinates, the normalized matrix wave operator
+dresses $\partial$ to $\mathcal L_{\rm KP}$. Subtracting the indicated
+differential action from each BA time derivative leaves a section
+with zero leading values at every puncture; BA uniqueness gives
+\cref{eq:KP-source-flows}. The finite-rank commutator identity then
+gives \cref{eq:KP-operator-flows}. The normalization and adjoint
+arguments are detailed in Appendix~\ref{app:KP-normalization}.
+\end{proof}
+
+\subsubsection{Relation to the canonical mode flows}
+
+The sources in \cref{eq:BA-constrained-operators} are precisely the
+ordinary and dual evaluations used for the $v,w$ modes in
+\cref{eq:multipoint-mode-arrays}. Evaluating the $L$ spectral problem
+at the $M$-group points and the $M$ problem at the $L$-group points
+recovers their weighted equations; the kernel derivative supplies
+the $u$ equations. Multiwave equations involving eigenfunctions,
+adjoint eigenfunctions and pair potentials also occur in
+\cite[equations (57)--(58)]{AratynGomesNissimovPacheva2001}.
+
+On each birational BA level, \cref{thm:BA-higher-flows} supplies
+spectral Hamiltonians spanning all Abel directions. Matching a KP
+velocity is therefore a finite linear problem. The remaining endpoint
+phases are generated by the power charges in
+\cref{eq:canonical-charges}. Each normalized KP time consequently
+has a canonical spectral-plus-gauge generator on that level, with
+its coefficients held fixed after choosing the level.
+Appendix~\ref{app:KP-normalization} gives the construction, and
+\cref{sec:numeric-KP-time} checks the second time in genus two.
+
+This identifies the operators and their BA evolution. The pointwise
+source arrays contain $NL+NM$ canonical pairs, whereas the full mode
+system also retains $LM$ pair-composite pairs through its kernel
+primitives. Identifying a KP field Poisson bracket with the complete
+finite canonical bracket requires a further constraint calculation.

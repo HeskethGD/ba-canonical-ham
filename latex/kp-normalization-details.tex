@@ -1,0 +1,124 @@
+\section{Constrained-KP normalization and canonical flow matching}
+\label{app:KP-normalization}
+
+We justify the matrix wave normalization used in
+\cref{prop:KP-hierarchy} and explain how its times acquire canonical
+Hamiltonians on a fixed birational BA level.
+
+\subsection{Wave normalization, commutativity and source evolution}
+
+At each puncture, the ordinary column has leading vector $e_k$ in
+\cref{eq:general-BA-asymptotics}. Collecting its $N$ local Laurent
+expansions gives a matrix wave function with identity leading matrix.
+It determines a formally invertible dressing operator
+$\mathscr W=\Id_N+\mathsf W_1\partial^{-1}+\mathsf W_2\partial^{-2}+\cdots$.
+Before the gauge change, the $N$ Laurent expansions of $h_A$ form a
+time-independent diagonal formal operator $\mathsf H_A(\partial)$.
+The spectral equations at all punctures imply
+$\mathcal A_A\mathscr W=\mathscr W\mathsf H_A$. Since the diagonal
+operators commute, so do $\mathcal A_L$ and $\mathcal A_M$.
+This proves \cref{eq:KP-matrix-commutation} without inferring
+commutativity from only one eigenfunction column.
+
+Now use the local coordinates $s'_k=1/h_L(P)$. The gauge
+$\mathsf T^{-1}=e^{x\mathsf C_L}$ changes the leading ordinary
+factor from $e^{x/s_k}e_k$ to $e^{xh_L(P)}e_k$; the remaining
+factor has identity leading matrix. In these coordinates the
+renormalized dressing operator therefore satisfies
+\[
+ \mathcal L_{\rm KP}=\mathscr W\partial\mathscr W^{-1}.
+\]
+For a higher time, the principal parts of $h_L^n$ prescribe the BA
+exponentials in the original $s_k$ coordinates. Multiplying component
+$k$ by $\exp(x_n\operatorname{reg}_{R_k}h_L^n)$ supplies the
+required regular constant. The dual component receives the inverse
+factor. Hence the normalization includes both the Abel velocity and
+the component phases.
+
+The BA construction with these times gives the Sato equation
+\[
+ \partial_{x_n}\mathscr W
+ =-(\mathcal L_{\rm KP}^{\,n})_-\mathscr W,
+\]
+where $-$ retains the negative differential powers. Equivalently,
+subtracting $\mathcal B_n=(\mathcal L_{\rm KP}^{\,n})_+$ from the
+ordinary BA derivative leaves zero leading values at every puncture.
+The fixed divisor and BA uniqueness give the first equation in
+\cref{eq:KP-source-flows}.
+
+For the dual, the residue pairing uses $d\Omega_0$.
+Converting to the local spectral measure $dh_L$ multiplies the dual
+wave by the fixed scalar factor $d\Omega_0/dh_L$. This ratio has
+leading value one at every puncture. The residue pairing identifies
+the resulting dual wave with the formal adjoint wave operator,
+giving $-\mathcal B_n^{\rm ad}$ as its time generator. Since the
+factor is independent of all BA times, the same differential
+equation holds for $\widetilde{\boldsymbol\psi}^{\vee}$ itself.
+These are the standard BA and adjoint-wave arguments
+\cite{Krichever1977,KricheverShiota2011} in the present normalization.
+
+For a matrix differential operator $B$ and column functions $F,G$,
+the finite-rank identity is
+\[
+ [B,F\partial^{-1}G^{\trans}]_-
+ =B(F)\partial^{-1}G^{\trans}
+  -F\partial^{-1}(B^{\rm ad}(G))^{\trans}
+\]
+\cite[equations (7)--(8)]{ChvartatskyiSydorenko2013}.
+It proves preservation of the negative parts of both operators in
+\cref{eq:KP-operator-flows}. Their nonnegative parts remain fixed:
+for $\mathcal L_{\rm KP}$ this follows from
+$[\mathcal L_{\rm KP}^{\,n},\mathcal L_{\rm KP}]=0$; for
+$\mathcal M_{\rm KP}$ it follows from
+$[\mathcal L_{\rm KP}^{\,n},\mathcal M_{\rm KP}]=0$ and its constant
+differential part $\Id_N\partial+\mathsf C_M-\mathsf C_L$.
+The commutator of a negative-order operator with either differential
+part has negative order. This completes the operator and source-flow
+proof for arbitrary $N$.
+
+\subsection{Selecting the canonical generator on a fixed level}
+
+Fix a birational prescribed BA level of genus $g$. By
+\cref{thm:BA-higher-flows}, select $g$ spectral Hamiltonians
+$H_1,\ldots,H_g$ with independent Abel vectors
+$\boldsymbol U^{(1)},\ldots,\boldsymbol U^{(g)}$.
+For comparison with the physical Hamiltonian convention write
+$x_n=-it_n$, and let $\boldsymbol U_{{\rm KP},n}$ be defined by
+$z(t_n)=z_0-it_n\boldsymbol U_{{\rm KP},n}$.
+The coefficients of the required spectral combination solve
+\begin{equation}\label{eq:KP-Abel-linear-match}
+ \sum_{\alpha=1}^{g}\beta_{n\alpha}\boldsymbol U^{(\alpha)}
+ =\boldsymbol U_{{\rm KP},n}.
+\end{equation}
+The matrix of these vectors is invertible. When $g=0$, no spectral
+combination is required.
+
+The remaining difference of the puncture time representatives has
+zero residue pairing with every holomorphic differential. The
+Mittag--Leffler criterion therefore makes it the principal part of
+a meromorphic function supported at the punctures, up to an
+additive constant. Its evaluations at the ordinary points and its
+regular puncture constants give fixed vertex phase differences
+$\delta\varphi_\ell^L$, $\delta\varphi_m^M$, $\delta\varphi_k^N$.
+The BA theta translations already agree; these vertex phases account
+for the remaining exponential factors in the mode arrays.
+
+The power charges generate them through
+\begin{equation}\label{eq:KP-canonical-generator}
+\begin{aligned}
+ \widehat H_n={}&\sum_{\alpha=1}^{g}\beta_{n\alpha}H_\alpha
+ -\sum_{\ell=1}^{L}\delta\varphi_\ell^L Q_\ell^L
+ +\sum_{m=1}^{M}\delta\varphi_m^M Q_m^M
+ +\sum_{k=1}^{N}\delta\varphi_k^N Q_k^N.
+\end{aligned}
+\end{equation}
+The resulting phase rates of $u_{\ell m},v_{mk},w_{k\ell}$ are
+respectively $\delta\varphi_\ell^L-\delta\varphi_m^M$,
+$\delta\varphi_m^M-\delta\varphi_k^N$ and
+$\delta\varphi_k^N-\delta\varphi_\ell^L$; partner rates are opposite.
+Thus \cref{eq:KP-canonical-generator} matches every mode, including
+its phase. All coefficients are constants after choosing the level,
+and the Hamiltonians and charges in the combination commute.
+Allowing these coefficients to vary with spectral integrals inside
+one Hamiltonian would introduce additional derivatives and is not
+the construction used here.

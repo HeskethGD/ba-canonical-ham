@@ -298,6 +298,28 @@ spectral traces:
 At $40$ digits the analytic residuals decrease further; both precision
 records and the trajectories accompany the code.
 
+\subsubsection{The second normalized matrix-KP time}
+\label{sec:numeric-KP-time}
+
+Using the same genus-two $L=M=N=2$ data, we test
+\cref{prop:KP-hierarchy} with the local spectral coordinate $h_L$.
+The principal parts of $h_L^2$ determine the second KP time. A rational
+correction reduces those double poles to the simple-pole time
+representatives, retaining their endpoint and puncture phases.
+Complete theta jets through order two give the BA time derivatives
+independently of the KP differential equations.
+For $\mathcal L_{\rm KP}=\partial+V\partial^{-1}+O(\partial^{-2})$,
+the second differential generator is $\mathcal B_2=\partial^2+2V$.
+We compare its ordinary and dual source equations, its bilinear
+kernel derivative, and all $24$ mode rates at three states:
+\input{ba-matrix-kp-validation-table}
+The canonical comparison solves the Abel-direction matching problem
+once and fixes the gauge rates at the initial state, then checks
+those same coefficients at two further states. The script
+\path{code/matrix_kp_hierarchy_check.py} records the coefficients,
+principal-part correction and $192$ exact ambient source-bracket
+checks. Its stored results generate the displayed table.
+
 \subsection{BA reconstruction from canonical initial modes}
 \label{sec:numeric-BA-converse}
 

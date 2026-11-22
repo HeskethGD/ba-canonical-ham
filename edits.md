@@ -1,6 +1,6 @@
 # Notes for editing paper
 
-Initial clarity and attribution pass completed on 22 November 2026. Checked items have been addressed; unchecked items remain deferred. The KP experiment and manuscript reordering have not been incorporated.
+Initial clarity and attribution pass completed on 22 November 2026. Checked items have been addressed; unchecked items remain deferred. The general KP correspondence and separate one-point subsection were subsequently incorporated on 22 November 2026, with normalization and flow-matching details in an appendix. The fuller elliptic example remains deferred.
 
 ## Section 4 - Correspondences and explicit specializations
 
@@ -14,11 +14,11 @@ Initial clarity and attribution pass completed on 22 November 2026. Checked item
   to a single endpoint BA function." - where and when, do we mean as the quartic is rewritten as a cuic system, if os just add a couple fo words to that effect.
   - **Status, 22 November 2026:** The sentence now explicitly locates the collapse in the quartic-to-cubic correspondence.
 
-- [ ] we need to add the generalization of our KP correspondence to arbitrary L,M,N. We have this done but not added i think.
-  - **Status, 22 November 2026:** Pending manuscript incorporation. The arbitrary-N operator comparison is recorded in [the initial experiment](../../code/multipoint_matrix_kp_experiment.md). [The higher-flow follow-up](../../code/multipoint_kp_hierarchy_followup.md) now gives the normalized matrix-KP hierarchy/source argument and a successful genus-two second-time match to canonical spectral-plus-gauge flows. A KP field-Poisson identification remains separate and is not claimed.
+- [x] we need to add the generalization of our KP correspondence to arbitrary L,M,N. We have this done but not added i think.
+  - **Status, 22 November 2026:** Incorporated the arbitrary-N matrix constrained-KP operators, source hierarchy and levelwise canonical generators. Longer normalization and phase-matching arguments are in a dedicated appendix. The genus-two second-time check, stored results and generated table are included in the public repository. A KP field-Poisson equivalence is not claimed.
 
-- [ ] the one point specialization stuff that currently sits in the KP section is probably still needed but shoudl come out of KP and have its own section after KP but before hyperelliptic polynomial interpolation.
-  - **Status, 22 November 2026:** Pending: defer the split and reordering until the general KP comparison is ready.
+- [x] the one point specialization stuff that currently sits in the KP section is probably still needed but shoudl come out of KP and have its own section after KP but before hyperelliptic polynomial interpolation.
+  - **Status, 22 November 2026:** Split and reordered: the general matrix constrained-KP subsection now precedes a separate one-point specialization, followed by hyperelliptic polynomial interpolation. Preserved the scalar conserved-coefficient calculation with the one-point formulas.
 
 - [x] one points specialization has i clashes "Elementary modes and their canonical equations"
   - **Status, 22 November 2026:** Replaced the first-group index i by ell throughout the one-point formulas, retaining i only as the imaginary unit.

@@ -35,6 +35,7 @@ SUITES={
         'multipoint_BA_network_check.py',
         'multipoint_BA_elliptic_check.py',
         'multipoint_BA_genus2_check.py',
+        'matrix_kp_hierarchy_check.py',
         'ba_genus2_converse_check.py',
         'multipoint_higher_flow_check.py',
         'multipoint_repeated_phase_moments.py',
