@@ -63,7 +63,7 @@ Recorded results and figures are included. Regeneration replaces files in
 
 ## Checks
 
-Run the quick checks or the complete suite of 30 scripts:
+Run the quick checks or the complete suite of 33 scripts:
 
 ```sh
 .venv/bin/python code/run_checks.py --suite quick

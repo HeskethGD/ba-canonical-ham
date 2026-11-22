@@ -74,12 +74,14 @@ The `multipoint` suite includes the following additional checks:
 | `multipoint_BA_network_check.py` | Exact rational L=M=N=2 BA kernel, interpolation, phase conversion and all 24 rates. |
 | `multipoint_BA_elliptic_check.py` | Generapy 0.2.0 theta jets: elliptic two-puncture basis, all rates, left/right spectral eigenvectors and normalized bilinear kernel. |
 | `matrix_kp_hierarchy_check.py` | Genus-two second matrix-KP time: ordinary, dual and kernel equations, canonical spectral-plus-gauge rates, and symbolic source brackets. |
+| `ba_completion_compatibility_check.py` | Genus-two completion preserving prescribed point weights, all 48 canonical rates, and rejection of perturbed weights requiring nonconstant phases. |
+| `ba_repeated_phase_converse_check.py` | Direct repeated-phase (1,1,3) initial modes, exact active reduction, elliptic BA reconstruction and restoration, and independent Hamiltonian RK4 refinement. |
 | `multipoint_higher_flow_check.py` | Finite-part BA times and vertex phases against independent shifted cubic/quartic trace fields. |
 | `multipoint_repeated_phase_moments.py` | Exact conservation of all three quadratic moments under the cubic and higher trace flows. |
 | `generate_multipoint_validation_table.py` | Generates the additional manuscript residual table and divisor values from the stored higher-flow JSON. |
 
 The last script is a table generator rather than a suite check. The complete
-suite now has 30 scripts. The multipuncture wrappers use the existing
+suite now has 33 scripts. The multipuncture wrappers use the existing
 public theta jets; no changes to Generapy are required. A native convenience
 API assembling general multipoint bases is not assumed.
 
@@ -155,3 +157,30 @@ also compares with independent RK4 integration.
 `independent_elliptic_theta_check.py` checks public Generapy theta jets
 and ratios against mpmath's Jacobi theta implementation. This backend
 is for independent validation only and is not used by the BA plots.
+
+### Completion and repeated-phase reconstruction
+
+`ba_completion_compatibility_check.py` retains one prescribed point and
+weight per group and adjoins three points to each on a genus-two curve.
+It solves the moment equations exactly with nonzero new weights, then
+checks all 48 canonical rates using public Generapy BA jets. Perturbing
+either group's weights must yield a nonzero residual and incompatible
+constant phases across the sampled states.
+
+`ba_repeated_phase_converse_check.py` starts from rational canonical
+(1,1,3) modes with a repeated third-group phase. The conserved block
+moment determines a constant canonical basis and one inactive direction.
+The active (1,1,2) pencil normalizes to a smooth elliptic curve. The check
+recovers both BA divisors and the initial modes algebraically, evaluates
+the BA evolution with Generapy theta jets, restores all original modes,
+and compares them with direct Hamiltonian RK4 integration at two step sizes.
+This checks one active-reduction profile, not arbitrary phase clusters.
+
+```sh
+python code/ba_completion_compatibility_check.py
+python code/ba_repeated_phase_converse_check.py
+```
+
+The repeated-phase rank checker enforces the full spectral-plus-moment
+rank. The al-function and higher-flow diagnostics also enforce residual
+tolerances; a printed discrepancy cannot silently pass those checks.

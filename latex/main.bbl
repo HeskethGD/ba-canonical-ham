@@ -34,6 +34,16 @@ Mark Adler and Pierre van Moerbeke.
 \newblock \href {https://doi.org/10.1088/1751-8121/aad82d}
   {\path{doi:10.1088/1751-8121/aad82d}}.
 
+\bibitem{AlberLutherMarsdenRobbins1998}
+Mark~S. Alber, Gregory~G. Luther, Jerrold~E. Marsden, and Jonathan~M. Robbins.
+\newblock Geometric phases, reduction and {Lie--Poisson} structure for the
+  resonant three-wave interaction.
+\newblock {\em Physica D: Nonlinear Phenomena}, 123(1--4):271--290, 1998.
+\newblock Author version:
+  \url{https://www.cds.caltech.edu/~marsden/bib/1998/07-AlLuMaRo1998/AlLuMaRo1998.pdf}.
+\newblock \href {https://doi.org/10.1016/S0167-2789(98)00127-4}
+  {\path{doi:10.1016/S0167-2789(98)00127-4}}.
+
 \bibitem{AratynGomesNissimovPacheva2001}
 H.~Aratyn, J.~F. Gomes, E.~Nissimov, and S.~Pacheva.
 \newblock Loop-algebra and {Virasoro} symmetries of integrable hierarchies of
@@ -149,6 +159,16 @@ Rui~Loja Fernandes and Pol Vanhaecke.
 \newblock \url{https://arxiv.org/abs/math-ph/0011051}.
 \newblock \href {https://doi.org/10.1007/s002200100476}
   {\path{doi:10.1007/s002200100476}}.
+
+\bibitem{GengGuanDu2022}
+Xue Geng, Liang Guan, and Dianlou Du.
+\newblock Action-angle variables for the {Lie--Poisson Hamiltonian} systems
+  associated with the three-wave resonant interaction system.
+\newblock {\em AIMS Mathematics}, 7(6):9989--10008, 2022.
+\newblock
+  \url{https://www.aimspress.com/aimspress-data/math/2022/6/PDF/math-07-06-557.pdf}.
+\newblock \href {https://doi.org/10.3934/math.2022557}
+  {\path{doi:10.3934/math.2022557}}.
 
 \bibitem{Griffiths1985}
 Phillip~A. Griffiths.
@@ -372,6 +392,14 @@ Yoshihiro {\^O}nishi.
 \newblock \url{https://arxiv.org/abs/math/0105189}.
 \newblock \href {https://doi.org/10.1017/S0013091503000695}
   {\path{doi:10.1017/S0013091503000695}}.
+
+\bibitem{PedroniVanhaecke1998}
+Marco Pedroni and Pol Vanhaecke.
+\newblock A {Lie} algebraic generalization of the {Mumford} system, its
+  symmetries and its multi-hamiltonian structure.
+\newblock {\em Regular and Chaotic Dynamics}, 3(3):132--160, 1998.
+\newblock \href {https://doi.org/10.1070/RD1998v003n03ABEH000086}
+  {\path{doi:10.1070/RD1998v003n03ABEH000086}}.
 
 \bibitem{Vanhaecke2001}
 Pol Vanhaecke.

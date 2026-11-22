@@ -6,12 +6,60 @@ The current requirements pin `generapy==0.2.0` from PyPI. Its runtime source
 matches the previously tested development revision. A clean installation
 was verified for the release; see the latest
 [release validation](#generapy-020-pypi-release) below.
-The previous 29-check suite passed with the release, as recorded in the
-17 November validation below. The original 18 checks and both complete
+All 33 checks in the current suite passed with the release on
+22 November, as recorded below. The original 18 checks and both complete
 one-point numerical examples also passed on 16 November 2026. The [migration validation](#public-ba-jet-migration)
 records the BA adapter conventions and numerator-zero checks. The code and
 requirements are intended to be used together. Earlier records below
 describe historical checks, rather than the current installation status.
+
+## Coverage extension and complete suite (22 November 2026)
+
+All 33 scripts in `code/run_checks.py --suite all` passed in the pinned
+Generapy 0.2.0 release environment. Logs are in
+`.check-logs/submission-coverage/` (ignored). This run includes the
+previously separate MCL dictionary checker and the following additions:
+
+- **Finite completion and incompatible weights.** On the genus-two curve
+  `y^2 = 4*x*(x^2-1)*(x^2-4)`, retain one prescribed point/weight in each
+  group and adjoin three points per group. Exact rational interpolation
+  gives nonzero completed weights for `(L,M,N)=(4,4,1)`. Direct public
+  Generapy BA jets check all 48 canonical rates at three geometric Abel
+  times: maximum scaled residual `8.5e-35` at 36 digits. Perturbing either
+  group's weights produces residuals above `0.38` and changes the phase
+  coefficients required at different times. This tests the criterion's
+  mechanism; it does not replace its necessity proof.
+- **Repeated-phase converse with active reduction.** Direct rational
+  `(1,1,3)` canonical initial modes have a rank-two third-group moment
+  and one inactive direction. A constant canonical basis reduces to an
+  active `(1,1,2)` pencil. Its discriminant has a forced square and a
+  square-free quartic normalization, giving genus one. Both BA divisors
+  and algebraic reference sections are recovered before theta evaluation.
+  Algebraic initial recovery is `3.2e-38`; restored original-mode rate
+  residuals are below `4.9e-37` at 40 digits. Direct Hamiltonian RK4 in
+  all seven original pairs over `[0,0.2]` gives errors `1.06e-11` and
+  `6.60e-13` at 32 and 64 steps, with refinement ratio `15.998`.
+- **Failure enforcement.** The repeated-phase rank checker now requires
+  the complete spectral-plus-moment rank. The al-function Hamiltonian
+  residuals/common-potential checks and the higher-flow evolution
+  diagnostics have explicit tolerances. Higher-flow residuals and their
+  thresholds are saved in `code/results/higher_flow_evolution_diagnostic.json`.
+
+Commands:
+
+```sh
+python code/run_checks.py --suite all --log-dir .check-logs/submission-coverage
+python code/ba_completion_compatibility_check.py
+python code/ba_repeated_phase_converse_check.py
+```
+
+The code inventory and recorded results are updated without expanding the
+manuscript. The existing long-time figures and refinement tables were not
+regenerated: these changes add checks rather than alter their equations.
+Remaining extensions include a generic non-hyperelliptic converse and
+positive-genus BA reconstruction with three active punctures. The new
+three-puncture launch has two active punctures after reduction and is not
+claimed as that latter test. Only one active-reduction profile is exercised.
 
 ## Manuscript cleanup (22 November 2026)
 

@@ -17,6 +17,7 @@ SUITES={
     ],
     'symbolic':[
         'latex_final_section2_checks.py',
+        'mcl_jrw_matrix_embedding.py',
         'jrw_three_group_integral_count.py',
         'jrw_repeated_phase_general.py',
         'jrw_phase_cluster_insertion.py',
@@ -37,6 +38,8 @@ SUITES={
         'multipoint_BA_genus2_check.py',
         'matrix_kp_hierarchy_check.py',
         'ba_genus2_converse_check.py',
+        'ba_completion_compatibility_check.py',
+        'ba_repeated_phase_converse_check.py',
         'multipoint_higher_flow_check.py',
         'multipoint_repeated_phase_moments.py',
     ],
