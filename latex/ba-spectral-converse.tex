@@ -188,13 +188,13 @@ spectral curve, rather than restricting initial modes further.
 
 Let $f_k$ be the last $N$ coordinate vectors, $\mathsf J$ their
 coordinate projection, and $a=\sum_{k=1}^{N}f_k$.
-Choose right and left spectral eigenvectors $r,\ell$ with
-$i\dot r=-\mathsf T_0r$, $i\dot\ell=\ell\mathsf T_0$ and reference
-normalizations $a^{\trans}r(P,0)=\ell(P,0)a=1$. Define
+Choose right and left spectral eigenvectors $r,r^{\vee}$ with
+$i\dot r=-\mathsf T_0r$, $i\dot r^{\vee}=r^{\vee}\mathsf T_0$ and reference
+normalizations $a^{\trans}r(P,0)=r^{\vee}(P,0)a=1$. Define
 \begin{equation}\label{eq:BA-converse-functions}
- \psi_k(P)=\ell(P)f_k,\qquad
+ \psi_k(P)=r^{\vee}(P)f_k,\qquad
  \psi_k^\vee(P)=f_k^{\trans}r(P),\qquad
- \Omega(P,Q)=-\frac{\ell(P)r(Q)}{\nu(P)-\nu(Q)}.
+ \Omega(P,Q)=-\frac{r^{\vee}(P)r(Q)}{\nu(P)-\nu(Q)}.
 \end{equation}
 Since $\mathsf T_0(\nu(P))-\mathsf T_0(\nu(Q))
 =-(\nu(P)-\nu(Q))\mathsf J$, this kernel satisfies
@@ -221,7 +221,7 @@ the dual statement; the analytic infinity justification for repeated
 phases is given in Appendix~\ref{app:BA-active-converse}.
 The duality differential is
 \begin{equation}\label{eq:BA-converse-duality}
- d\Omega_0=-\frac{d\nu}{\ell(P)r(P)}.
+ d\Omega_0=-\frac{d\nu}{r^{\vee}(P)r(P)}.
 \end{equation}
 It is regular at the outer branches, has the required double poles
 at $R_k$, and its apparent projection-branch poles cancel with $d\nu$.

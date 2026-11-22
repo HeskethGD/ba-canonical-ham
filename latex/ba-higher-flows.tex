@@ -129,17 +129,17 @@ suffice to generate all its Abel translations.
 The right eigenvector is \cref{eq:BA-prescribed-eigenvector}.
 A compatible left vector is
 \[
- \ell(P)=\bigl((-c_{\ell}\Omega(P,Q_{\ell}))_{\ell=1}^{L},
+ r^{\vee}(P)=\bigl((-c_{\ell}\Omega(P,Q_{\ell}))_{\ell=1}^{L},
  (\kappa_{L+j}\Omega(P,Q_{L+j})/c_{L+j})_{j=1}^{M},
  (\psi_k(P)/e_k)_{k=1}^{N}\bigr).
 \]
 Their convolution identities give the spectral equations and
 \begin{equation}\label{eq:BA-higher-initial-kernel}
- \ell(P)r(Q)=-(\nu(P)-\nu(Q))\Omega(P,Q).
+ r^{\vee}(P)r(Q)=-(\nu(P)-\nu(Q))\Omega(P,Q).
 \end{equation}
 Evolve the vectors under
 $i\dot r_H=-\mathsf T_{r,\nu_0}r_H$ and
-$i\dot\ell_H=\ell_H\mathsf T_{r,\nu_0}$.
+$i\dot r_H^{\vee}=r_H^{\vee}\mathsf T_{r,\nu_0}$.
 Near every infinity branch the eigenvalue equation gives the
 convergent local factorization
 \begin{equation}\label{eq:BA-higher-local-factorization}
@@ -154,7 +154,7 @@ poles; the local factorization is used only near infinity.
 
 Dress the vectors reciprocally by
 $\widetilde r=e^{-it\mathfrak f}r_H$,
-$\widetilde\ell=e^{it\mathfrak f}\ell_H$.
+$\widetilde r^{\vee}=e^{it\mathfrak f}r_H^{\vee}$.
 At $Q_{\ell},Q_{L+j}$ the polar exponents cancel and the right leading
 coefficients acquire $e^{-it\varphi_{\ell}^L}$,
 $e^{-it\varphi_j^M}$. Their initial coefficients
@@ -169,7 +169,7 @@ leading vector at all punctures, so the same argument identifies
 the kernel components.
 
 No finite equal-$\nu$ poles are introduced: the derivative of
-$\ell_H(P)r_H(Q)$ is divisible by $\nu(P)-\nu(Q)$ because the
+$r_H^{\vee}(P)r_H(Q)$ is divisible by $\nu(P)-\nu(Q)$ because the
 time matrix is polynomial. Initially removable poles remain
 removable. Reciprocal dressing is regular there and leaves the
 diagonal pairing unchanged. Thus $d\Omega_0$ and the weights are

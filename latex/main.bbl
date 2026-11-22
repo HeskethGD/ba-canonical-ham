@@ -425,4 +425,12 @@ S.~Wojciechowski, Z.~Jiang, and R.~K. Bullough.
 \newblock \href {https://doi.org/10.1016/0375-9601(86)90006-X}
   {\path{doi:10.1016/0375-9601(86)90006-X}}.
 
+\bibitem{WuGeng1999}
+Yongtang Wu and Xianguo Geng.
+\newblock A finite-dimensional integrable system associated with the three-wave
+  interaction equations.
+\newblock {\em Journal of Mathematical Physics}, 40(7):3409--3430, 1999.
+\newblock \href {https://doi.org/10.1063/1.532896}
+  {\path{doi:10.1063/1.532896}}.
+
 \end{thebibliography}
